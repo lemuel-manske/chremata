@@ -1,0 +1,14 @@
+{
+  "name": "chremata-frontend",
+  "version": "0.0.0",
+  "description": "A full-fledged finance Web App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "web"
+  ],
+  "author": "lemuel-manske",
+  "license": "MIT"
+}
