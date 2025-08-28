@@ -25,8 +25,6 @@ test('should call `onClick` when focused and [Enter] is pressed', async () => {
 
   render(<Button onClick={onClick} />);
 
-  const button = screen.getByRole('button');
-
   await user.tab();
   await user.keyboard('[Enter]');
 
