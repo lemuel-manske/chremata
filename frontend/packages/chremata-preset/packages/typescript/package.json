@@ -1,0 +1,28 @@
+{
+  "name": "@chremata-preset/typescript",
+  "version": "0.0.0",
+  "description": "Chremata typescript preset",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemuel-manske/chremata.git",
+    "directory": "packages/chremata-preset/packages/typescript"
+  },
+  "private": true,
+  "author": "lemuel-manske",
+  "type": "module",
+  "main": "./tsconfig.json",
+  "exports": {
+    ".": "./tsconfig.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "tsconfig.json"
+  ],
+  "peerDependencies": {
+    "typescript": ">=5.4 <5.6"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@chremata-preset/rollup",
+  "version": "0.0.0",
+  "description": "Chremata rollup preset",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemuel-manske/chremata.git",
+    "directory": "packages/chremata-preset/packages/rollup"
+  },
+  "private": true,
+  "author": "lemuel-manske",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@rollup/plugin-typescript": "12.1.4",
+    "rollup": "4.49.0"
+  },
+  "peerDependencies": {
+    "tslib": "2.8.1"
+  }
+}
