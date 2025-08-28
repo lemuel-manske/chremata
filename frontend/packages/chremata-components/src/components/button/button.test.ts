@@ -1,9 +1,9 @@
-import { fixture, html } from '@open-wc/testing';
+import { test, expect } from '@playwright/test';
 
 import './button';
 
-describe('button', () => {
-  it('should be clicked', async () => {
-    const el = await fixture(html` <ch-button></ch-button> `);
+test.describe('button', () => {
+  test('is rendered', async ({ page }) => {
+    await page.setContent('<ch-button></ch-button>');
   });
 });
