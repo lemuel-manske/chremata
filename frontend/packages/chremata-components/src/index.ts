@@ -1,1 +1,1 @@
-export { HelloWorld } from './field/field';
+export * from './components'; 

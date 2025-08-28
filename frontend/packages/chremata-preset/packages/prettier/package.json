@@ -1,6 +1,6 @@
 
 {
-  "name": "@chremata-preset/rollup",
+  "name": "@chremata-preset/prettier",
   "version": "0.0.0",
   "description": "Chremata prettier preset",
   "license": "MIT",
@@ -25,5 +25,5 @@
   ],
   "peerDependencies": {
     "prettier": "^2.0.0"
-  },
+  }
 }
