@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@chremata-preset/rollup": "file:../chremata-preset/packages/rollup",
+    "@chremata-preset/prettier": "file:../chremata-preset/packages/prettier",
     "@chremata-preset/typescript": "file:../chremata-preset/packages/typescript",
     "@rollup/plugin-typescript": "12.1.4",
     "lit": "3.3.1",

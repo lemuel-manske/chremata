@@ -1,0 +1,29 @@
+
+{
+  "name": "@chremata-preset/rollup",
+  "version": "0.0.0",
+  "description": "Chremata prettier preset",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemuel-manske/chremata.git",
+    "directory": "packages/chremata-preset/packages/prettier"
+  },
+  "private": true,
+  "author": "lemuel-manske",
+  "type": "module",
+  "main": "./.prettierrc.json",
+  "exports": {
+    ".": "./.prettierrc.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    ".prettierrc.json"
+  ],
+  "peerDependencies": {
+    "prettier": "^2.0.0"
+  },
+}
