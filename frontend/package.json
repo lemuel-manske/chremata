@@ -1,5 +1,5 @@
 {
-  "name": "chremata-frontend",
+  "name": "@chremata/app",
   "description": "A full-fledged finance Web App",
   "version": "0.0.0",
   "private": true,
@@ -12,7 +12,7 @@
   "repository": {
     "type": "git",
     "url": "github:lemuel-manske/chremata",
-    "directory": "."
+    "directory": "frontend"
   },
   "workspaces": [
     "packages/*"

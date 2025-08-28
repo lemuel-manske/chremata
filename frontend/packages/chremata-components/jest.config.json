@@ -1,0 +1,9 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "jsdom",
+  "cache": true,
+  "collectCoverage": true,
+  "testMatch": [
+    "**/*.spec.tsx"
+  ]
+}

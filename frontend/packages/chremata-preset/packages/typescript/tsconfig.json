@@ -17,6 +17,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
+    "jsx": "react-jsx",
     "strict": true,
     "target": "ES2023",
     "verbatimModuleSyntax": true
