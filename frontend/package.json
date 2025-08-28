@@ -1,14 +1,29 @@
 {
   "name": "chremata-frontend",
   "version": "0.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "github:lemuel-manske/chremata",
+    "directory": "."
+  },
+  "workspaces": [
+    "packages/*"
+  ],
   "description": "A full-fledged finance Web App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:e2e": "playwright test"
   },
   "keywords": [
     "web"
   ],
   "author": "lemuel-manske",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "1.55.0"
+  },
+  "engines": {
+    "node": ">=24 <25"
+  }
 }
