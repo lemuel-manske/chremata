@@ -1,13 +1,21 @@
+type UserEvent = () => void;
+
+type ButtonLabel = string;
+
 type ButtonProps = {
-  onClick?: () => void;
+  disabled?: boolean;
+  label?: ButtonLabel;
+  onClick?: UserEvent;
 };
 
-const Button = ((props: ButtonProps) => {
-  const { onClick } = props;
+const Button = (props: ButtonProps) => {
+  const { onClick, label, disabled } = props;
 
-  return <button onClick={onClick}></button>;
-});
-
-export {
-  Button,
+  return (
+    <button disabled={disabled} onClick={onClick}>
+      {label}
+    </button>
+  );
 };
+
+export { Button };
