@@ -12,9 +12,9 @@
 # testing
 **/coverage
 
-# next
-**/.next/
-**/out/
-
 # production
 **/build
+
+# storybook
+**/storybook-static
+**/storybook.log
