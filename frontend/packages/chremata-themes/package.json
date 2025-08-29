@@ -1,0 +1,28 @@
+{
+  "name": "@chremata-preset/themes",
+  "version": "0.0.0",
+  "description": "Chremata themes",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemuel-manske/chremata.git",
+    "directory": "frontend/packages/chremata-themes"
+  },
+  "private": true,
+  "author": "lemuel-manske",
+  "type": "module",
+  "main": "./index.css",
+  "exports": {
+    ".": "./index.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.css"
+  ],
+  "peerDependencies": {
+    "@chremata/fonts": "file:../chremata-fonts"
+  }
+}

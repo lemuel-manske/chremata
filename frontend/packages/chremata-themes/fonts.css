@@ -1,0 +1,11 @@
+:root {
+  --font-family-base: 'CentraleSans', sans-serif;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  
+  --font-style-normal: normal;
+  --font-style-italic: italic;
+}

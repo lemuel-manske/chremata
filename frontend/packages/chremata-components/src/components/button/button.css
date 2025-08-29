@@ -1,0 +1,44 @@
+.ch-button {
+  cursor: pointer;
+
+  color: var(--color-0);
+  background: var(--color-50);
+  
+  font-family: var(--font-family-base);
+  letter-spacing: 0.2px;
+
+  display: inline-flex;
+
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  text-align: center;
+
+  height: fit-content;
+  width: max-content;
+
+  padding: 12px 16px;
+
+  border-radius: 4px;
+
+  border: none;
+}
+
+.ch-button:hover {
+  background: var(--color-55);
+}
+
+.ch-button:focus {
+  outline: 3px solid var(--color-30);
+  outline-offset: 1px;
+}
+
+.ch-button:active {
+  background: var(--color-60);
+}
+
+.ch-button:disabled {
+  background: var(--color-50);
+}

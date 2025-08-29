@@ -1,0 +1,19 @@
+{
+  "name": "@chremata/fonts",
+  "author": "Chremata fonts",
+  "version": "0.0.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lemuel-manske/chremata",
+    "directory": "frontend/packages/chremata-fonts"
+  },
+  "main": "index.css",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "default": "./index.css",
+      "types": "./index.d.ts"
+    }
+  }
+}

@@ -21,6 +21,8 @@
     "build:sb": "storybook build"
   },
   "dependencies": {
+    "@chremata-preset/themes": "file:../chremata-themes",
+    "@chremata-preset/fonts": "file:../chremata-fonts",
     "react": "19",
     "react-dom": "19"
   },
