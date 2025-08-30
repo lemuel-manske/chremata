@@ -3,16 +3,10 @@
   --color-expense: var(--color-danger);
 }
 
-.ch-money {
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-regular);
-  letter-spacing: 0.2px;
-}
-
 .ch-money--expense {
-  color: var(--color-expense);
+  color: var(--color-expense) !important;
 }
 
 .ch-money--revenue {
-  color: var(--color-revenue);
+  color: var(--color-revenue) !important;
 }

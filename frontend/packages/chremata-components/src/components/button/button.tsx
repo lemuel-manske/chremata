@@ -1,5 +1,7 @@
 import classNames from '../utils';
 
+import { Text, TextColor } from '../text/text';
+
 import type { ButtonProps } from './button.types';
 import './button.css';
 
@@ -18,7 +20,7 @@ const Button = (props: ButtonProps) => {
       disabled={disabled}
       onClick={onClick}
     >
-      <span>{label}</span>
+      <Text value={label ?? ''} color={TextColor.LIGHT} />
     </button>
   );
 };

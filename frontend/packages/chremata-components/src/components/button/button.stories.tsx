@@ -5,7 +5,7 @@ import { fn } from 'storybook/test';
 import { Button } from './button';
 
 export default {
-  args: { label: 'Button', onClick: fn() },
+  args: { label: 'Button', disabled: false, onClick: fn() },
   component: Button,
   title: 'Button',
   id: 'button',

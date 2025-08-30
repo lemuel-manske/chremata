@@ -1,11 +1,7 @@
 .ch-button {
   cursor: pointer;
 
-  color: var(--color-0);
   background: var(--color-50);
-  
-  font-family: var(--font-family-base);
-  letter-spacing: 0.2px;
 
   display: inline-flex;
 

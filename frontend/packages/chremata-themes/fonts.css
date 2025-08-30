@@ -4,11 +4,15 @@
   --font-color-dark: var(--color-90);
   --font-color-light: var(--color-10);
 
+  --font-size-regular: 1rem;
+  --font-size-small: .875rem;
+  --font-size-large: 1.25rem;
+
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
   
-  --font-style-normal: normal;
+  --font-style-regular: normal;
   --font-style-italic: italic;
 }

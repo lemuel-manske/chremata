@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import classNames from '../utils';
+import { Text } from '../text/text';
 
 import { type MoneyProps, type MoneyTypeProps, MoneyType } from './money.types';
 
@@ -22,32 +23,26 @@ const Revenue = (props: MoneyTypeProps) => {
   const { amount } = props;
 
   const revenueClassNames = classNames({
-    'ch-money': true,
     'ch-money--revenue': true,
   });
 
-  return <span className={revenueClassNames}>+{BRL(amount)}</span>;
+  return <Text className={revenueClassNames} value={`+${BRL(amount)}`} />;
 };
 
 const Expense = (props: MoneyTypeProps) => {
   const { amount } = props;
 
   const expenseClassNames = classNames({
-    'ch-money': true,
     'ch-money--expense': true,
   });
 
-  return <span className={expenseClassNames}>-{BRL(amount)}</span>;
+  return <Text className={expenseClassNames} value={`-${BRL(amount)}`} />;
 };
 
 const Neutral = (props: MoneyTypeProps) => {
   const { amount } = props;
 
-  const neutralClassNames = classNames({
-    'ch-money': true,
-  });
-
-  return <span className={neutralClassNames}>{BRL(amount)}</span>;
+  return <Text className={'ch-money--neutral'} value={BRL(amount)} />;
 };
 
 const decideType = {

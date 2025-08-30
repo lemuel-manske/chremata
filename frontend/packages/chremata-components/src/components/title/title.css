@@ -1,39 +1,24 @@
 .ch-header h1,
-.ch-header h2,
-.ch-header h3,
-.ch-header h4,
-.ch-header h5,
-.ch-header h6,
-.ch-header p {
+.ch-header span {
   margin: 0;
   padding: 0;
-  font-family: var(--font-family-base);
-  color: var(--font-color-dark);
 }
 
 .ch-header {
   display: flex;
   flex-direction: column;
 
-  align-items: baseline;
+  align-items: flex-start;
   justify-content: center;
 
   gap: 0.25rem;
 }
 
-.ch-header p {
+.ch-header span {
   width: 100%;
   max-width: 40ch;
 
   white-space: normal;
   overflow-wrap: break-word; 
   word-break: break-word;
-}
-
-.ch-title--regular {
-  font-weight: var(--font-weight-regular);
-}
-
-.ch-title--bold {
-  font-weight: var(--font-weight-bold);
 }
