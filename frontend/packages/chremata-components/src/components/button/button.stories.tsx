@@ -4,12 +4,8 @@ import { fn } from 'storybook/test';
 
 import { Button } from './button';
 
-const onClick = fn(() => {
-  console.log('[onClick] dispatched');
-});
-
 export default {
-  args: { label: 'Button', onClick },
+  args: { label: 'Button', onClick: fn() },
   component: Button,
   title: 'Button',
   id: 'button',

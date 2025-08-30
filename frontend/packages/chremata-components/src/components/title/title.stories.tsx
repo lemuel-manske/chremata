@@ -4,7 +4,7 @@ import { Title } from './title';
 import type { TitleProps } from './title.types';
 
 export default {
-  args: { value: 'Title' },
+  args: { value: 'Title', subtitleValue: 'Subtitle', level: 1 },
   component: Title,
   title: 'Title',
   id: 'title',
@@ -12,21 +12,4 @@ export default {
 
 export const Default: StoryObj<typeof Title> = {
   render: (props: TitleProps) => <Title {...props} />,
-};
-
-export const WithSubtitle: StoryObj<typeof Title> = {
-  render: (props: TitleProps) => <Title {...props} subtitleValue="Subtitle" />,
-};
-
-export const WithLevel: StoryObj<typeof Title> = {
-  render: (props: TitleProps) => <Title {...props} level={2} />,
-};
-
-export const WithLongSubtitle: StoryObj<typeof Title> = {
-  render: (props: TitleProps) => (
-    <Title
-      {...props}
-      subtitleValue="This is a longer subtitle that should wrap onto one more line for demonstration purposes"
-    />
-  ),
 };

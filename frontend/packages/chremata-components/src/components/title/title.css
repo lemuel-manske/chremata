@@ -30,16 +30,8 @@
   word-break: break-word;
 }
 
-.ch-title--light {
-  font-weight: var(--font-weight-light);
-}
-
 .ch-title--regular {
   font-weight: var(--font-weight-regular);
-}
-
-.ch-title--medium {
-  font-weight: var(--font-weight-medium);
 }
 
 .ch-title--bold {

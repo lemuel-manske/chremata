@@ -37,39 +37,3 @@ test('should render title of level [2]', async ({ mount, page }) => {
   await expect(title).toBeVisible();
   await expect(title).toNotHaveAccessibilityViolations();
 });
-
-test('should render title of level [3]', async ({ mount, page }) => {
-  await mount(<Title value="My title" level={3} />);
-
-  const title = page.getByRole('heading', { name: 'My title', level: 3 });
-
-  await expect(title).toBeVisible();
-  await expect(title).toNotHaveAccessibilityViolations();
-});
-
-test('should render title of level [4]', async ({ mount, page }) => {
-  await mount(<Title value="My title" level={4} />);
-
-  const title = page.getByRole('heading', { name: 'My title', level: 4 });
-
-  await expect(title).toBeVisible();
-  await expect(title).toNotHaveAccessibilityViolations();
-});
-
-test('should render title of level [5]', async ({ mount, page }) => {
-  await mount(<Title value="My title" level={5} />);
-
-  const title = page.getByRole('heading', { name: 'My title', level: 5 });
-
-  await expect(title).toBeVisible();
-  await expect(title).toNotHaveAccessibilityViolations();
-});
-
-test('should render title of level [6]', async ({ mount, page }) => {
-  await mount(<Title value="My title" level={6} />);
-
-  const title = page.getByRole('heading', { name: 'My title', level: 6 });
-
-  await expect(title).toBeVisible();
-  await expect(title).toNotHaveAccessibilityViolations();
-});

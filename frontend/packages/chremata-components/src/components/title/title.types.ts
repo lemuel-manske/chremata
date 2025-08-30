@@ -1,7 +1,7 @@
 type Title = string;
 type Subtitle = string;
 
-type TitleLevel = 1 | 2 | 3 | 4 | 5 | 6;
+type TitleLevel = 1 | 2;
 
 type TitleProps = {
   value: Title;
@@ -9,4 +9,4 @@ type TitleProps = {
   level?: TitleLevel;
 };
 
-export type { TitleProps, TitleLevel };
+export type { TitleProps };
