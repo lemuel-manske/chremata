@@ -3,7 +3,7 @@
 # playwright
 **/test-results
 **/playwright-report
-**/playwright
+**/playwright/.cache
 
 # compile
 **/dist

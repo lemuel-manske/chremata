@@ -18,8 +18,8 @@ const getConfig = (): PlaywrightTestConfig => ({
   reporter: 'html',
 
   use: {
-    trace: 'on-first-retry',
     ctPort: 3100,
+    trace: 'on-first-retry',
   },
 
   projects: [
