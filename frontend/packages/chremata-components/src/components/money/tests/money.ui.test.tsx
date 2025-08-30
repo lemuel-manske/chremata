@@ -30,3 +30,12 @@ test('should render neutral with precision', { tag: TAGS }, async ({ mount, page
   await expect(currencyLabel).toBeVisible();
   await expect(currencyLabel).toNotHaveAccessibilityViolations();
 });
+
+test('should render big amount with precision', { tag: TAGS }, async ({ mount, page }) => {
+  await mount(<Money.Neutral amount={1265.22} />);
+
+  const currencyLabel = page.getByText('R$ 1.265,22');
+
+  await expect(currencyLabel).toBeVisible();
+  await expect(currencyLabel).toNotHaveAccessibilityViolations();
+});
