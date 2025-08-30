@@ -3,7 +3,11 @@
   "testEnvironment": "jsdom",
   "cache": true,
   "collectCoverage": true,
+  "coverageProvider": "v8",
   "testMatch": [
     "**/*.spec.tsx"
-  ]
+  ],
+  "transform": {
+    "\\.css$": "jest-transform-css"
+  }
 }

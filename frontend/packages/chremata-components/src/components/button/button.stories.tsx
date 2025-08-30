@@ -4,21 +4,17 @@ import { fn } from 'storybook/test';
 
 import { Button } from './button';
 
-const meta = {
-  title: 'Button',
+const onClick = fn(() => {
+  console.log('[onClick] dispatched');
+});
+
+export default {
+  args: { label: 'Button', onClick },
   component: Button,
-  parameters: {
-    layout: 'centered',
-  },
-  args: { onClick: fn() },
+  title: 'Button',
+  id: 'button',
 } satisfies Meta<typeof Button>;
 
-export default meta;
-
-type Story = StoryObj<typeof meta>;
-
-export const Primary: Story = {
-  args: {
-    label: 'Button',
-  },
+export const Default: StoryObj<typeof Button> = {
+  render: (props) => <Button {...props} />,
 };

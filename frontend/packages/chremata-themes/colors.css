@@ -19,7 +19,7 @@
   --color-10: hsl(var(--color-group-blue-10));
   --color-5: hsl(var(--color-group-blue-5));
   --color-0: hsl(var(--color-group-blue-0));
-  
+
   --color-signal-success: #10B981;
   --color-signal-warning: #F59E0B;
   --color-signal-error: #EF4444;

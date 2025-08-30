@@ -1,6 +1,9 @@
 :root {
   --font-family-base: 'CentraleSans', sans-serif;
 
+  --font-color-dark: var(--color-90);
+  --font-color-light: var(--color-10);
+
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
