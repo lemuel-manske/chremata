@@ -2,7 +2,9 @@ import { test, expect } from '../../../fixtures/test';
 
 import { Title } from '../title';
 
-test('should render title', async ({ mount, page }) => {
+const TAGS = ['@title'];
+
+test('should render title', { tag: TAGS }, async ({ mount, page }) => {
   await mount(<Title value="My title" />);
 
   const title = page.getByRole('heading', { name: 'My title' });
@@ -11,7 +13,7 @@ test('should render title', async ({ mount, page }) => {
   await expect(title).toNotHaveAccessibilityViolations();
 });
 
-test('should render title with subtitle', async ({ mount, page }) => {
+test('should render title with subtitle', { tag: TAGS }, async ({ mount, page }) => {
   await mount(<Title value="My title" subtitleValue="My subtitle" />);
 
   const subtitle = page.getByRole('paragraph').filter({ hasText: 'My subtitle' });
@@ -20,7 +22,7 @@ test('should render title with subtitle', async ({ mount, page }) => {
   await expect(subtitle).toNotHaveAccessibilityViolations();
 });
 
-test('should render title of level [1]', async ({ mount, page }) => {
+test('should render title of level [1]', { tag: TAGS }, async ({ mount, page }) => {
   await mount(<Title value="My title" level={1} />);
 
   const title = page.getByRole('heading', { name: 'My title', level: 1 });
@@ -29,7 +31,7 @@ test('should render title of level [1]', async ({ mount, page }) => {
   await expect(title).toNotHaveAccessibilityViolations();
 });
 
-test('should render title of level [2]', async ({ mount, page }) => {
+test('should render title of level [2]', { tag: TAGS }, async ({ mount, page }) => {
   await mount(<Title value="My title" level={2} />);
 
   const title = page.getByRole('heading', { name: 'My title', level: 2 });

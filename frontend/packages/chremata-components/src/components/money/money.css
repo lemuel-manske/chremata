@@ -1,0 +1,18 @@
+:root {
+  --color-revenue: var(--color-success);
+  --color-expense: var(--color-danger);
+}
+
+.ch-money {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: 0.2px;
+}
+
+.ch-money--expense {
+  color: var(--color-expense);
+}
+
+.ch-money--revenue {
+  color: var(--color-revenue);
+}

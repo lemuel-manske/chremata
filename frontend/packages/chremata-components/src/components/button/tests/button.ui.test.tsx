@@ -2,16 +2,18 @@ import { test, expect } from '../../../fixtures/test';
 
 import { Button } from '../button';
 
-test('should render active', async ({ mount, page }) => {
-  mount(<Button label="Active button" />);
+const TAGS = ['@button'];
+
+test('should render active', { tag: TAGS }, async ({ mount, page }) => {
+  await mount(<Button label="Active button" />);
 
   const button = page.getByRole('button');
 
   await expect(button).toNotHaveAccessibilityViolations();
 });
 
-test('should render with label', async ({ mount, page }) => {
-  mount(<Button label="With label" />);
+test('should render with label', { tag: TAGS }, async ({ mount, page }) => {
+  await mount(<Button label="With label" />);
 
   const button = page.getByRole('button', { name: 'With label' });
 
@@ -20,8 +22,8 @@ test('should render with label', async ({ mount, page }) => {
   await expect(button).toNotHaveAccessibilityViolations();
 });
 
-test('should be focusable', async ({ mount, page }) => {
-  mount(<Button label="Focusable button" />);
+test('should be focusable', { tag: TAGS }, async ({ mount, page }) => {
+  await mount(<Button label="Focusable button" />);
 
   const button = page.getByRole('button', { name: 'Focusable button' });
 
@@ -32,8 +34,8 @@ test('should be focusable', async ({ mount, page }) => {
   await expect(button).toNotHaveAccessibilityViolations();
 });
 
-test('should render disabled', async ({ mount, page }) => {
-  mount(<Button label="Disabled button" disabled />);
+test('should render disabled', { tag: TAGS }, async ({ mount, page }) => {
+  await mount(<Button label="Disabled button" disabled />);
 
   const button = page.getByRole('button');
 
@@ -42,8 +44,8 @@ test('should render disabled', async ({ mount, page }) => {
   await expect(button).toNotHaveAccessibilityViolations();
 });
 
-test('should not be focusable when disabled', async ({ mount, page }) => {
-  mount(<Button label="Disabled button" disabled />);
+test('should not be focusable when disabled', { tag: TAGS }, async ({ mount, page }) => {
+  await mount(<Button label="Disabled button" disabled />);
 
   const button = page.getByRole('button', { name: 'Disabled button' });
 

@@ -19,6 +19,7 @@ const getConfig = (): PlaywrightTestConfig => ({
 
   use: {
     ctPort: 3100,
+    screenshot: 'on',
     trace: 'on-first-retry',
   },
 
