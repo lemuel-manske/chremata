@@ -1,28 +1,43 @@
-import { getNodeResolveConf } from './src/plugins/node-resolve.mjs';
-import { getCommonJsConf } from './src/plugins/commonjs.mjs';
-import { getTypescriptConf } from './src/plugins/typescript.mjs';
-import { getPostcssConf } from './src/plugins/postcss.mjs';
+import { getNodeResolveConf } from './src/plugins/node-resolve.js';
+import { getCommonJsConf } from './src/plugins/commonjs.js';
+import { getTypescriptConf } from './src/plugins/typescript.js';
+import { getPostcssConf } from './src/plugins/postcss.js';
+import { getJsonConf } from './src/plugins/json.js';
+import { getSwcConf } from './src/plugins/swc.js';
+
+import { getPeerDependencies } from './src/helpers/manifest.js';
 
 /**
- * @type {import('rollup').RollupOptions}
+ * @type {Promise<import('rollup').RollupOptions>}
  */
-export const getConfig = () => ({
-  input: 'src/index.mts',
+export async function getConfig() {
+  return {
+    input: 'src/index.mts',
 
-  output: [
-    {
-      file: 'dist/index.cjs',
-      format: 'cjs',
-      sourcemap: true,
-    },
-    {
-      file: 'dist/index.mjs',
-      format: 'esm',
-      sourcemap: true,
-    },
-  ],
+    cache: false,
 
-  plugins: [getNodeResolveConf(), getCommonJsConf(), getTypescriptConf(), getPostcssConf()],
+    output: [
+      {
+        file: 'dist/index.cjs',
+        format: 'cjs',
+        sourcemap: true,
+      },
+      {
+        file: 'dist/index.mjs',
+        format: 'esm',
+        sourcemap: true,
+      },
+    ],
 
-  external: [],
-});
+    plugins: [
+      await getPostcssConf(),
+      await getJsonConf(),
+      await getSwcConf(),
+      await getCommonJsConf(),
+      await getNodeResolveConf(),
+      await getTypescriptConf(),
+    ],
+
+    external: await getPeerDependencies(),
+  };
+}
