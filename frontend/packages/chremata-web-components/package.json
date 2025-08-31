@@ -21,16 +21,22 @@
   },
   "scripts": {
     "start:preview": "vite",
-    "build": "npm run build:cleanup && npm run build:types && npm run build:js",
-    "build:cleanup": "rm -rf ./dist",
+    "build": "npm run clean && npm run build:types && npm run build:js",
     "build:types": "tsc",
-    "build:js": "rollup -c"
+    "build:js": "rollup -c",
+    "clean": "rm -rf ./dist",
+    "test:e2e": "playwright test"
+  },
+  "peerDependencies": {
+    "@chremata/themes": "file:../chremata-themes",
+    "@chremata/fonts": "file:../chremata-fonts"
   },
   "devDependencies": {
-    "@chremata-preset/typescript": "file:../chremata-preset/packages/typescript",
     "@chremata-preset/prettier": "file:../chremata-preset/packages/prettier",
     "@chremata-preset/rollup": "file:../chremata-preset/packages/rollup",
-    "@chremata/themes": "file:../chremata-themes",
+    "@chremata-preset/typescript": "file:../chremata-preset/packages/typescript",
+    "@chremata-preset/playwright": "file:../chremata-preset/packages/playwright",
+    "@playwright/test": "^1.55.0",
     "rollup": "^4.49.0",
     "typescript": "^5.9.2",
     "vite": "^7.1.3"

@@ -1,17 +1,14 @@
 {
-  "name": "@chremata/app",
-  "description": "A full-fledged finance Web App",
+  "name": "@chremata/preset",
+  "description": "Set of presets for Chremata packages",
   "version": "0.0.0",
   "private": true,
   "author": "lemuel-manske",
   "license": "MIT",
-  "keywords": [
-    "web"
-  ],
   "repository": {
     "type": "git",
     "url": "github:lemuel-manske/chremata",
-    "directory": "frontend"
+    "directory": "frontend/packages/chremata-preset"
   },
   "workspaces": [
     "packages/*"
