@@ -9,11 +9,7 @@
     "directory": "frontend/packages/chremata-fonts"
   },
   "main": "index.css",
-  "types": "index.d.ts",
   "exports": {
-    ".": {
-      "default": "./index.css",
-      "types": "./index.d.ts"
-    }
+    ".": "./index.css"
   }
 }

@@ -9,8 +9,9 @@
 **/playwright/.cache
 
 # compile
-**/dist
-**/.tsbuildinfo
+**/tsconfig.tsbuildinfo
+**/.rollup.cache
+**/dist/*
 
 # testing
 **/coverage

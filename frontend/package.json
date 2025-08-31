@@ -5,7 +5,6 @@
   "private": true,
   "author": "lemuel-manske",
   "license": "MIT",
-  "main": "index.js",
   "keywords": [
     "web"
   ],
@@ -19,5 +18,8 @@
   ],
   "engines": {
     "node": ">=24 <25"
+  },
+  "devDependencies": {
+    "postcss-url": "^10.1.3"
   }
 }

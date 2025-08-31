@@ -1,7 +1,7 @@
 :root {
-  --font-family-base: 'CentraleSans', sans-serif;
+  --font-family: 'CentraleSans', sans-serif;
 
-  --font-color-dark: var(--color-90);
+  --font-color-regular: var(--color-90);
   --font-color-light: var(--color-10);
 
   --font-size-regular: 1rem;
@@ -12,7 +12,4 @@
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
-  
-  --font-style-regular: normal;
-  --font-style-italic: italic;
 }

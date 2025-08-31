@@ -1,4 +1,7 @@
 :root {
+  --color-success: #0A855C;
+  --color-danger: #E02121;
+  
   --color-100: hsl(var(--color-group-blue-100));
   --color-90: hsl(var(--color-group-blue-90));
   --color-85: hsl(var(--color-group-blue-85));
@@ -19,9 +22,6 @@
   --color-10: hsl(var(--color-group-blue-10));
   --color-5: hsl(var(--color-group-blue-5));
   --color-0: hsl(var(--color-group-blue-0));
-
-  --color-success: #0A855C;
-  --color-danger: #E02121;
 
   --color-group-blue-100: 0, 0%, 0%;
   --color-group-blue-90: 234, 50%, 8%;
