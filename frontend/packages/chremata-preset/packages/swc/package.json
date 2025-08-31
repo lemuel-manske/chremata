@@ -1,0 +1,34 @@
+{
+  "name": "@chremata-preset/swc",
+  "version": "0.0.0",
+  "description": "Chremata SWC configuration",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemuel-manske/chremata.git",
+    "directory": "frontend/packages/chremata-preset/packages/swc"
+  },
+  "private": true,
+  "author": "lemuel-manske",
+  "type": "module",
+  "types": "./index.d.mts",
+  "main": "./index.mjs",
+  "exports": {
+    ".": {
+      "types": "./index.d.mts",
+      "import": "./index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "@swc/core": "^1.13.5"
+  },
+  "devDependencies": {
+    "@chremata-preset/prettier": "file:../prettier",
+    "@chremata-preset/typescript": "file:../typescript",
+    "typescript": "^5.9.2"
+  }
+}
