@@ -1,0 +1,51 @@
+{
+  "name": "@chremata-preset/playwright",
+  "version": "0.0.0",
+  "description": "Chremata Playwright configuration",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemuel-manske/chremata.git",
+    "directory": "frontend/packages/chremata-preset/packages/playwright"
+  },
+  "private": true,
+  "author": "lemuel-manske",
+  "type": "module",
+  "exports": {
+    "./test": {
+      "require": "./dist/test.cjs",
+      "import": "./dist/test.js",
+      "types": "./dist/test.d.ts"
+    },
+    "./config": {
+      "require": "./dist/playwright-config.cjs",
+      "import": "./dist/playwright-config.js",
+      "types": "./dist/playwright-config.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "./dist"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run build:types && npm run build:js",
+    "build:js": "rollup -c",
+    "build:types": "tsc",
+    "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo"
+  },
+  "peerDependencies": {
+    "@playwright/test": "^1.55.0",
+    "lodash.merge": "^4.6.2"
+  },
+  "devDependencies": {
+    "@chremata-preset/prettier": "file:../prettier",
+    "@chremata-preset/rollup": "file:../rollup",
+    "@chremata-preset/typescript": "file:../typescript",
+    "@types/lodash.merge": "^4.6.9",
+    "rollup": "^4.49.0",
+    "typescript": "^5.9.2"
+  }
+}
