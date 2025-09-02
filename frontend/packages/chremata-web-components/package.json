@@ -20,6 +20,7 @@
     "./package.json": "./package.json"
   },
   "scripts": {
+    "dev": "storybook dev",
     "build": "npm run clean && npm run build:types && npm run build:js",
     "build:types": "tsc",
     "build:js": "rollup -c",
@@ -28,15 +29,17 @@
     "test:e2e": "playwright test"
   },
   "peerDependencies": {
-    "@chremata/themes": "file:../chremata-themes",
-    "@chremata/fonts": "file:../chremata-fonts"
+    "@chremata/fonts": "file:../chremata-fonts",
+    "@chremata/themes": "file:../chremata-themes"
   },
   "devDependencies": {
+    "@chremata-preset/playwright": "file:../chremata-preset/packages/playwright",
     "@chremata-preset/prettier": "file:../chremata-preset/packages/prettier",
     "@chremata-preset/rollup": "file:../chremata-preset/packages/rollup",
     "@chremata-preset/typescript": "file:../chremata-preset/packages/typescript",
-    "@chremata-preset/playwright": "file:../chremata-preset/packages/playwright",
     "@playwright/test": "^1.55.0",
+    "@storybook/addon-a11y": "8.6.7",
+    "@storybook/web-components-vite": "^9.1.4",
     "rollup": "^4.49.0",
     "typescript": "^5.9.2",
     "vite": "^7.1.3"
