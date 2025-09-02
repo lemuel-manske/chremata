@@ -20,6 +20,17 @@ class ChremataComponent extends HTMLElement {
   }
 
   /**
+   * Resolves a boolean attribute.
+   *
+   * @param attr The name of the attribute to resolve.
+   *
+   * @returns True if the attribute is present, false otherwise.
+   */
+  resolveBooleanAttr(attr: string) {
+    return this.hasAttribute(attr);
+  }
+
+  /**
    * Get the shadow root of the component.
    *
    * @returns The shadow root of the component.
