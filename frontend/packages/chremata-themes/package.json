@@ -24,5 +24,8 @@
   ],
   "peerDependencies": {
     "@chremata/fonts": "file:../chremata-fonts"
+  },
+  "devDependencies": {
+    "@chremata-preset/prettier": "file:../prettier"
   }
 }

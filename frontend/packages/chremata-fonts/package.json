@@ -16,5 +16,8 @@
   "main": "index.css",
   "exports": {
     ".": "./index.css"
+  },
+  "devDependencies": {
+    "@chremata-preset/prettier": "file:../prettier"
   }
 }
