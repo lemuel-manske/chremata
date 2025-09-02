@@ -42,6 +42,9 @@ async function getConfig() {
   };
 }
 
-const config = getConfig();
+/**
+ * @type {Promise<import('rollup').RollupOptions>}
+ */
+const config = await getConfig();
 
 export { config };

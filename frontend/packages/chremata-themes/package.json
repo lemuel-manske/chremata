@@ -26,6 +26,6 @@
     "@chremata/fonts": "file:../chremata-fonts"
   },
   "devDependencies": {
-    "@chremata-preset/prettier": "file:../prettier"
+    "@chremata-preset/prettier": "file:../chremata-preset/packages/prettier"
   }
 }

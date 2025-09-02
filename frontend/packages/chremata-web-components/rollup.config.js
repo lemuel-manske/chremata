@@ -1,7 +1,5 @@
 import { defineConfig } from 'rollup';
 
-import { config } from '@chremata-preset/rollup';
+import { config as baseConfig } from '@chremata-preset/rollup';
 
-const presetConfig = await config;
-
-export default defineConfig(presetConfig);
+export default defineConfig(baseConfig);

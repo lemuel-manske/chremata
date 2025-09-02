@@ -39,7 +39,15 @@ class Button extends LitElement {
 
   render() {
     return html`
-      <button class="ch-button" ?disabled=${this.disabled} @click=${this._handleClick}>${this.label}</button>
+      <button
+        class="ch-button"
+        aria-label=${this.label}
+        aria-disabled="${this.disabled}"
+        ?disabled=${this.disabled}
+        @click=${this._handleClick}
+      >
+        ${this.label}
+      </button>
     `;
   }
 }

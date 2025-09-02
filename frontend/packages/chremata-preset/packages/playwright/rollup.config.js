@@ -1,8 +1,6 @@
 import { defineConfig } from 'rollup';
 
-import { getConfig } from '@chremata-preset/rollup';
-
-const baseConfig = await getConfig();
+import { config as baseConfig } from '@chremata-preset/rollup';
 
 const getCustomOutput = () => {
   const base = {
