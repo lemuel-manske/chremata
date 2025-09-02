@@ -12,7 +12,7 @@ import { getPeerDependencies } from './src/helpers/manifest.js';
  */
 export async function getConfig() {
   return {
-    input: 'src/index.mts',
+    input: 'src/index.ts',
 
     cache: false,
 
@@ -23,7 +23,7 @@ export async function getConfig() {
         sourcemap: true,
       },
       {
-        file: 'dist/index.mjs',
+        file: 'dist/index.js',
         format: 'esm',
         sourcemap: true,
       },

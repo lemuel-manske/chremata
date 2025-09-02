@@ -1,35 +1,5 @@
 import type { Page } from '@playwright/test';
 
-const makeTemplateWith = (component: string) => `
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-
-      <style>
-        body {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          min-width: 100vw;
-          min-height: 100vh;
-          
-          margin: 0;
-          padding: 0;
-        }
-      </style>
-
-      <link rel="stylesheet" href="./dist/index.css" />
-      <script type="module" src="./dist/index.mjs"></script>
-    </head>
-    
-    <body>
-      ${component}
-    </body>
-  </html>
-`;
-
 type RenderFixture = {
   /**
    * Renders the specified web component on the current page.
@@ -46,9 +16,17 @@ type RenderFixture = {
  * @returns A string containing the complete HTML template.
  */
 function render(page: Page, component: string) {
-  const html = makeTemplateWith(component);
+  return page.evaluate(
+    ([component]) => {
+      const body = document.body;
 
-  return page.setContent(html);
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = component;
+
+      body.appendChild(wrapper);
+    },
+    [component]
+  );
 }
 
 export { render, type RenderFixture };

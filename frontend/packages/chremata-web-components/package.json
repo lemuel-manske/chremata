@@ -20,11 +20,11 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "start:preview": "vite",
     "build": "npm run clean && npm run build:types && npm run build:js",
     "build:types": "tsc",
     "build:js": "rollup -c",
     "clean": "rm -rf ./dist",
+    "start:e2e": "npm run build && vite ./playwright",
     "test:e2e": "playwright test"
   },
   "peerDependencies": {

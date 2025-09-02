@@ -1,50 +1,43 @@
 import { ChremataComponent } from '../base/base.js';
-
 import buttonStyles from './button.styles.js';
 
 class ChButton extends ChremataComponent {
   constructor() {
     super();
-
     this.injectStyles(buttonStyles);
 
-    const button = this.createButton();
+    const template = this._create();
 
-    this.assignEvents(button);
-
-    this.getShadowRoot().appendChild(button);
+    this.getShadowRoot().appendChild(template.cloneNode(true));
   }
 
   static get observedAttributes() {
-    return ['label'];
+    return ['disabled'];
   }
 
-  private createButton() {
-    const button = document.createElement('button');
+  _create() {
+    const template = document.createElement('template');
 
-    button.classList.add('ch-button');
-    button.textContent = this.getLabel();
+    template.innerHTML = `
+      <button class="ch-button"></button>
+    `;
 
-    button.ariaLabel = this.getLabel();
+    const content = template.content;
 
-    return button;
+    const isDisabled = this._isDisabled();
+
+    const button = content.querySelector('button');
+
+    if (button) {
+      button.textContent = this.textContent;
+      button.disabled = isDisabled;
+    }
+
+    return content;
   }
 
-  private assignEvents(button: HTMLElement) {
-    button.addEventListener('click', () => {
-      button.dispatchEvent(this.newClickEvent());
-    });
-  }
-
-  private newClickEvent() {
-    return new CustomEvent('ch-button:click', {
-      bubbles: true,
-      composed: true,
-    });
-  }
-
-  private getLabel() {
-    return this.getAttribute('label') || '';
+  _isDisabled() {
+    return this.resolveBooleanAttr('disabled');
   }
 }
 
