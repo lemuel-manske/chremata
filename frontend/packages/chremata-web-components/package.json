@@ -38,7 +38,7 @@
     "@chremata-preset/rollup": "file:../chremata-preset/packages/rollup",
     "@chremata-preset/typescript": "file:../chremata-preset/packages/typescript",
     "@playwright/test": "^1.55.0",
-    "@storybook/addon-a11y": "8.6.7",
+    "@storybook/addon-a11y": "^9.1.4",
     "@storybook/web-components-vite": "^9.1.4",
     "rollup": "^4.49.0",
     "typescript": "^5.9.2",
