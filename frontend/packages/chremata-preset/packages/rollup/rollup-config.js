@@ -10,7 +10,7 @@ import { getPeerDependencies } from './src/helpers/manifest.js';
 /**
  * @type {Promise<import('rollup').RollupOptions>}
  */
-export async function getConfig() {
+async function getConfig() {
   return {
     input: 'src/index.ts',
 
@@ -41,3 +41,7 @@ export async function getConfig() {
     external: await getPeerDependencies(),
   };
 }
+
+const config = getConfig();
+
+export { config };

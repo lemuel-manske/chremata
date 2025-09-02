@@ -15,8 +15,12 @@
   "author": "lemuel-manske",
   "type": "module",
   "main": "./rollup-config.js",
+  "types": "./rollup-config.d.ts",
   "exports": {
-    ".": "./rollup-config.js",
+    ".": {
+      "import": "./rollup-config.js",
+      "types": "./rollup-config.d.ts"
+    },
     "./package.json": "./package.json"
   },
   "dependencies": {
