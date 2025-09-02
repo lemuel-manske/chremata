@@ -24,7 +24,7 @@
     "build:types": "tsc",
     "build:js": "rollup -c",
     "clean": "rm -rf ./dist",
-    "start:e2e": "npm run build && vite ./playwright",
+    "start:e2e": "vite ./playwright",
     "test:e2e": "playwright test"
   },
   "peerDependencies": {

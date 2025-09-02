@@ -2,7 +2,7 @@ import { type PlaywrightTestConfig, defineConfig } from '@playwright/test';
 
 import { getConfig } from '@chremata-preset/playwright/config';
 
-const URL = 'http://localhost:5173';
+const URL = 'http://localhost:3000';
 
 const customConfig: PlaywrightTestConfig = {
   webServer: {
