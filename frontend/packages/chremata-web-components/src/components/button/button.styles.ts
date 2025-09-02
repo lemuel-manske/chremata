@@ -1,4 +1,6 @@
-export default `
+import { css } from 'lit';
+
+export default css`
   .ch-button {
     cursor: pointer;
 

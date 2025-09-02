@@ -2,6 +2,8 @@
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
     "composite": true,
     "declaration": true,
     "declarationMap": true,

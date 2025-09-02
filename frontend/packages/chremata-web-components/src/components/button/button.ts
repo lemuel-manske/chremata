@@ -1,44 +1,47 @@
-import { ChremataComponent } from '../base/base.js';
-import buttonStyles from './button.styles.js';
+import { LitElement, html } from 'lit';
 
-class ChButton extends ChremataComponent {
-  constructor() {
-    super();
-    this.injectStyles(buttonStyles);
+import { customElement, property } from 'lit/decorators.js';
 
-    const template = this._create();
+import styles from './button.styles.js';
 
-    this.getShadowRoot().appendChild(template.cloneNode(true));
+const DEFAULT_PROPS = {
+  label: 'Button',
+  disabled: false,
+};
+
+type Events = {
+  onClick: () => void;
+};
+
+type ButtonProps = Events & {
+  label: string;
+  disabled: boolean;
+};
+
+@customElement('ch-button')
+class Button extends LitElement {
+  @property({ type: String })
+  label: string = 'Button';
+
+  @property({ type: Boolean, reflect: true })
+  disabled: boolean = false;
+
+  static styles = [styles];
+
+  private _handleClick() {
+    this.dispatchEvent(
+      new CustomEvent('onClick', {
+        bubbles: true,
+        composed: true,
+      })
+    );
   }
 
-  static get observedAttributes() {
-    return ['disabled'];
-  }
-
-  _create() {
-    const template = document.createElement('template');
-
-    template.innerHTML = `
-      <button class="ch-button"></button>
+  render() {
+    return html`
+      <button class="ch-button" ?disabled=${this.disabled} @click=${this._handleClick}>${this.label}</button>
     `;
-
-    const content = template.content;
-
-    const isDisabled = this._isDisabled();
-
-    const button = content.querySelector('button');
-
-    if (button) {
-      button.textContent = this.textContent;
-      button.disabled = isDisabled;
-    }
-
-    return content;
-  }
-
-  _isDisabled() {
-    return this.resolveBooleanAttr('disabled');
   }
 }
 
-customElements.define('ch-button', ChButton);
+export { DEFAULT_PROPS, type ButtonProps };
