@@ -1,7 +1,29 @@
 :root {
   --color-success: #0A855C;
   --color-danger: #E02121;
-  
+
+  --gs-100: hsl(0, 0%, 0%);
+  --gs-95: hsl(0, 0%, 5%);
+  --gs-90: hsl(0, 0%, 10%);
+  --gs-85: hsl(0, 0%, 15%);
+  --gs-80: hsl(0, 0%, 20%);
+  --gs-75: hsl(0, 0%, 25%);
+  --gs-70: hsl(0, 0%, 30%);
+  --gs-65: hsl(0, 0%, 35%);
+  --gs-60: hsl(0, 0%, 40%);
+  --gs-55: hsl(0, 0%, 45%);
+  --gs-50: hsl(0, 0%, 50%);
+  --gs-45: hsl(0, 0%, 55%);
+  --gs-40: hsl(0, 0%, 60%);
+  --gs-35: hsl(0, 0%, 65%);
+  --gs-30: hsl(0, 0%, 70%);
+  --gs-25: hsl(0, 0%, 75%);
+  --gs-20: hsl(0, 0%, 80%);
+  --gs-15: hsl(0, 0%, 85%);
+  --gs-10: hsl(0, 0%, 90%);
+  --gs-5:  hsl(0, 0%, 95%);
+  --gs-0:  hsl(0, 0%, 100%);
+
   --color-100: hsl(var(--color-group-blue-100));
   --color-90: hsl(var(--color-group-blue-90));
   --color-85: hsl(var(--color-group-blue-85));

@@ -1,0 +1,7 @@
+:root {
+  --shadow-elevation-medium: 0 2px 8px var(--gs-10), 0 2px 4px var(--gs-25);
+}
+
+:root {
+  --radius-silent: 4px;
+}

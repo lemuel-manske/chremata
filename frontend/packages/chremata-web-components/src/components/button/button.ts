@@ -10,11 +10,21 @@ const DEFAULT_PROPS = {
 };
 
 type Events = {
+  /**
+   * Dispatched when button is clicked.
+   */
   onClick: () => void;
 };
 
 type ButtonProps = Events & {
+  /**
+   * Button label.
+   */
   label: string;
+
+  /**
+   * Whether the button is enabled or not.
+   */
   disabled: boolean;
 };
 

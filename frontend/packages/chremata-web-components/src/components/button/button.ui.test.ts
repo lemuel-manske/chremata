@@ -1,12 +1,18 @@
 import { test, expect } from '@chremata-preset/playwright/test';
 
-test('should render', { tag: ['@ch-button'] }, async ({ page }) => {
+test('should render a button', { tag: ['@ch-button'] }, async ({ page }) => {
   await page.render(`
     <ch-button label="Click me"/>`);
 
   const button = page.getByRole('button', { name: 'Click me' });
 
   await expect(button).toBeVisible();
+
+  const body = page.locator('body');
+
+  await expect(body).toMatchAriaSnapshot(`
+    - button "Click me" [disabled=false]
+  `);
 });
 
 test('should be focused when clicked', { tag: ['@ch-button'] }, async ({ page }) => {
@@ -20,13 +26,19 @@ test('should be focused when clicked', { tag: ['@ch-button'] }, async ({ page })
   await expect(button).toBeFocused();
 });
 
-test('should be disabled', { tag: ['@ch-button'] }, async ({ page }) => {
+test('should render a disabled button', { tag: ['@ch-button'] }, async ({ page }) => {
   await page.render(`
     <ch-button disabled label="Click me"/>`);
 
   const button = page.getByRole('button', { name: 'Click me' });
 
   await expect(button).toBeDisabled();
+
+  const body = page.locator('body');
+
+  await expect(body).toMatchAriaSnapshot(`
+    - button "Click me" [disabled=true]
+  `);
 });
 
 test('should be focused when [Tab] and [Enter] are pressed', { tag: ['@ch-button'] }, async ({ page }) => {

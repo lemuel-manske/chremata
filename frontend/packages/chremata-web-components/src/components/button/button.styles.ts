@@ -28,7 +28,7 @@ export default css`
 
     padding: 12px 16px;
 
-    border-radius: 4px;
+    border-radius: var(--radius-silent);
 
     border: none;
   }
