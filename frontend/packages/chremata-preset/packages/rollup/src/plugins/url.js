@@ -3,6 +3,6 @@ import url from '@rollup/plugin-url';
 /**
  * @returns {Promise<import('rollup').Plugin>}
  */
-export async function getUrlPlugin() {
+export async function getUrlConf() {
   return url();
 }

@@ -1,1 +1,16 @@
 @import url('./CentraleSans/index.css');
+
+:root {
+  --font-family: 'CentraleSans', sans-serif;
+
+  --font-color-regular: var(--gs-85);
+  --font-color-light: var(--gs-10);
+
+  --font-size-regular: 1rem;
+  --font-size-small: .875rem;
+  --font-size-large: 1.25rem;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 500;
+  --font-weight-bold: 700;
+}

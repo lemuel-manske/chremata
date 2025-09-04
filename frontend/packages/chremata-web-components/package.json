@@ -14,9 +14,9 @@
   "private": true,
   "author": "lemuel-manske",
   "type": "module",
-  "main": "./dist/index.mjs",
+  "main": "./dist/index.js",
   "exports": {
-    ".": "./dist/index.mjs",
+    ".": "./dist/index.js",
     "./package.json": "./package.json"
   },
   "scripts": {
@@ -24,9 +24,12 @@
     "build": "npm run clean && npm run build:types && npm run build:js",
     "build:types": "tsc",
     "build:js": "rollup -c",
-    "clean": "rm -rf ./dist",
+    "clean": "rm -rf ./dist && rm tsconfig.tsbuildinfo",
     "start:e2e": "vite ./playwright",
     "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "lit": "^3.3.1"
   },
   "peerDependencies": {
     "@chremata/fonts": "file:../chremata-fonts",
@@ -48,8 +51,5 @@
     "rollup": "^4.49.0",
     "typescript": "^5.9.2",
     "vite": "^7.1.3"
-  },
-  "dependencies": {
-    "lit": "^3.3.1"
   }
 }
