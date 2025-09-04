@@ -24,7 +24,7 @@ export const Default: StoryObj = {
 export const WithIcon: StoryObj = {
   render: (args) => html`<ch-card>
     <ch-card-header slot="header" .title=${args.title} .subtitle=${args.subtitle}>
-      <ch-coin-icon slot="icon" .color=${'var(--gs-20)'} />
+      <ch-coin-icon slot="icon" color="var(--gs-20)" />
     </ch-card-header>
   </ch-card>`,
 };

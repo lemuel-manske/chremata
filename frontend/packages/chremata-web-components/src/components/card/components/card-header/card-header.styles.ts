@@ -4,7 +4,7 @@ export default css`
   .ch-card__header {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
 
     justify-content: space-between;
 

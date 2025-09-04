@@ -29,8 +29,6 @@ abstract class SolidIcon extends LitElement {
     }
 
     svg {
-      color: inherit;
-
       display: block;
 
       width: 100%;
