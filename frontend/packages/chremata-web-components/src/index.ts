@@ -3,3 +3,4 @@ import '@chremata/fonts';
 
 export * as ChButton from './components/button/index.js';
 export * as ChCard from './components/card/index.js';
+export * as ChIcon from './components/icon/index.js';

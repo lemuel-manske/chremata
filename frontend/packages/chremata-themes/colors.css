@@ -2,6 +2,8 @@
   --color-success: #0A855C;
   --color-danger: #E02121;
 
+  --color-icon-regular: var(--gs-100);
+
   --gs-100: hsl(0, 0%, 0%);
   --gs-95: hsl(0, 0%, 5%);
   --gs-90: hsl(0, 0%, 10%);

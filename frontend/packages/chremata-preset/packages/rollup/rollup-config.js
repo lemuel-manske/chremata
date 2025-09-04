@@ -4,6 +4,7 @@ import { getTypescriptConf } from './src/plugins/typescript.js';
 import { getPostcssConf } from './src/plugins/postcss.js';
 import { getJsonConf } from './src/plugins/json.js';
 import { getSwcConf } from './src/plugins/swc.js';
+import { getUrlConf } from './src/plugins/url.js';
 
 import { getPeerDependencies } from './src/helpers/manifest.js';
 
@@ -36,6 +37,7 @@ async function getConfig() {
       await getCommonJsConf(),
       await getNodeResolveConf(),
       await getTypescriptConf(),
+      await getUrlConf(),
     ],
 
     external: await getPeerDependencies(),

@@ -30,7 +30,8 @@
   },
   "peerDependencies": {
     "@chremata/fonts": "file:../chremata-fonts",
-    "@chremata/themes": "file:../chremata-themes"
+    "@chremata/themes": "file:../chremata-themes",
+    "@chremata/icons": "file:../chremata-icons"
   },
   "devDependencies": {
     "@chremata-preset/playwright": "file:../chremata-preset/packages/playwright",
