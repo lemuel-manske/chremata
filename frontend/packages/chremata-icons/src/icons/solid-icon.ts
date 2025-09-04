@@ -15,7 +15,7 @@ abstract class SolidIcon extends LitElement {
   size = IconSize.SMALL;
 
   @property({ type: String })
-  color = 'currentColor';
+  color = '';
 
   static styles = css`
     :host {
@@ -51,7 +51,7 @@ abstract class SolidIcon extends LitElement {
         width=${this.size}
         height=${this.size}
         fill="none"
-        stroke=${this.color}
+        color=${this.color}
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >
