@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/web-components';
 
 import { fn } from '@storybook/test';
 
-import { DEFAULT_PROPS, type ButtonProps } from './button';
+import { DEFAULT_PROPS, type ButtonProps } from './button.js';
 import { IconSize } from '@chremata/icons';
 
 export default {

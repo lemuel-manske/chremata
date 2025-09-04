@@ -20,3 +20,5 @@ class Card extends LitElement {
     </article>`;
   }
 }
+
+export { Card };

@@ -1,2 +1,2 @@
-import './card-section/card-section';
-import './card-header/card-header';
+import './card-section/card-section.js';
+import './card-header/card-header.js';

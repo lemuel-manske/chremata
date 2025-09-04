@@ -2,7 +2,7 @@ import { html } from 'lit';
 
 import type { Meta, StoryObj } from '@storybook/web-components';
 
-import './card';
+import './card.js';
 
 export default {
   component: 'ch-card',
