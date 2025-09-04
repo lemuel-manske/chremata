@@ -37,7 +37,7 @@ export default css`
     background: var(--color-55);
   }
 
-  .ch-button:focus {
+  .ch-button:focus-visible {
     outline: 4px solid var(--color-35);
     outline-offset: 1px;
   }
@@ -47,6 +47,7 @@ export default css`
   }
 
   .ch-button:disabled {
+    cursor: not-allowed;
     background: var(--color-55);
   }
 `;

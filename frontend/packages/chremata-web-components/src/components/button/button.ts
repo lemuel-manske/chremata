@@ -31,16 +31,18 @@ type ButtonProps = Events & {
 @customElement('ch-button')
 class Button extends LitElement {
   @property({ type: String })
-  label: string = 'Button';
+  label: string = DEFAULT_PROPS.label;
 
   @property({ type: Boolean, reflect: true })
-  disabled: boolean = false;
+  disabled: boolean = DEFAULT_PROPS.disabled;
 
   static styles = [styles];
 
-  private _handleClick() {
+  #handleClick() {
+    if (this.disabled) return;
+
     this.dispatchEvent(
-      new CustomEvent('onClick', {
+      new CustomEvent('ch-button:click', {
         bubbles: true,
         composed: true,
       })
@@ -49,17 +51,11 @@ class Button extends LitElement {
 
   render() {
     return html`
-      <button
-        class="ch-button"
-        aria-label=${this.label}
-        aria-disabled="${this.disabled}"
-        ?disabled=${this.disabled}
-        @click=${this._handleClick}
-      >
-        ${this.label}
+      <button class="ch-button" aria-label=${this.label} ?disabled=${this.disabled} @click=${this.#handleClick}>
+        <slot>${this.label}</slot>
       </button>
     `;
   }
 }
 
-export { DEFAULT_PROPS, type ButtonProps };
+export { DEFAULT_PROPS, Button, type ButtonProps };

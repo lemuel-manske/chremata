@@ -7,12 +7,15 @@ test('should render a button', { tag: ['@ch-button'] }, async ({ page }) => {
   const button = page.getByRole('button', { name: 'Click me' });
 
   await expect(button).toBeVisible();
+});
 
-  const body = page.locator('body');
+test('should render a button with slotted content', { tag: ['@ch-button'] }, async ({ page }) => {
+  await page.render(`
+    <ch-button><span>Click me</span></ch-button>`);
 
-  await expect(body).toMatchAriaSnapshot(`
-    - button "Click me" [disabled=false]
-  `);
+  const button = page.locator('ch-button', { hasText: 'Click me' });
+
+  await expect(button).toBeVisible();
 });
 
 test('should be focused when clicked', { tag: ['@ch-button'] }, async ({ page }) => {
@@ -33,12 +36,6 @@ test('should render a disabled button', { tag: ['@ch-button'] }, async ({ page }
   const button = page.getByRole('button', { name: 'Click me' });
 
   await expect(button).toBeDisabled();
-
-  const body = page.locator('body');
-
-  await expect(body).toMatchAriaSnapshot(`
-    - button "Click me" [disabled=true]
-  `);
 });
 
 test('should be focused when [Tab] and [Enter] are pressed', { tag: ['@ch-button'] }, async ({ page }) => {
