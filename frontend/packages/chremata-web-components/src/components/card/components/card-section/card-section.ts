@@ -14,3 +14,5 @@ class CardSection extends LitElement {
     </section>`;
   }
 }
+
+export { CardSection };

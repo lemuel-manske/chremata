@@ -18,7 +18,7 @@ class CardHeader extends LitElement {
     return html`
       <header class="ch-card__header">
         <section>
-          <h2 class="ch-card__title" aria-label="${this.title}">${this.title}</h2>
+          <h1 class="ch-card__title" aria-label="${this.title}">${this.title}</h1>
           <p class="ch-card__subtitle">${this.subtitle}</p>
         </section>
 
@@ -29,3 +29,5 @@ class CardHeader extends LitElement {
     `;
   }
 }
+
+export { CardHeader };

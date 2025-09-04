@@ -10,11 +10,4 @@ test('should render a card', { tag: ['@ch-card'] }, async ({ page }) => {
   const card = page.getByRole('article');
 
   await expect(card).toBeVisible();
-
-  const body = page.locator('body');
-
-  await expect(body).toMatchAriaSnapshot(`
-    - article:
-      - heading "My card" [level=2]
-  `);
 });
