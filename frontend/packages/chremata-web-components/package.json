@@ -24,7 +24,7 @@
     "build": "npm run clean && npm run build:types && npm run build:js",
     "build:types": "tsc",
     "build:js": "rollup -c",
-    "clean": "rm -rf ./dist && rm tsconfig.tsbuildinfo",
+    "clean": "rm -rf ./dist && rm -f tsconfig.tsbuildinfo",
     "start:e2e": "vite ./playwright",
     "test:e2e": "playwright test"
   },

@@ -9,21 +9,11 @@ export default css`
     padding: 8px 12px;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     max-width: 100%;
     max-height: 100%;
 
     min-height: var(--font-size-large);
-  }
-
-  .ch-card__title {
-    color: var(--font-color-regular);
-
-    font-family: var(--font-family);
-    font-size: var(--font-size-large);
-    font-weight: var(--font-weight-bold);
-
-    letter-spacing: 0.2px;
   }
 `;

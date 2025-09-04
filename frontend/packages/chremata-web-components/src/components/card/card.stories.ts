@@ -2,7 +2,7 @@ import { html } from 'lit';
 
 import type { Meta, StoryObj } from '@storybook/web-components';
 
-import { DEFAULT_PROPS, type CardProps } from './card';
+import './card';
 
 export default {
   component: 'ch-card',
@@ -10,10 +10,21 @@ export default {
   title: 'Card',
 
   args: {
-    ...DEFAULT_PROPS,
+    title: 'Card title',
+    subtitle: 'Subtitle',
   },
-} as Meta<CardProps>;
+} as Meta;
 
-export const Default: StoryObj<CardProps> = {
-  render: (args) => html`<ch-card .title=${args.title} />`,
+export const Default: StoryObj = {
+  render: (args) => html`<ch-card>
+    <ch-card-header slot="header" .title=${args.title} .subtitle=${args.subtitle} />
+  </ch-card>`,
+};
+
+export const WithIcon: StoryObj = {
+  render: (args) => html`<ch-card>
+    <ch-card-header slot="header" .title=${args.title} .subtitle=${args.subtitle}>
+      <ch-coin-icon slot="icon" .color=${'var(--gs-20)'} />
+    </ch-card-header>
+  </ch-card>`,
 };
