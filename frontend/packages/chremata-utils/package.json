@@ -1,6 +1,6 @@
 {
-  "name": "@chremata-foundation/utils",
-  "description": "Chremata utils",
+  "name": "@chremata/utils",
+  "description": "Chremata utilities & helpers",
   "license": "MIT",
   "version": "0.0.0",
   "engines": {
@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/lemuel-manske/chremata",
-    "directory": "frontend/packages/chremata-foundation/packages/utils"
+    "directory": "frontend/packages/chremata-utils"
   },
   "private": true,
   "author": "lemuel-manske",
@@ -18,7 +18,8 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs"
     }
   },
   "scripts": {

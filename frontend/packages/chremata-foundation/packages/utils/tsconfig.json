@@ -1,8 +1,0 @@
-{
-  "extends": "@chremata-preset/typescript",
-  "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src"
-  },
-  "include": ["./src"],
-}

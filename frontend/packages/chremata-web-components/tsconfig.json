@@ -2,8 +2,9 @@
   "extends": "@chremata-preset/typescript",
   "compilerOptions": {
     "outDir": "./dist",
+    "jsx": "react-jsx",
     "rootDir": "./src"
   },
   "include": ["./src"],
-  "exclude": ["./src/**/*.test.ts"]
+  "exclude": ["./src/**/*.test.ts", "./src/**/*.test.tsx"]
 }

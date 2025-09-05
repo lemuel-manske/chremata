@@ -1,10 +1,12 @@
-import { type PlaywrightTestConfig, devices } from '@playwright/test';
+import { devices } from '@playwright/test';
+
+import { type PlaywrightTestConfig } from '@playwright/experimental-ct-react';
 
 import merge from 'lodash.merge';
 
 const getBaseConfig = (): PlaywrightTestConfig => ({
-  testDir: './src',
-  testMatch: /.*\.ui\.test\.ts?$/,
+  testDir: './',
+  testMatch: /.*\.ui\.test\.tsx?$/,
 
   timeout: 10 * 1000,
   fullyParallel: true,
@@ -14,6 +16,7 @@ const getBaseConfig = (): PlaywrightTestConfig => ({
   reporter: 'html',
 
   use: {
+    ctPort: 3100,
     screenshot: 'on',
     trace: 'on-first-retry',
   },
@@ -30,7 +33,7 @@ const getBaseConfig = (): PlaywrightTestConfig => ({
   ],
 });
 
-const getConfig = (customConfig: PlaywrightTestConfig = {}) => {
+const getConfig = (customConfig: PlaywrightTestConfig = {}): PlaywrightTestConfig => {
   return merge(getBaseConfig(), customConfig);
 };
 

@@ -25,18 +25,19 @@
     "build:types": "tsc",
     "build:js": "rollup -c",
     "clean": "rm -rf ./dist && rm -f tsconfig.tsbuildinfo",
-    "start:e2e": "vite ./playwright",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test -c playwright-ct.config.ts"
   },
   "dependencies": {
-    "lit": "^3.3.1"
+    "@lit/react": "^1.0.8",
+    "lit": "^3.3.1",
+    "react": "^19.0.0"
   },
   "peerDependencies": {
     "@chremata-foundation/models": "file:../chremata-foundation/packages/models",
     "@chremata-foundation/utils": "file:../chremata-foundation/packages/utils",
     "@chremata/fonts": "file:../chremata-fonts",
-    "@chremata/themes": "file:../chremata-themes",
-    "@chremata/icons": "file:../chremata-icons"
+    "@chremata/icons": "file:../chremata-icons",
+    "@chremata/themes": "file:../chremata-themes"
   },
   "devDependencies": {
     "@chremata-preset/playwright": "file:../chremata-preset/packages/playwright",
@@ -48,10 +49,11 @@
     "@storybook/addon-actions": "^8.6.14",
     "@storybook/addon-essentials": "^8.6.14",
     "@storybook/addon-interactions": "^8.6.14",
+    "@storybook/react": "^8.6.14",
+    "@storybook/react-vite": "^8.6.14",
     "@storybook/test": "^8.6.14",
-    "@storybook/web-components-vite": "^8.6.14",
     "rollup": "^4.49.0",
     "typescript": "^5.9.2",
-    "vite": "^7.1.3"
+    "vite": "^6.0.0"
   }
 }

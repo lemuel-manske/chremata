@@ -2,8 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true,
-    "experimentalDecorators": true,
-    "useDefineForClassFields": false,
+    "allowImportingTsExtensions": true,
     "composite": true,
     "declaration": true,
     "declarationMap": true,

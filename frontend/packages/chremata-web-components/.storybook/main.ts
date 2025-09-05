@@ -1,12 +1,12 @@
-import { type StorybookConfig } from '@storybook/web-components-vite';
+import { type StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.stories.ts'],
+  stories: ['../src/**/*.stories.tsx'],
 
   addons: ['@storybook/addon-essentials', '@storybook/addon-a11y', '@storybook/addon-interactions'],
 
   framework: {
-    name: '@storybook/web-components-vite',
+    name: '@storybook/react-vite',
     options: {},
   },
 };
