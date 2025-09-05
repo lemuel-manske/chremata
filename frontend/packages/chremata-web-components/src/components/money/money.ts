@@ -1,67 +1,62 @@
 import { html, LitElement } from 'lit';
 
-import { customElement, property } from 'lit/decorators.js';
+import { customElement, property, state } from 'lit/decorators.js';
+
+import { Currency, Locale, Money as MoneyModel, type MoneyInterface } from '@chremata-foundation/models';
 
 import styles from './money.styles.js';
 
-enum Currency {
-  BRL = 'BRL',
-}
-
-enum Locale {
-  BRAZIL = 'pt-BR',
-}
-
 type MoneyProps = {
+  amount: number;
   currency: Currency;
   locale: Locale;
-  amount: number;
 };
 
 const DEFAULT_PROPS: MoneyProps = {
+  amount: 0,
   currency: Currency.BRL,
   locale: Locale.BRAZIL,
-  amount: 0,
 };
 
 @customElement('ch-money')
 class Money extends LitElement {
-  @property({ type: Currency })
+  @property()
+  amount = DEFAULT_PROPS.amount;
+
+  @property()
   currency = DEFAULT_PROPS.currency;
 
-  @property({ type: Locale })
+  @property()
   locale = DEFAULT_PROPS.locale;
-
-  @property({ type: Number })
-  amount = DEFAULT_PROPS.amount;
 
   static styles = [styles];
 
-  private readonly FORMATTER = new Intl.NumberFormat(this.locale, {
-    style: 'currency',
-    currency: this.currency,
-    maximumFractionDigits: 2,
-    minimumFractionDigits: 2,
-  });
+  #money: MoneyInterface;
 
-  #isPositive() {
-    return this.amount >= 0;
+  constructor() {
+    super();
+
+    this.#money = MoneyModel({ amount: this.amount, currency: this.currency });
   }
 
   #formattedAmount() {
-    const signal = this.#isPositive() ? '+' : '';
-    const amount = this.FORMATTER.format(this.amount);
+    const signal = this.#money.isPositive() ? '+' : '';
+    const amount = this.#money.format(this.locale);
 
     return signal + amount;
   }
 
-  render() {
+  #signDecorator(): string {
     const posDecorator = 'ch-money__positive';
     const negDecorator = 'ch-money__negative';
 
-    return html`<span class="ch-money ${this.#isPositive() ? posDecorator : negDecorator}">
-      ${this.#formattedAmount()}
-    </span>`;
+    return this.#money.isPositive() ? posDecorator : negDecorator;
+  }
+
+  render() {
+    this.#money = MoneyModel({ amount: this.amount, currency: this.currency });
+
+    return html`<span class="ch-money ${this.#signDecorator()}"> ${this.#formattedAmount()} </span>`;
   }
 }
 

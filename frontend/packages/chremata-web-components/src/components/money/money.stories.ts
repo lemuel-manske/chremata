@@ -2,7 +2,9 @@ import { html } from 'lit';
 
 import type { Meta, StoryObj } from '@storybook/web-components';
 
-import { DEFAULT_PROPS, Locale, Currency, type MoneyProps } from './money.js';
+import { Currency, Locale } from '@chremata-foundation/models';
+
+import { DEFAULT_PROPS, type MoneyProps } from './money.js';
 
 export default {
   component: 'ch-money',
@@ -26,5 +28,9 @@ export default {
 } as Meta<MoneyProps>;
 
 export const Default: StoryObj<MoneyProps> = {
-  render: (args) => html`<ch-money .currency=${args.currency} .locale=${args.locale} .amount=${args.amount} />`,
+  args: {
+    amount: 12,
+  },
+
+  render: (args) => html`<ch-money .amount=${args.amount} .currency=${args.currency} .locale=${args.locale} />`,
 };

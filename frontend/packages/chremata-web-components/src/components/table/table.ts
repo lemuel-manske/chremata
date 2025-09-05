@@ -4,6 +4,13 @@ import { customElement, property } from 'lit/decorators.js';
 import { styleMap, type StyleInfo } from 'lit/directives/style-map.js';
 
 import styles from './table.styles.js';
+import { isEven } from '@chremata-foundation/utils';
+
+const DEFAULT_PROPS = {
+  caption: 'Table',
+  columns: [],
+  data: [],
+};
 
 type Row = object;
 
@@ -15,16 +22,13 @@ type Column = {
 @customElement('ch-table')
 class Table extends LitElement {
   @property()
-  caption: string = 'Table';
+  caption: string = DEFAULT_PROPS.caption;
 
   @property()
-  columns: Array<Column> = [];
+  columns: Array<Column> = DEFAULT_PROPS.columns;
 
   @property()
-  data: Array<Row> = [];
-
-  @property()
-  styles?: StyleInfo;
+  data: Array<Row> = DEFAULT_PROPS.data;
 
   static styles = [styles];
 
@@ -42,10 +46,6 @@ class Table extends LitElement {
     </thead>`;
   }
 
-  #isEven(index: number) {
-    return index % 2 === 0;
-  }
-
   #renderBody() {
     const rows = this.data.map(
       (row, i) => html`<tr class="ch-row ${this.#resolveRowParity(i)}" role="row">
@@ -59,7 +59,7 @@ class Table extends LitElement {
   }
 
   #resolveRowParity(i: number): unknown {
-    return this.#isEven(i) ? 'ch-row-even' : 'ch-row-odd';
+    return isEven(i) ? 'ch-row-even' : 'ch-row-odd';
   }
 
   #renderCell(col: Column, row: Row) {
@@ -67,12 +67,12 @@ class Table extends LitElement {
   }
 
   render() {
-    this.styles = {
+    const dynamicStyles = {
       gridTemplateColumns: `repeat(${this.#columnsCount()}, minmax(120px, 1fr))`,
     };
 
     return html`
-      <table class="ch-grid" style=${styleMap(this.styles)} role="grid" aria-label=${this.caption}>
+      <table class="ch-grid" style=${styleMap(dynamicStyles)} role="grid" aria-label=${this.caption}>
         ${this.#renderHeader()} ${this.#renderBody()}
       </table>
     `;

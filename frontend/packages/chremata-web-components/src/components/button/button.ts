@@ -30,10 +30,10 @@ type ButtonProps = Events & {
 
 @customElement('ch-button')
 class Button extends LitElement {
-  @property({ type: String })
+  @property()
   label: string = DEFAULT_PROPS.label;
 
-  @property({ type: Boolean, reflect: true })
+  @property()
   disabled: boolean = DEFAULT_PROPS.disabled;
 
   static styles = [styles];

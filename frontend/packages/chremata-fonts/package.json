@@ -1,6 +1,7 @@
 {
   "name": "@chremata/fonts",
   "description": "Chremata fonts",
+  "version": "0.0.0",
   "license": "MIT",
   "engines": {
     "node": ">=24 <25"

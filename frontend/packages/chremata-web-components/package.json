@@ -32,6 +32,8 @@
     "lit": "^3.3.1"
   },
   "peerDependencies": {
+    "@chremata-foundation/models": "file:../chremata-foundation/packages/models",
+    "@chremata-foundation/utils": "file:../chremata-foundation/packages/utils",
     "@chremata/fonts": "file:../chremata-fonts",
     "@chremata/themes": "file:../chremata-themes",
     "@chremata/icons": "file:../chremata-icons"

@@ -1,6 +1,6 @@
 {
-  "name": "@chremata/preset",
-  "description": "Set of presets for Chremata packages",
+  "name": "@chremata/foundation",
+  "description": "Chremata foundation",
   "version": "0.0.0",
   "license": "MIT",
   "engines": {
@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "github:lemuel-manske/chremata",
-    "directory": "frontend/packages/chremata-preset"
+    "directory": "frontend/packages/chremata-foundation"
   },
   "private": true,
   "author": "lemuel-manske",
