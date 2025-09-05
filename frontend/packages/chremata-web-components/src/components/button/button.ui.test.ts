@@ -31,7 +31,7 @@ test('should be focused when clicked', { tag: ['@ch-button'] }, async ({ page })
 
 test('should render a disabled button', { tag: ['@ch-button'] }, async ({ page }) => {
   await page.render(`
-    <ch-button disabled label="Click me"/>`);
+    <ch-button disabled="true" label="Click me"/>`);
 
   const button = page.getByRole('button', { name: 'Click me' });
 

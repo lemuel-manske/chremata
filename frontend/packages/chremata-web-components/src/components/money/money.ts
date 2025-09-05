@@ -60,4 +60,4 @@ class Money extends LitElement {
   }
 }
 
-export { DEFAULT_PROPS, Money, type MoneyProps, Locale, Currency };
+export { DEFAULT_PROPS, Money, type MoneyProps };
