@@ -10,7 +10,6 @@ import * as React from 'react';
  *
  * @example
  *
- * ```tsx
  * const MyComponent = () => (
  *   <ParentComponent>
  *    <ChildComponentA />
@@ -19,7 +18,6 @@ import * as React from 'react';
  *
  * const foundChild = findChild(children, ChildComponentA);
  * // foundChild will be the <ChildComponentA /> element
- * ```
  *
  * @see {@link https://reactjs.org/docs/react-api.html#reactchildren}
  */
