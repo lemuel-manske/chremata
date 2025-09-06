@@ -15,7 +15,7 @@ export function ButtonWithIcon(props: ButtonWithIconProps) {
     <Button {...buttonProps}>
       {iconHidden ? undefined : (
         <Button.Icon>
-          <Icon name="CoinIconSvg" label="Coin" primaryColor="black" />
+          <Icon name="CoinIconSvg" label="Coin" primaryColor="var(--gs-0)" />
         </Button.Icon>
       )}
 

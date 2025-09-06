@@ -27,7 +27,7 @@ test(
     await mount(
       <Button>
         <Button.Icon>
-          <Icon name="CoinIconSvg" label="" primaryColor="black" />
+          <Icon name="CoinIconSvg" label="" primaryColor="none" />
         </Button.Icon>
 
         <Button.Label>Click me</Button.Label>
