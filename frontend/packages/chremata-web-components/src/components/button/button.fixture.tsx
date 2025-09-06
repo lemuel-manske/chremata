@@ -1,4 +1,4 @@
-import { CoinIcon } from '@chremata/icons';
+import { Icon } from '../icon/icon';
 
 import { Button } from './button';
 import { type ButtonProps } from './button.types';
@@ -15,7 +15,7 @@ export function ButtonWithIcon(props: ButtonWithIconProps) {
     <Button {...buttonProps}>
       {iconHidden ? undefined : (
         <Button.Icon>
-          <CoinIcon />
+          <Icon name="CoinIconSvg" label="Coin" primaryColor="black" />
         </Button.Icon>
       )}
 

@@ -1,0 +1,41 @@
+:root {
+  --icon-wrapper-size-xsmall: 8px;
+  --icon-wrapper-size-small: 12px;
+  --icon-wrapper-size-medium: 16px;
+  --icon-wrapper-size-large: 20px;
+  --icon-wrapper-size-xlarge: 24px;
+  --icon-wrapper-size-xxlarge: 28px;
+}
+
+.ch-icon-wrapper {
+  display: flex;
+}
+
+.ch-icon-wrapper:disabled {
+  cursor: not-allowed;
+}
+
+.ch-icon-wrapper__xsmall {
+  inline-size: var(--icon-wrapper-size-xsmall);
+  block-size: var(--icon-wrapper-size-xsmall);
+}
+
+.ch-icon-wrapper__small {
+  inline-size: var(--icon-wrapper-size-small);
+  block-size: var(--icon-wrapper-size-small);
+}
+
+.ch-icon-wrapper__medium {
+  inline-size: var(--icon-wrapper-size-medium);
+  block-size: var(--icon-wrapper-size-medium);
+}
+
+.ch-icon-wrapper__large {
+  inline-size: var(--icon-wrapper-size-large);
+  block-size: var(--icon-wrapper-size-large);
+}
+
+.ch-icon-wrapper__xlarge {
+  inline-size: var(--icon-wrapper-size-xlarge);
+  block-size: var(--icon-wrapper-size-xlarge);
+}

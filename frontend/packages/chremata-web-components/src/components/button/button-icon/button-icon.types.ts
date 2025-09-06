@@ -1,7 +1,7 @@
-import { type SolidIcon } from '@chremata/icons';
+import { type IconProps } from '../../icon/icon.types';
 
 type ButtonIconProps = {
-  children: SolidIcon;
+  children: React.ReactElement<IconProps>;
 };
 
 export { type ButtonIconProps };

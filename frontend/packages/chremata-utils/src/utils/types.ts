@@ -1,0 +1,71 @@
+/**
+ * Represents a type that can be an enum or a string literal type of that enum.
+ *
+ * @example
+ *
+ * enum ExampleEnum {
+ *   VALUE1 = 'value1',
+ *   VALUE2 = 'value2',
+ *   VALUE3 = 'value3',
+ * }
+ *
+ * type OutputType = EnumOrStringLiteralTypes<ExampleEnum>;
+ *
+ * let example: OutputType;
+ *
+ * // valid usage
+ * example = 'value1';
+ * example = ExampleEnum.VALUE1;
+ */
+export type EnumOrStringLiteralTypes<T> = `${T & string}` | T;
+
+/**
+ * Represents a type that includes enum values or string literal types, including specific values.
+ * @template T - The enum type.
+ * @template IncludeValues - The values to be included to the resulting type.
+ *
+ * @example
+ *
+ * enum ExampleEnum {
+ *   VALUE1 = 'value1',
+ *   VALUE2 = 'value2',
+ *   VALUE3 = 'value3',
+ * }
+ * type ExampleType = EnumOrStringLiteralTypesInclude<ExampleEnum, 'value1' | ExampleEnum.VALUE3>;
+ *
+ * let example: ExampleType;
+ *
+ * // Assigning valid values
+ * example = 'value1'; // valid
+ * example = ExampleEnum.VALUE3; // valid
+ *
+ * // Assigning invalid values
+ * example = 'value2'; // Error: Type '"value2"' is not assignable to type 'ExampleType'.
+ * example = ExampleEnum.VALUE2; // Error: Type 'Status.VALUE2' is not assignable to type 'ExampleType'.
+ */
+export type EnumOrStringLiteralTypesInclude<
+  T,
+  IncludeValues extends `${T & string}` | T
+> = T extends string
+  ? T extends IncludeValues
+    ? `${T & string}` | T
+    : never
+  : never;
+
+/**
+ * Extracts keys from an object whose corresponding values are optional (i.e., `undefined` is assignable to them).
+ *
+ * @example
+ *
+ * interface ExampleInterface {
+ *   foo?: string;
+ *   fee?: boolean;
+ *   foobar: number;
+ *   baz: boolean;
+ * }
+ *
+ * type AllOptionalKeys = Optionals<ExampleInterface>; // output keys will be `foo` and `fee`
+ */
+export type Optionals<T> = {
+  [K in keyof T]: undefined extends T[K] ? K : never;
+}[keyof T];

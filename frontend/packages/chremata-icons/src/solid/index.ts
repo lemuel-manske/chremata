@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { CoinIcon } from './icons/coin';
 
-import { CoinIcon } from './coin';
+export * from './solid-icon.types';
 
-type SolidIcon = React.ReactElement<SVGSVGElement>;
-
-export { type SolidIcon, CoinIcon };
+export const solid = {
+  CoinIconSvg: CoinIcon,
+};

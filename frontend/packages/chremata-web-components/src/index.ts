@@ -1,1 +1,2 @@
-import './components/button/index.js';
+import './components/button/button';
+import './components/icon/icon';

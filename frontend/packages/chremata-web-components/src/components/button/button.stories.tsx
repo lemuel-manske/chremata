@@ -1,4 +1,4 @@
-import { type Meta, type StoryObj } from '@storybook/react-vite';
+import { type Meta, type StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
 import { DEFAULT_BUTTON_PROPS } from './use-button';

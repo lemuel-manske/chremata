@@ -1,9 +1,8 @@
 import { test, expect } from '@playwright/experimental-ct-react';
 
-import { CoinIcon } from '@chremata/icons';
+import { Icon } from '../icon/icon';
 
 import { Button } from './button';
-import { ButtonIcon } from './button-icon/button-icon';
 
 test(
   'should render a button',
@@ -27,9 +26,9 @@ test(
   async ({ mount, page }) => {
     await mount(
       <Button>
-        <ButtonIcon>
-          <CoinIcon />
-        </ButtonIcon>
+        <Button.Icon>
+          <Icon name="CoinIconSvg" label="" primaryColor="black" />
+        </Button.Icon>
 
         <Button.Label>Click me</Button.Label>
       </Button>
