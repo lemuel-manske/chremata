@@ -15,7 +15,10 @@ type ButtonEvents = {
   onClick?: () => void;
 };
 
-type ButtonSize = EnumOrStringLiteralTypesInclude<Size, 'small' | 'medium'>;
+export type ButtonSize = EnumOrStringLiteralTypesInclude<
+  Size,
+  'small' | 'medium'
+>;
 
 type ButtonAttributes = {
   /**
@@ -35,8 +38,6 @@ type ButtonAttributes = {
     | React.ReactElement<ButtonLabelProps>;
 };
 
-type ButtonProps = ButtonAttributes & ButtonEvents;
+export type ButtonProps = ButtonAttributes & ButtonEvents;
 
-type DefaultButtonProps = Required<Pick<ButtonProps, 'disabled'>>;
-
-export { type ButtonProps, type DefaultButtonProps, type ButtonSize };
+export type DefaultButtonProps = Required<Pick<ButtonProps, 'disabled'>>;

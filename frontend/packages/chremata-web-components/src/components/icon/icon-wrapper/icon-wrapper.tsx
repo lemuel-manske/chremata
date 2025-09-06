@@ -6,7 +6,7 @@ import { type IconWrapperProps } from '../icon.types';
 
 import './index.css';
 
-function IconWrapper(props: React.PropsWithChildren<IconWrapperProps>) {
+export function IconWrapper(props: React.PropsWithChildren<IconWrapperProps>) {
   const { label, disabled, children, size } = props;
 
   const classes = classNames({
@@ -33,5 +33,3 @@ function IconWrapper(props: React.PropsWithChildren<IconWrapperProps>) {
     </div>
   );
 }
-
-export { IconWrapper };

@@ -1,7 +1,5 @@
 import { type IconProps } from '../../icon/icon.types';
 
-type ButtonIconProps = {
+export type ButtonIconProps = {
   children: React.ReactElement<IconProps>;
 };
-
-export { type ButtonIconProps };

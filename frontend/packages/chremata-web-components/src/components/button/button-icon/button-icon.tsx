@@ -11,7 +11,7 @@ const ICON_SIZE_MAP: Record<ButtonSize, IconSize> = {
   medium: 'xlarge',
 };
 
-function ButtonIcon(props: ButtonIconProps) {
+export function ButtonIcon(props: ButtonIconProps) {
   const { children } = props;
 
   const { size } = useButtonContext();
@@ -20,5 +20,3 @@ function ButtonIcon(props: ButtonIconProps) {
     size: ICON_SIZE_MAP[size],
   });
 }
-
-export { ButtonIcon };

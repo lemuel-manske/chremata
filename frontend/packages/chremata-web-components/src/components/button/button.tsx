@@ -9,7 +9,10 @@ import { useButton } from './use-button';
 
 import './index.css';
 
-const Button = (props: ButtonProps) => {
+Button.Label = ButtonLabel;
+Button.Icon = ButtonIcon;
+
+export function Button(props: ButtonProps) {
   const { label, disabled, startIcon, onClick } = useButton(props);
 
   const classNames = 'ch-button';
@@ -24,9 +27,4 @@ const Button = (props: ButtonProps) => {
       {startIcon && startIcon} {label}
     </button>
   );
-};
-
-Button.Label = ButtonLabel;
-Button.Icon = ButtonIcon;
-
-export { Button };
+}

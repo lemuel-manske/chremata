@@ -13,7 +13,7 @@ function InnerIcon(props: InnerIconProps) {
   return React.createElement(availableSVGs[name], svgProps);
 }
 
-function Icon(props: IconProps) {
+export function Icon(props: IconProps) {
   const { label, name, size, disabled, ...svgProps } = useIcon(props);
 
   return (
@@ -22,5 +22,3 @@ function Icon(props: IconProps) {
     </IconWrapper>
   );
 }
-
-export { Icon };

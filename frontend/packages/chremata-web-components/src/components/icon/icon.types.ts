@@ -11,7 +11,7 @@ type IconAttributes = {
   name: IconSolidNames;
 };
 
-type IconSize = EnumOrStringLiteralTypesInclude<
+export type IconSize = EnumOrStringLiteralTypesInclude<
   Size,
   | 'fillAvailable'
   | 'xsmall'
@@ -22,22 +22,14 @@ type IconSize = EnumOrStringLiteralTypesInclude<
   | 'xxlarge'
 >;
 
-type InnerIconProps = SVGSolidProps & IconAttributes;
+export type InnerIconProps = SVGSolidProps & IconAttributes;
 
-type IconWrapperProps = {
+export type IconWrapperProps = {
   label?: string;
   disabled?: boolean;
   size?: IconSize;
 };
 
-type IconProps = InnerIconProps & IconWrapperProps;
+export type IconProps = InnerIconProps & IconWrapperProps;
 
-type IconDefaultProps = Required<Pick<IconProps, 'size' | 'disabled'>>;
-
-export {
-  type InnerIconProps,
-  type IconProps,
-  type IconWrapperProps,
-  type IconSize,
-  type IconDefaultProps,
-};
+export type IconDefaultProps = Required<Pick<IconProps, 'size' | 'disabled'>>;
