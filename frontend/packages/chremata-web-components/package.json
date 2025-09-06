@@ -28,22 +28,20 @@
     "test:e2e": "playwright test -c playwright-ct.config.ts"
   },
   "dependencies": {
-    "@lit/react": "^1.0.8",
-    "lit": "^3.3.1",
     "react": "^19.0.0"
   },
   "peerDependencies": {
-    "@chremata-foundation/models": "file:../chremata-foundation/packages/models",
-    "@chremata-foundation/utils": "file:../chremata-foundation/packages/utils",
     "@chremata/fonts": "file:../chremata-fonts",
     "@chremata/icons": "file:../chremata-icons",
-    "@chremata/themes": "file:../chremata-themes"
+    "@chremata/themes": "file:../chremata-themes",
+    "@chremata/utils": "file:../chremata-utils"
   },
   "devDependencies": {
     "@chremata-preset/playwright": "file:../chremata-preset/packages/playwright",
     "@chremata-preset/prettier": "file:../chremata-preset/packages/prettier",
     "@chremata-preset/rollup": "file:../chremata-preset/packages/rollup",
     "@chremata-preset/typescript": "file:../chremata-preset/packages/typescript",
+    "@newhighsco/storybook-addon-svgr": "^2.0.60",
     "@playwright/test": "^1.55.0",
     "@storybook/addon-a11y": "^8.6.14",
     "@storybook/addon-actions": "^8.6.14",

@@ -1,24 +1,32 @@
-import React from 'react';
+import { doNothing } from '@chremata/utils';
 
 import { type ButtonProps } from './button.types';
 
+import { ButtonLabel } from './button-label/button-label';
+import { ButtonIcon } from './button-icon/button-icon';
+
+import { useButton } from './use-button';
+
 import './index.css';
 
-const DEFAULT_PROPS: ButtonProps = {
-  label: 'Button',
-  disabled: false,
-};
-
-const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
-  const { label = DEFAULT_PROPS.label, disabled = DEFAULT_PROPS.disabled, onClick } = props;
+const Button = (props: ButtonProps) => {
+  const { label, disabled, startIcon, onClick } = useButton(props);
 
   const classNames = 'ch-button';
 
   return (
-    <button className={classNames} aria-label={label} disabled={disabled} onClick={disabled ? undefined : onClick}>
-      {label}
+    <button
+      className={classNames}
+      aria-label={label}
+      disabled={disabled}
+      onClick={disabled ? doNothing : onClick}
+    >
+      {startIcon && startIcon} {label}
     </button>
   );
 };
 
-export { DEFAULT_PROPS, Button };
+Button.Label = ButtonLabel;
+Button.Icon = ButtonIcon;
+
+export { Button };

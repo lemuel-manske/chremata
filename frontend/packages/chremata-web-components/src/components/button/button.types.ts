@@ -1,21 +1,25 @@
+import * as React from 'react';
+
+import { type ButtonIconProps } from './button-icon/button-icon.types';
+import { type ButtonLabelProps } from './button-label/button-label.types';
+
 type ButtonEvents = {
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: () => void;
 };
 
-type ButtonProps = ButtonEvents & {
-  /**
-   * Button label.
-   *
-   * @example "Click me" "Submit"
-   */
-  label?: string;
-
-  /**
-   * Whether the button is disabled.
-   *
-   * @default false
-   */
+type ButtonAttributes = {
   disabled?: boolean;
+
+  children:
+    | [
+        React.ReactElement<ButtonIconProps>,
+        React.ReactElement<ButtonLabelProps>
+      ]
+    | React.ReactElement<ButtonLabelProps>;
 };
 
-export { type ButtonProps, type ButtonEvents };
+type ButtonProps = ButtonAttributes & ButtonEvents;
+
+type DefaultButtonProps = Required<Pick<ButtonProps, 'disabled'>>;
+
+export { type ButtonProps, type DefaultButtonProps };

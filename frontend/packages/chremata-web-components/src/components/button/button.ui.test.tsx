@@ -1,51 +1,110 @@
 import { test, expect } from '@playwright/experimental-ct-react';
 
-import { Button } from './button.tsx';
+import { CoinIcon } from '@chremata/icons';
 
-test('should render a button', { tag: ['@ch-button'] }, async ({ mount, page }) => {
-  await mount(<Button label="Click me" />);
+import { Button } from './button';
 
-  const button = page.getByRole('button', { name: 'Click me' });
+test(
+  'should render a button',
+  { tag: ['@ch-button'] },
+  async ({ mount, page }) => {
+    await mount(
+      <Button>
+        <Button.Label>Click me</Button.Label>
+      </Button>
+    );
 
-  await expect(button).toBeVisible();
-});
+    const button = page.getByRole('button', { name: 'Click me' });
 
-test('should be focused when clicked', { tag: ['@ch-button'] }, async ({ mount, page }) => {
-  await mount(<Button label="Click me" />);
+    await expect(button).toBeVisible();
+  }
+);
 
-  const button = page.getByRole('button', { name: 'Click me' });
+test(
+  'should render a button with Icon',
+  { tag: ['@ch-button'] },
+  async ({ mount, page }) => {
+    await mount(
+      <Button>
+        <CoinIcon />
+        <Button.Label>Click me</Button.Label>
+      </Button>
+    );
 
-  await button.click();
+    const button = page.getByRole('button', { name: 'Click me' });
 
-  await expect(button).toBeFocused();
-});
+    await expect(button).toBeVisible();
+  }
+);
 
-test('should render a disabled button', { tag: ['@ch-button'] }, async ({ mount, page }) => {
-  await mount(<Button disabled label="Click me" />);
+test(
+  'should be focused when clicked',
+  { tag: ['@ch-button'] },
+  async ({ mount, page }) => {
+    await mount(
+      <Button>
+        <Button.Label>Click me</Button.Label>
+      </Button>
+    );
 
-  const button = page.getByRole('button', { name: 'Click me' });
+    const button = page.getByRole('button', { name: 'Click me' });
 
-  await expect(button).toBeDisabled();
-});
+    await button.click();
 
-test('should be focused when [Tab] and [Enter] are pressed', { tag: ['@ch-button'] }, async ({ mount, page }) => {
-  await mount(<Button label="Click me" />);
+    await expect(button).toBeFocused();
+  }
+);
 
-  const button = page.getByRole('button', { name: 'Click me' });
+test(
+  'should render a disabled button',
+  { tag: ['@ch-button'] },
+  async ({ mount, page }) => {
+    await mount(
+      <Button disabled>
+        <Button.Label>Click me</Button.Label>
+      </Button>
+    );
 
-  await page.keyboard.press('Tab');
-  await page.keyboard.press('Enter');
+    const button = page.getByRole('button', { name: 'Click me' });
 
-  await expect(button).toBeFocused();
-});
+    await expect(button).toBeDisabled();
+  }
+);
 
-test('should be focused when [Tab] and [Space] are pressed', { tag: ['@ch-button'] }, async ({ mount, page }) => {
-  await mount(<Button label="Click me" />);
+test(
+  'should be focused when [Tab] and [Enter] are pressed',
+  { tag: ['@ch-button'] },
+  async ({ mount, page }) => {
+    await mount(
+      <Button>
+        <Button.Label>Click me</Button.Label>
+      </Button>
+    );
 
-  const button = page.getByRole('button', { name: 'Click me' });
+    const button = page.getByRole('button', { name: 'Click me' });
 
-  await page.keyboard.press('Tab');
-  await page.keyboard.press('Space');
+    await page.keyboard.press('Tab');
+    await page.keyboard.press('Enter');
 
-  await expect(button).toBeFocused();
-});
+    await expect(button).toBeFocused();
+  }
+);
+
+test(
+  'should be focused when [Tab] and [Space] are pressed',
+  { tag: ['@ch-button'] },
+  async ({ mount, page }) => {
+    await mount(
+      <Button>
+        <Button.Label>Click me</Button.Label>
+      </Button>
+    );
+
+    const button = page.getByRole('button', { name: 'Click me' });
+
+    await page.keyboard.press('Tab');
+    await page.keyboard.press('Space');
+
+    await expect(button).toBeFocused();
+  }
+);

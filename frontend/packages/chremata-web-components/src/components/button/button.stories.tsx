@@ -3,7 +3,13 @@ import { type Meta, type StoryObj } from '@storybook/react-vite';
 import { fn } from '@storybook/test';
 
 import { Button } from './button.tsx';
-import type { ButtonProps } from './button.types.ts';
+import { type ButtonProps } from './button.types.ts';
+import { DEFAULT_BUTTON_PROPS } from './use-button.ts';
+import { CoinIcon } from '@chremata/icons';
+
+const actions = {
+  onClick: fn(),
+};
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -16,19 +22,17 @@ const meta: Meta<typeof Button> = {
   },
 
   args: {
-    label: 'Click me',
-    disabled: false,
-    onClick: () => fn(),
+    ...DEFAULT_BUTTON_PROPS,
+    ...actions,
   },
 };
 
 export default meta;
 
 export const Default: StoryObj<ButtonProps> = {
-  args: {
-    label: 'Click me',
-    disabled: false,
-  },
+  render: (args: ButtonProps) => <Button {...args}>Button</Button>,
+};
 
-  render: (args: ButtonProps) => <Button {...args} />,
+export const WithIcon: StoryObj<ButtonProps> = {
+  render: (args: ButtonProps) => <CoinIcon />,
 };

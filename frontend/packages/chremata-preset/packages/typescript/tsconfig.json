@@ -2,7 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true,
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false,
     "composite": true,
     "declaration": true,
     "declarationMap": true,
