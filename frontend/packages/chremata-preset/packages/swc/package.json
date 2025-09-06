@@ -14,12 +14,12 @@
   "private": true,
   "author": "lemuel-manske",
   "type": "module",
-  "types": "./index.d.mts",
-  "main": "./index.mjs",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "exports": {
     ".": {
-      "types": "./index.d.mts",
-      "import": "./index.mjs"
+      "import": "./index.js",
+      "types": "./index.d.ts"
     },
     "./package.json": "./package.json"
   },
@@ -27,8 +27,6 @@
     "@swc/core": "^1.13.5"
   },
   "devDependencies": {
-    "@chremata-preset/prettier": "file:../prettier",
-    "@chremata-preset/typescript": "file:../typescript",
-    "typescript": "^5.9.2"
+    "@chremata-preset/prettier": "file:../prettier"
   }
 }
