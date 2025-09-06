@@ -7,16 +7,13 @@
   font-size: var(--font-size-regular);
   font-weight: var(--font-weight-regular);
 
-  letter-spacing: 0.2px;
-
   background: var(--color-50);
 
   display: inline-flex;
-
   flex-direction: row;
-
   align-items: center;
-  justify-content: space-between;
+  gap: 8px;
+
   align-content: center;
   text-align: center;
 

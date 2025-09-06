@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import type { DefaultButtonProps, ButtonProps } from './button.types';
+
 import { ButtonLabel } from './button-label/button-label';
 import { ButtonIcon } from './button-icon/button-icon';
 
