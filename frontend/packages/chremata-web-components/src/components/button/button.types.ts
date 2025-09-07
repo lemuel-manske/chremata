@@ -1,12 +1,9 @@
-import * as React from 'react';
-
 import {
   type Size,
   type EnumOrStringLiteralTypesInclude,
 } from '@chremata/utils';
 
 import { type ButtonIconProps } from './button-icon/button-icon.types';
-import { type ButtonLabelProps } from './button-label/button-label.types';
 
 type ButtonEvents = {
   /**
@@ -22,22 +19,28 @@ export type ButtonSize = EnumOrStringLiteralTypesInclude<
 
 type ButtonAttributes = {
   /**
+   * The label of the Button.
+   */
+  label: string;
+
+  /**
+   * The size of the Button. Default is 'medium'.
+   */
+  size?: ButtonSize;
+
+  /**
    * Whether the Button is disabled. Default is false.
    */
   disabled?: boolean;
 
   /**
-   * The icon and label icon of the Button.
+   * The icon of the Button. None by default.
    */
-  children:
-    | [
-        React.ReactElement<ButtonIconProps>,
-        React.ReactElement<ButtonLabelProps>
-      ]
-    | [undefined, React.ReactElement<ButtonLabelProps>]
-    | React.ReactElement<ButtonLabelProps>;
+  children?: React.ReactElement<ButtonIconProps> | null;
 };
 
 export type ButtonProps = ButtonAttributes & ButtonEvents;
 
-export type DefaultButtonProps = Required<Pick<ButtonProps, 'disabled'>>;
+export type DefaultButtonProps = Required<
+  Pick<ButtonProps, 'disabled' | 'size'>
+>;

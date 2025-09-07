@@ -1,13 +1,14 @@
 import * as React from 'react';
 
-import { type ButtonIconProps } from './button-icon.types';
+import { type IconSize } from '../../icon/icon.types';
 
 import { type ButtonSize } from '../button.types';
-import { type IconSize } from '../../icon/icon.types';
 import { useButtonContext } from '../button.context';
 
+import { type ButtonIconProps } from './button-icon.types';
+
 const ICON_SIZE_MAP: Record<ButtonSize, IconSize> = {
-  small: 'medium',
+  small: 'large',
   medium: 'xlarge',
 };
 
@@ -17,6 +18,7 @@ export function ButtonIcon(props: ButtonIconProps) {
   const { size } = useButtonContext();
 
   return React.cloneElement(children, {
+    color: 'white',
     size: ICON_SIZE_MAP[size],
   });
 }

@@ -1,9 +1,10 @@
 import { test, expect } from '@playwright/experimental-ct-react';
 
 import { Money } from './money';
+import { Currency } from './money.types';
 
 test('should render USD', { tag: ['@ch-money'] }, async ({ mount, page }) => {
-  await mount(<Money amount={1234.56} currency="USD" />);
+  await mount(<Money amount={1234.56} currency={Currency.US_DOLLAR} />);
 
   const money = page.getByText('+US$ 1.234,56');
 
@@ -14,7 +15,7 @@ test(
   'should render negative USD',
   { tag: ['@ch-money'] },
   async ({ mount, page }) => {
-    await mount(<Money amount={-1234.56} currency="USD" />);
+    await mount(<Money amount={-1234.56} currency={Currency.US_DOLLAR} />);
 
     const money = page.getByText('-US$ 1.234,56');
 

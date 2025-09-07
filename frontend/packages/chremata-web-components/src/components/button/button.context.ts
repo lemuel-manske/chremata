@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { type ButtonSize } from './button.types';
+import { DEFAULT_BUTTON_PROPS } from './use-button';
 
 export type ButtonState = {
   disabled: boolean;
@@ -12,8 +13,8 @@ export type ButtonContextValue = {
 };
 
 export const ButtonContext = React.createContext<ButtonContextValue>({
-  size: 'medium',
-  state: { disabled: false },
+  size: DEFAULT_BUTTON_PROPS.size,
+  state: { disabled: DEFAULT_BUTTON_PROPS.disabled },
 });
 
 export function useButtonContext() {

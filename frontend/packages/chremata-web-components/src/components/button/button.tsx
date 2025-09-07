@@ -1,30 +1,34 @@
-import { doNothing } from '@chremata/utils';
-
-import { type ButtonProps } from './button.types';
+import { classNames, doNothing } from '@chremata/utils';
 
 import { ButtonLabel } from './button-label/button-label';
 import { ButtonIcon } from './button-icon/button-icon';
 
+import { type ButtonProps } from './button.types';
 import { useButton } from './use-button';
+import { ButtonContext } from './button.context';
 
 import './index.css';
 
-Button.Label = ButtonLabel;
-Button.Icon = ButtonIcon;
-
 export function Button(props: ButtonProps) {
-  const { label, disabled, startIcon, onClick } = useButton(props);
+  const { label, size, icon, disabled, contextValue, onClick } =
+    useButton(props);
 
-  const classNames = 'ch-button';
+  const classes = classNames({
+    'ch-button': true,
+    [`ch-button--${size}`]: true,
+  });
 
   return (
-    <button
-      className={classNames}
-      aria-label={label}
-      disabled={disabled}
-      onClick={disabled ? doNothing : onClick}
-    >
-      {startIcon && startIcon} {label}
-    </button>
+    <ButtonContext.Provider value={contextValue}>
+      <button
+        className={classes}
+        aria-label={label}
+        disabled={disabled}
+        onClick={disabled ? doNothing : onClick}
+      >
+        {icon && <ButtonIcon>{icon}</ButtonIcon>}
+        <ButtonLabel>{label}</ButtonLabel>
+      </button>
+    </ButtonContext.Provider>
   );
 }

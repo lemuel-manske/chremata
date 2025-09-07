@@ -1,0 +1,42 @@
+.ch-label {
+  font-family: var(--font-family);
+
+  color: var(--font-color-regular);
+
+  cursor: inherit;
+  overflow: hidden;
+  display: block;
+  white-space: nowrap;
+  text-align: start;
+  max-inline-size: fit-content;
+}
+
+.ch-label:disabled {
+  color: var(--font-color-disabled);
+}
+
+
+.ch-label--small {
+  font-size: var(--font-size-small);
+}
+
+.ch-label--medium {
+  font-size: var(--font-size-medium);
+}
+
+.ch-label--large {
+  font-size: var(--font-size-large);
+}
+
+.ch-label--xlarge {
+  font-size: var(--font-size-xlarge);
+}
+
+
+.ch-label--regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.ch-label--emphasis {
+  font-weight: var(--font-weight-emphasis);
+}

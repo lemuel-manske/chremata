@@ -1,7 +1,8 @@
 import { classNames } from '@chremata/utils';
 
-import { type MoneyProps } from './money.types';
+import { Label } from '../label/label';
 
+import { type MoneyProps } from './money.types';
 import { useMoney } from './use-money';
 
 import './index.css';
@@ -11,15 +12,13 @@ export function Money(props: MoneyProps) {
 
   const classes = classNames({
     'ch-money': true,
-    'ch-money__positive': amount > 0,
-    'ch-money__negative': amount < 0,
+    'ch-money--positive': amount > 0,
+    'ch-money--negative': amount < 0,
   });
 
-  const role = 'text';
-
   return (
-    <span className={classes} role={role} aria-label={formattedAmount}>
-      {formattedAmount}
+    <span className={classes}>
+      <Label>{formattedAmount}</Label>
     </span>
   );
 }

@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react';
 
 import { DEFAULT_MONEY_PROPS } from './use-money';
 import { ZeroAmountMoney } from './money.fixture';
-import { type MoneyProps } from './money.types';
+import { type MoneyProps, Locale, Currency } from './money.types';
 
 export default {
   id: 'Money',
@@ -15,18 +15,17 @@ export default {
       control: 'number',
     },
     currency: {
-      control: 'text',
-      options: ['BRL'],
+      control: 'select',
+      options: [Currency.BRAZILIAN_REAL, Currency.US_DOLLAR],
     },
     locale: {
-      control: 'text',
-      options: ['pt-BR'],
+      control: 'select',
+      options: [Locale.BRAZIL, Locale.USA],
     },
   },
 
   args: {
     ...DEFAULT_MONEY_PROPS,
-    amount: 0.0,
   },
 } as Meta<typeof ZeroAmountMoney>;
 

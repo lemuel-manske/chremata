@@ -8,11 +8,7 @@ test(
   'should render a button',
   { tag: ['@ch-button'] },
   async ({ mount, page }) => {
-    await mount(
-      <Button>
-        <Button.Label>Click me</Button.Label>
-      </Button>
-    );
+    await mount(<Button label="Click me" />);
 
     const button = page.getByRole('button', { name: 'Click me' });
 
@@ -25,12 +21,8 @@ test(
   { tag: ['@ch-button'] },
   async ({ mount, page }) => {
     await mount(
-      <Button>
-        <Button.Icon>
-          <Icon name="CoinIconSvg" label="" primaryColor="none" />
-        </Button.Icon>
-
-        <Button.Label>Click me</Button.Label>
+      <Button label="Click me">
+        <Icon name="CoinIconSvg" label="" primaryColor="none" />
       </Button>
     );
 
@@ -44,11 +36,7 @@ test(
   'should be focused when clicked',
   { tag: ['@ch-button'] },
   async ({ mount, page }) => {
-    await mount(
-      <Button>
-        <Button.Label>Click me</Button.Label>
-      </Button>
-    );
+    await mount(<Button label="Click me" />);
 
     const button = page.getByRole('button', { name: 'Click me' });
 
@@ -62,11 +50,7 @@ test(
   'should render a disabled button',
   { tag: ['@ch-button'] },
   async ({ mount, page }) => {
-    await mount(
-      <Button disabled>
-        <Button.Label>Click me</Button.Label>
-      </Button>
-    );
+    await mount(<Button label="Click me" />);
 
     const button = page.getByRole('button', { name: 'Click me' });
 
@@ -78,11 +62,7 @@ test(
   'should be focused when [Tab] and [Enter] are pressed',
   { tag: ['@ch-button'] },
   async ({ mount, page }) => {
-    await mount(
-      <Button>
-        <Button.Label>Click me</Button.Label>
-      </Button>
-    );
+    await mount(<Button label="Click me" />);
 
     const button = page.getByRole('button', { name: 'Click me' });
 
@@ -97,11 +77,7 @@ test(
   'should be focused when [Tab] and [Space] are pressed',
   { tag: ['@ch-button'] },
   async ({ mount, page }) => {
-    await mount(
-      <Button>
-        <Button.Label>Click me</Button.Label>
-      </Button>
-    );
+    await mount(<Button label="Click me" />);
 
     const button = page.getByRole('button', { name: 'Click me' });
 

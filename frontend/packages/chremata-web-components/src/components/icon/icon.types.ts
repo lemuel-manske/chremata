@@ -5,7 +5,7 @@ import {
   type EnumOrStringLiteralTypesInclude,
 } from '@chremata/utils';
 
-type IconSolidNames = keyof typeof SolidSVGs;
+export type IconSolidNames = keyof typeof SolidSVGs;
 
 type IconAttributes = {
   name: IconSolidNames;
@@ -25,8 +25,19 @@ export type IconSize = EnumOrStringLiteralTypesInclude<
 export type InnerIconProps = SVGSolidProps & IconAttributes;
 
 export type IconWrapperProps = {
-  label?: string;
+  /**
+   * The Icon label. A11y requirement.
+   */
+  label: string;
+
+  /**
+   * Whether the Icon is disabled. Default is false.
+   */
   disabled?: boolean;
+
+  /**
+   * The size of the Icon. Default is 'medium'.
+   */
   size?: IconSize;
 };
 

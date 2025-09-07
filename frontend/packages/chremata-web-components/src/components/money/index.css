@@ -4,10 +4,10 @@
   font-weight: var(--font-weight-regular);
 }
 
-.ch-money__positive {
+.ch-money--positive {
   color: var(--color-signal-green);
 }
 
-.ch-money__negative {
+.ch-money--negative {
   color: var(--color-signal-red);
 }

@@ -3,6 +3,7 @@ import { fn } from '@storybook/test';
 
 import { DEFAULT_BUTTON_PROPS } from './use-button';
 import { ButtonWithIcon, type ButtonWithIconProps } from './button.fixture';
+import { Size } from '@chremata/utils';
 
 export default {
   id: 'Button',
@@ -14,6 +15,10 @@ export default {
     label: {
       control: 'text',
     },
+    size: {
+      control: 'select',
+      options: [Size.SMALL, Size.MEDIUM],
+    },
     disabled: {
       control: 'boolean',
     },
@@ -24,8 +29,11 @@ export default {
 
   args: {
     ...DEFAULT_BUTTON_PROPS,
-    label: 'Button',
+
     onClick: fn(),
+
+    label: 'Button',
+    iconHidden: false,
   },
 } as Meta<typeof ButtonWithIcon>;
 

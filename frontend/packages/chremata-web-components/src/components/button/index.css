@@ -3,24 +3,18 @@
 
   color: var(--font-color-light);
 
-  font-family: var(--font-family);
-  font-size: var(--font-size-regular);
-  font-weight: var(--font-weight-regular);
-
   background: var(--color-50);
 
   display: inline-flex;
   flex-direction: row;
   align-items: center;
+
   gap: 8px;
 
-  align-content: center;
   text-align: center;
 
   height: fit-content;
   width: max-content;
-
-  padding: 12px 16px;
 
   border-radius: var(--radius-silent);
 
@@ -43,4 +37,12 @@
 .ch-button:disabled {
   cursor: not-allowed;
   background: var(--color-55);
+}
+
+.ch-button--small {
+  padding: 8px 12px;
+}
+
+.ch-button--medium {
+  padding: 12px 16px;
 }
