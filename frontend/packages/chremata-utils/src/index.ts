@@ -4,3 +4,4 @@ export * from './utils/class-names';
 export * from './utils/find-child';
 export * from './utils/types';
 export * from './utils/size';
+export * from './utils/variant';

@@ -11,7 +11,6 @@ export function useIcon(props: IconProps) {
     name,
     size = DEFAULT_ICON_PROPS.size,
     disabled = DEFAULT_ICON_PROPS.disabled,
-
     ...svgProps
   } = props;
 
@@ -20,7 +19,6 @@ export function useIcon(props: IconProps) {
     name,
     size,
     disabled,
-
     ...svgProps,
   };
 }

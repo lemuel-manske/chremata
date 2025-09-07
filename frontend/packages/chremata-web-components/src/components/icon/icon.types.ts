@@ -13,13 +13,7 @@ type IconAttributes = {
 
 export type IconSize = EnumOrStringLiteralTypesInclude<
   Size,
-  | 'fillAvailable'
-  | 'xsmall'
-  | 'small'
-  | 'medium'
-  | 'large'
-  | 'xlarge'
-  | 'xxlarge'
+  'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge'
 >;
 
 export type InnerIconProps = SVGSolidProps & IconAttributes;

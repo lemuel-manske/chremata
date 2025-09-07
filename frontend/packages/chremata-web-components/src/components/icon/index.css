@@ -1,0 +1,35 @@
+:root {
+  --icon-size-small: 12px;
+  --icon-size-medium: 16px;
+  --icon-size-large: 20px;
+  --icon-size-xlarge: 24px;
+  --icon-size-xxlarge: 28px;
+}
+
+.ch-icon {
+  display: flex;
+}
+
+.ch-icon--disabled {
+  cursor: not-allowed;
+}
+
+.ch-icon--small {
+  inline-size: var(--icon-size-small);
+  block-size: var(--icon-size-small);
+}
+
+.ch-icon--medium {
+  inline-size: var(--icon-size-medium);
+  block-size: var(--icon-size-medium);
+}
+
+.ch-icon--large {
+  inline-size: var(--icon-size-large);
+  block-size: var(--icon-size-large);
+}
+
+.ch-icon--xlarge {
+  inline-size: var(--icon-size-xlarge);
+  block-size: var(--icon-size-xlarge);
+}

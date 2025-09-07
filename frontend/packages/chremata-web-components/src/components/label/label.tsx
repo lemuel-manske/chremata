@@ -20,7 +20,11 @@ export function Label(props: LabelProps) {
   };
 
   return (
-    <label id={id} aria-disabled={disabled} style={styles} className={classes}>
+    <label
+      id={id}
+      aria-disabled={disabled}
+      style={styles}
+      className={classes}>
       {label}
     </label>
   );

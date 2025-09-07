@@ -1,11 +1,13 @@
 import * as React from 'react';
 
 import { solid as availableSVGs } from '@chremata/icons';
+import { classNames } from '@chremata/utils';
 
 import { type IconProps, type InnerIconProps } from './icon.types';
-import { IconWrapper } from './icon-wrapper/icon-wrapper';
 
 import { useIcon } from './use-icon';
+
+import './index.css';
 
 function InnerIcon(props: InnerIconProps) {
   const { name, ...svgProps } = props;
@@ -16,9 +18,29 @@ function InnerIcon(props: InnerIconProps) {
 export function Icon(props: IconProps) {
   const { label, name, size, disabled, ...svgProps } = useIcon(props);
 
+  const classes = classNames({
+    'ch-icon': true,
+    'ch-icon--disabled': !!disabled,
+    'ch-icon--small': size === 'small',
+    'ch-icon--medium': size === 'medium',
+    'ch-icon--large': size === 'large',
+    'ch-icon--xlarge': size === 'xlarge',
+    'ch-icon--xxlarge': size === 'xxlarge',
+  });
+
+  const role = 'img';
+
   return (
-    <IconWrapper label={label} size={size} disabled={disabled}>
-      <InnerIcon name={name} disabled={disabled} {...svgProps} />
-    </IconWrapper>
+    <div
+      aria-label={label}
+      aria-disabled={disabled}
+      className={classes}
+      role={role}>
+      <InnerIcon
+        name={name}
+        disabled={disabled}
+        {...svgProps}
+      />
+    </div>
   );
 }
