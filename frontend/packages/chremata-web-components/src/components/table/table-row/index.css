@@ -1,0 +1,8 @@
+.ch-row {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-auto-flow: column;
+  grid-template-columns: inherit;
+
+  border-radius: var(--radius-regular);
+}

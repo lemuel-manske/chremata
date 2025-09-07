@@ -1,0 +1,31 @@
+.ch-cell {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+
+  align-items: center;
+
+  padding: 8px 16px;
+
+  box-sizing: border-box;
+  position: relative;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ch-cell:not(:last-child) {
+  border-inline-end: 2px solid var(--color-10);
+}
+
+.ch-columnheader {
+  display: flex;
+
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: start;
+
+  font-weight: var(--font-weight-bold);
+}

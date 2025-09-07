@@ -1,0 +1,6 @@
+.ch-rowgroup {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: inherit;
+  grid-auto-flow: column;
+}
