@@ -22,7 +22,11 @@ test(
   async ({ mount, page }) => {
     await mount(
       <Button label="Click me">
-        <Icon name="CoinIconSvg" label="" primaryColor="none" />
+        <Icon
+          name="CoinIconSvg"
+          label=""
+          primaryColor="none"
+        />
       </Button>
     );
 
@@ -50,7 +54,12 @@ test(
   'should render a disabled button',
   { tag: ['@ch-button'] },
   async ({ mount, page }) => {
-    await mount(<Button label="Click me" />);
+    await mount(
+      <Button
+        disabled
+        label="Click me"
+      />
+    );
 
     const button = page.getByRole('button', { name: 'Click me' });
 

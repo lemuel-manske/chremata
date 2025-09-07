@@ -1,0 +1,17 @@
+.ch-grid {
+  display: grid;
+  
+  box-sizing: border-box;
+
+  block-size: 100%;
+  inline-size: 100%;
+
+  padding: var(--grid-container-padding, 0);
+
+  grid-template-areas: var(--grid-template-areas, none);
+  grid-template-rows: var(--grid-template-rows, auto);
+  grid-template-columns: var(--grid-template-columns, auto);
+
+  row-gap: var(--grid-row-gap, 0);
+  column-gap: var(--grid-column-gap, 0);
+}

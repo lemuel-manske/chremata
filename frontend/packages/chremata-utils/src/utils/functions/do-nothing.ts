@@ -3,8 +3,6 @@
  *
  * @returns {null} Always returns null.
  */
-const doNothing = () => {
+export function doNothing(): null {
   return null;
-};
-
-export { doNothing };
+}

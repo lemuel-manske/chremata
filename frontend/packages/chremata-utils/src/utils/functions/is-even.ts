@@ -10,8 +10,6 @@
  * isEven(4); // true
  * isEven(7); // false
  */
-function isEven(number: number): boolean {
+export function isEven(number: number): boolean {
   return number % 2 === 0;
 }
-
-export { isEven };

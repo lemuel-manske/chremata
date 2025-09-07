@@ -1,0 +1,11 @@
+.ch-grid-area {
+  padding: var(--grid-area-padding, 0);
+  
+  grid-area: var(--grid-area, auto);
+  
+  box-shadow: none;
+}
+
+.ch-grid-area > .ch-grid > * {
+  box-shadow: none;
+}

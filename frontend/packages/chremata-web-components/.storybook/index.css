@@ -1,6 +1,9 @@
 .preview {
+  inset: 0;
+  position: fixed;
   display: flex;
-  height: 90vh;
+  height: 100vh;
+  width: 100vw;
   align-items: center;
   justify-content: center;
 }
