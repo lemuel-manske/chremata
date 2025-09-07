@@ -37,6 +37,7 @@
     "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo"
   },
   "peerDependencies": {
+    "@axe-core/playwright": "^4.10.2",
     "@playwright/experimental-ct-react": "^1.55.0",
     "@playwright/test": "^1.55.0",
     "lodash.merge": "^4.6.2"

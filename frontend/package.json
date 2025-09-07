@@ -14,6 +14,10 @@
     "directory": "frontend"
   },
   "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "dev": "npm run dev --workspace=@chremata/web-components",
+    "test": "npm run test --workspaces --if-present",
+    "test:e2e": "npm run test:e2e --workspaces --if-present",
     "clear": "npm run clear:ts && npm run clear:dist && npm run clear:lock && npm run clear:node_modules",
     "clear:ts": "find . -name '*.tsbuildinfo' | xargs -exec rm -f",
     "clear:dist": "find . -name dist | xargs -exec rm -rf",

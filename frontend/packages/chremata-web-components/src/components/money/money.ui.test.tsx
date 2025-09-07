@@ -1,24 +1,28 @@
-import { test, expect } from '@playwright/experimental-ct-react';
+import { test, expect } from '@chremata-preset/playwright/test';
 
 import { Currency } from '@chremata/utils';
 
 import { Money } from './money';
 
-test('should render USD', { tag: ['@ch-money'] }, async ({ mount, page }) => {
-  await mount(
-    <Money
-      amount={1234.56}
-      currency={Currency.US_DOLLAR}
-    />
-  );
+test(
+  'should render a USD Money',
+  { tag: ['@ch-money'] },
+  async ({ mount, page }) => {
+    await mount(
+      <Money
+        amount={1234.56}
+        currency={Currency.US_DOLLAR}
+      />
+    );
 
-  const money = page.getByText('+US$ 1.234,56');
+    const money = page.getByText('+US$ 1.234,56');
 
-  await expect(money).toBeVisible();
-});
+    await expect(money).toNotHaveAccessibilityViolations();
+  }
+);
 
 test(
-  'should render negative USD',
+  'should render a negative USD Money',
   { tag: ['@ch-money'] },
   async ({ mount, page }) => {
     await mount(
@@ -30,6 +34,6 @@ test(
 
     const money = page.getByText('-US$ 1.234,56');
 
-    await expect(money).toBeVisible();
+    await expect(money).toNotHaveAccessibilityViolations();
   }
 );

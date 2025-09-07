@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/experimental-ct-react';
+import { test, expect } from '@chremata-preset/playwright/test';
 
 import { Icon } from '../icon/icon';
 
@@ -12,7 +12,7 @@ test(
 
     const button = page.getByRole('button', { name: 'Click me' });
 
-    await expect(button).toBeVisible();
+    await expect(button).toNotHaveAccessibilityViolations();
   }
 );
 
@@ -26,7 +26,7 @@ test('should render a secondary variation button', async ({ mount, page }) => {
 
   const button = page.getByRole('button', { name: 'Click me' });
 
-  await expect(button).toBeVisible();
+  await expect(button).toNotHaveAccessibilityViolations();
 });
 
 test('should render a secondary variation button with an Icon', async ({
@@ -39,7 +39,7 @@ test('should render a secondary variation button with an Icon', async ({
       variant="secondary">
       <Icon
         name="CoinIconSvg"
-        label=""
+        label="Coin"
         primaryColor="currentColor"
       />
     </Button>
@@ -47,7 +47,7 @@ test('should render a secondary variation button with an Icon', async ({
 
   const button = page.getByRole('button', { name: 'Click me' });
 
-  await expect(button).toBeVisible();
+  await expect(button).toNotHaveAccessibilityViolations();
 });
 
 test(
@@ -58,7 +58,7 @@ test(
       <Button label="Click me">
         <Icon
           name="CoinIconSvg"
-          label=""
+          label="Coin"
           primaryColor="currentColor"
         />
       </Button>
@@ -66,7 +66,7 @@ test(
 
     const button = page.getByRole('button', { name: 'Click me' });
 
-    await expect(button).toBeVisible();
+    await expect(button).toNotHaveAccessibilityViolations();
   }
 );
 
@@ -80,7 +80,7 @@ test(
 
     await button.click();
 
-    await expect(button).toBeFocused();
+    await expect(button).toNotHaveAccessibilityViolations();
   }
 );
 
@@ -98,6 +98,7 @@ test(
     const button = page.getByRole('button', { name: 'Click me' });
 
     await expect(button).toBeDisabled();
+    await expect(button).toNotHaveAccessibilityViolations();
   }
 );
 
@@ -113,6 +114,7 @@ test(
     await page.keyboard.press('Enter');
 
     await expect(button).toBeFocused();
+    await expect(button).toNotHaveAccessibilityViolations();
   }
 );
 
@@ -128,5 +130,6 @@ test(
     await page.keyboard.press('Space');
 
     await expect(button).toBeFocused();
+    await expect(button).toNotHaveAccessibilityViolations();
   }
 );

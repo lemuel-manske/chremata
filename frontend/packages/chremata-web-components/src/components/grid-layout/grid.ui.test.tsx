@@ -1,11 +1,11 @@
-import { test, expect } from '@playwright/experimental-ct-react';
+import { test, expect } from '@chremata-preset/playwright/test';
 
 import { Label } from '../label/label';
 
 import { GridLayout } from './grid-layout';
 
 test(
-  'should render a grid layout',
+  'should render a GridLayout',
   { tag: ['@ch-grid'] },
   async ({ mount, page }) => {
     const grid = await mount(
@@ -40,6 +40,6 @@ test(
       </GridLayout>
     );
 
-    await expect(grid).toBeVisible();
+    await expect(grid).toNotHaveAccessibilityViolations();
   }
 );

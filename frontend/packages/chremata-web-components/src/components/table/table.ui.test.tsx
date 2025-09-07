@@ -1,9 +1,9 @@
-import { test, expect } from '@playwright/experimental-ct-react';
+import { test, expect } from '@chremata-preset/playwright/test';
 
 import { Table } from './table';
 
 test(
-  'should render table with caption',
+  'should render a Table',
   { tag: ['@ch-table'] },
   async ({ mount, page }) => {
     await mount(
@@ -22,10 +22,10 @@ test(
 
     const table = page.getByRole('grid', { name: 'Sample Table' });
 
-    await expect(table).toBeVisible();
-
     const rows = table.getByRole('row');
 
     await expect(rows).toHaveCount(3);
+
+    await expect(table).toNotHaveAccessibilityViolations();
   }
 );
