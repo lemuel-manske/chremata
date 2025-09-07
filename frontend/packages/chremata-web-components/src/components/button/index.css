@@ -1,43 +1,70 @@
 .ch-button {
   cursor: pointer;
 
-  color: var(--font-color-light);
-
-  background: var(--color-50);
-
   display: inline-flex;
-  flex-direction: row;
   align-items: center;
+  justify-content: center;
 
   gap: 8px;
-
-  text-align: center;
 
   height: fit-content;
   width: max-content;
 
   border-radius: var(--radius-silent);
-
   border: none;
-}
-
-.ch-button:hover {
-  background: var(--color-55);
-}
-
-.ch-button:focus-visible {
-  outline: 4px solid var(--color-35);
-  outline-offset: 1px;
-}
-
-.ch-button:active {
-  background: var(--color-60);
 }
 
 .ch-button:disabled {
   cursor: not-allowed;
+}
+
+
+.ch-button--primary {
+  color: white;
+  background: var(--color-50);
+}
+
+.ch-button--primary:hover {
   background: var(--color-55);
 }
+
+.ch-button--primary:focus-visible {
+  outline: 4px solid var(--color-35);
+  outline-offset: 1px;
+}
+
+.ch-button--primary:active {
+  background: var(--color-60);
+}
+
+.ch-button--primary:disabled {
+  color: var(--gs-10);
+  background: var(--color-55);
+}
+
+
+.ch-button--secondary {
+  color: var(--color-50);
+  background: none;
+}
+
+.ch-button--secondary:hover {
+  color: var(--color-60);
+}
+
+.ch-button--secondary:focus-visible {
+  outline: 4px solid var(--color-20);
+  outline-offset: 1px;
+}
+
+.ch-button--secondary:active {
+  color: var(--color-70);
+}
+
+.ch-button--secondary:disabled {
+  color: var(--gs-25);
+}
+
 
 .ch-button--small {
   padding: 8px 12px;

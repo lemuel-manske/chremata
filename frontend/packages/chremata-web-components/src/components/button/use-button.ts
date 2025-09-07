@@ -7,6 +7,7 @@ import type { ButtonContextValue } from './button.context';
 
 export const DEFAULT_BUTTON_PROPS: DefaultButtonProps = {
   size: 'medium',
+  variant: 'primary',
   disabled: false,
 };
 
@@ -14,6 +15,7 @@ export function useButton(props: ButtonProps) {
   const {
     label,
     children,
+    variant = DEFAULT_BUTTON_PROPS.variant,
     disabled = DEFAULT_BUTTON_PROPS.disabled,
     size = DEFAULT_BUTTON_PROPS.size,
     onClick,
@@ -33,6 +35,7 @@ export function useButton(props: ButtonProps) {
   };
 
   return {
+    variant,
     size,
     label,
     icon,

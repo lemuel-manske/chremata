@@ -8,14 +8,16 @@ export function TableRow(props: TableRowProps) {
   const { children, className } = props;
 
   const classes = classNames({
-    'ch-row': true,
-    [className!]: true,
+    'ch-table-row': true,
+    [className!]: !!className,
   });
 
   const role = 'row';
 
   return (
-    <tr className={classes} role={role}>
+    <tr
+      className={classes}
+      role={role}>
       {children}
     </tr>
   );

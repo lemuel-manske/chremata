@@ -18,7 +18,7 @@ export function Table(props: TableProps) {
   };
 
   const classes = classNames({
-    'ch-grid': true,
+    'ch-table': true,
   });
 
   const role = 'grid';
@@ -28,13 +28,15 @@ export function Table(props: TableProps) {
       role={role}
       className={classes}
       style={dynamicStyles}
-      aria-label={caption}
-    >
+      aria-label={caption}>
       <TableCaption caption={caption} />
 
       <TableHeader columns={columns} />
 
-      <TableBody columns={columns} data={data} />
+      <TableBody
+        columns={columns}
+        data={data}
+      />
     </table>
   );
 }

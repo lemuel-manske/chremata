@@ -13,19 +13,23 @@ export function TableHeader(props: TableHeaderProps) {
   const { columns } = props;
 
   const classes = classNames({
-    'ch-rowgroup': true,
+    'ch-table-rowgroup': true,
   });
 
   const role = 'rowgroup';
 
   const cells = columns.map((col: Column) => (
-    <TableCell header key={col.key}>
+    <TableCell
+      header
+      key={col.key}>
       {col.label}
     </TableCell>
   ));
 
   return (
-    <thead className={classes} role={role}>
+    <thead
+      className={classes}
+      role={role}>
       <TableRow>{cells}</TableRow>
     </thead>
   );

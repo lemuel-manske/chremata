@@ -14,28 +14,32 @@ export function TableBody(props: TableBodyProps) {
 
   const rows = data.map((row: Row, i: number) => {
     const classes = classNames({
-      'ch-row-even': isEven(i),
+      'ch-table-row--even': isEven(i),
     });
 
-    const newLocal = columns.map((col: Column) => (
-      <TableCell key={col.key}>{row[col.key] as React.ReactNode}</TableCell>
+    const cells = columns.map((col: Column) => (
+      <TableCell key={col.key}>{row[col.key] as string}</TableCell>
     ));
 
     return (
-      <TableRow key={i} className={classes}>
-        {newLocal}
+      <TableRow
+        key={i}
+        className={classes}>
+        {cells}
       </TableRow>
     );
   });
 
   const classes = classNames({
-    'ch-rowgroup': true,
+    'ch-table-rowgroup': true,
   });
 
   const role = 'rowgroup';
 
   return (
-    <tbody className={classes} role={role}>
+    <tbody
+      className={classes}
+      role={role}>
       {rows}
     </tbody>
   );

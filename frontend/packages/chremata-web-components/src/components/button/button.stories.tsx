@@ -4,6 +4,7 @@ import { fn } from '@storybook/test';
 import { DEFAULT_BUTTON_PROPS } from './use-button';
 import { ButtonWithIcon, type ButtonWithIconProps } from './button.fixture';
 import { Size } from '@chremata/utils';
+import { ButtonVariantEnum } from './button.types';
 
 export default {
   id: 'Button',
@@ -25,6 +26,10 @@ export default {
     onClick: {
       action: 'clicked',
     },
+    variant: {
+      control: 'select',
+      options: [ButtonVariantEnum.PRIMARY, ButtonVariantEnum.SECONDARY],
+    },
   },
 
   args: {
@@ -35,7 +40,7 @@ export default {
     label: 'Button',
     iconHidden: false,
   },
-} as Meta<typeof ButtonWithIcon>;
+} satisfies Meta<typeof ButtonWithIcon>;
 
 export const Default: StoryObj<ButtonWithIconProps> = {
   render: (args: ButtonWithIconProps) => <ButtonWithIcon {...args} />,

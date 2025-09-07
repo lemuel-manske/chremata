@@ -1,4 +1,4 @@
 export type TableCellProps = {
-  children: React.ReactNode;
+  children: string;
   header?: boolean;
 };

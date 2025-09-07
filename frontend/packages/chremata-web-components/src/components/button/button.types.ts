@@ -1,5 +1,6 @@
 import {
   type Size,
+  type EnumOrStringLiteralTypes,
   type EnumOrStringLiteralTypesInclude,
 } from '@chremata/utils';
 
@@ -11,6 +12,13 @@ type ButtonEvents = {
    */
   onClick?: () => void;
 };
+
+export enum ButtonVariantEnum {
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
+}
+
+export type ButtonVariant = EnumOrStringLiteralTypes<ButtonVariantEnum>;
 
 export type ButtonSize = EnumOrStringLiteralTypesInclude<
   Size,
@@ -34,6 +42,11 @@ type ButtonAttributes = {
   disabled?: boolean;
 
   /**
+   * The variant of the Button. Default is 'primary'.
+   */
+  variant?: ButtonVariant;
+
+  /**
    * The icon of the Button. None by default.
    */
   children?: React.ReactElement<ButtonIconProps> | null;
@@ -42,5 +55,5 @@ type ButtonAttributes = {
 export type ButtonProps = ButtonAttributes & ButtonEvents;
 
 export type DefaultButtonProps = Required<
-  Pick<ButtonProps, 'disabled' | 'size'>
+  Pick<ButtonProps, 'disabled' | 'size' | 'variant'>
 >;

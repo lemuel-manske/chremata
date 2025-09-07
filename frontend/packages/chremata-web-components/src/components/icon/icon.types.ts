@@ -8,6 +8,9 @@ import {
 export type IconSolidNames = keyof typeof SolidSVGs;
 
 type IconAttributes = {
+  /**
+   * The name of the SVG icon.
+   */
   name: IconSolidNames;
 };
 
@@ -18,7 +21,7 @@ export type IconSize = EnumOrStringLiteralTypesInclude<
 
 export type InnerIconProps = SVGSolidProps & IconAttributes;
 
-export type IconWrapperProps = {
+export type IconProps = InnerIconProps & {
   /**
    * The Icon label. A11y requirement.
    */
@@ -34,7 +37,5 @@ export type IconWrapperProps = {
    */
   size?: IconSize;
 };
-
-export type IconProps = InnerIconProps & IconWrapperProps;
 
 export type IconDefaultProps = Required<Pick<IconProps, 'size' | 'disabled'>>;

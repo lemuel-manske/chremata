@@ -8,11 +8,13 @@ export function TableCaption(props: TableCaptionProps) {
   const { caption } = props;
 
   const classes = classNames({
-    'ch-caption': true,
+    'ch-table-caption': true,
   });
 
   return (
-    <caption aria-hidden={true} className={classes}>
+    <caption
+      aria-hidden={true}
+      className={classes}>
       {caption}
     </caption>
   );

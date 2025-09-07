@@ -16,6 +16,40 @@ test(
   }
 );
 
+test('should render a secondary variation button', async ({ mount, page }) => {
+  await mount(
+    <Button
+      label="Click me"
+      variant="secondary"
+    />
+  );
+
+  const button = page.getByRole('button', { name: 'Click me' });
+
+  await expect(button).toBeVisible();
+});
+
+test('should render a secondary variation button with an Icon', async ({
+  mount,
+  page,
+}) => {
+  await mount(
+    <Button
+      label="Click me"
+      variant="secondary">
+      <Icon
+        name="CoinIconSvg"
+        label=""
+        primaryColor="currentColor"
+      />
+    </Button>
+  );
+
+  const button = page.getByRole('button', { name: 'Click me' });
+
+  await expect(button).toBeVisible();
+});
+
 test(
   'should render a button with Icon',
   { tag: ['@ch-button'] },
@@ -25,7 +59,7 @@ test(
         <Icon
           name="CoinIconSvg"
           label=""
-          primaryColor="none"
+          primaryColor="currentColor"
         />
       </Button>
     );

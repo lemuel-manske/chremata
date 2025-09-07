@@ -10,11 +10,12 @@ import { ButtonContext } from './button.context';
 import './index.css';
 
 export function Button(props: ButtonProps) {
-  const { label, size, icon, disabled, contextValue, onClick } =
+  const { label, size, icon, disabled, variant, contextValue, onClick } =
     useButton(props);
 
   const classes = classNames({
     'ch-button': true,
+    [`ch-button--${variant}`]: true,
     [`ch-button--${size}`]: true,
   });
 
@@ -24,9 +25,9 @@ export function Button(props: ButtonProps) {
         className={classes}
         aria-label={label}
         disabled={disabled}
-        onClick={disabled ? doNothing : onClick}
-      >
+        onClick={disabled ? doNothing : onClick}>
         {icon && <ButtonIcon>{icon}</ButtonIcon>}
+
         <ButtonLabel>{label}</ButtonLabel>
       </button>
     </ButtonContext.Provider>

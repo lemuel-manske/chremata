@@ -14,7 +14,11 @@ export function ButtonWithIcon(props: ButtonWithIconProps) {
   const noIcon = doNothing();
 
   const coinIcon = (
-    <Icon name="CoinIconSvg" label="Coin" primaryColor="white" />
+    <Icon
+      name="CoinIconSvg"
+      label="Coin"
+      primaryColor="currentColor"
+    />
   );
 
   return <Button {...buttonProps}>{iconHidden ? noIcon : coinIcon}</Button>;
