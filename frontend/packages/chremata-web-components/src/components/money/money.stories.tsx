@@ -1,8 +1,10 @@
 import { type Meta, type StoryObj } from '@storybook/react';
 
+import { Currency, Locale } from '@chremata/utils';
+
 import { DEFAULT_MONEY_PROPS } from './use-money';
 import { ZeroAmountMoney } from './money.fixture';
-import { type MoneyProps, Locale, Currency } from './money.types';
+import { type MoneyProps } from './money.types';
 
 export default {
   id: 'Money',

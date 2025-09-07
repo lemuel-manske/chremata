@@ -5,3 +5,5 @@ export * from './utils/find-child';
 export * from './utils/types';
 export * from './utils/size';
 export * from './utils/variant';
+export * from './utils/locale';
+export * from './utils/currency';

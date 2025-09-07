@@ -1,6 +1,6 @@
-import { type MoneyProps } from './money.types';
+import { type DefaultMoneyProps, type MoneyProps } from './money.types';
 
-export const DEFAULT_MONEY_PROPS = {
+export const DEFAULT_MONEY_PROPS: DefaultMoneyProps = {
   currency: 'BRL',
   locale: 'pt-BR',
 };

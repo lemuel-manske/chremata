@@ -1,12 +1,12 @@
-export enum Currency {
-  US_DOLLAR = 'USD',
-  BRAZILIAN_REAL = 'BRL',
-}
+import {
+  Currency,
+  Locale,
+  type EnumOrStringLiteralTypes,
+} from '@chremata/utils';
 
-export enum Locale {
-  BRAZIL = 'pt-BR',
-  USA = 'en-US',
-}
+export type MoneyCurrency = EnumOrStringLiteralTypes<Currency>;
+
+export type MoneyLocale = EnumOrStringLiteralTypes<Locale>;
 
 export type MoneyProps = {
   /**
@@ -17,10 +17,14 @@ export type MoneyProps = {
   /**
    * The currency code (e.g., 'USD', 'EUR') for formatting the amount. Default is 'BRL'.
    */
-  currency?: Currency;
+  currency?: MoneyCurrency;
 
   /**
    * The locale code (e.g., 'en-US', 'pt-BR') for formatting the amount. Default is 'pt-BR'.
    */
-  locale?: Locale;
+  locale?: MoneyLocale;
 };
+
+export type DefaultMoneyProps = Required<
+  Pick<MoneyProps, 'currency' | 'locale'>
+>;
