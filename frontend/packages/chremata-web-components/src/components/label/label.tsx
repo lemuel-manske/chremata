@@ -11,19 +11,16 @@ export function Label(props: LabelProps) {
 
   const classes = classNames({
     'ch-label': true,
+    'ch-label--disabled': disabled,
     [`ch-label--${size}`]: true,
     [`ch-label--${variant}`]: true,
   });
 
-  const styles = {
-    color: color,
-  };
-
   return (
     <label
       id={id}
+      color={color}
       aria-disabled={disabled}
-      style={styles}
       className={classes}>
       {label}
     </label>

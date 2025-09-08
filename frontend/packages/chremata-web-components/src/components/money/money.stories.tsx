@@ -29,7 +29,7 @@ export default {
   args: {
     ...DEFAULT_MONEY_PROPS,
   },
-} as Meta<typeof ZeroAmountMoney>;
+} satisfies Meta<typeof ZeroAmountMoney>;
 
 export const Default: StoryObj<MoneyProps> = {
   render: (args: MoneyProps) => <ZeroAmountMoney {...args} />,

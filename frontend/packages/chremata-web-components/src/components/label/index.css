@@ -11,7 +11,7 @@
   max-inline-size: fit-content;
 }
 
-.ch-label:disabled {
+.ch-label--disabled {
   color: var(--font-color-disabled);
 }
 

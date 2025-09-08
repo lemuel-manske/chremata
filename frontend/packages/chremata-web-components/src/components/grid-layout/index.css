@@ -1,3 +1,11 @@
+:root {
+  --grid-layout-gap-none: 0px;
+  --grid-layout-gap-panel: 16px;
+
+  --grid-layout-container-padding-none: 0px;
+  --grid-layout-container-padding-small: 8px;
+}
+
 .ch-grid {
   display: grid;
   

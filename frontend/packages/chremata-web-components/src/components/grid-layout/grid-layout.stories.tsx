@@ -8,6 +8,7 @@ import {
   type GridLayoutProps,
 } from './grid-layout.types';
 import { GridLayout } from './grid-layout';
+import { Card } from '../card/card';
 
 const innerTemplateArea: GridLayoutProps = {
   columnGap: 'panel',
@@ -60,7 +61,7 @@ export default {
       control: 'text',
     },
   },
-} as Meta<typeof GridLayout>;
+} satisfies Meta<typeof GridLayout>;
 
 export const Default: StoryObj<typeof GridLayout> = {
   render: function Default(props: GridLayoutProps) {
@@ -83,7 +84,12 @@ export const Default: StoryObj<typeof GridLayout> = {
             <GridLayout.Area
               areaName="left"
               padding="small">
-              <Label>Left with Secondary background</Label>
+              <Card title="Card in Grid Area">
+                <Card.Header />
+                <Card.Body>
+                  <Label>Left</Label>
+                </Card.Body>
+              </Card>
             </GridLayout.Area>
 
             <GridLayout.Area

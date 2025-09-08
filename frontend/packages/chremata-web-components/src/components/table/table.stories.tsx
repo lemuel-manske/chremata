@@ -8,7 +8,7 @@ export default {
   title: 'Table',
 
   component: TableWithData,
-} as Meta<TableProps>;
+} satisfies Meta<TableProps>;
 
 export const WithData: StoryObj<TableProps> = {
   render: (args: TableProps) => <TableWithData {...args} />,

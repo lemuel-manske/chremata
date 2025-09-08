@@ -1,0 +1,15 @@
+.ch-card {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px; 
+
+  border-radius: var(--radius-regular);
+  border: 1px solid var(--gs-15);
+  
+  box-shadow: var(--shadow-elevation-medium);
+
+  padding: 24px 16px;
+
+  width: fill-available;
+}
