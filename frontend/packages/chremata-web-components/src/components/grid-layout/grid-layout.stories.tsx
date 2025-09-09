@@ -15,12 +15,12 @@ const innerTemplateArea: GridLayoutProps = {
   rowGap: 'panel',
 
   areas: [
-    ['left', 'highCenter', 'right'],
-    ['left', 'lowCenter', 'right'],
+    ['left', 'right'],
+    ['left', 'right'],
   ],
 
-  columns: ['auto', 'auto', 'auto'],
-  rows: 'auto 50px',
+  columns: ['auto', 'auto'],
+  rows: 'auto',
 };
 
 export default {
@@ -33,9 +33,9 @@ export default {
     columnGap: 'panel',
     rowGap: 'panel',
     padding: 'small',
-    areas: '"header header header" "sidebar main main" "footer footer footer"',
-    columns: '200px auto 100px',
-    rows: '100px auto auto',
+    areas: '"sidebar header header" "sidebar main main" "sidebar main main"',
+    columns: ['200px', '1fr', '1fr'],
+    rows: ['64px', '1fr', '64px'],
   },
 
   argTypes: {
@@ -70,13 +70,13 @@ export const Default: StoryObj<typeof GridLayout> = {
         <GridLayout.Area
           areaName="header"
           padding="small">
-          <Label>Fixed Height Header with static background</Label>
+          <Label>Header</Label>
         </GridLayout.Area>
 
         <GridLayout.Area
           areaName="sidebar"
           padding="small">
-          <Label>Fixed Width Sidebar</Label>
+          <Label>Sidebar</Label>
         </GridLayout.Area>
 
         <GridLayout.Area areaName="main">
@@ -84,7 +84,7 @@ export const Default: StoryObj<typeof GridLayout> = {
             <GridLayout.Area
               areaName="left"
               padding="small">
-              <Card title="Card in Grid Area">
+              <Card title="Left">
                 <Card.Header />
                 <Card.Body>
                   <Label>Left</Label>
@@ -93,29 +93,16 @@ export const Default: StoryObj<typeof GridLayout> = {
             </GridLayout.Area>
 
             <GridLayout.Area
-              areaName="highCenter"
-              padding="small">
-              <Label>Center</Label>
-            </GridLayout.Area>
-
-            <GridLayout.Area
-              areaName="lowCenter"
-              padding="small">
-              <Label>Fixed Lower Center</Label>
-            </GridLayout.Area>
-
-            <GridLayout.Area
               areaName="right"
               padding="small">
-              <Label>Right</Label>
+              <Card title="Right">
+                <Card.Header />
+                <Card.Body>
+                  <Label>Right</Label>
+                </Card.Body>
+              </Card>
             </GridLayout.Area>
           </GridLayout>
-        </GridLayout.Area>
-
-        <GridLayout.Area
-          areaName="footer"
-          padding="small">
-          <Label>Footer</Label>
         </GridLayout.Area>
       </GridLayout>
     );

@@ -25,12 +25,12 @@ export function GridLayout(props: GridLayoutProps) {
   });
 
   const styles = styleMap({
-    '--grid-column-gap': columnGap,
-    '--grid-row-gap': rowGap,
-    '--grid-template-areas': templateArea,
-    '--grid-template-columns': templateColumns,
-    '--grid-template-rows': templateRows,
-    '--grid-container-padding': padding,
+    '--grid-layout-column-gap': columnGap,
+    '--grid-layout-row-gap': rowGap,
+    '--grid-layout-template-areas': templateArea,
+    '--grid-layout-template-columns': templateColumns,
+    '--grid-layout-template-rows': templateRows,
+    '--grid-layout-padding': padding,
   });
 
   return (

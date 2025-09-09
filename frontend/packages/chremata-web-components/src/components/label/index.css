@@ -1,8 +1,6 @@
 .ch-label {
   font-family: var(--font-family);
 
-  color: var(--font-color-regular);
-
   cursor: inherit;
   overflow: hidden;
   display: block;

@@ -2,8 +2,8 @@
   --grid-layout-gap-none: 0px;
   --grid-layout-gap-panel: 16px;
 
-  --grid-layout-container-padding-none: 0px;
-  --grid-layout-container-padding-small: 8px;
+  --grid-layout-padding-none: 0px;
+  --grid-layout-padding-small: 8px;
 }
 
 .ch-grid {
@@ -14,12 +14,12 @@
   block-size: 100%;
   inline-size: 100%;
 
-  padding: var(--grid-container-padding, 0);
+  padding: var(--grid-layout-padding);
 
-  grid-template-areas: var(--grid-template-areas, none);
-  grid-template-rows: var(--grid-template-rows, auto);
-  grid-template-columns: var(--grid-template-columns, auto);
+  grid-template-areas: var(--grid-layout-template-areas);
+  grid-template-rows: var(--grid-layout-template-rows);
+  grid-template-columns: var(--grid-layout-template-columns);
 
-  row-gap: var(--grid-row-gap, 0);
-  column-gap: var(--grid-column-gap, 0);
+  row-gap: var(--grid-layout-row-gap);
+  column-gap: var(--grid-layout-column-gap);
 }

@@ -9,8 +9,8 @@ export function GridLayoutArea(props: GridAreaProps) {
   const { areaName, padding, children } = useGridLayoutArea(props);
 
   const styles = styleMap({
-    '--grid-area': areaName,
-    '--grid-area-padding': padding,
+    '--grid-layout-area': areaName,
+    '--grid-layout-area-padding': padding,
   });
 
   const classes = classNames({

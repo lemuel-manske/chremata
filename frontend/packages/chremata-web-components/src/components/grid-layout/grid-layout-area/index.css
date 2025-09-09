@@ -1,7 +1,12 @@
+:root {
+  --grid-layout-area-padding-none: 0px;
+  --grid-layout-area-padding-small: 8px;
+}
+
 .ch-grid-area {
-  padding: var(--grid-area-padding, 0);
-  
-  grid-area: var(--grid-area, auto);
+  grid-area: var(--grid-layout-area);
+
+  padding: var(--grid-layout-area-padding);
   
   box-shadow: none;
 }
