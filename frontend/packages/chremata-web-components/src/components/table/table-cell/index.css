@@ -17,7 +17,7 @@
 }
 
 .ch-table-cell:not(:last-child) {
-  border-inline-end: 2px solid var(--color-10);
+  border-inline-end: 2px solid var(--color-blue-10);
 }
 
 .ch-table-columnheader {

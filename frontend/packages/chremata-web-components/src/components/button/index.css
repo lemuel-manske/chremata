@@ -21,48 +21,48 @@
 
 .ch-button--primary {
   color: white;
-  background: var(--color-50);
+  background: var(--color-blue-50);
 }
 
 .ch-button--primary:hover {
-  background: var(--color-55);
+  background: var(--color-blue-55);
 }
 
 .ch-button--primary:focus-visible {
-  outline: 4px solid var(--color-35);
+  outline: 4px solid var(--color-blue-35);
   outline-offset: 1px;
 }
 
 .ch-button--primary:active {
-  background: var(--color-60);
+  background: var(--color-blue-60);
 }
 
 .ch-button--primary:disabled {
-  color: var(--gs-10);
-  background: var(--color-55);
+  color: var(--color-gray-10);
+  background: var(--color-blue-55);
 }
 
 
 .ch-button--secondary {
-  color: var(--color-50);
+  color: var(--color-blue-50);
   background: none;
 }
 
 .ch-button--secondary:hover {
-  color: var(--color-60);
+  color: var(--color-blue-60);
 }
 
 .ch-button--secondary:focus-visible {
-  outline: 4px solid var(--color-20);
+  outline: 4px solid var(--color-blue-20);
   outline-offset: 1px;
 }
 
 .ch-button--secondary:active {
-  color: var(--color-70);
+  color: var(--color-blue-70);
 }
 
 .ch-button--secondary:disabled {
-  color: var(--gs-25);
+  color: var(--color-gray-25);
 }
 
 

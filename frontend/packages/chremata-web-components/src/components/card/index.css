@@ -5,7 +5,7 @@
   gap: 16px; 
 
   border-radius: var(--radius-regular);
-  border: 1px solid var(--gs-15);
+  border: 1px solid var(--color-gray-15);
   
   box-shadow: var(--shadow-elevation-medium);
 
