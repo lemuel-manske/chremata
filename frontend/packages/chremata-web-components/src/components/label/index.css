@@ -1,16 +1,32 @@
+:root {
+  --font-family: 'CentraleSans', sans-serif;
+
+  --font-color-regular: #2f3e46;
+  --font-color-light: #ffffff;
+  --font-color-disabled: #777777;
+
+  --font-size-small: .775rem;
+  --font-size-medium: .850rem;
+  --font-size-large: 1rem;
+  --font-size-xlarge: 1.125rem;
+
+  --font-weight-regular: 500;
+  --font-weight-emphasis: 700;
+}
+
 .ch-label {
   font-family: var(--font-family);
 
-  cursor: inherit;
+  cursor: default;
+  user-select: none;
+
   overflow: hidden;
+
   display: block;
   white-space: nowrap;
   text-align: start;
-  max-inline-size: fit-content;
-}
 
-.ch-label--disabled {
-  color: var(--font-color-disabled);
+  max-inline-size: fit-content;
 }
 
 
@@ -37,4 +53,17 @@
 
 .ch-label--emphasis {
   font-weight: var(--font-weight-emphasis);
+}
+
+
+.ch-label--wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--font-color-regular)
+}
+
+.ch-label--wrapper-disabled {
+  color: var(--font-color-disabled);
 }

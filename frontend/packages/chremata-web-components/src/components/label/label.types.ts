@@ -1,7 +1,11 @@
+import * as React from 'react';
+
 import {
   type Size,
   type EnumOrStringLiteralTypesInclude,
 } from '@chremata/utils';
+
+import type { LabelIconProps } from './label-icon/label-icon.types';
 
 type LabelAttributes = {
   /**
@@ -20,19 +24,18 @@ type LabelAttributes = {
   size?: LabelSize;
 
   /**
-   * The color of the Label text. Default is inherited from parent.
-   */
-  color?: string;
-
-  /**
    * The variant of the Label. Default is 'regular'.
    */
   variant?: LabelVariant;
 
   /**
-   * The text label to be displayed within the Label. Required.
+   * The text label to be displayed within the Label with or without an Icon. Required.
    */
-  children: string;
+  children:
+    | string
+    | [React.ReactElement<LabelIconProps>, string]
+    | [null, string]
+    | [undefined, string];
 };
 
 export type LabelVariant = 'regular' | 'emphasis';
@@ -45,5 +48,5 @@ export type LabelSize = EnumOrStringLiteralTypesInclude<
 export type LabelProps = LabelAttributes;
 
 export type DefaultLabelProps = Required<
-  Pick<LabelProps, 'disabled' | 'size' | 'variant' | 'color'>
+  Pick<LabelProps, 'disabled' | 'size' | 'variant'>
 >;

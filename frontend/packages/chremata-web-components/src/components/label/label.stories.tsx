@@ -1,9 +1,9 @@
 import { type Meta, type StoryObj } from '@storybook/react';
 
-import { DEFAULT_LABEL_PROPS } from './use-label';
-import { type LabelProps } from './label.types';
-import { Label } from './label';
 import { Size, Variant } from '@chremata/utils';
+
+import { Label } from './label';
+import { LabelWithIcon, type LabelWithIconProps } from './label.fixture';
 
 export default {
   id: 'Label',
@@ -15,6 +15,9 @@ export default {
     disabled: {
       control: 'boolean',
     },
+    hiddenIcon: {
+      control: 'boolean',
+    },
     size: {
       control: 'select',
       options: [Size.SMALL, Size.MEDIUM, Size.LARGE, Size.XLARGE],
@@ -23,18 +26,20 @@ export default {
       control: 'select',
       options: [Variant.EMPHASIS, Variant.REGULAR],
     },
-    color: {
-      control: 'color',
+    icon: {
+      control: 'text',
     },
   },
 
   args: {
-    ...DEFAULT_LABEL_PROPS,
-
-    children: 'Label',
+    disabled: false,
+    size: 'medium',
+    variant: 'regular',
+    label: 'Label',
+    icon: 'CoinIconSvg',
   },
-} satisfies Meta<typeof Label>;
+} satisfies Meta<typeof LabelWithIcon>;
 
-export const Default: StoryObj<LabelProps> = {
-  render: (args: LabelProps) => <Label {...args} />,
+export const Default: StoryObj<LabelWithIconProps> = {
+  render: (args: LabelWithIconProps) => <LabelWithIcon {...args} />,
 };
