@@ -3,6 +3,7 @@ import * as React from 'react';
 import {
   type EnumOrStringLiteralTypes,
   type EnumOrStringLiteralTypesInclude,
+  Padding,
   Spacing,
 } from '@chremata/utils';
 
@@ -11,18 +12,21 @@ export enum LayoutGapEnum {
   PANEL = 'panel',
 }
 
-export enum LayoutPaddingEnum {
-  NONE = 'none',
-  SMALL = 'small',
+export enum BackgroundEnum {
+  MAIN = 'main',
+  SURFACE = 'surface',
+  DETACHED = 'detached',
 }
 
 export type LayoutGap = EnumOrStringLiteralTypes<LayoutGapEnum>;
-export type LayoutPadding = EnumOrStringLiteralTypes<LayoutPaddingEnum>;
+export type LayoutPadding = EnumOrStringLiteralTypes<Padding>;
 
 export type AreaPadding = EnumOrStringLiteralTypesInclude<
   Spacing,
   'none' | 'small'
 >;
+
+export type LayoutBackground = EnumOrStringLiteralTypes<BackgroundEnum>;
 
 export type GridAreaProps = {
   /**
@@ -48,6 +52,11 @@ export type GridLayoutProps = {
   children?:
     | React.ReactElement<GridAreaProps>
     | React.ReactElement<GridAreaProps>[];
+
+  /**
+   * Defines the background color of the grid container. Default is `main`.
+   */
+  background?: LayoutBackground;
 
   /**
    * Defines the gap between the grid columns. Default is `panel`.
@@ -81,7 +90,7 @@ export type GridLayoutProps = {
 };
 
 export type DefaultGridLayoutProps = Required<
-  Pick<GridLayoutProps, 'columnGap' | 'rowGap' | 'padding'>
+  Pick<GridLayoutProps, 'columnGap' | 'rowGap' | 'padding' | 'background'>
 >;
 
 export type DefaultGridAreaProps = Required<Pick<GridAreaProps, 'padding'>>;

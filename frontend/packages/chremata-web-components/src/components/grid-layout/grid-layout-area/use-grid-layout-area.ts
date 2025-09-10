@@ -24,7 +24,7 @@ export function useGridLayoutArea(props: GridAreaProps) {
 
   return {
     areaName,
-    padding,
     children,
+    padding,
   };
 }

@@ -12,6 +12,7 @@ GridLayout.Area = GridLayoutArea;
 export function GridLayout(props: GridLayoutProps) {
   const {
     children,
+    background,
     columnGap,
     rowGap,
     padding,
@@ -25,6 +26,7 @@ export function GridLayout(props: GridLayoutProps) {
   });
 
   const styles = styleMap({
+    '--grid-layout-background': background,
     '--grid-layout-column-gap': columnGap,
     '--grid-layout-row-gap': rowGap,
     '--grid-layout-template-areas': templateArea,
