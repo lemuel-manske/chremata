@@ -1,0 +1,40 @@
+{
+  "name": "@chremata-preset/prettier",
+  "version": "0.0.0",
+  "description": "Chremata prettier preset",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemuel-manske/chremata.git",
+    "directory": "presets/packages/chremata-preset-prettier"
+  },
+  "private": true,
+  "author": "lemuel-manske",
+  "type": "module",
+  "main": "./.prettierrc.json",
+  "exports": {
+    ".": "./.prettierrc.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    ".prettierrc.json"
+  ],
+  "scripts": {
+    "lint": "npm run lint:source:fix && npm run lint:format:fix",
+    "lint:source": "eslint .",
+    "lint:source:fix": "npm run lint:source -- --fix",
+    "lint:format": "prettier --check --ignore-path .gitignore .",
+    "lint:format:fix": "prettier --write --ignore-path .gitignore ."
+  },
+  "peerDependencies": {
+    "prettier": "^3.6.2"
+  },
+  "devDependencies": {
+    "@chremata-preset/prettier": "file:../chremata-preset-prettier",
+    "@chremata-preset/eslint": "file:../chremata-preset-eslint",
+    "eslint": "^9.35.0"
+  }
+}

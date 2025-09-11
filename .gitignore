@@ -1,1 +1,25 @@
 **/.vscode
+
+# node
+**/node_modules
+**/package-lock.json
+
+# playwright
+**/test-results
+**/playwright-report
+**/playwright/.cache
+
+# compile
+**/tsconfig.tsbuildinfo
+**/.rollup.cache
+**/dist/*
+
+# testing
+**/coverage
+
+# production
+**/build
+
+# storybook
+**/storybook-static
+**/storybook.log

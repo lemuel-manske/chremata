@@ -1,0 +1,43 @@
+{
+  "name": "@chremata-preset/swc",
+  "version": "0.0.0",
+  "description": "Chremata SWC configuration",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemuel-manske/chremata.git",
+    "directory": "presets/packages/chremata-preset-swc"
+  },
+  "private": true,
+  "author": "lemuel-manske",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "lint": "npm run lint:source:fix && npm run lint:format:fix",
+    "lint:source": "eslint .",
+    "lint:source:fix": "npm run lint:source -- --fix",
+    "lint:format": "prettier --check --ignore-path .gitignore .",
+    "lint:format:fix": "prettier --write --ignore-path .gitignore ."
+  },
+  "peerDependencies": {
+    "@swc/core": "^1.13.5"
+  },
+  "devDependencies": {
+    "@chremata-preset/prettier": "file:../chremata-preset-prettier",
+    "@chremata-preset/typescript": "file:../chremata-preset-prettier",
+    "@chremata-preset/eslint": "file:../chremata-preset-eslint",
+    "prettier": "^3.6.2",
+    "eslint": "^9.35.0"
+  }
+}
