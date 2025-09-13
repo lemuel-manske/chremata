@@ -1,3 +1,5 @@
 .ch-table-row--even {
-  background-color: var(--background-surface);
+  --color-row-even: #084b32;
+
+  background-color: var(--color-row-even);
 }

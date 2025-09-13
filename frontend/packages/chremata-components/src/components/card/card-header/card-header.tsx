@@ -9,8 +9,6 @@ import { type CardHeaderProps } from './card-header.types';
 import './index.css';
 
 export function CardHeader(props: CardHeaderProps) {
-  const { children } = props;
-
   const classes = classNames({
     'ch-card-header': true,
   });
@@ -30,8 +28,6 @@ export function CardHeader(props: CardHeaderProps) {
 
         {subtitle && <Label size="medium">{subtitle}</Label>}
       </section>
-
-      <section>{children}</section>
     </header>
   );
 }

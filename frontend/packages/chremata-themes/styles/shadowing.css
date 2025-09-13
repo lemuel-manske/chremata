@@ -1,7 +1,0 @@
-:root {
-  --shadow-elevation-low:
-    0 1px 4px var(--color-gray-10), 0 1px 6px var(--color-gray-25);
-
-  --shadow-elevation-medium:
-    0 2px 8px var(--color-gray-10), 0 2px 12px var(--color-gray-25);
-}

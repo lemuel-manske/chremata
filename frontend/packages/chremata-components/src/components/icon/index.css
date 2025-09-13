@@ -1,5 +1,7 @@
 .ch-icon {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ch-icon--disabled {

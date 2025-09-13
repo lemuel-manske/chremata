@@ -61,18 +61,16 @@
 /* Secondary */
 
 .ch-button--secondary {
-  --background-color: none;
+  --background-color-hover: #03311C;
 
   background-color: var(--background-color);
 }
 
 .ch-button--secondary:focus-visible {
-  outline: 4px solid var(--background-surface);
+  outline: 4px solid var(--background-color-hover);
   outline-offset: 2px;
 }
 
 .ch-button--secondary:hover {
-  --background-color-hover: var(--background-surface);
-
   background-color: var(--background-color-hover);
 }

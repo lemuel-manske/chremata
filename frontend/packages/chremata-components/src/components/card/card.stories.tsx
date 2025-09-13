@@ -1,8 +1,29 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { CardFixture } from './card.fixture';
+import { Label } from '../label/label';
+import { Card } from './card';
 
-import './index.css';
+type CardFixtureProps = {
+  title?: string;
+  subtitle?: string;
+  content?: string;
+};
+
+function CardFixture(props: CardFixtureProps) {
+  const { title, subtitle, content } = props;
+
+  return (
+    <Card
+      title={title ?? 'Title'}
+      subtitle={subtitle}>
+      <Card.Header />
+
+      <Card.Body>
+        <Label>{content ?? ''}</Label>
+      </Card.Body>
+    </Card>
+  );
+}
 
 export default {
   id: 'Card',
