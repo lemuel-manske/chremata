@@ -39,7 +39,8 @@ export default {
 
     label: 'Coin',
     name: 'CoinIconSvg',
-    primaryColor: 'black',
+    primaryColor: 'white',
+    primaryColorDisabled: 'gray',
   },
 } satisfies Meta<typeof Icon>;
 

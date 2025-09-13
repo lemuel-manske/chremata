@@ -16,32 +16,27 @@ export function Label(props: LabelProps) {
 
   const classes = classNames({
     'ch-label': true,
-    [`ch-label--${size}`]: true,
     [`ch-label--${variant}`]: true,
+    [`ch-label--${size}`]: true,
   });
 
   const wrapperClasses = classNames({
     'ch-label-wrapper': true,
+    [`ch-label-wrapper--${color}`]: true,
+    [`ch-label-wrapper--${color}-disabled`]: disabled,
   });
-
-  const styles = styleMap({
-    color,
-  });
-
+  
   const stateValue = { label, variant, size, state: { disabled } };
 
   return (
     <LabelContext.Provider value={stateValue}>
-      <span
-        className={wrapperClasses}
-        style={styles}
-        aria-disabled={disabled}>
+      <span className={wrapperClasses} aria-disabled={disabled}>
         {icon && icon}
 
         <label
-          id={id}
           aria-disabled={disabled}
-          className={classes}>
+          className={classes}
+          id={id}>
           {label}
         </label>
       </span>

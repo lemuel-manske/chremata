@@ -10,7 +10,7 @@ import type { LabelIconProps } from './label-icon/label-icon.types';
 
 export enum LabelColorEnum {
   REGULAR = 'regular',
-  ACCENT = 'light',
+  ACCENT = 'accent',
 }
 
 export type LabelColor = EnumOrStringLiteralTypes<LabelColorEnum>;
@@ -24,7 +24,7 @@ type LabelAttributes = {
   /**
    * The color of the Label. Default is 'regular'.
    */
-  color?: LabelColor | string;
+  color?: LabelColor;
 
   /**
    * Whether the Label is disabled. Default is false.

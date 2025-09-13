@@ -1,10 +1,17 @@
-import { type DefaultButtonProps, type ButtonProps } from './button.types';
+import { type LabelColor } from '../label/label.types';
+
+import { type DefaultButtonProps, type ButtonProps, type ButtonVariant } from './button.types';
 
 export const DEFAULT_BUTTON_PROPS: DefaultButtonProps = {
   size: 'medium',
   variant: 'primary',
   disabled: false,
 };
+
+const COLOR_MAP: Record<ButtonVariant, LabelColor> ={
+  primary: 'accent',
+  secondary: 'regular',
+}
 
 export function useButton(props: ButtonProps) {
   const {
@@ -21,12 +28,15 @@ export function useButton(props: ButtonProps) {
     throw new Error('[Button] requires a label.');
   }
 
+  const color = COLOR_MAP[variant];
+
   return {
     disabled,
     icon,
     label,
     size,
     variant,
+    color,
 
     onClick,
   };

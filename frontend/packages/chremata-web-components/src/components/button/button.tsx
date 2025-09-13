@@ -9,12 +9,12 @@ import { useButton } from './use-button';
 import './index.css';
 
 export function Button(props: ButtonProps) {
-  const { label, size, icon, disabled, variant, onClick } = useButton(props);
+  const { color, label, size, icon, disabled, variant, onClick } = useButton(props);
 
   const classes = classNames({
     'ch-button': true,
-    [`ch-button--${variant}`]: true,
     [`ch-button--${size}`]: true,
+    [`ch-button--${variant}`]: true,
   });
 
   return (
@@ -25,6 +25,7 @@ export function Button(props: ButtonProps) {
       onClick={disabled ? doNothing : onClick}>
       <Label
         size={size}
+        color={color}
         disabled={disabled}>
         {icon && <Label.Icon name={icon} />}
         {label}

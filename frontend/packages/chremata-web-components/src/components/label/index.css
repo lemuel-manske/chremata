@@ -14,6 +14,8 @@
   max-inline-size: fit-content;
 }
 
+/* Sizes */
+
 .ch-label--small {
   --font-size-small: 0.775rem;
 
@@ -50,16 +52,35 @@
   font-weight: var(--font-weight-emphasis);
 }
 
+/* Variants */
+
 .ch-label-wrapper {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-
-  color: white;
 }
 
-.ch-label-wrapper-disabled {
-  --font-disabled: #a1a1a1;
+.ch-label-wrapper--regular-disabled {
+  --font-color-regular-disabled: #b0b7ab;
 
-  color: var(--font-disabled);
+  color: var(--font-color-regular-disabled) !important;
+}
+
+.ch-label-wrapper--regular {
+  --font-color-regular: #eef9e5;
+
+  color: var(--font-color-regular);
+}
+
+
+.ch-label-wrapper--accent-disabled {
+  --font-color-accent-disabled: #151c12;
+
+  color: var(--font-color-accent-disabled) !important;
+}
+
+.ch-label-wrapper--accent {
+  --font-color-accent: #061400;
+
+  color: var(--font-color-accent);
 }
