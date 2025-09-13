@@ -11,7 +11,7 @@ const ICON_SIZE_MAP: Record<LabelSize, IconSize> = {
   large: 'large',
   xlarge: 'xlarge',
   xxlarge: 'xlarge',
-}
+};
 
 export function LabelIcon(props: LabelIconProps) {
   const { name } = props;

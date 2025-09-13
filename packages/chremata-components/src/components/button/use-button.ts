@@ -23,7 +23,7 @@ const LABEL_SIZE_MAP: Record<ButtonSize, LabelSize> = {
   medium: 'medium',
   large: 'large',
   fillAvailable: 'large',
-}
+};
 
 export function useButton(props: ButtonProps) {
   const {

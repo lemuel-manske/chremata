@@ -1,7 +1,7 @@
 .ch-grid-area {
   --grid-layout-area-padding-none: 0px;
   --grid-layout-area-padding-small: 8px;
-  
+
   grid-area: var(--grid-layout-area);
 
   padding: var(--grid-layout-area-padding);

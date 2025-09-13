@@ -3,7 +3,10 @@ import { Button } from '../../button/button';
 
 export function NavbarItem(props: NavbarItemProps) {
   return (
-    <Button variant="secondary" size="fillAvailable" {...props} />
+    <Button
+      variant="secondary"
+      size="fillAvailable"
+      {...props}
+    />
   );
 }
- 

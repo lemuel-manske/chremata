@@ -61,7 +61,7 @@
 /* Secondary */
 
 .ch-button--secondary {
-  --background-color-hover: #03311C;
+  --background-color-hover: #03311c;
 
   background-color: var(--background-color);
 }

@@ -1,6 +1,6 @@
-import  { type NavbarFooterProps } from "./navbar-footer.types";
+import { type NavbarFooterProps } from './navbar-footer.types';
 
-import "./index.css";
+import './index.css';
 
 export function NavbarFooter(props: NavbarFooterProps) {
   const { children } = props;

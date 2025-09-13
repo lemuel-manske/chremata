@@ -1,4 +1,4 @@
-import type { NavbarBodyProps } from "./navbar-body.types";
+import type { NavbarBodyProps } from './navbar-body.types';
 
 export function NavbarBody(props: NavbarBodyProps) {
   const { children } = props;

@@ -4,7 +4,7 @@ import { Navbar } from './navbar';
 
 type NavbarFixtureProps = {
   title: string;
-}
+};
 
 function NavbarFixture(props: NavbarFixtureProps) {
   const { title } = props;
@@ -12,7 +12,7 @@ function NavbarFixture(props: NavbarFixtureProps) {
   return (
     <Navbar>
       <Navbar.Header title={title} />
-      
+
       <Navbar.Body>
         <Navbar.Item label="Home" />
       </Navbar.Body>
@@ -27,7 +27,7 @@ function NavbarFixture(props: NavbarFixtureProps) {
 export default {
   id: 'Navbar',
   title: 'Navbar',
-  
+
   component: Navbar,
 
   argTypes: {

@@ -1,13 +1,13 @@
-import { classNames } from "@chremata/utils";
+import { classNames } from '@chremata/utils';
 
-import { NavbarHeader } from "./navbar-header/navbar-header";
-import { NavbarItem } from "./navbar-item/navbar-item";
-import { NavbarBody } from "./navbar-body/navbar-body";
-import { NavbarFooter } from "./navbar-footer/navbar-footer";
+import { NavbarHeader } from './navbar-header/navbar-header';
+import { NavbarItem } from './navbar-item/navbar-item';
+import { NavbarBody } from './navbar-body/navbar-body';
+import { NavbarFooter } from './navbar-footer/navbar-footer';
 
-import { type NavbarProps } from "./navbar.types";
+import { type NavbarProps } from './navbar.types';
 
-import "./index.css";
+import './index.css';
 
 Navbar.Header = NavbarHeader;
 Navbar.Body = NavbarBody;

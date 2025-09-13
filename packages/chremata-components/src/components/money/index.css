@@ -5,7 +5,7 @@
 }
 
 .ch-money--negative .ch-label {
-  --money-red: #FF7B2E;
+  --money-red: #ff7b2e;
 
   color: var(--money-red);
 }

@@ -1,2 +1,1 @@
-export type CardHeaderProps = {
-};
+export type CardHeaderProps = {};
