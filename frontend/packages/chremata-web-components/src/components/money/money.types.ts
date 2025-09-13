@@ -1,14 +1,18 @@
 import {
-  Currency,
-  Locale,
+  type Currency,
+  type Locale,
   type EnumOrStringLiteralTypes,
 } from '@chremata/utils';
+
+import type { LabelProps } from '../label/label.types';
 
 export type MoneyCurrency = EnumOrStringLiteralTypes<Currency>;
 
 export type MoneyLocale = EnumOrStringLiteralTypes<Locale>;
 
-export type MoneyProps = {
+type MoneyLabelAttributes = Pick<LabelProps, 'size' | 'variant'>;
+
+type MoneyAttributes = {
   /**
    * The monetary amount to be displayed.
    */
@@ -25,6 +29,8 @@ export type MoneyProps = {
   locale?: MoneyLocale;
 };
 
+export type MoneyProps = MoneyLabelAttributes & MoneyAttributes;
+
 export type DefaultMoneyProps = Required<
-  Pick<MoneyProps, 'currency' | 'locale'>
+  Pick<MoneyProps, 'currency' | 'locale' | 'size' | 'variant'>
 >;

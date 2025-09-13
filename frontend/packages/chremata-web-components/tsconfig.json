@@ -1,5 +1,5 @@
 {
-  "extends": "@chremata-preset/typescript",
+  "extends": "@chremata-preset/typescript/web",
   "compilerOptions": {
     "outDir": "./dist",
     "jsx": "react-jsx",

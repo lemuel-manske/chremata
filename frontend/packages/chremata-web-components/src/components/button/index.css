@@ -10,61 +10,11 @@
   height: fit-content;
   width: max-content;
 
-  border-radius: var(--radius-silent);
   border: none;
+  border-radius: var(--radius-silent);
 }
 
-.ch-button:disabled {
-  cursor: not-allowed;
-}
-
-
-.ch-button--primary {
-  color: white;
-  background: var(--color-blue-50);
-}
-
-.ch-button--primary:hover {
-  background: var(--color-blue-55);
-}
-
-.ch-button--primary:focus-visible {
-  outline: 4px solid var(--color-blue-35);
-  outline-offset: 1px;
-}
-
-.ch-button--primary:active {
-  background: var(--color-blue-60);
-}
-
-.ch-button--primary:disabled {
-  color: var(--color-gray-10);
-  background: var(--color-blue-55);
-}
-
-
-.ch-button--secondary {
-  color: var(--color-blue-50);
-  background: none;
-}
-
-.ch-button--secondary:hover {
-  color: var(--color-blue-60);
-}
-
-.ch-button--secondary:focus-visible {
-  outline: 4px solid var(--color-blue-20);
-  outline-offset: 1px;
-}
-
-.ch-button--secondary:active {
-  color: var(--color-blue-70);
-}
-
-.ch-button--secondary:disabled {
-  color: var(--color-gray-25);
-}
-
+/* Sizes */
 
 .ch-button--small {
   padding: 8px 12px;
@@ -72,4 +22,82 @@
 
 .ch-button--medium {
   padding: 12px 16px;
+}
+
+/* Primary */
+
+.ch-button--primary {
+  --color: #061400;
+  --color-disabled: #141812;
+
+  --background-color: #e3fff5;
+  --background-color-hover: #ffffff;
+  --background-color-disabled: #e3fff59a;
+
+  background-color: var(--background-color);
+}
+
+.ch-button--primary:focus-visible {
+  outline: 10px solid var(--background-color);
+  outline-offset: 2px;
+}
+
+.ch-button--primary .ch-label {
+  color: var(--color);
+}
+
+.ch-button--primary .ch-icon {
+  color: var(--color);
+}
+
+.ch-button--primary:hover {
+  background-color: var(--background-color-hover);
+}
+
+.ch-button--primary:disabled {
+  background-color: var(--background-color-disabled);
+}
+
+.ch-button--primary:disabled .ch-label {
+  color: var(--color-disabled);
+}
+
+.ch-button--primary:disabled .ch-icon {
+  color: var(--color-disabled);
+}
+
+/* Secondary */
+
+.ch-button--secondary {
+  --color: #ffffff;
+  --color-disabled: #b8b8b8;
+
+  --background-color: none;
+  --background-hover: var(--background-surface);
+
+  background-color: var(--background-color);
+}
+
+.ch-button--secondary .ch-label {
+  color: var(--color);
+}
+
+.ch-button--secondary .ch-icon {
+  color: var(--color);
+}
+
+.ch-button--secondary:hover {
+  background-color: var(--background-hover);
+}
+
+.ch-button--secondary:disabled {
+  background-color: var(--background-color-disabled);
+}
+
+.ch-button--secondary:disabled .ch-label {
+  color: var(--color-disabled);
+}
+
+.ch-button--secondary:disabled .ch-icon {
+  color: var(--color-disabled);
 }

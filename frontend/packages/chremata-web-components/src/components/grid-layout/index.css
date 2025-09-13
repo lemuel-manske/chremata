@@ -1,20 +1,18 @@
-:root {
+.ch-grid {
   --grid-layout-gap-none: 0px;
   --grid-layout-gap-panel: 16px;
 
   --grid-layout-padding-none: 0px;
   --grid-layout-padding-small: 8px;
-  
+
   --background-main: #fefefe;
   --background-surface: #cad2c5;
   --background-detached: #84a98c;
-}
 
-.ch-grid {
   display: grid;
-  
+
   background-color: var(--grid-layout-background);
-  
+
   box-sizing: border-box;
 
   block-size: 100%;

@@ -1,24 +1,9 @@
-:root {
+.ch-label {
   --font-family: 'CentraleSans', sans-serif;
 
-  --font-color-regular: #2f3e46;
-  --font-color-light: #ffffff;
-  --font-color-disabled: #777777;
-
-  --font-size-small: .775rem;
-  --font-size-medium: .850rem;
-  --font-size-large: 1rem;
-  --font-size-xlarge: 1.125rem;
-
-  --font-weight-regular: 500;
-  --font-weight-emphasis: 700;
-}
-
-.ch-label {
   font-family: var(--font-family);
 
-  cursor: default;
-  user-select: none;
+  cursor: inherit;
 
   overflow: hidden;
 
@@ -29,41 +14,52 @@
   max-inline-size: fit-content;
 }
 
-
 .ch-label--small {
+  --font-size-small: 0.775rem;
+
   font-size: var(--font-size-small);
 }
 
 .ch-label--medium {
+  --font-size-medium: 0.85rem;
+
   font-size: var(--font-size-medium);
 }
 
 .ch-label--large {
+  --font-size-large: 1rem;
+
   font-size: var(--font-size-large);
 }
 
 .ch-label--xlarge {
+  --font-size-xlarge: 1.125rem;
+
   font-size: var(--font-size-xlarge);
 }
 
-
 .ch-label--regular {
+  --font-weight-regular: 500;
+
   font-weight: var(--font-weight-regular);
 }
 
 .ch-label--emphasis {
+  --font-weight-emphasis: 700;
+
   font-weight: var(--font-weight-emphasis);
 }
 
-
-.ch-label--wrapper {
+.ch-label-wrapper {
   display: inline-flex;
   align-items: center;
   gap: 8px;
 
-  color: var(--font-color-regular)
+  color: white;
 }
 
-.ch-label--wrapper-disabled {
-  color: var(--font-color-disabled);
+.ch-label-wrapper-disabled {
+  --font-disabled: #a1a1a1;
+
+  color: var(--font-disabled);
 }

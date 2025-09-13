@@ -23,17 +23,25 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "npm run clean && npm run build:types && npm run build:js",
+    "lint": "npm run lint:source:fix && npm run lint:format:fix",
+    "lint:source": "eslint .",
+    "lint:source:fix": "npm run lint:source -- --fix",
+    "lint:format": "prettier --check --ignore-path .gitignore .",
+    "lint:format:fix": "prettier --write --ignore-path .gitignore .",
+    "build": "npm run build:types && npm run build:js",
     "build:types": "tsc",
-    "build:js": "rollup -c",
-    "clean": "rm -rf ./dist && rm -f tsconfig.tsbuildinfo"
-  },
-  "devDependencies": {
-    "@chremata-preset/prettier": "file:../chremata-preset/packages/prettier",
-    "@chremata-preset/rollup": "file:../chremata-preset/packages/rollup",
-    "@chremata-preset/typescript": "file:../chremata-preset/packages/typescript"
+    "build:js": "rollup -c"
   },
   "peerDependencies": {
     "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@chremata-preset/prettier": "file:../../../presets/packages/chremata-preset-prettier",
+    "@chremata-preset/rollup": "file:../../../presets/packages/chremata-preset-rollup",
+    "@chremata-preset/typescript": "file:../../../presets/packages/chremata-preset-typescript",
+    "@chremata-preset/eslint": "file:../../../presets/packages/chremata-preset-eslint",
+    "eslint": "^9.35.0",
+    "typescript": "^5.9.2",
+    "prettier": "^3.6.2"
   }
 }

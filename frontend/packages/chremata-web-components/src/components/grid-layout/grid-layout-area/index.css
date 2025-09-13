@@ -7,7 +7,7 @@
   grid-area: var(--grid-layout-area);
 
   padding: var(--grid-layout-area-padding);
-  
+
   box-shadow: none;
 }
 

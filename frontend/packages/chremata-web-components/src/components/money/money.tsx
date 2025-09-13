@@ -8,7 +8,7 @@ import { useMoney } from './use-money';
 import './index.css';
 
 export function Money(props: MoneyProps) {
-  const { amount, formattedAmount } = useMoney(props);
+  const { amount, formattedAmount, size, variant } = useMoney(props);
 
   const classes = classNames({
     'ch-money': true,
@@ -18,7 +18,11 @@ export function Money(props: MoneyProps) {
 
   return (
     <span className={classes}>
-      <Label>{formattedAmount}</Label>
+      <Label
+        size={size}
+        variant={variant}>
+        {formattedAmount}
+      </Label>
     </span>
   );
 }

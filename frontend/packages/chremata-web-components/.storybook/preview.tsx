@@ -15,7 +15,7 @@ const Root = ({ children }: RootProps) => {
 };
 
 const preview: Preview = {
-  decorators: [(Story) => <Root>{Story()}</Root>],
+  decorators: [Story => <Root>{Story()}</Root>],
 };
 
 export default preview;

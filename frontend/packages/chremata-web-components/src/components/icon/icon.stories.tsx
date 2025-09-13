@@ -3,18 +3,18 @@ import { type Meta, type StoryObj } from '@storybook/react';
 import { Size } from '@chremata/utils';
 
 import { DEFAULT_ICON_PROPS } from './use-icon';
-
-import { type SolidIconProps, SolidIcon } from './icon.fixture';
+import { Icon } from './icon';
+import type { IconProps } from './icon.types';
 
 export default {
   id: 'Icon',
   title: 'Icon',
 
-  component: SolidIcon,
+  component: Icon,
 
   argTypes: {
     name: {
-      control: 'text',
+      control: 'select',
     },
     label: {
       control: 'text',
@@ -29,6 +29,9 @@ export default {
     primaryColor: {
       control: 'color',
     },
+    primaryColorDisabled: {
+      control: 'color',
+    },
   },
 
   args: {
@@ -38,8 +41,8 @@ export default {
     name: 'CoinIconSvg',
     primaryColor: 'black',
   },
-} satisfies Meta<typeof SolidIcon>;
+} satisfies Meta<typeof Icon>;
 
-export const Default: StoryObj<SolidIconProps> = {
-  render: (args: SolidIconProps) => <SolidIcon {...args} />,
+export const Default: StoryObj<IconProps> = {
+  render: (args: IconProps) => <Icon {...args} />,
 };

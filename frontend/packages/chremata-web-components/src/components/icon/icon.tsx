@@ -20,12 +20,8 @@ export function Icon(props: IconProps) {
 
   const classes = classNames({
     'ch-icon': true,
-    'ch-icon--disabled': !!disabled,
-    'ch-icon--small': size === 'small',
-    'ch-icon--medium': size === 'medium',
-    'ch-icon--large': size === 'large',
-    'ch-icon--xlarge': size === 'xlarge',
-    'ch-icon--xxlarge': size === 'xxlarge',
+    'ch-icon--disabled': disabled,
+    [`ch-icon--${size}`]: true,
   });
 
   const role = 'img';

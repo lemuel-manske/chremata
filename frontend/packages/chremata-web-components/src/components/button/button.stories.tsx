@@ -1,16 +1,18 @@
 import { type Meta, type StoryObj } from '@storybook/react';
+
 import { fn } from '@storybook/test';
 
-import { DEFAULT_BUTTON_PROPS } from './use-button';
-import { ButtonWithIcon, type ButtonWithIconProps } from './button.fixture';
 import { Size } from '@chremata/utils';
-import { ButtonVariantEnum } from './button.types';
+
+import { DEFAULT_BUTTON_PROPS } from './use-button';
+import { ButtonVariantEnum, type ButtonProps } from './button.types';
+import { Button } from './button';
 
 export default {
   id: 'Button',
   title: 'Button',
 
-  component: ButtonWithIcon,
+  component: Button,
 
   argTypes: {
     label: {
@@ -30,6 +32,9 @@ export default {
       control: 'select',
       options: [ButtonVariantEnum.PRIMARY, ButtonVariantEnum.SECONDARY],
     },
+    icon: {
+      control: 'select',
+    },
   },
 
   args: {
@@ -38,10 +43,10 @@ export default {
     onClick: fn(),
 
     label: 'Button',
-    iconHidden: false,
+    icon: 'CoinIconSvg',
   },
-} satisfies Meta<typeof ButtonWithIcon>;
+} satisfies Meta<typeof Button>;
 
-export const Default: StoryObj<ButtonWithIconProps> = {
-  render: (args: ButtonWithIconProps) => <ButtonWithIcon {...args} />,
+export const Default: StoryObj<ButtonProps> = {
+  render: (args: ButtonProps) => <Button {...args} />,
 };

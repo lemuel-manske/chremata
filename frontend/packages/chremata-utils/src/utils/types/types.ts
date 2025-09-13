@@ -45,7 +45,7 @@ export type EnumOrStringLiteralTypes<T> = `${T & string}` | T;
  */
 export type EnumOrStringLiteralTypesInclude<
   T,
-  IncludeValues extends `${T & string}` | T
+  IncludeValues extends `${T & string}` | T,
 > = T extends string
   ? T extends IncludeValues
     ? `${T & string}` | T
@@ -69,3 +69,14 @@ export type EnumOrStringLiteralTypesInclude<
 export type Optionals<T> = {
   [K in keyof T]: undefined extends T[K] ? K : never;
 }[keyof T];
+
+/**
+ * Represents a user event callback function.
+ *
+ * @example
+ *
+ * function handleClick(): UserEvent {
+ *   console.log('Button clicked!');
+ * }
+ */
+export type UserEvent = () => void;

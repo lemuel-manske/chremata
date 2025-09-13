@@ -1,13 +1,11 @@
-.ch-money {
-  font-family: var(--font-family);
-  font-size: var(--font-size-regular);
-  font-weight: var(--font-weight-regular);
+.ch-money--positive .ch-label {
+  --money-green: #30ddc9;
+
+  color: var(--money-green);
 }
 
-.ch-money--positive {
-  color: var(--color-signal-green);
-}
+.ch-money--negative .ch-label {
+  --money-red: #fd4a1d;
 
-.ch-money--negative {
-  color: var(--color-signal-red);
+  color: var(--money-red);
 }

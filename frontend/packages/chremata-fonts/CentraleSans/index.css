@@ -3,7 +3,8 @@
   font-weight: 300;
   font-style: normal;
   font-display: swap;
-  src: local('Centrale Sans Light'),
+  src:
+    local('Centrale Sans Light'),
     url('./woff2/CentraleSans-Light.woff2') format('woff2'),
     url('./woff/CentraleSans-Light.woff') format('woff');
 }
@@ -13,7 +14,8 @@
   font-weight: 300;
   font-style: italic;
   font-display: swap;
-  src: local('Centrale Sans Light Italic'),
+  src:
+    local('Centrale Sans Light Italic'),
     url('./woff2/CentraleSans-LightItalic.woff2') format('woff2'),
     url('./woff/CentraleSans-LightItalic.woff') format('woff');
 }
@@ -23,7 +25,8 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: local('Centrale Sans Book'),
+  src:
+    local('Centrale Sans Book'),
     url('./woff2/CentraleSans-Book.woff2') format('woff2'),
     url('./woff/CentraleSans-Book.woff') format('woff');
 }
@@ -33,7 +36,8 @@
   font-weight: 400;
   font-style: italic;
   font-display: swap;
-  src: local('Centrale Sans Book Italic'),
+  src:
+    local('Centrale Sans Book Italic'),
     url('./woff2/CentraleSans-BookItalic.woff2') format('woff2'),
     url('./woff/CentraleSans-BookItalic.woff') format('woff');
 }
@@ -43,7 +47,8 @@
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: local('Centrale Sans Medium'),
+  src:
+    local('Centrale Sans Medium'),
     url('./woff2/CentraleSans-Medium.woff2') format('woff2'),
     url('./woff/CentraleSans-Medium.woff') format('woff');
 }
@@ -53,7 +58,8 @@
   font-weight: 500;
   font-style: italic;
   font-display: swap;
-  src: local('Centrale Sans Medium Italic'),
+  src:
+    local('Centrale Sans Medium Italic'),
     url('./woff2/CentraleSans-MediumItalic.woff2') format('woff2'),
     url('./woff/CentraleSans-MediumItalic.woff') format('woff');
 }
@@ -63,7 +69,8 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: local('Centrale Sans Bold'),
+  src:
+    local('Centrale Sans Bold'),
     url('./woff2/CentraleSans-Bold.woff2') format('woff2'),
     url('./woff/CentraleSans-Bold.woff') format('woff');
 }
@@ -73,7 +80,8 @@
   font-weight: 700;
   font-style: italic;
   font-display: swap;
-  src: local('Centrale Sans Bold Italic'),
+  src:
+    local('Centrale Sans Bold Italic'),
     url('./woff2/CentraleSans-BoldItalic.woff2') format('woff2'),
     url('./woff/CentraleSans-BoldItalic.woff') format('woff');
 }

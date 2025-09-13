@@ -2,16 +2,29 @@ import * as React from 'react';
 
 import {
   type Size,
+  type EnumOrStringLiteralTypes,
   type EnumOrStringLiteralTypesInclude,
 } from '@chremata/utils';
 
 import type { LabelIconProps } from './label-icon/label-icon.types';
+
+export enum LabelColorEnum {
+  REGULAR = 'regular',
+  ACCENT = 'light',
+}
+
+export type LabelColor = EnumOrStringLiteralTypes<LabelColorEnum>;
 
 type LabelAttributes = {
   /**
    * The id of the Label. None by default.
    */
   id?: string;
+
+  /**
+   * The color of the Label. Default is 'regular'.
+   */
+  color?: LabelColor | string;
 
   /**
    * Whether the Label is disabled. Default is false.
@@ -48,5 +61,5 @@ export type LabelSize = EnumOrStringLiteralTypesInclude<
 export type LabelProps = LabelAttributes;
 
 export type DefaultLabelProps = Required<
-  Pick<LabelProps, 'disabled' | 'size' | 'variant'>
+  Pick<LabelProps, 'disabled' | 'size' | 'variant' | 'color'>
 >;

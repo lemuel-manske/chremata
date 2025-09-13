@@ -1,9 +1,9 @@
 {
-  "extends": "@chremata-preset/typescript",
+  "extends": "@chremata-preset/typescript/node",
   "compilerOptions": {
     "outDir": "./dist",
     "jsx": "react-jsx",
     "rootDir": "./src"
   },
-  "include": ["./src"],
+  "include": ["./src"]
 }

@@ -26,7 +26,7 @@ function findChild<T>(
   type: React.ElementType<T>
 ): React.ReactElement<T> | undefined {
   return React.Children.toArray(children).find(
-    (child) => React.isValidElement(child) && child.type === type
+    child => React.isValidElement(child) && child.type === type
   ) as React.ReactElement<T> | undefined;
 }
 

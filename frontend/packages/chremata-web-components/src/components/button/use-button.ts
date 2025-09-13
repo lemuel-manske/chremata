@@ -1,9 +1,4 @@
-import { findChild } from '@chremata/utils';
-
-import { Icon } from '../icon/icon';
-
 import { type DefaultButtonProps, type ButtonProps } from './button.types';
-import type { ButtonContextValue } from './button.context';
 
 export const DEFAULT_BUTTON_PROPS: DefaultButtonProps = {
   size: 'medium',
@@ -13,11 +8,12 @@ export const DEFAULT_BUTTON_PROPS: DefaultButtonProps = {
 
 export function useButton(props: ButtonProps) {
   const {
-    label,
-    children,
-    variant = DEFAULT_BUTTON_PROPS.variant,
     disabled = DEFAULT_BUTTON_PROPS.disabled,
+    icon,
+    label,
+    variant = DEFAULT_BUTTON_PROPS.variant,
     size = DEFAULT_BUTTON_PROPS.size,
+
     onClick,
   } = props;
 
@@ -25,22 +21,13 @@ export function useButton(props: ButtonProps) {
     throw new Error('[Button] requires a label.');
   }
 
-  const childrenArray = [children].flat();
-
-  const icon = findChild(childrenArray, Icon);
-
-  const contextValue: ButtonContextValue = {
-    size,
-    state: { disabled },
-  };
-
   return {
-    variant,
-    size,
-    label,
-    icon,
-    contextValue,
     disabled,
+    icon,
+    label,
+    size,
+    variant,
+
     onClick,
   };
 }

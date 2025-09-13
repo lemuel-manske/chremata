@@ -1,7 +1,5 @@
 import { test, expect } from '@chremata-preset/playwright/test';
 
-import { Icon } from '../icon/icon';
-
 import { Button } from './button';
 
 test(
@@ -36,13 +34,9 @@ test('should render a secondary variation button with an Icon', async ({
   await mount(
     <Button
       label="Click me"
-      variant="secondary">
-      <Icon
-        name="CoinIconSvg"
-        label="Coin"
-        primaryColor="currentColor"
-      />
-    </Button>
+      variant="secondary"
+      icon="CoinIconSvg"
+    />
   );
 
   const button = page.getByRole('button', { name: 'Click me' });
@@ -55,13 +49,10 @@ test(
   { tag: ['@ch-button'] },
   async ({ mount, page }) => {
     await mount(
-      <Button label="Click me">
-        <Icon
-          name="CoinIconSvg"
-          label="Coin"
-          primaryColor="currentColor"
-        />
-      </Button>
+      <Button
+        label="Click me"
+        icon="CoinIconSvg"
+      />
     );
 
     const button = page.getByRole('button', { name: 'Click me' });

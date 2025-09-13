@@ -17,7 +17,7 @@ export type CardProps = {
    */
   children: [
     React.ReactElement<CardHeaderProps>,
-    React.ReactElement<CardBodyProps>
+    React.ReactElement<CardBodyProps>,
   ];
 };
 

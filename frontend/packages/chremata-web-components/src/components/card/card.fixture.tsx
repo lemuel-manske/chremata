@@ -20,7 +20,7 @@ export function CardFixture(props: CardFixtureProps) {
           size="xlarge"
           name="CoinIconSvg"
           label="Coin"
-          primaryColor="var(--gs-40)"
+          primaryColor="var(--color-gray-40)"
         />
       </Card.Header>
 

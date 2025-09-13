@@ -1,16 +1,16 @@
 import { type Meta, type StoryObj } from '@storybook/react';
 
-import { Currency, Locale } from '@chremata/utils';
+import { Size, Variant, Currency, Locale } from '@chremata/utils';
 
 import { DEFAULT_MONEY_PROPS } from './use-money';
-import { ZeroAmountMoney } from './money.fixture';
 import { type MoneyProps } from './money.types';
+import { Money } from './money';
 
 export default {
   id: 'Money',
   title: 'Money',
 
-  component: ZeroAmountMoney,
+  component: Money,
 
   argTypes: {
     amount: {
@@ -24,13 +24,23 @@ export default {
       control: 'select',
       options: [Locale.BRAZIL, Locale.USA],
     },
+    size: {
+      control: 'select',
+      options: [Size.SMALL, Size.MEDIUM, Size.LARGE, Size.XLARGE],
+    },
+    variant: {
+      control: 'select',
+      options: [Variant.EMPHASIS, Variant.REGULAR],
+    },
   },
 
   args: {
     ...DEFAULT_MONEY_PROPS,
+
+    amount: 0,
   },
-} satisfies Meta<typeof ZeroAmountMoney>;
+} satisfies Meta<typeof Money>;
 
 export const Default: StoryObj<MoneyProps> = {
-  render: (args: MoneyProps) => <ZeroAmountMoney {...args} />,
+  render: (args: MoneyProps) => <Money {...args} />,
 };

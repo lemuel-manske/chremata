@@ -1,16 +1,17 @@
 import {
   type Size,
+  type UserEvent,
   type EnumOrStringLiteralTypes,
   type EnumOrStringLiteralTypesInclude,
 } from '@chremata/utils';
 
-import { type ButtonIconProps } from './button-icon/button-icon.types';
+import type { IconSolidNames } from '../icon/icon.types';
 
 type ButtonEvents = {
   /**
    * Callback fired when the button is clicked.
    */
-  onClick?: () => void;
+  onClick?: UserEvent;
 };
 
 export enum ButtonVariantEnum {
@@ -47,9 +48,9 @@ type ButtonAttributes = {
   variant?: ButtonVariant;
 
   /**
-   * The icon of the Button. None by default.
+   * The icon to be displayed in the Button. Defaults to `undefined`.
    */
-  children?: React.ReactElement<ButtonIconProps> | null;
+  icon?: IconSolidNames;
 };
 
 export type ButtonProps = ButtonAttributes & ButtonEvents;

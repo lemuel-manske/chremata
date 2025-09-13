@@ -16,11 +16,14 @@
 export function styleMap(styles: {
   [key: string]: string | number | undefined;
 }) {
-  return Object.entries(styles).reduce((acc, [key, value]) => {
-    if (value !== undefined) {
-      acc[key] = value;
-    }
+  return Object.entries(styles).reduce(
+    (acc, [key, value]) => {
+      if (value !== undefined) {
+        acc[key] = value;
+      }
 
-    return acc;
-  }, {} as { [key: string]: string | number });
+      return acc;
+    },
+    {} as { [key: string]: string | number }
+  );
 }
