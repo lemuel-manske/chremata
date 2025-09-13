@@ -1,9 +1,10 @@
-import { type LabelColor } from '../label/label.types';
+import { type LabelColor, type LabelSize } from '../label/label.types';
 
 import {
   type DefaultButtonProps,
   type ButtonProps,
   type ButtonVariant,
+  type ButtonSize,
 } from './button.types';
 
 export const DEFAULT_BUTTON_PROPS: DefaultButtonProps = {
@@ -16,6 +17,13 @@ const COLOR_MAP: Record<ButtonVariant, LabelColor> = {
   primary: 'accent',
   secondary: 'regular',
 };
+
+const LABEL_SIZE_MAP: Record<ButtonSize, LabelSize> = {
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+  fillAvailable: 'large',
+}
 
 export function useButton(props: ButtonProps) {
   const {
@@ -33,11 +41,13 @@ export function useButton(props: ButtonProps) {
   }
 
   const color = COLOR_MAP[variant];
+  const labelSize = LABEL_SIZE_MAP[size];
 
   return {
     disabled,
     icon,
     label,
+    labelSize,
     size,
     variant,
     color,

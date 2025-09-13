@@ -23,8 +23,7 @@ export type ButtonVariant = EnumOrStringLiteralTypes<ButtonVariantEnum>;
 
 export type ButtonSize = EnumOrStringLiteralTypesInclude<
   Size,
-  'small' | 'medium'
->;
+  'small' | 'medium' | 'large' | 'fillAvailable'>;
 
 type ButtonAttributes = {
   /**

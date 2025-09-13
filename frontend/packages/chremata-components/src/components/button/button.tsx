@@ -9,7 +9,7 @@ import { useButton } from './use-button';
 import './index.css';
 
 export function Button(props: ButtonProps) {
-  const { color, label, size, icon, disabled, variant, onClick } =
+  const { color, label, labelSize, size, icon, disabled, variant, onClick } =
     useButton(props);
 
   const classes = classNames({
@@ -25,7 +25,7 @@ export function Button(props: ButtonProps) {
       disabled={disabled}
       onClick={disabled ? doNothing : onClick}>
       <Label
-        size={size}
+        size={labelSize}
         color={color}
         disabled={disabled}>
         {icon && <Label.Icon name={icon} />}

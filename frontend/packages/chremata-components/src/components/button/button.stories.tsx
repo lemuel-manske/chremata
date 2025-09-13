@@ -20,7 +20,7 @@ export default {
     },
     size: {
       control: 'select',
-      options: [Size.SMALL, Size.MEDIUM],
+      options: [Size.SMALL, Size.MEDIUM, Size.LARGE],
     },
     disabled: {
       control: 'boolean',

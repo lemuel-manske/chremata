@@ -11,7 +11,6 @@
   width: max-content;
 
   border: none;
-  border-radius: var(--radius-silent);
 }
 
 /* Sizes */
@@ -22,6 +21,16 @@
 
 .ch-button--medium {
   padding: 12px 16px;
+}
+
+.ch-button--large {
+  padding: 16px 20px;
+}
+
+.ch-button--fillAvailable {
+  padding: 12px 16px;
+
+  width: -webkit-fill-available;
 }
 
 /* Primary */

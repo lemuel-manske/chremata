@@ -1,0 +1,11 @@
+.ch-navbar {
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 0px 32px rgba(0, 0, 0, 0.12);
+
+  background-color: var(--background-dark);
+
+  min-width: 250px;
+  height: 100%;
+}

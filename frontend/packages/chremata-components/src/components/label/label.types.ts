@@ -55,7 +55,7 @@ export type LabelVariant = 'regular' | 'emphasis';
 
 export type LabelSize = EnumOrStringLiteralTypesInclude<
   Size,
-  'small' | 'medium' | 'large' | 'xlarge'
+  'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge'
 >;
 
 export type LabelProps = LabelAttributes;
