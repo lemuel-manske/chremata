@@ -1,0 +1,46 @@
+{
+  "name": "@chremata-preset/typescript",
+  "version": "0.0.0",
+  "description": "Chremata typescript preset",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemuel-manske/chremata.git",
+    "directory": "frontend/chremata-presets/packages/chremata-preset-typescript"
+  },
+  "private": true,
+  "author": "lemuel-manske",
+  "type": "module",
+  "main": "./tsconfig.json",
+  "exports": {
+    ".": "./tsconfig.json",
+    "./node": "./tsconfig.node.json",
+    "./web": "./tsconfig.web.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "tsconfig.json",
+    "tsconfig.node.json",
+    "tsconfig.web.json"
+  ],
+  "scripts": {
+    "lint": "npm run lint:source:fix && npm run lint:format:fix",
+    "lint:source": "eslint .",
+    "lint:source:fix": "npm run lint:source -- --fix",
+    "lint:format": "prettier --check --ignore-path .gitignore .",
+    "lint:format:fix": "prettier --write --ignore-path .gitignore ."
+  },
+  "peerDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "@chremata-preset/prettier": "file:../chremata-preset-prettier",
+    "@chremata-preset/eslint": "file:../chremata-preset-eslint",
+    "prettier": "^3.6.2",
+    "eslint": "^9.35.0"
+  }
+}

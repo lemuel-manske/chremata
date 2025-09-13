@@ -1,0 +1,33 @@
+{
+  "name": "@chremata/app",
+  "description": "A full-fledged finance Web App",
+  "version": "0.0.0",
+  "private": true,
+  "author": "lemuel-manske",
+  "license": "MIT",
+  "keywords": [
+    "web"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "github:lemuel-manske/chremata"
+  },
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "dev": "npm run dev --workspace=@chremata/web-components",
+    "test": "npm run test --workspaces --if-present",
+    "test:e2e": "npm run test:e2e --workspaces --if-present",
+    "lint": "npm run lint --workspaces",
+    "clear": "npm run clear:ts && npm run clear:dist && npm run clear:lock && npm run clear:node_modules",
+    "clear:ts": "find . -name '*.tsbuildinfo' | xargs -exec rm -f",
+    "clear:dist": "find . -name dist | xargs -exec rm -rf",
+    "clear:lock": "find . -name package-lock.json | xargs -exec rm -f",
+    "clear:node_modules": "find . -name node_modules | xargs -exec rm -rf"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=24 <25"
+  }
+}

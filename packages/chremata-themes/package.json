@@ -1,0 +1,44 @@
+{
+  "name": "@chremata/themes",
+  "version": "0.0.0",
+  "description": "Chremata themes",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemuel-manske/chremata.git",
+    "directory": "packages/chremata-themes"
+  },
+  "private": true,
+  "author": "lemuel-manske",
+  "type": "module",
+  "main": "./index.css",
+  "exports": {
+    ".": "./index.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.css"
+  ],
+  "scripts": {
+    "lint": "npm run lint:source:fix && npm run lint:format:fix",
+    "lint:source": "eslint .",
+    "lint:source:fix": "npm run lint:source -- --fix",
+    "lint:format": "prettier --check --ignore-path .gitignore .",
+    "lint:format:fix": "prettier --write --ignore-path .gitignore ."
+  },
+  "peerDependencies": {
+    "@chremata/fonts": "file:../chremata-fonts"
+  },
+  "devDependencies": {
+    "@chremata-preset/prettier": "file:../chremata-presets/packages/chremata-preset-prettier",
+    "@chremata-preset/rollup": "file:../chremata-presets/packages/chremata-preset-rollup",
+    "@chremata-preset/typescript": "file:../chremata-presets/packages/chremata-preset-typescript",
+    "@chremata-preset/eslint": "file:../chremata-presets/packages/chremata-preset-eslint",
+    "eslint": "^9.35.0",
+    "typescript": "^5.9.2",
+    "prettier": "^3.6.2"
+  }
+}

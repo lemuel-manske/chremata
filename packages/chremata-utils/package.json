@@ -1,0 +1,45 @@
+{
+  "name": "@chremata/utils",
+  "description": "Chremata utilities & helpers",
+  "license": "MIT",
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lemuel-manske/chremata",
+    "directory": "packages/chremata-utils"
+  },
+  "private": true,
+  "author": "lemuel-manske",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "lint": "npm run lint:source:fix && npm run lint:format:fix",
+    "lint:source": "eslint .",
+    "lint:source:fix": "npm run lint:source -- --fix",
+    "lint:format": "prettier --check --ignore-path .gitignore .",
+    "lint:format:fix": "prettier --write --ignore-path .gitignore .",
+    "build": "npm run clean && npm run build:types && npm run build:js",
+    "build:js": "rollup -c",
+    "build:types": "tsc",
+    "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo"
+  },
+  "devDependencies": {
+    "@chremata-preset/playwright": "file:../chremata-presets/packages/chremata-preset-playwright",
+    "@chremata-preset/prettier": "file:../chremata-presets/packages/chremata-preset-prettier",
+    "@chremata-preset/eslint": "file:../chremata-presets/packages/chremata-preset-eslint",
+    "@chremata-preset/rollup": "file:../chremata-presets/packages/chremata-preset-rollup",
+    "@chremata-preset/typescript": "file:../chremata-presets/packages/chremata-preset-typescript",
+    "eslint": "^9.35.0",
+    "typescript": "^5.9.2",
+    "prettier": "^3.6.2"
+  }
+}
