@@ -1,5 +1,5 @@
 {
-  "name": "@chremata/web-components",
+  "name": "@chremata/components",
   "version": "0.0.0",
   "description": "Chremata Web Components",
   "license": "MIT",
@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lemuel-manske/chremata.git",
-    "directory": "frontend/packages/chremata-web-components"
+    "directory": "frontend/packages/chremata-components"
   },
   "private": true,
   "author": "lemuel-manske",
