@@ -9,7 +9,8 @@ import { useButton } from './use-button';
 import './index.css';
 
 export function Button(props: ButtonProps) {
-  const { color, label, size, icon, disabled, variant, onClick } = useButton(props);
+  const { color, label, size, icon, disabled, variant, onClick } =
+    useButton(props);
 
   const classes = classNames({
     'ch-button': true,

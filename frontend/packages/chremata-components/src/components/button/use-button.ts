@@ -1,6 +1,10 @@
 import { type LabelColor } from '../label/label.types';
 
-import { type DefaultButtonProps, type ButtonProps, type ButtonVariant } from './button.types';
+import {
+  type DefaultButtonProps,
+  type ButtonProps,
+  type ButtonVariant,
+} from './button.types';
 
 export const DEFAULT_BUTTON_PROPS: DefaultButtonProps = {
   size: 'medium',
@@ -8,10 +12,10 @@ export const DEFAULT_BUTTON_PROPS: DefaultButtonProps = {
   disabled: false,
 };
 
-const COLOR_MAP: Record<ButtonVariant, LabelColor> ={
+const COLOR_MAP: Record<ButtonVariant, LabelColor> = {
   primary: 'accent',
   secondary: 'regular',
-}
+};
 
 export function useButton(props: ButtonProps) {
   const {

@@ -25,12 +25,14 @@ export function Label(props: LabelProps) {
     [`ch-label-wrapper--${color}`]: true,
     [`ch-label-wrapper--${color}-disabled`]: disabled,
   });
-  
+
   const stateValue = { label, variant, size, state: { disabled } };
 
   return (
     <LabelContext.Provider value={stateValue}>
-      <span className={wrapperClasses} aria-disabled={disabled}>
+      <span
+        className={wrapperClasses}
+        aria-disabled={disabled}>
         {icon && icon}
 
         <label

@@ -26,7 +26,7 @@ export default {
     color: {
       control: 'select',
       options: [LabelColorEnum.REGULAR, LabelColorEnum.ACCENT],
-    }
+    },
   },
 
   args: {
@@ -38,10 +38,10 @@ export default {
 } satisfies Meta<typeof Label>;
 
 export const Default: StoryObj<LabelProps> = {
-  render: (args: LabelProps) => 
+  render: (args: LabelProps) => (
     <Label {...args}>
       <Label.Icon name={'CoinIconSvg'} />
       Label
     </Label>
-,
+  ),
 };

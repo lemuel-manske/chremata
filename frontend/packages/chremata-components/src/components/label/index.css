@@ -72,7 +72,6 @@
   color: var(--font-color-regular);
 }
 
-
 .ch-label-wrapper--accent-disabled {
   --font-color-accent-disabled: #151c12;
 
