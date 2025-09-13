@@ -14,34 +14,32 @@ function commonPlugins() {
 }
 
 /**
- * @type {import('@eslint/config-helpers').Config}
+ * @type {import('eslint').Linter.Config}
  */
-export default [
-  {
-    ignores: ['**/dist', '**/node_modules'],
+const config = {
+  ignores: ['**/dist', '**/node_modules'],
+
+  languageOptions: {
+    parser: tseslint.parser,
   },
-  {
-    languageOptions: {
-      parser: tseslint.parser,
-    },
 
-    linterOptions: {
-      reportUnusedDisableDirectives: 'error',
-    },
+  linterOptions: {
+    reportUnusedDisableDirectives: 'error',
+  },
 
-    plugins: commonPlugins(),
+  plugins: commonPlugins(),
 
-    rules: {
-      ...tseslint.configs.recommended.rules,
-      ...react.configs.recommended.rules,
+  rules: {
+    ...react.configs.recommended.rules,
 
-      'perfectionist/sort-objects': 'warn',
-    },
+    'perfectionist/sort-objects': 'warn',
+  },
 
-    settings: {
-      react: {
-        version: 'detect',
-      },
+  settings: {
+    react: {
+      version: 'detect',
     },
   },
-];
+};
+
+export default config;
