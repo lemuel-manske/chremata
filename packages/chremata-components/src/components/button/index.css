@@ -30,7 +30,7 @@
 .ch-button--fillAvailable {
   padding: 12px 16px;
 
-  width: -webkit-fill-available;
+  width: stretch;
 }
 
 /* Primary */

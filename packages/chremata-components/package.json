@@ -32,14 +32,12 @@
     "test": "jest --config jest.config.ts",
     "test:e2e": "playwright test -c playwright-ct.config.ts"
   },
-  "dependencies": {
-    "react": "^19.0.0"
-  },
   "peerDependencies": {
     "@chremata/fonts": "file:../chremata-fonts",
     "@chremata/icons": "file:../chremata-icons",
     "@chremata/themes": "file:../chremata-themes",
-    "@chremata/utils": "file:../chremata-utils"
+    "@chremata/utils": "file:../chremata-utils",
+    "react": "^19.0.0"
   },
   "devDependencies": {
     "@chremata-preset/eslint": "file:../chremata-presets/packages/chremata-preset-eslint",
