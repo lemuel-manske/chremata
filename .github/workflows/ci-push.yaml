@@ -1,4 +1,4 @@
-name: "CI - Push"
+name: CI - Push
 
 permissions:
   packages: write
