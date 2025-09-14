@@ -11,6 +11,18 @@ on:
       - main
 
 jobs:
+  checkout:
+    name: Checkout
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Git Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
+        fetch-tags: false
+        set-safe-directory: true
+
   setup-workspace:
     name: Setup - Workspace
     runs-on: ubuntu-latest
