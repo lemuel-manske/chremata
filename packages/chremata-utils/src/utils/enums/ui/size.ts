@@ -1,6 +1,3 @@
-/**
- * Enum for size options.
- */
 export enum Size {
   FILL_AVAILABLE = 'fillAvailable',
   FIT_CONTENT = 'fitContent',
