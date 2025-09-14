@@ -1,0 +1,121 @@
+name: CI - Pull Request
+
+permissions:
+  packages: write
+  contents: read
+  pull-requests: read
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  setup-workspace:
+    name: Setup - Workspace
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          fetch-tags: false
+          set-safe-directory: true
+
+      - uses: ./.github/actions/bake
+        with:
+          target: setup-workspace
+          cache-registry: true
+          ssh-key: ${{ secrets.GH_SSH_PRIVATE_KEY }}
+
+  build-workspace:
+    name: Build - Workspace
+    needs: setup-workspace
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          fetch-tags: false
+          set-safe-directory: true
+          
+      - uses: ./.github/actions/bake
+        with:
+          target: build
+          cache-registry: true
+          ssh-key: ${{ secrets.GH_SSH_PRIVATE_KEY }}
+
+  lint-eslint:
+    name: Lint - ESLint
+    needs: setup-workspace
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          fetch-tags: false
+          set-safe-directory: true
+          
+      - uses: ./.github/actions/bake
+        with:
+          target: lint-eslint
+          ssh-key: ${{ secrets.GH_SSH_PRIVATE_KEY }}
+
+  lint-prettier:
+    name: Lint - Prettier
+    needs: setup-workspace
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          fetch-tags: false
+          set-safe-directory: true
+          
+      - uses: ./.github/actions/bake
+        with:
+          target: lint-prettier
+          ssh-key: ${{ secrets.GH_SSH_PRIVATE_KEY }}
+
+  test-jest:
+    name: Test - Jest
+    needs: build-workspace
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          fetch-tags: false
+          set-safe-directory: true
+          
+      - uses: ./.github/actions/bake
+        with:
+          target: test-jest
+          ssh-key: ${{ secrets.GH_SSH_PRIVATE_KEY }}
+
+  test-playwright:
+    name: Test - Playwright
+    needs: build-workspace
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          fetch-tags: false
+          set-safe-directory: true
+          
+      - uses: ./.github/actions/bake
+        with:
+          target: test-playwright
+          ssh-key: ${{ secrets.GH_SSH_PRIVATE_KEY }}

@@ -1,0 +1,49 @@
+name: CI - Push
+
+permissions:
+  packages: write
+  contents: read
+  pull-requests: read
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  setup-workspace:
+    name: Setup - Workspace
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          fetch-tags: false
+          set-safe-directory: true
+          
+      - uses: ./.github/actions/bake
+        with:
+          target: setup-workspace
+          cache-registry: true
+          ssh-key: ${{ secrets.GH_SSH_PRIVATE_KEY }}
+
+  build-workspace:
+    name: Build - Workspace
+    needs: setup-workspace
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          fetch-tags: false
+          set-safe-directory: true
+          
+      - uses: ./.github/actions/bake
+        with:
+          target: build
+          cache-registry: true
+          ssh-key: ${{ secrets.GH_SSH_PRIVATE_KEY }}

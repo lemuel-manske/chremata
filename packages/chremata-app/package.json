@@ -1,8 +1,17 @@
 {
-  "name": "chremata-app",
-  "private": true,
+  "name": "@chremata/app",
   "version": "0.0.0",
-  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lemuel-manske/chremata",
+    "directory": "packages/chremata-app"
+  },
+  "private": true,
+  "author": "lemuel-manske",
   "scripts": {
     "dev": "vite",
     "lint": "eslint ."
