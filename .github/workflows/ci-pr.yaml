@@ -11,24 +11,18 @@ on:
       - main
 
 jobs:
-  checkout:
-    name: Checkout
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Git Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 1
-        fetch-tags: false
-        set-safe-directory: true
-
   setup-workspace:
     name: Setup - Workspace
-    needs: checkout
     runs-on: ubuntu-latest
 
     steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          fetch-tags: false
+          set-safe-directory: true
+
       - uses: ./.github/actions/bake
         with:
           target: setup-workspace
@@ -40,6 +34,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          fetch-tags: false
+          set-safe-directory: true
+          
       - uses: ./.github/actions/bake
         with:
           target: build
@@ -51,6 +52,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          fetch-tags: false
+          set-safe-directory: true
+          
       - uses: ./.github/actions/bake
         with:
           target: lint-eslint
@@ -61,6 +69,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          fetch-tags: false
+          set-safe-directory: true
+          
       - uses: ./.github/actions/bake
         with:
           target: lint-prettier
@@ -71,6 +86,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          fetch-tags: false
+          set-safe-directory: true
+          
       - uses: ./.github/actions/bake
         with:
           target: test-jest
@@ -81,6 +103,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          fetch-tags: false
+          set-safe-directory: true
+          
       - uses: ./.github/actions/bake
         with:
           target: test-playwright
