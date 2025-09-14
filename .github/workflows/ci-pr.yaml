@@ -1,0 +1,73 @@
+name: "CI - Pull Request"
+
+permissions:
+  packages: write
+  contents: read
+  pull-requests: read
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  setup-workspace:
+    name: Setup - Workspace
+    runs-on: ["self-hosted", "linux", "x64", "ubuntu-latest"]
+
+    steps:
+      - uses: ./.github/actions/bake
+        with:
+          target: setup-workspace
+          cache-registry: true
+
+  build-workspace:
+    name: Build - Workspace
+    needs: setup-workspace
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: ./.github/actions/bake
+        with:
+          target: build
+          cache-registry: true
+
+  lint-eslint:
+    name: Lint - ESLint
+    needs: setup-workspace
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: ../actions/bake
+        with:
+          target: lint-eslint
+
+  lint-prettier:
+    name: Lint - Prettier
+    needs: setup-workspace
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: ./.github/actions/bake
+        with:
+          target: lint-prettier
+
+  test-jest:
+    name: Test - Jest
+    needs: build-workspace
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: ./.github/actions/bake
+        with:
+          target: test-jest
+
+  test-playwright:
+    name: Test - Playwright
+    needs: build-workspace
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: ./.github/actions/bake
+        with:
+          target: test-playwright

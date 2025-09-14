@@ -29,7 +29,6 @@
     "./dist"
   ],
   "scripts": {
-    "lint": "npm run lint:source:fix && npm run lint:format:fix",
     "lint:source": "eslint .",
     "lint:source:fix": "npm run lint:source -- --fix",
     "lint:format": "prettier --check --ignore-path .gitignore .",

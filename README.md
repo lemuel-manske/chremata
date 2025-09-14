@@ -2,30 +2,14 @@
 
 _Money... In greek_
 
-## Backend
+## Build
 
-```mermaid
-classDiagram
-  class Expense {
-    - amount: Money
-    - paymentDate: LocalDateTime
-    - dueDate: LocalDateTime
-
-    + pay(Money amountPaid): void
-    + isPaid(): boolean
-  }
+```bash
+docker buildx bake build --allow ssh
 ```
 
-## Frontend
+## Tests
 
-```mermaid
-flowchart TD
-  UI("Web page")
-  API("Backend REST API")
-  DB("Data access layer")
-
-  UI -->|Sends request to| API
-  API -->|Returns response to| UI
-  API -->|Fetches data from| DB
-  DB -->|Returns data to| API
+```bash
+docker buildx bake test --allow ssh
 ```

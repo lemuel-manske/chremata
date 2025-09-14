@@ -1,0 +1,84 @@
+name: Docker Bake
+description: CI using Docker Bake
+
+inputs:
+  file:
+    description: Path to the docker bake file
+    required: false
+    default: "docker-bake.hcl"
+
+  context:
+    description: Path to the build context
+    required: false
+    default: "."
+
+  target:
+    description: Target build stage
+    required: true
+
+  registry:
+    description: Container registry for cache
+    required: false
+    default: "ghcr.io"
+
+  cache-registry:
+    description: Use Container registry for build cache
+    required: false
+    default: false
+
+runs:
+  using: "composite"
+  steps:
+    - name: Git Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
+        fetch-tags: false
+        set-safe-directory: true
+
+    - name: Setup environment variables
+      working-directory: ${{ github.action_path }}
+      shell: bash
+      run: ./src/action.sh
+
+    - name: Login to Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ inputs.registry }}
+        username: ${{ github.actor }}
+        password: ${{ github.token }}
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      with:
+        cache-binary: true
+        cleanup: true
+        install: true
+        use: true
+
+        version: v0.24.0
+
+    - name: Run Docker Bake - ${{ inputs.target }}
+      uses: docker/bake-action@v6
+      env:
+        CI: true
+        REGISTRY: ${{ inputs.registry }}
+        TARGET: ${{ inputs.target }}
+
+        DOCKER_BUILD_CHECKS_ANNOTATIONS: true
+        DOCKER_BUILD_SUMMARY: false
+        DOCKER_BUILD_RECORD_UPLOAD: true
+
+        CACHE_NAME: ${{inputs.registry}}/${{github.repository}}-build-cache
+      with:
+        allow: ssh
+        source: .
+        provenance: false
+        sbom: false
+        targets: ${{ inputs.target }}
+        pull: true
+        set: |
+          ${{ env.TARGET }}.cache-from+=type=registry,ref=${{ env.CACHE_NAME }}:${{env.GIT_BRANCH_CURRENT}}
+          ${{ env.TARGET }}.cache-from+=type=registry,ref=${{ env.CACHE_NAME }}:${{env.GIT_BRANCH_TARGET}}
+
+          ${{ inputs.cache-registry == 'true' && format('{0}.cache-to=type=registry,ref={1}:{2},mode=max,name-canonical=true,force-compression=true', env.TARGET, env.CACHE_NAME, env.GIT_BRANCH_CURRENT) || '' }}

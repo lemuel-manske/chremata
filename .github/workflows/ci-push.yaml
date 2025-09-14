@@ -1,0 +1,33 @@
+name: "CI - Push"
+
+permissions:
+  packages: write
+  contents: read
+  pull-requests: read
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  setup-workspace:
+    name: Setup - Workspace
+    runs-on: ["self-hosted", "linux", "x64", "ubuntu-latest"]
+
+    steps:
+      - uses: ./.github/actions/bake
+        with:
+          target: setup-workspace
+          cache-registry: true
+
+  build-workspace:
+    name: Build - Workspace
+    needs: setup-workspace
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: ./.github/actions/bake
+        with:
+          target: build
+          cache-registry: true

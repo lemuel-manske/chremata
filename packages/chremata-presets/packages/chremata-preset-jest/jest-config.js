@@ -2,8 +2,8 @@ import { config as swcConfig } from '@chremata-preset/swc';
 
 const config = {
   injectGlobals: true,
-  resetModules: true,
 
+  resetModules: true,
   testEnvironment: 'jsdom',
   testEnvironmentOptions: {
     environment: 'jsdom',
