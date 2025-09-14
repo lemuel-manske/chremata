@@ -15,7 +15,6 @@ inputs:
   ssh-key:
     description: SSH private key
     required: true
-    default: ${{ secrets.GH_SSH_PRIVATE_KEY }}
 
   target:
     description: Target build stage
