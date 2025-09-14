@@ -27,6 +27,7 @@ jobs:
         with:
           target: setup-workspace
           cache-registry: true
+          ssh-key: ${{ secrets.GH_SSH_PRIVATE_KEY }}
 
   build-workspace:
     name: Build - Workspace
@@ -45,3 +46,4 @@ jobs:
         with:
           target: build
           cache-registry: true
+          ssh-key: ${{ secrets.GH_SSH_PRIVATE_KEY }}
