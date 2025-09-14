@@ -11,14 +11,14 @@ import './index.css';
 export function Button(props: ButtonProps) {
   const {
     color,
-    label, 
-    labelSize, 
-    size, 
-    icon, 
+    label,
+    labelSize,
+    size,
+    icon,
     disabled,
-    variant, 
-    
-    onClick 
+    variant,
+
+    onClick,
   } = useButton(props);
 
   const classes = classNames({
