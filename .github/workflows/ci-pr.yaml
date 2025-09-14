@@ -25,6 +25,7 @@ jobs:
 
   setup-workspace:
     name: Setup - Workspace
+    needs: checkout
     runs-on: ubuntu-latest
 
     steps:
