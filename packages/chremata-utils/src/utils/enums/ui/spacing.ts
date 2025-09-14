@@ -1,6 +1,3 @@
-/**
- * Represents the spacing options.
- */
 export enum Spacing {
   NONE = 'none',
   MEDIUM = 'medium',

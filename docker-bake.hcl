@@ -3,7 +3,6 @@ variable "CI" {
   default = false
 }
 
-
 target "_common" {
   ssh = [{ id = "default" }]
   platforms = ["linux/amd64"]
@@ -75,18 +74,6 @@ target "build" {
   contexts = {
     setup-workspace = "target:setup-workspace"
   }
-}
-
-target "build-local" {
-  inherits = ["_common"]
-  description = "Build monorepo and exports outputs to local filesystem"
-  dockerfile = ".bake/build-local.dockerfile"
-
-  contexts = {
-    build = "target:build"
-  }
-
-  output = ["."]
 }
 
 target "test-jest" {

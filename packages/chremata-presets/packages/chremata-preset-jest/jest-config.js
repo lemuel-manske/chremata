@@ -9,7 +9,7 @@ const config = {
     environment: 'jsdom',
   },
 
-  testMatch: ['**/*/*.spec.tsx'],
+  testMatch: ['**/*/*.spec.tsx', '**/*/*.spec.ts'],
 
   transform: {
     '^.+\\.(t|j)sx?$': [

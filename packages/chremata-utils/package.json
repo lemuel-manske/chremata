@@ -29,16 +29,20 @@
     "lint:format:fix": "prettier --write --ignore-path .gitignore .",
     "build": "npm run build:types && npm run build:js",
     "build:js": "rollup -c",
-    "build:types": "tsc"
+    "build:types": "tsc",
+    "test:jest": "jest --config jest.config.ts"
   },
   "devDependencies": {
+    "@chremata-preset/eslint": "file:../chremata-presets/packages/chremata-preset-eslint",
     "@chremata-preset/playwright": "file:../chremata-presets/packages/chremata-preset-playwright",
     "@chremata-preset/prettier": "file:../chremata-presets/packages/chremata-preset-prettier",
-    "@chremata-preset/eslint": "file:../chremata-presets/packages/chremata-preset-eslint",
     "@chremata-preset/rollup": "file:../chremata-presets/packages/chremata-preset-rollup",
     "@chremata-preset/typescript": "file:../chremata-presets/packages/chremata-preset-typescript",
+    "@jest/globals": "^30.1.2",
+    "@types/jest": "^30.0.0",
     "eslint": "^9.35.0",
-    "typescript": "^5.9.2",
-    "prettier": "^3.6.2"
+    "jest": "^30.1.3",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2"
   }
 }
