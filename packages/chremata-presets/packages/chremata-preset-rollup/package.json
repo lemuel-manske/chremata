@@ -44,7 +44,7 @@
     "tslib": "^2.8.1"
   },
   "peerDependencies": {
-    "rollup": "^4.49.0"
+    "rollup": "^4.50.1"
   },
   "devDependencies": {
     "@chremata-preset/eslint": "file:../chremata-preset-eslint",

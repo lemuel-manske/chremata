@@ -38,7 +38,7 @@
   },
   "peerDependencies": {
     "@jest/globals": "29.x.x",
-    "@swc/core": "1.13.x",
+    "@swc/core": "^1.13.5",
     "jest": "30.1.x",
     "jest-environment-jsdom": "29.x.x",
     "jest-transform-css": "6.0.x"
