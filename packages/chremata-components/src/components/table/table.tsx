@@ -11,11 +11,7 @@ import { TableBody } from './table-body/table-body';
 import './index.css';
 
 export function Table(props: TableProps) {
-  const { columns, columnsCount, data, caption } = useTable(props);
-
-  const dynamicStyles = {
-    gridTemplateColumns: `repeat(${columnsCount}, minmax(120px, 1fr))`,
-  };
+  const { columns, data, caption } = useTable(props);
 
   const classes = classNames({
     'ch-table': true,
@@ -27,7 +23,6 @@ export function Table(props: TableProps) {
     <table
       role={role}
       className={classes}
-      style={dynamicStyles}
       aria-label={caption}>
       {caption && <TableCaption caption={caption} />}
 

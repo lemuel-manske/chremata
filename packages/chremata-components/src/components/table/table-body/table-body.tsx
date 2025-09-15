@@ -24,17 +24,21 @@ export function TableBody(props: TableBodyProps) {
   const role = 'rowgroup';
 
   if (isEmpty) {
+    const emptyLabel = (
+      <Label
+        variant="emphasis"
+        size="large">
+        No data
+      </Label>
+    );
+
     return (
       <tbody>
-        <TableRow className="ch-table-row--empty">
+        <TableRow className="empty-row">
           <TableCell
             colSpan={columns.length}
             key={1}>
-            <Label
-              variant="emphasis"
-              size="large">
-              No data
-            </Label>
+            {emptyLabel}
           </TableCell>
         </TableRow>
       </tbody>

@@ -13,6 +13,8 @@
     "url": "github:lemuel-manske/chremata"
   },
   "scripts": {
+    "dev": "npm run dev --workspace=@chremata/components",
+
     "build": "npm run build:components",
     "build:components": "npm run build --workspace=@chremata/components",
     "build:setup": "npm run build:utils && npm run build:icons",

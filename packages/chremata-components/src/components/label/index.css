@@ -8,8 +8,10 @@
   overflow: hidden;
 
   display: block;
+
   white-space: nowrap;
   text-align: start;
+  text-overflow: ellipsis;
 
   max-inline-size: fit-content;
 }
@@ -63,31 +65,29 @@
 /* Variants */
 
 .ch-label-wrapper {
-  display: inline-flex;
-  align-items: center;
   gap: 8px;
 }
 
 .ch-label-wrapper--regular-disabled {
-  --font-color-regular-disabled: #b0b7ab;
+  --font-color-regular-disabled: var(--readable-high-contrast-disabled);
 
   color: var(--font-color-regular-disabled);
 }
 
 .ch-label-wrapper--accent-disabled {
-  --font-color-accent-disabled: #151c12;
+  --font-color-accent-disabled: var(--readable-low-contrast-disabled);
 
   color: var(--font-color-accent-disabled);
 }
 
 .ch-label-wrapper--regular {
-  --font-color-regular: #eef9e5;
+  --font-color-regular: var(--readable-high-contrast);
 
   color: var(--font-color-regular);
 }
 
 .ch-label-wrapper--accent {
-  --font-color-accent: #061400;
+  --font-color-accent: var(--readable-low-contrast);
 
   color: var(--font-color-accent);
 }

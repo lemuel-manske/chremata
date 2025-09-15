@@ -1,4 +1,13 @@
 :root {
+  --border-color-high-contrast: var(--readable-high-contrast);
+  --border-color-low-contrast: var(--readable-low-contrast);
+
+  --readable-high-contrast: #eef9e5;
+  --readable-high-contrast-disabled: #b0b7ab;
+
+  --readable-low-contrast: #061400;
+  --readable-low-contrast-disabled: #151c12;
+
   --color-gray-95: hsl(0, 0%, 5%);
   --color-gray-90: hsl(0, 0%, 10%);
   --color-gray-85: hsl(0, 0%, 15%);
@@ -18,4 +27,8 @@
   --color-gray-15: hsl(0, 0%, 85%);
   --color-gray-10: hsl(0, 0%, 90%);
   --color-gray-5: hsl(0, 0%, 95%);
+
+  --color-orange-50: #ff7b2e;
+
+  --color-green-50: #30ddc9;
 }

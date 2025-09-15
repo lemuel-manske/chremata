@@ -17,9 +17,4 @@ export type TableCellProps = {
    * Number of columns the cell should span.
    */
   colSpan?: number;
-
-  /**
-   * Custom class name for styling.
-   */
-  className?: string;
 };

@@ -27,20 +27,20 @@ export default {
   id: 'Label',
   title: 'Label',
 
-  component: Label,
+  component: LabelFixture,
 
   argTypes: {
     id: {
       control: 'text',
+    },
+    icon: {
+      control: 'select',
     },
     disabled: {
       control: 'boolean',
     },
     label: {
       control: 'text',
-    },
-    icon: {
-      control: 'select',
     },
     size: {
       control: 'select',
