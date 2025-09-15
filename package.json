@@ -15,8 +15,8 @@
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "dev": "npm run dev --workspace=@chremata/web-components",
-    "test": "npm run test --workspaces --if-present",
-    "test:e2e": "npm run test:e2e --workspaces --if-present",
+    "test:jest": "npm run test:jest --workspaces --if-present",
+    "test:playwright": "npm run test:playwright --workspaces --if-present",
     "lint": "npm run lint --workspaces",
     "clear": "npm run clear:modules",
     "clear:modules": "find . -name node_modules | xargs -exec rm -rf"
