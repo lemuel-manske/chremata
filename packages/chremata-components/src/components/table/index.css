@@ -16,11 +16,11 @@
 .ch-table td {
   padding: 0.5rem 1rem;
 
-  border-inline-end: 1px solid white;
+  border-inline-end: 1px solid var(--border-color-high-contrast);
+}
 
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.ch-table th span {
+  display: inline-flex;
 }
 
 .ch-table th:last-child,
@@ -28,12 +28,16 @@
   border-inline-end: 0;
 }
 
-.ch-table tbody tr:nth-child(odd) {
-  --color-row-odd: #084b32;
+.ch-table thead tr {
+  background-color: var(--background-surface);
+}
+
+.ch-table tbody tr:nth-child(odd):not(.empty-row) {
+  --color-row-odd: var(--background-deep);
 
   background: var(--color-row-odd);
 }
 
-.ch-table-row--empty {
+.empty-row {
   text-align: center;
 }
