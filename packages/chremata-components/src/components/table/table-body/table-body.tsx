@@ -14,18 +14,11 @@ export function TableBody(props: TableBodyProps) {
   const rows = data.map((row: Row, i: number) => {
     const cells = columns.map((col: Column) => (
       <TableCell key={col.key}>
-        <Label>
-          {row[col.key] as string}
-        </Label>
+        <Label>{row[col.key] as string}</Label>
       </TableCell>
     ));
 
-    return (
-      <TableRow
-        key={i}>
-        {cells}
-      </TableRow>
-    );
+    return <TableRow key={i}>{cells}</TableRow>;
   });
 
   const role = 'rowgroup';
@@ -33,19 +26,20 @@ export function TableBody(props: TableBodyProps) {
   if (isEmpty) {
     return (
       <tbody>
-        <TableRow className='ch-table-row--empty'>
-          <TableCell colSpan={columns.length} key={1}>
-            <Label variant='emphasis' size='large'>No data</Label>
+        <TableRow className="ch-table-row--empty">
+          <TableCell
+            colSpan={columns.length}
+            key={1}>
+            <Label
+              variant="emphasis"
+              size="large">
+              No data
+            </Label>
           </TableCell>
         </TableRow>
       </tbody>
     );
   }
 
-  return (
-    <tbody
-      role={role}>
-      {rows}
-    </tbody>
-  );
+  return <tbody role={role}>{rows}</tbody>;
 }

@@ -4,12 +4,7 @@ import { classNames } from '@chremata/utils';
 import { type TableCellProps } from './table-cell.types';
 
 export function TableCell(props: TableCellProps) {
-  const {
-    children,
-    colSpan,
-    className,
-    header = false,
-  } = props;
+  const { children, colSpan, className, header = false } = props;
 
   const role = header ? 'columnheader' : 'gridcell';
 
@@ -20,8 +15,11 @@ export function TableCell(props: TableCellProps) {
   });
 
   return (
-    <Tag role={role} colSpan={colSpan} className={classes}>
-      {children} 
+    <Tag
+      role={role}
+      colSpan={colSpan}
+      className={classes}>
+      {children}
     </Tag>
   );
 }

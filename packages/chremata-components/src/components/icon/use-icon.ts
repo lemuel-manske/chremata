@@ -20,7 +20,7 @@ export function useIcon(props: IconProps) {
     name,
     size,
     disabled,
-    
+
     ...svgProps,
   };
 }

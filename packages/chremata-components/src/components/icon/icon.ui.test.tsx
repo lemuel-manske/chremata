@@ -7,100 +7,111 @@ test(
   { tag: ['@ch-icon'] },
   async ({ mount, page }) => {
     await mount(
-      <Icon 
+      <Icon
         name="CoinIconSvg"
-        primaryColor='white'
-        label="Coin icon" 
+        primaryColor="white"
+        label="Coin icon"
       />
     );
 
     const icon = page.getByRole('img', { name: 'Coin icon' });
 
     await expect(icon).toNotHaveAccessibilityViolations();
-});
+  }
+);
 
-test('should render a disabled Icon',
+test(
+  'should render a disabled Icon',
   { tag: ['@ch-icon'] },
   async ({ mount, page }) => {
     await mount(
-      <Icon 
+      <Icon
         name="CoinIconSvg"
-        primaryColor='white'
-        primaryColorDisabled='gray'
+        primaryColor="white"
+        primaryColorDisabled="gray"
         disabled
-        label="Coin icon" 
+        label="Coin icon"
       />
     );
 
     const icon = page.getByRole('img', { name: 'Coin icon' });
 
     await expect(icon).toNotHaveAccessibilityViolations();
-});
+  }
+);
 
-test('should render a small Icon',
+test(
+  'should render a small Icon',
   { tag: ['@ch-icon'] },
   async ({ mount, page }) => {
     await mount(
-      <Icon 
+      <Icon
         name="CoinIconSvg"
-        primaryColor='white'
-        size='small'
-        label="Coin icon" 
+        primaryColor="white"
+        size="small"
+        label="Coin icon"
       />
     );
 
     const icon = page.getByRole('img', { name: 'Coin icon' });
 
     await expect(icon).toNotHaveAccessibilityViolations();
-});
+  }
+);
 
-test('should render a medium Icon',
+test(
+  'should render a medium Icon',
   { tag: ['@ch-icon'] },
   async ({ mount, page }) => {
     await mount(
-      <Icon 
+      <Icon
         name="CoinIconSvg"
-        primaryColor='white'
-        size='medium'
-        label="Coin icon" 
+        primaryColor="white"
+        size="medium"
+        label="Coin icon"
       />
     );
 
     const icon = page.getByRole('img', { name: 'Coin icon' });
 
     await expect(icon).toNotHaveAccessibilityViolations();
-});
+  }
+);
 
-test('should render a large Icon',
+test(
+  'should render a large Icon',
   { tag: ['@ch-icon'] },
   async ({ mount, page }) => {
     await mount(
-      <Icon 
+      <Icon
         name="CoinIconSvg"
-        primaryColor='white'
-        size='large'
-        label="Coin icon" 
+        primaryColor="white"
+        size="large"
+        label="Coin icon"
       />
     );
 
     const icon = page.getByRole('img', { name: 'Coin icon' });
 
     await expect(icon).toNotHaveAccessibilityViolations();
-});
+  }
+);
 
-test('should render an xlarge Icon',
+test(
+  'should render an xlarge Icon',
   { tag: ['@ch-icon'] },
   async ({ mount, page }) => {
     await mount(
-      <Icon 
+      <Icon
         name="CoinIconSvg"
-        primaryColor='white'
-        size='xlarge'
-        label="Coin icon" 
+        primaryColor="white"
+        size="xlarge"
+        label="Coin icon"
       />
     );
 
     const icon = page.getByRole('img', { name: 'Coin icon' });
 
     await expect(icon).toNotHaveAccessibilityViolations();
-});
+  }
+);

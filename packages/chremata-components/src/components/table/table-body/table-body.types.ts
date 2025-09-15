@@ -10,4 +10,4 @@ export type TableBodyProps = {
    * Data to display.
    */
   data: Row[];
-};;
+};

@@ -16,13 +16,12 @@ export function TableHeader(props: TableHeaderProps) {
     <TableCell
       header
       key={col.key}>
-      <Label variant='emphasis'>{col.label}</Label>
+      <Label variant="emphasis">{col.label}</Label>
     </TableCell>
   ));
 
   return (
-    <thead
-      role={role}>
+    <thead role={role}>
       <TableRow>{cells}</TableRow>
     </thead>
   );

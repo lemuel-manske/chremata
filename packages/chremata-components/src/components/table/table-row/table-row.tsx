@@ -11,7 +11,9 @@ export function TableRow(props: TableRowProps) {
   });
 
   return (
-    <tr role={role} className={classes}>
+    <tr
+      role={role}
+      className={classes}>
       {children}
     </tr>
   );

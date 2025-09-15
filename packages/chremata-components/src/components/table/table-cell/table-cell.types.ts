@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React from 'react';
 
-import  {type LabelProps } from "../../label/label.types";
+import { type LabelProps } from '../../label/label.types';
 
 export type TableCellProps = {
   /**
