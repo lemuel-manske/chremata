@@ -15,6 +15,18 @@ export enum LabelColorEnum {
 
 export type LabelColor = EnumOrStringLiteralTypes<LabelColorEnum>;
 
+export enum LabelVariantEnum {
+  REGULAR = 'regular',
+  EMPHASIS = 'emphasis',
+}
+
+export type LabelVariant = EnumOrStringLiteralTypes<LabelVariantEnum>;
+
+export type LabelSize = EnumOrStringLiteralTypesInclude<
+  Size,
+  'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge'
+>;
+
 type LabelAttributes = {
   /**
    * The id of the Label. None by default.
@@ -50,13 +62,6 @@ type LabelAttributes = {
     | [null, string]
     | [undefined, string];
 };
-
-export type LabelVariant = 'regular' | 'emphasis';
-
-export type LabelSize = EnumOrStringLiteralTypesInclude<
-  Size,
-  'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge'
->;
 
 export type LabelProps = LabelAttributes;
 

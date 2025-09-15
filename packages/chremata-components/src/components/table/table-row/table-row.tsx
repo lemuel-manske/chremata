@@ -1,23 +1,17 @@
-import { classNames } from '@chremata/utils';
-
 import { type TableRowProps } from './table-row.types';
-
-import './index.css';
+import { classNames } from '@chremata/utils';
 
 export function TableRow(props: TableRowProps) {
   const { children, className } = props;
 
-  const classes = classNames({
-    'ch-table-row': true,
-    [className!]: !!className,
-  });
-
   const role = 'row';
 
+  const classes = classNames({
+    [className ?? '']: !!className,
+  });
+
   return (
-    <tr
-      className={classes}
-      role={role}>
+    <tr role={role} className={classes}>
       {children}
     </tr>
   );

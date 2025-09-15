@@ -2,14 +2,14 @@ import { config as swcConfig } from '@chremata-preset/swc';
 
 const config = {
   injectGlobals: true,
-  resetModules: true,
 
+  resetModules: true,
   testEnvironment: 'jsdom',
   testEnvironmentOptions: {
     environment: 'jsdom',
   },
 
-  testMatch: ['**/*/*.spec.tsx'],
+  testMatch: ['**/*/*.spec.tsx', '**/*/*.spec.ts'],
 
   transform: {
     '^.+\\.(t|j)sx?$': [

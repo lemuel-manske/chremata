@@ -1,31 +1,19 @@
 # chremata
 
-_Money... In greek_
+Chremata is a full-fledged finance app.
 
-## Backend
+## Build
 
-```mermaid
-classDiagram
-  class Expense {
-    - amount: Money
-    - paymentDate: LocalDateTime
-    - dueDate: LocalDateTime
+Builds the monorepo.
 
-    + pay(Money amountPaid): void
-    + isPaid(): boolean
-  }
+```bash
+docker buildx bake build --allow ssh
 ```
 
-## Frontend
+## Tests
 
-```mermaid
-flowchart TD
-  UI("Web page")
-  API("Backend REST API")
-  DB("Data access layer")
+Runs unit & e2e tests.
 
-  UI -->|Sends request to| API
-  API -->|Returns response to| UI
-  API -->|Fetches data from| DB
-  DB -->|Returns data to| API
+```bash
+docker buildx bake test --allow ssh
 ```

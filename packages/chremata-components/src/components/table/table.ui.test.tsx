@@ -29,3 +29,20 @@ test(
     await expect(table).toNotHaveAccessibilityViolations();
   }
 );
+
+test('should render a Table with no data', async ({ mount, page }) => {
+  await mount(
+    <Table
+      caption="Empty Table"
+      columns={[
+        { label: 'Name', key: 'name' },
+        { label: 'Age', key: 'age' },
+      ]}
+      data={[]}
+    />
+  );
+
+  const table = page.getByRole('grid', { name: 'Empty Table' });
+
+  await expect(table).toNotHaveAccessibilityViolations();
+});

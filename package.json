@@ -1,5 +1,5 @@
 {
-  "name": "@chremata/app",
+  "name": "chremata",
   "description": "A full-fledged finance Web App",
   "version": "0.0.0",
   "private": true,
@@ -13,13 +13,25 @@
     "url": "github:lemuel-manske/chremata"
   },
   "scripts": {
-    "build": "npm run build --workspaces --if-present",
-    "dev": "npm run dev --workspace=@chremata/web-components",
+    "build": "npm run build:components",
+    "build:components": "npm run build --workspace=@chremata/components",
+    "build:setup": "npm run build:utils && npm run build:icons",
+    "build:utils": "npm run build --workspace=@chremata/utils",
+    "build:icons": "npm run build --workspace=@chremata/icons",
+    
+    "lint:format": "npm run lint:format --workspaces --if-present",
+    "lint:format:fix": "npm run lint:format:fix --workspaces  --if-present",
+    "lint:source": "npm run lint:source --workspaces  --if-present",
+    "lint:source:fix": "npm run lint:source:fix --workspaces  --if-present",
+
+    "test:setup": "npm run build:setup",
+    "test:jest:setup": "npm run test:setup",
+    "test:playwright:setup": "npm run test:setup && npm run build:playwright-preset && playwright install --with-deps",
+
     "test:jest": "npm run test:jest --workspaces --if-present",
     "test:playwright": "npm run test:playwright --workspaces --if-present",
-    "lint": "npm run lint --workspaces",
-    "clear": "npm run clear:modules",
-    "clear:modules": "find . -name node_modules | xargs -exec rm -rf"
+
+    "build:playwright-preset": "npm run build --workspace=@chremata-preset/playwright"
   },
   "workspaces": [
     "packages/*",

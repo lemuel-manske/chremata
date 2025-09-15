@@ -71,19 +71,19 @@
 .ch-label-wrapper--regular-disabled {
   --font-color-regular-disabled: #b0b7ab;
 
-  color: var(--font-color-regular-disabled) !important;
+  color: var(--font-color-regular-disabled);
+}
+
+.ch-label-wrapper--accent-disabled {
+  --font-color-accent-disabled: #151c12;
+
+  color: var(--font-color-accent-disabled);
 }
 
 .ch-label-wrapper--regular {
   --font-color-regular: #eef9e5;
 
   color: var(--font-color-regular);
-}
-
-.ch-label-wrapper--accent-disabled {
-  --font-color-accent-disabled: #151c12;
-
-  color: var(--font-color-accent-disabled) !important;
 }
 
 .ch-label-wrapper--accent {

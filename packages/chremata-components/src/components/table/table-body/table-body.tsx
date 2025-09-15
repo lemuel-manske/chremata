@@ -1,5 +1,4 @@
-import { isEven, classNames } from '@chremata/utils';
-
+import { Label } from '../../label/label';
 import { TableCell } from '../table-cell/table-cell';
 import { TableRow } from '../table-row/table-row';
 
@@ -7,38 +6,44 @@ import { type Column, type Row } from '../table.types';
 
 import { type TableBodyProps } from './table-body.types';
 
-import './index.css';
-
 export function TableBody(props: TableBodyProps) {
   const { columns, data } = props;
 
-  const rows = data.map((row: Row, i: number) => {
-    const classes = classNames({
-      'ch-table-row--even': isEven(i),
-    });
+  const isEmpty = data.length === 0;
 
+  const rows = data.map((row: Row, i: number) => {
     const cells = columns.map((col: Column) => (
-      <TableCell key={col.key}>{row[col.key] as string}</TableCell>
+      <TableCell key={col.key}>
+        <Label>
+          {row[col.key] as string}
+        </Label>
+      </TableCell>
     ));
 
     return (
       <TableRow
-        key={i}
-        className={classes}>
+        key={i}>
         {cells}
       </TableRow>
     );
   });
 
-  const classes = classNames({
-    'ch-table-rowgroup': true,
-  });
-
   const role = 'rowgroup';
+
+  if (isEmpty) {
+    return (
+      <tbody>
+        <TableRow className='ch-table-row--empty'>
+          <TableCell colSpan={columns.length} key={1}>
+            <Label variant='emphasis' size='large'>No data</Label>
+          </TableCell>
+        </TableRow>
+      </tbody>
+    );
+  }
 
   return (
     <tbody
-      className={classes}
       role={role}>
       {rows}
     </tbody>

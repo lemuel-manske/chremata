@@ -23,8 +23,8 @@ export default {
       { name: 'Jane Smith', age: 34, email: 'janesmith@email.com' },
     ],
   },
-} satisfies Meta<TableProps>;
+} satisfies Meta<typeof Table>;
 
-export const WithData: StoryObj<TableProps> = {
+export const Default: StoryObj<TableProps> = {
   render: (args: TableProps) => <Table {...args} />,
 };

@@ -29,7 +29,7 @@ export function Table(props: TableProps) {
       className={classes}
       style={dynamicStyles}
       aria-label={caption}>
-      <TableCaption caption={caption} />
+      {caption && <TableCaption caption={caption} />}
 
       <TableHeader columns={columns} />
 

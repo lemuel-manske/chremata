@@ -4,6 +4,24 @@ import { Size, Variant } from '@chremata/utils';
 
 import { Label } from './label';
 import { LabelColorEnum, type LabelProps } from './label.types';
+import { DEFAULT_LABEL_PROPS } from './use-label';
+import type { IconSolidNames } from '../icon/icon.types';
+
+interface LabelFixtureProps extends LabelProps {
+  label: string;
+  icon?: IconSolidNames;
+}
+
+function LabelFixture(props: LabelFixtureProps) {
+  const { label, icon, ...rest } = props;
+
+  return (
+    <Label {...rest}>
+      {icon && <Label.Icon name={icon} />}
+      {label}
+    </Label>
+  );
+}
 
 export default {
   id: 'Label',
@@ -12,8 +30,17 @@ export default {
   component: Label,
 
   argTypes: {
+    id: {
+      control: 'text',
+    },
     disabled: {
       control: 'boolean',
+    },
+    label: {
+      control: 'text',
+    },
+    icon: {
+      control: 'select',
     },
     size: {
       control: 'select',
@@ -30,18 +57,13 @@ export default {
   },
 
   args: {
-    color: 'regular',
-    disabled: false,
-    size: 'medium',
-    variant: 'regular',
-  },
-} satisfies Meta<typeof Label>;
+    ...DEFAULT_LABEL_PROPS,
 
-export const Default: StoryObj<LabelProps> = {
-  render: (args: LabelProps) => (
-    <Label {...args}>
-      <Label.Icon name={'CoinIconSvg'} />
-      Label
-    </Label>
-  ),
+    label: 'Label',
+    icon: 'CoinIconSvg',
+  },
+} satisfies Meta<typeof LabelFixture>;
+
+export const Default: StoryObj<LabelFixtureProps> = {
+  render: (args: LabelFixtureProps) => <LabelFixture {...args} />,
 };
