@@ -1,20 +1,14 @@
-import { classNames } from '@chremata/utils';
+import { type TableHeaderProps } from './table-header.types';
 
 import { TableRow } from '../table-row/table-row';
 import { TableCell } from '../table-cell/table-cell';
 
 import { type Column } from '../table.types';
 
-import { type TableHeaderProps } from './table-header.types';
-
-import './index.css';
+import { Label } from '../../label/label';
 
 export function TableHeader(props: TableHeaderProps) {
   const { columns } = props;
-
-  const classes = classNames({
-    'ch-table-rowgroup': true,
-  });
 
   const role = 'rowgroup';
 
@@ -22,14 +16,12 @@ export function TableHeader(props: TableHeaderProps) {
     <TableCell
       header
       key={col.key}>
-      {col.label}
+      <Label variant="emphasis">{col.label}</Label>
     </TableCell>
   ));
 
   return (
-    <thead
-      className={classes}
-      role={role}>
+    <thead role={role}>
       <TableRow>{cells}</TableRow>
     </thead>
   );

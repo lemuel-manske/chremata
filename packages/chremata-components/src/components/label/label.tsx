@@ -1,4 +1,4 @@
-import { classNames, styleMap } from '@chremata/utils';
+import { classNames } from '@chremata/utils';
 
 import { type LabelProps } from './label.types';
 
@@ -22,7 +22,7 @@ export function Label(props: LabelProps) {
 
   const wrapperClasses = classNames({
     'ch-label-wrapper': true,
-    [`ch-label-wrapper--${color}`]: true,
+    [`ch-label-wrapper--${color}`]: !disabled,
     [`ch-label-wrapper--${color}-disabled`]: disabled,
   });
 

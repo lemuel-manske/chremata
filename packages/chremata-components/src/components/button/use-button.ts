@@ -7,12 +7,6 @@ import {
   type ButtonSize,
 } from './button.types';
 
-export const DEFAULT_BUTTON_PROPS: DefaultButtonProps = {
-  size: 'medium',
-  variant: 'primary',
-  disabled: false,
-};
-
 const COLOR_MAP: Record<ButtonVariant, LabelColor> = {
   primary: 'accent',
   secondary: 'regular',
@@ -23,6 +17,12 @@ const LABEL_SIZE_MAP: Record<ButtonSize, LabelSize> = {
   medium: 'medium',
   large: 'large',
   fillAvailable: 'large',
+};
+
+export const DEFAULT_BUTTON_PROPS: DefaultButtonProps = {
+  size: 'medium',
+  variant: 'primary',
+  disabled: false,
 };
 
 export function useButton(props: ButtonProps) {

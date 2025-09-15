@@ -7,13 +7,6 @@ import {
 
 import type { IconSolidNames } from '../icon/icon.types';
 
-type ButtonEvents = {
-  /**
-   * Callback fired when the button is clicked.
-   */
-  onClick?: UserEvent;
-};
-
 export enum ButtonVariantEnum {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
@@ -25,6 +18,13 @@ export type ButtonSize = EnumOrStringLiteralTypesInclude<
   Size,
   'small' | 'medium' | 'large' | 'fillAvailable'
 >;
+
+type ButtonEvents = {
+  /**
+   * Callback fired when the button is clicked.
+   */
+  onClick?: UserEvent;
+};
 
 type ButtonAttributes = {
   /**

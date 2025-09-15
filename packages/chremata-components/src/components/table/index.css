@@ -1,3 +1,39 @@
 .ch-table {
-  display: grid;
+  table-layout: fixed;
+
+  padding: 8px;
+
+  width: stretch;
+
+  border-collapse: collapse;
+}
+
+.ch-table caption {
+  display: none;
+}
+
+.ch-table th,
+.ch-table td {
+  padding: 0.5rem 1rem;
+
+  border-inline-end: 1px solid white;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ch-table th:last-child,
+.ch-table td:last-child {
+  border-inline-end: 0;
+}
+
+.ch-table tbody tr:nth-child(odd) {
+  --color-row-odd: #084b32;
+
+  background: var(--color-row-odd);
+}
+
+.ch-table-row--empty {
+  text-align: center;
 }

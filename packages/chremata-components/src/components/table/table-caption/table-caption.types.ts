@@ -1,3 +1,6 @@
 export type TableCaptionProps = {
-  caption?: string;
+  /**
+   * Table caption.
+   */
+  caption: string;
 };
