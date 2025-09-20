@@ -1,3 +1,3 @@
-import { Config } from '@eslint/config-helpers';
+import type { ConfigWithExtends } from 'typescript-eslint';
 
-export const config: Config;
+export const config: ConfigWithExtends;

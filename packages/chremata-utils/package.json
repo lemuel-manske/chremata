@@ -30,7 +30,7 @@
     "build": "npm run build:types && npm run build:js",
     "build:js": "rollup -c",
     "build:types": "tsc",
-    "test:jest": "jest --config jest.config.ts"
+    "test:jest": "jest"
   },
   "devDependencies": {
     "@chremata-preset/eslint": "file:../chremata-presets/packages/chremata-preset-eslint",

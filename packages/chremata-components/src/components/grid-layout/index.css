@@ -4,6 +4,7 @@
 
   --grid-layout-padding-none: 0px;
   --grid-layout-padding-small: 8px;
+  --grid-layout-padding-medium: 16px;
 
   display: grid;
 

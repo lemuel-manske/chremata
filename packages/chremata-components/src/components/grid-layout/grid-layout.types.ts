@@ -3,7 +3,6 @@ import * as React from 'react';
 import {
   type EnumOrStringLiteralTypes,
   type EnumOrStringLiteralTypesInclude,
-  Padding,
   Spacing,
 } from '@chremata/utils';
 
@@ -13,11 +12,14 @@ export enum LayoutGapEnum {
 }
 
 export type LayoutGap = EnumOrStringLiteralTypes<LayoutGapEnum>;
-export type LayoutPadding = EnumOrStringLiteralTypes<Padding>;
+export type LayoutPadding = EnumOrStringLiteralTypesInclude<
+  Spacing,
+  'none' | 'small' | 'medium'
+>;
 
 export type AreaPadding = EnumOrStringLiteralTypesInclude<
   Spacing,
-  'none' | 'small'
+  'none' | 'small' | 'medium' | 'large'
 >;
 
 export type GridAreaProps = {
@@ -34,7 +36,9 @@ export type GridAreaProps = {
   /**
    * The children that will be shown inside the component.
    */
-  children?: React.ReactElement<GridLayoutProps> | React.ReactElement[];
+  children?: React.ReactElement<GridLayoutProps> 
+    | React.ReactElement[]
+    | React.ReactElement
 };
 
 export type GridLayoutProps = {

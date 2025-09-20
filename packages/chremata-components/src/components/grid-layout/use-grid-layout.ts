@@ -10,6 +10,7 @@ import { getStringValue, isString } from '@chremata/utils';
 const PADDING_MAP: Record<NonNullable<LayoutPadding>, string> = {
   none: 'var(--grid-layout-padding-none)',
   small: 'var(--grid-layout-padding-small)',
+  medium: 'var(--grid-layout-padding-medium)',
 };
 
 const GAP_MAP: Record<NonNullable<LayoutGap>, string> = {
