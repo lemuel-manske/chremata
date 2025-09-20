@@ -4,15 +4,9 @@ import { config as swcConfig } from '@chremata-preset/swc';
  * @type {import('jest').Config}
  */
 const config = {
-  injectGlobals: false,
+  injectGlobals: true,
 
   resetModules: true,
-  
-  testEnvironment: 'jsdom',
-  
-  testEnvironmentOptions: {
-    environment: 'jsdom',
-  },
 
   testMatch: ['**/*/*.spec.tsx', '**/*/*.spec.ts'],
 
@@ -33,4 +27,4 @@ const config = {
   },
 };
 
-export { config };
+export default config;
