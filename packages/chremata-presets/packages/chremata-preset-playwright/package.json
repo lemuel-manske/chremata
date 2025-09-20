@@ -44,14 +44,14 @@
     "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
+    "@chremata-preset/rollup": "file:../chremata-preset-rollup",
     "@chremata-preset/prettier": "file:../chremata-preset-prettier",
     "@chremata-preset/eslint": "file:../chremata-preset-eslint",
-    "@chremata-preset/rollup": "file:../chremata-preset-rollup",
     "@chremata-preset/typescript": "file:../chremata-preset-typescript",
     "@types/lodash.merge": "^4.6.9",
-    "rollup": "^4.50.1",
     "eslint": "^9.35.0",
-    "typescript": "^5.9.2",
-    "prettier": "^3.6.2"
+    "rollup": "^4.50.1",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2"
   }
 }
