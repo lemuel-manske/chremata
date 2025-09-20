@@ -80,3 +80,27 @@ export type Optionals<T> = {
  * }
  */
 export type UserEvent = () => void;
+
+type Id = string;
+
+/**
+ * Represents a type that includes an `id` property of type `Id`.
+ * 
+ * @template T - The base type to be extended with the `id` property.
+ * 
+ * @example
+ * 
+ * interface Example {
+ *   name: string;
+ *   age: number;
+ * }
+ * 
+ * type IdentifiableExample = Identifiable<Example>;
+ * 
+ * const example: IdentifiableExample = {
+ *   id: '123',
+ *   name: 'John Doe',
+ *   age: 30,
+ * };
+ */
+export type Identifiable<T> = T & { id: Id };
