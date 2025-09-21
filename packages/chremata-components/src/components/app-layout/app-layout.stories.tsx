@@ -9,6 +9,7 @@ import {
   type Column,
   type Row,
 } from '../..';
+
 import { Banner } from '../banner/banner';
 
 const columns: Column[] = [
