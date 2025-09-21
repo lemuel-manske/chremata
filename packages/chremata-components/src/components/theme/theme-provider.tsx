@@ -6,14 +6,14 @@ type Theme = `t-${ThemeOption}`;
 
 type ThemeContextValue = {
   theme: Theme;
-}
+};
 
 type ThemeProviderProps = {
   children: React.ReactNode;
-}
+};
 
 const ThemeContext = React.createContext<ThemeContextValue>({
-  theme: "t-dark-green",
+  theme: 't-dark-green',
 });
 
 export function ThemeProvider(props: ThemeProviderProps) {
@@ -22,7 +22,7 @@ export function ThemeProvider(props: ThemeProviderProps) {
   const DEFAULT_THEME: Theme = 't-dark-green';
 
   const stateValue = { theme: DEFAULT_THEME };
-  
+
   return (
     <ThemeContext.Provider value={stateValue}>
       <div className={DEFAULT_THEME}>{children}</div>

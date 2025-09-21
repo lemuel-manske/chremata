@@ -46,7 +46,7 @@ type ButtonAttributes = {
   /**
    * The fit of the Button. Default is 'fitContent'.
    */
-  fit?:  ButtonFit;
+  fit?: ButtonFit;
 
   /**
    * Whether the Button is disabled. Default is false.
