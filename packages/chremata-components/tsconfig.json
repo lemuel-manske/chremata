@@ -4,7 +4,14 @@
     "outDir": "dist",
     "jsx": "react-jsx",
     "rootDir": "src",
-    "types": ["@testing-library/jest-dom/jest-globals"]
   },
-  "include": ["src/**/*.tsx", "src/**/*.ts"]
+  "include": ["./src"],
+  "exclude": [
+    "./src/**/*.test.ts",
+    "./src/**/*.test.tsx",
+    "./src/**/*.spec.ts",
+    "./src/**/*.spec.tsx",
+    "./src/**/*.stories.tsx",
+    "./src/**/*.stories.ts"
+  ]
 }
