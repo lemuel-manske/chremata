@@ -13,7 +13,11 @@ export default {
 export const Default: StoryObj<typeof Banner> = {
   render: () => (
     <Banner>
-      <Label size="xlarge" variant="emphasis">Banner</Label>
+      <Label
+        size="xlarge"
+        variant="emphasis">
+        Banner
+      </Label>
 
       <Label>Banner</Label>
     </Banner>

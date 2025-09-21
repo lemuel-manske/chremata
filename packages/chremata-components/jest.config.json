@@ -3,7 +3,7 @@
 
   "setupFilesAfterEnv": ["@testing-library/jest-dom/jest-globals"],
 
-  "testEnvironment": "jsdom", 
+  "testEnvironment": "jsdom",
   "testEnvironmentOptions": {
     "environment": "jsdom"
   }

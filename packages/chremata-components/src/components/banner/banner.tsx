@@ -11,9 +11,5 @@ export function Banner(bannerProps: BannerProps) {
     'ch-banner': true,
   });
 
-  return (
-    <div className={classes}>
-      {children}
-    </div>
-  );
+  return <div className={classes}>{children}</div>;
 }

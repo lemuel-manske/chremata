@@ -4,108 +4,86 @@ import { Currency } from '@chremata/utils';
 
 import { Money } from './money';
 
-test(
-  'should render a USD Money',
-  { tag: ['@ch-money'] },
-  async ({ mount, page }) => {
-    await mount(
-      <Money
-        amount={1234.56}
-        currency={Currency.US_DOLLAR}
-      />
-    );
+const tag = ['@ch-money'];
 
-    const money = page.getByText('+US$ 1.234,56');
+test('should render a USD Money', { tag }, async ({ mount, page }) => {
+  await mount(
+    <Money
+      amount={1234.56}
+      currency={Currency.US_DOLLAR}
+    />
+  );
 
-    await expect(money).toNotHaveAccessibilityViolations();
-  }
-);
+  const money = page.getByText('+US$ 1.234,56');
 
-test(
-  'should render a negative USD Money',
-  { tag: ['@ch-money'] },
-  async ({ mount, page }) => {
-    await mount(
-      <Money
-        amount={-1234.56}
-        currency={Currency.US_DOLLAR}
-      />
-    );
+  await expect(money).toNotHaveAccessibilityViolations();
+});
 
-    const money = page.getByText('-US$ 1.234,56');
+test('should render a negative USD Money', { tag }, async ({ mount, page }) => {
+  await mount(
+    <Money
+      amount={-1234.56}
+      currency={Currency.US_DOLLAR}
+    />
+  );
 
-    await expect(money).toNotHaveAccessibilityViolations();
-  }
-);
+  const money = page.getByText('-US$ 1.234,56');
 
-test(
-  'should render emphasis USD Money',
-  { tag: ['@ch-money'] },
-  async ({ mount, page }) => {
-    await mount(
-      <Money
-        amount={1234.56}
-        currency={Currency.US_DOLLAR}
-        variant="emphasis"
-      />
-    );
+  await expect(money).toNotHaveAccessibilityViolations();
+});
 
-    const money = page.getByText('+US$ 1.234,56');
+test('should render emphasis USD Money', { tag }, async ({ mount, page }) => {
+  await mount(
+    <Money
+      amount={1234.56}
+      currency={Currency.US_DOLLAR}
+      variant="emphasis"
+    />
+  );
 
-    await expect(money).toNotHaveAccessibilityViolations();
-  }
-);
+  const money = page.getByText('+US$ 1.234,56');
 
-test(
-  'should render small USD Money',
-  { tag: ['@ch-money'] },
-  async ({ mount, page }) => {
-    await mount(
-      <Money
-        amount={1234.56}
-        currency={Currency.US_DOLLAR}
-        size="small"
-      />
-    );
+  await expect(money).toNotHaveAccessibilityViolations();
+});
 
-    const money = page.getByText('+US$ 1.234,56');
+test('should render small USD Money', { tag }, async ({ mount, page }) => {
+  await mount(
+    <Money
+      amount={1234.56}
+      currency={Currency.US_DOLLAR}
+      size="small"
+    />
+  );
 
-    await expect(money).toNotHaveAccessibilityViolations();
-  }
-);
+  const money = page.getByText('+US$ 1.234,56');
 
-test(
-  'should render large USD Money',
-  { tag: ['@ch-money'] },
-  async ({ mount, page }) => {
-    await mount(
-      <Money
-        amount={1234.56}
-        currency={Currency.US_DOLLAR}
-        size="large"
-      />
-    );
+  await expect(money).toNotHaveAccessibilityViolations();
+});
 
-    const money = page.getByText('+US$ 1.234,56');
+test('should render large USD Money', { tag }, async ({ mount, page }) => {
+  await mount(
+    <Money
+      amount={1234.56}
+      currency={Currency.US_DOLLAR}
+      size="large"
+    />
+  );
 
-    await expect(money).toNotHaveAccessibilityViolations();
-  }
-);
+  const money = page.getByText('+US$ 1.234,56');
 
-test(
-  'should render a xlarge USD Money',
-  { tag: ['@ch-money'] },
-  async ({ mount, page }) => {
-    await mount(
-      <Money
-        amount={1234.56}
-        currency={Currency.US_DOLLAR}
-        size="xlarge"
-      />
-    );
+  await expect(money).toNotHaveAccessibilityViolations();
+});
 
-    const money = page.getByText('+US$ 1.234,56');
+test('should render a xlarge USD Money', { tag }, async ({ mount, page }) => {
+  await mount(
+    <Money
+      amount={1234.56}
+      currency={Currency.US_DOLLAR}
+      size="xlarge"
+    />
+  );
 
-    await expect(money).toNotHaveAccessibilityViolations();
-  }
-);
+  const money = page.getByText('+US$ 1.234,56');
+
+  await expect(money).toNotHaveAccessibilityViolations();
+});

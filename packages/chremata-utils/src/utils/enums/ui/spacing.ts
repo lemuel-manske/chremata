@@ -5,5 +5,5 @@ export enum Spacing {
   XSMALL = 'xsmall',
   LARGE = 'large',
   XLARGE = 'xlarge',
-  XXLARGE = 'xxlarge'
+  XXLARGE = 'xxlarge',
 }

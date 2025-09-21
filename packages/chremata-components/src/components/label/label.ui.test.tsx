@@ -2,103 +2,73 @@ import { test, expect } from '@chremata-preset/playwright/test';
 
 import { Label } from './label';
 
-test(
-  'should render a Label',
-  { tag: ['@ch-label'] },
-  async ({ mount, page }) => {
-    await mount(<Label>Label</Label>);
+const tag = ['@ch-label'];
 
-    const label = page.getByText('Label');
+test('should render a Label', { tag }, async ({ mount, page }) => {
+  await mount(<Label>Label</Label>);
 
-    await expect(label).toNotHaveAccessibilityViolations();
-  }
-);
+  const label = page.getByText('Label');
 
-test(
-  'should render disabled Label',
-  { tag: ['@ch-label'] },
-  async ({ mount, page }) => {
-    await mount(<Label disabled>Label</Label>);
+  await expect(label).toNotHaveAccessibilityViolations();
+});
 
-    const label = page.getByText('Label');
+test('should render disabled Label', { tag }, async ({ mount, page }) => {
+  await mount(<Label disabled>Label</Label>);
 
-    await expect(label).toNotHaveAccessibilityViolations();
-  }
-);
+  const label = page.getByText('Label');
 
-test(
-  'should render a emphasis Label',
-  { tag: ['@ch-label'] },
-  async ({ mount, page }) => {
-    await mount(<Label variant="emphasis">Label</Label>);
+  await expect(label).toNotHaveAccessibilityViolations();
+});
 
-    const label = page.getByText('Label');
+test('should render a emphasis Label', { tag }, async ({ mount, page }) => {
+  await mount(<Label variant="emphasis">Label</Label>);
 
-    await expect(label).toNotHaveAccessibilityViolations();
-  }
-);
+  const label = page.getByText('Label');
 
-test(
-  'should render a small Label',
-  { tag: ['@ch-label'] },
-  async ({ mount, page }) => {
-    await mount(<Label size="small">Label</Label>);
+  await expect(label).toNotHaveAccessibilityViolations();
+});
 
-    const label = page.getByText('Label');
+test('should render a small Label', { tag }, async ({ mount, page }) => {
+  await mount(<Label size="small">Label</Label>);
 
-    await expect(label).toNotHaveAccessibilityViolations();
-  }
-);
+  const label = page.getByText('Label');
 
-test(
-  'should render a medium Label',
-  { tag: ['@ch-label'] },
-  async ({ mount, page }) => {
-    await mount(<Label size="medium">Label</Label>);
+  await expect(label).toNotHaveAccessibilityViolations();
+});
 
-    const label = page.getByText('Label');
+test('should render a medium Label', { tag }, async ({ mount, page }) => {
+  await mount(<Label size="medium">Label</Label>);
 
-    await expect(label).toNotHaveAccessibilityViolations();
-  }
-);
+  const label = page.getByText('Label');
 
-test(
-  'should render a large Label',
-  { tag: ['@ch-label'] },
-  async ({ mount, page }) => {
-    await mount(<Label size="large">Label</Label>);
+  await expect(label).toNotHaveAccessibilityViolations();
+});
 
-    const label = page.getByText('Label');
+test('should render a large Label', { tag }, async ({ mount, page }) => {
+  await mount(<Label size="large">Label</Label>);
 
-    await expect(label).toNotHaveAccessibilityViolations();
-  }
-);
+  const label = page.getByText('Label');
 
-test(
-  'should render a xlarge Label',
-  { tag: ['@ch-label'] },
-  async ({ mount, page }) => {
-    await mount(<Label size="xlarge">Label</Label>);
+  await expect(label).toNotHaveAccessibilityViolations();
+});
 
-    const label = page.getByText('Label');
+test('should render a xlarge Label', { tag }, async ({ mount, page }) => {
+  await mount(<Label size="xlarge">Label</Label>);
 
-    await expect(label).toNotHaveAccessibilityViolations();
-  }
-);
+  const label = page.getByText('Label');
 
-test(
-  'should render a Label with Icon',
-  { tag: ['@ch-label'] },
-  async ({ mount, page }) => {
-    await mount(
-      <Label>
-        <Label.Icon name="CoinIconSvg" />
-        Label
-      </Label>
-    );
+  await expect(label).toNotHaveAccessibilityViolations();
+});
 
-    const label = page.getByText('Label');
+test('should render a Label with Icon', { tag }, async ({ mount, page }) => {
+  await mount(
+    <Label>
+      <Label.Icon name="CoinIconSvg" />
+      Label
+    </Label>
+  );
 
-    await expect(label).toNotHaveAccessibilityViolations();
-  }
-);
+  const label = page.getByText('Label');
+
+  await expect(label).toNotHaveAccessibilityViolations();
+});

@@ -36,9 +36,10 @@ export type GridAreaProps = {
   /**
    * The children that will be shown inside the component.
    */
-  children?: React.ReactElement<GridLayoutProps> 
+  children?:
+    | React.ReactElement<GridLayoutProps>
     | React.ReactElement[]
-    | React.ReactElement
+    | React.ReactElement;
 };
 
 export type GridLayoutProps = {

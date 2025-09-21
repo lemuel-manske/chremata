@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 export type ModalState = {
-  opened?: boolean;
-}
+  open?: boolean;
+};
 
 export type ModalContextValue = {
   id: string;
@@ -11,7 +11,7 @@ export type ModalContextValue = {
 
 export const ModalContext = React.createContext<ModalContextValue>({
   id: '',
-  state: { opened: false },
+  state: { open: false },
 });
 
 export function useModalContext() {

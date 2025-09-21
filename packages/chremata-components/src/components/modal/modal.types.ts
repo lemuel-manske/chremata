@@ -1,8 +1,8 @@
-import * as React from "react"
+import * as React from 'react';
 
-import type { ModalHeaderProps } from "./modal-header/modal-header.types";
+import type { ModalHeaderProps } from './modal-header/modal-header.types';
 
-export type ModalProps = {
+type ModalAttributes = {
   /**
    * Modal identifier.
    */
@@ -14,7 +14,9 @@ export type ModalProps = {
   children: React.ReactElement<ModalHeaderProps>;
 
   /**
-   * If `true` the modal is opened. Defaults to `false`.
+   * Whether the Modal is open or closed.
    */
-  opened?: boolean;
-}
+  open?: boolean;
+};
+
+export type ModalProps = ModalAttributes;

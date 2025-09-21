@@ -1,14 +1,21 @@
-import * as React from 'react';
+import { classNames } from '@chremata/utils';
 
-import { type ModalHeaderProps } from "./modal-header.types";
-import { useModalContext } from '../modal-context';
+import { type ModalHeaderProps } from './modal-header.types';
+import { useModalHeader } from './use-modal-header';
+
+import './index.css';
 
 export function ModalHeader(props: ModalHeaderProps) {
-  const { children } = props;
+  const { title, button } = useModalHeader(props);
 
-  const { id } = useModalContext();
-
-  return React.cloneElement(children, {
-    id,
+  const classes = classNames({
+    'ch-modal-header': true,
   });
+
+  return (
+    <div className={classes}>
+      {title}
+      {button}
+    </div>
+  );
 }

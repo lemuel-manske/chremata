@@ -6,5 +6,5 @@
     "rootDir": "src",
     "types": ["@testing-library/jest-dom/jest-globals"]
   },
-  "include": ["src/**/*.tsx", "src/**/*.ts"],
+  "include": ["src/**/*.tsx", "src/**/*.ts"]
 }

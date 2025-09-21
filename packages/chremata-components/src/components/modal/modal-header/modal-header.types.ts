@@ -1,7 +1,10 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { type LabelProps } from "../../label/label.types";
+import { type ButtonProps } from '../../button/button.types';
+import { type ModalTitleProps } from '../modal-title/modal-title.types';
 
 export type ModalHeaderProps = {
-  children: React.ReactElement<LabelProps>;
-}
+  children:
+    | React.ReactElement<ModalTitleProps>
+    | [React.ReactElement<ModalTitleProps>, React.ReactElement<ButtonProps>];
+};

@@ -4,7 +4,9 @@ import { Label } from '../label/label';
 
 import { GridLayout } from './grid-layout';
 
-test('should render a GridLayout', { tag: ['@ch-grid'] }, async ({ mount }) => {
+const tag = ['@ch-grid'];
+
+test('should render a GridLayout', { tag }, async ({ mount }) => {
   const grid = await mount(
     <GridLayout
       columnGap="panel"
