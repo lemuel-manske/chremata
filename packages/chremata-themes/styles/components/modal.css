@@ -1,0 +1,5 @@
+.t-dark-green {
+  --ch-modal--background-color: var(--background-color--top);
+  
+  --ch-modal--background-color--backdrop: var(--background-color--surface);
+}

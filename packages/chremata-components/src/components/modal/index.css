@@ -1,7 +1,11 @@
-.ch-modal {
-  position: fixed;
+.ch-modal::backdrop {
+  opacity: 0.45;
+  background-color: var(--ch-modal--background-color--backdrop);
+}
 
+.ch-modal {
   padding: 24px 32px;
+  border: none;
 
   background-color: var(--ch-modal--background-color);
 

@@ -17,25 +17,35 @@ Modal.Title = ModalTitle;
 export function Modal(props: ModalProps) {
   const { id, header, open } = useModal(props);
 
+  const currRef = React.useRef<HTMLDialogElement>(null);
+
+  React.useEffect(() => {
+    const dialog = currRef.current;
+
+    if (!dialog) return;
+
+    if (open) {
+      dialog.showModal();
+    } else {
+      dialog.close();
+    }
+  }, [open]);
+
   const classes = classNames({
     'ch-modal': true,
   });
-
-  if (!open) {
-    return null;
-  }
 
   const stateValue = { id, state: { open } };
 
   return (
     <ModalContext.Provider value={stateValue}>
-      <div
-        role="dialog"
+      <dialog
+        ref={currRef}
         aria-modal="true"
         aria-labelledby={id}
         className={classes}>
         {header}
-      </div>
+      </dialog>
     </ModalContext.Provider>
   );
 }

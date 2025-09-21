@@ -15,7 +15,7 @@ type RootProps = {
 const Root = ({ children }: RootProps) => {
   return (
     <ThemeProvider>
-      <main className="preview">{children}</main>;
+      <main className="preview">{children}</main>
     </ThemeProvider>
   );
 };

@@ -1,0 +1,7 @@
+.t-dark-green {
+  --font-color--light: #eef9e5; 
+  --font-color--light-disabled: #b0b7ab;
+  
+  --font-color--dark: #061400;
+  --font-color--dark-disabled: #151c12;
+}
