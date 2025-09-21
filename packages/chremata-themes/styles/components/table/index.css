@@ -1,0 +1,6 @@
+.t-dark-green {
+  --ch-table--background-color--row: #003b25;
+  --ch-table--background-color--row-odd: #084b32;
+
+  --ch-table--border-color: #eef9e5;
+}

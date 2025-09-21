@@ -1,0 +1,12 @@
+.t-dark-green {
+  --ch-button--background-color--primary: #e3fff5;
+  --ch-button--background-color--primary-active: #c1f7e4;
+  --ch-button--background-color--primary-disabled: #e3fff59a;
+  --ch-button--background-color--primary-focus-visible: #e3fff5;
+  --ch-button--background-color--primary-hover: #d8fdf0;
+
+  --ch-button--background-color--secondary: transparent;
+  --ch-button--background-color--secondary-active: #032616;
+  --ch-button--background-color--secondary-focus-visible: #03311c;
+  --ch-button--background-color--secondary-hover: #03311c;
+}

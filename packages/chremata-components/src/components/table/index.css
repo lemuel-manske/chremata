@@ -16,7 +16,7 @@
 .ch-table td {
   padding: 0.5rem 1rem;
 
-  border-inline-end: 1px solid var(--border-color-high-contrast);
+  border-inline-end: 1px solid var(--ch-table--border-color);
 }
 
 .ch-table th span {
@@ -29,13 +29,11 @@
 }
 
 .ch-table thead tr {
-  background-color: var(--background-surface);
+  background-color: var(--ch-table--background-color--row);
 }
 
 .ch-table tbody tr:nth-child(odd):not(.empty-row) {
-  --color-row-odd: var(--background-deep);
-
-  background: var(--color-row-odd);
+  background: var(--ch-table--background-color--row-odd);
 }
 
 .empty-row {

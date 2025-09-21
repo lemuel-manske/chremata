@@ -3,7 +3,17 @@
 
   padding: 24px 32px;
 
-  background-color: var(--background-dark);
+  background-color: var(--ch-modal--background-color);
 
   min-width: 40%;
+}
+
+.ch-modal-header {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 2rem;
 }
