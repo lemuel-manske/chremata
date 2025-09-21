@@ -1,4 +1,5 @@
 import {
+  type Fit,
   type Size,
   type UserEvent,
   type EnumOrStringLiteralTypes,
@@ -16,7 +17,12 @@ export type ButtonVariant = EnumOrStringLiteralTypes<ButtonVariantEnum>;
 
 export type ButtonSize = EnumOrStringLiteralTypesInclude<
   Size,
-  'small' | 'medium' | 'large' | 'fillAvailable'
+  'small' | 'medium' | 'large'
+>;
+
+export type ButtonFit = EnumOrStringLiteralTypesInclude<
+  Fit,
+  'fitContent' | 'fillAvailable'
 >;
 
 type ButtonEvents = {
@@ -38,6 +44,11 @@ type ButtonAttributes = {
   size?: ButtonSize;
 
   /**
+   * The fit of the Button. Default is 'fitContent'.
+   */
+  fit?: ButtonFit;
+
+  /**
    * Whether the Button is disabled. Default is false.
    */
   disabled?: boolean;
@@ -56,5 +67,5 @@ type ButtonAttributes = {
 export type ButtonProps = ButtonAttributes & ButtonEvents;
 
 export type DefaultButtonProps = Required<
-  Pick<ButtonProps, 'disabled' | 'size' | 'variant'>
+  Pick<ButtonProps, 'disabled' | 'size' | 'variant' | 'fit'>
 >;

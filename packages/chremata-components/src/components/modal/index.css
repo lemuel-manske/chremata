@@ -1,9 +1,23 @@
+.ch-modal::backdrop {
+  opacity: 0.45;
+  background-color: var(--ch-modal--background-color--backdrop);
+}
+
 .ch-modal {
-  position: fixed;
-
   padding: 24px 32px;
+  border: none;
 
-  background-color: var(--background-dark);
+  background-color: var(--ch-modal--background-color);
 
   min-width: 40%;
+}
+
+.ch-modal-header {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 2rem;
 }

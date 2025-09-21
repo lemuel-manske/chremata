@@ -4,6 +4,8 @@ import '@chremata/icons';
 
 import type { Preview } from '@storybook/react';
 
+import { ThemeProvider } from '../src/components/theme/theme-provider';
+
 import './index.css';
 
 type RootProps = {
@@ -11,7 +13,11 @@ type RootProps = {
 };
 
 const Root = ({ children }: RootProps) => {
-  return <main className="preview">{children}</main>;
+  return (
+    <ThemeProvider>
+      <main className="preview">{children}</main>
+    </ThemeProvider>
+  );
 };
 
 const preview: Preview = {

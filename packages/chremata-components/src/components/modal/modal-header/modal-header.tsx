@@ -3,8 +3,6 @@ import { classNames } from '@chremata/utils';
 import { type ModalHeaderProps } from './modal-header.types';
 import { useModalHeader } from './use-modal-header';
 
-import './index.css';
-
 export function ModalHeader(props: ModalHeaderProps) {
   const { title, button } = useModalHeader(props);
 

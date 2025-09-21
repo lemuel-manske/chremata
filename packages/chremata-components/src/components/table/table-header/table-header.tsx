@@ -16,7 +16,11 @@ export function TableHeader(props: TableHeaderProps) {
     <TableCell
       header
       key={col.key}>
-      <Label variant="emphasis">{col.label}</Label>
+      <Label
+        size="xlarge"
+        variant="emphasis">
+        {col.label}
+      </Label>
     </TableCell>
   ));
 

@@ -67,29 +67,23 @@
 .ch-label-wrapper {
   display: flex;
 
+  align-items: center;
+
   gap: 8px;
 }
 
 .ch-label-wrapper--regular-disabled {
-  --font-color-regular-disabled: var(--readable-high-contrast-disabled);
-
-  color: var(--font-color-regular-disabled);
-}
-
-.ch-label-wrapper--accent-disabled {
-  --font-color-accent-disabled: var(--readable-low-contrast-disabled);
-
-  color: var(--font-color-accent-disabled);
+  color: var(--ch-label--color--regular-disabled);
 }
 
 .ch-label-wrapper--regular {
-  --font-color-regular: var(--readable-high-contrast);
+  color: var(--ch-label--color--regular);
+}
 
-  color: var(--font-color-regular);
+.ch-label-wrapper--accent-disabled {
+  color: var(--ch-label--color--accent-disabled);
 }
 
 .ch-label-wrapper--accent {
-  --font-color-accent: var(--readable-low-contrast);
-
-  color: var(--font-color-accent);
+  color: var(--ch-label--color--accent);
 }

@@ -6,9 +6,7 @@ import { useCardContext } from '../card.context';
 
 import { type CardHeaderProps } from './card-header.types';
 
-import './index.css';
-
-export function CardHeader(props: CardHeaderProps) {
+export function CardHeader(_props: CardHeaderProps) {
   const classes = classNames({
     'ch-card-header': true,
   });

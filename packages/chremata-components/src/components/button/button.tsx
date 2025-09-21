@@ -11,6 +11,7 @@ import './index.css';
 export function Button(props: ButtonProps) {
   const {
     color,
+    fit,
     label,
     labelSize,
     size,
@@ -23,6 +24,7 @@ export function Button(props: ButtonProps) {
 
   const classes = classNames({
     'ch-button': true,
+    [`ch-button--${fit}`]: true,
     [`ch-button--${size}`]: true,
     [`ch-button--${variant}`]: true,
   });

@@ -10,5 +10,5 @@
 
   min-height: 4em;
 
-  background-color: var(--background-dark);
+  background-color: var(--ch-banner--background-color);
 }

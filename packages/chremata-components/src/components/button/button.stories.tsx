@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react';
 
 import { fn } from '@storybook/test';
 
-import { Size } from '@chremata/utils';
+import { Fit, Size } from '@chremata/utils';
 
 import { DEFAULT_BUTTON_PROPS } from './use-button';
 import { ButtonVariantEnum, type ButtonProps } from './button.types';
@@ -18,9 +18,13 @@ export default {
     label: {
       control: 'text',
     },
+    fit: {
+      control: 'select',
+      options: [Fit.FILL_AVAILABLE, Fit.FIT_CONTENT],
+    },
     size: {
       control: 'select',
-      options: [Size.SMALL, Size.MEDIUM, Size.LARGE, Size.FILL_AVAILABLE],
+      options: [Size.SMALL, Size.MEDIUM, Size.LARGE],
     },
     disabled: {
       control: 'boolean',

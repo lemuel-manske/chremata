@@ -8,7 +8,8 @@ import {
   Table,
   type Column,
   type Row,
-} from '@chremata/components';
+} from '../..';
+
 import { Banner } from '../banner/banner';
 
 const columns: Column[] = [

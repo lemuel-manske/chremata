@@ -1,6 +1,8 @@
 :root {
-  --background-deep: #084b32;
-  --background-main: #06402b;
-  --background-surface: #003b25;
-  --background-dark: #03311c;
+  --background-color--deep: #121212;
+  --background-color--dark: #012015;
+  --background-color--top: #003824;
+  --background-color--surface: #0d0e0d;
+
+  --background-color--main: var(--background-color--deep);
 }

@@ -6,7 +6,8 @@ export function NavbarItem(props: NavbarItemProps) {
   return (
     <Button
       variant="secondary"
-      size="fillAvailable"
+      size="medium"
+      fit="fillAvailable"
       {...props}
     />
   );

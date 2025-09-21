@@ -12,11 +12,15 @@
   display: none;
 }
 
+.ch-table th {
+  text-align: left;
+}
+
 .ch-table th,
 .ch-table td {
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.5rem;
 
-  border-inline-end: 1px solid var(--border-color-high-contrast);
+  border-bottom: 1px solid var(--ch-table--border-color);
 }
 
 .ch-table th span {
@@ -26,16 +30,6 @@
 .ch-table th:last-child,
 .ch-table td:last-child {
   border-inline-end: 0;
-}
-
-.ch-table thead tr {
-  background-color: var(--background-surface);
-}
-
-.ch-table tbody tr:nth-child(odd):not(.empty-row) {
-  --color-row-odd: var(--background-deep);
-
-  background: var(--color-row-odd);
 }
 
 .empty-row {

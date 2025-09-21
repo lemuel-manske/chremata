@@ -1,0 +1,4 @@
+.t-dark-green {
+  --ch-card--background-color: var(--background-color--surface);
+  --ch-card--border-radius: var(--radius-emphasis);
+}
