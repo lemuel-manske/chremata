@@ -2,35 +2,33 @@ import { test, expect } from '@chremata-preset/playwright/test';
 
 import { Table } from './table';
 
-test(
-  'should render a Table',
-  { tag: ['@ch-table'] },
-  async ({ mount, page }) => {
-    await mount(
-      <Table
-        caption="Sample Table"
-        columns={[
-          { label: 'Name', key: 'name' },
-          { label: 'Age', key: 'age' },
-        ]}
-        data={[
-          { name: 'Alice', age: 30, country: 'USA' },
-          { name: 'Bob', age: 25, country: 'Canada' },
-        ]}
-      />
-    );
+const tag = ['@ch-table'];
 
-    const table = page.getByRole('grid', { name: 'Sample Table' });
+test('should render a Table', { tag }, async ({ mount, page }) => {
+  await mount(
+    <Table
+      caption="Sample Table"
+      columns={[
+        { label: 'Name', key: 'name' },
+        { label: 'Age', key: 'age' },
+      ]}
+      data={[
+        { name: 'Alice', age: 30, country: 'USA' },
+        { name: 'Bob', age: 25, country: 'Canada' },
+      ]}
+    />
+  );
 
-    const rows = table.getByRole('row');
+  const table = page.getByRole('grid', { name: 'Sample Table' });
 
-    await expect(rows).toHaveCount(3);
+  const rows = table.getByRole('row');
 
-    await expect(table).toNotHaveAccessibilityViolations();
-  }
-);
+  await expect(rows).toHaveCount(3);
 
-test('should render a Table with no data', async ({ mount, page }) => {
+  await expect(table).toNotHaveAccessibilityViolations();
+});
+
+test('should render a Table with no data', { tag }, async ({ mount, page }) => {
   await mount(
     <Table
       caption="Empty Table"

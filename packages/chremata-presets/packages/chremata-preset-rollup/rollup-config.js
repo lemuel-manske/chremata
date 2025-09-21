@@ -9,7 +9,7 @@ import { getUrlConf } from './src/plugins/url.js';
 import { getPeerDependencies } from './src/helpers/manifest.js';
 
 /**
- * @type {Promise<import('rollup').RollupOptions>}
+ * @returns {Promise<import('rollup').RollupOptions>}
  */
 async function getConfig() {
   return {
@@ -44,9 +44,4 @@ async function getConfig() {
   };
 }
 
-/**
- * @type {Promise<import('rollup').RollupOptions>}
- */
-const config = await getConfig();
-
-export { config };
+export { getConfig as default };

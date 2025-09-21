@@ -13,8 +13,7 @@
   "private": true,
   "author": "lemuel-manske",
   "scripts": {
-    "dev": "vite",
-    "lint": "eslint ."
+    "dev": "vite"
   },
   "peerDependencies": {
     "@chremata/fonts": "file:../chremata-fonts",
@@ -27,14 +26,15 @@
   "devDependencies": {
     "@chremata-preset/eslint": "file:../chremata-presets/packages/chremata-preset-eslint",
     "@chremata-preset/prettier": "file:../chremata-presets/packages/chremata-preset-prettier",
-    "@chremata-preset/rollup": "file:../chremata-presets/packages/chremata-preset-rollup",
     "@chremata-preset/typescript": "file:../chremata-presets/packages/chremata-preset-typescript",
     "@eslint/js": "^9.33.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react-swc": "^4.0.1",
-    "eslint": "^9.33.0",
+    "eslint": "^9.35.0",
     "globals": "^16.3.0",
+    "rollup": "^4.50.1",
+    "prettier": "^3.6.2",
     "typescript": "~5.8.3",
     "vite": "^7.1.2"
   }

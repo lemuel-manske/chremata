@@ -1,0 +1,9 @@
+.ch-modal {
+  position: fixed;
+
+  padding: 24px 32px;
+
+  background-color: var(--background-dark);
+
+  min-width: 40%;
+}

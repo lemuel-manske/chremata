@@ -1,0 +1,10 @@
+{
+  "preset": "../chremata-presets/packages/chremata-preset-jest/jest-config.js",
+
+  "setupFilesAfterEnv": ["@testing-library/jest-dom/jest-globals"],
+
+  "testEnvironment": "jsdom",
+  "testEnvironmentOptions": {
+    "environment": "jsdom"
+  }
+}

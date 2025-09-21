@@ -5,7 +5,9 @@ import { Label } from '../label/label';
 
 import { Card } from './card';
 
-test('should render a Card', { tag: ['@ch-card'] }, async ({ mount, page }) => {
+const tag = ['@ch-card'];
+
+test('should render a Card', { tag }, async ({ mount, page }) => {
   await mount(
     <Card
       title="Card title"

@@ -15,11 +15,9 @@
   "author": "lemuel-manske",
   "type": "module",
   "main": "./eslint-config.js",
-  "types": "./eslint-config.d.ts",
   "exports": {
     ".": {
-      "import": "./eslint-config.js",
-      "types": "./eslint-config.d.ts"
+      "import": "./eslint-config.js"
     },
     "./package.json": "./package.json"
   },

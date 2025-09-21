@@ -1,14 +1,12 @@
 .ch-grid-area {
   --grid-layout-area-padding-none: 0px;
   --grid-layout-area-padding-small: 8px;
+  --grid-layout-area-padding-medium: 16px;
+  --grid-layout-area-padding-large: 32px;
 
   grid-area: var(--grid-layout-area);
 
   padding: var(--grid-layout-area-padding);
 
-  box-shadow: none;
-}
-
-.ch-grid-area > .ch-grid > * {
   box-shadow: none;
 }

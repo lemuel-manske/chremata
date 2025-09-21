@@ -1,12 +1,14 @@
 import {
-  type LayoutPadding,
+  type AreaPadding,
   type DefaultGridAreaProps,
   type GridAreaProps,
 } from '../grid-layout.types';
 
-const PADDING_MAP: Record<NonNullable<LayoutPadding>, string> = {
+const PADDING_MAP: Record<NonNullable<AreaPadding>, string> = {
   none: 'var(--grid-layout-area-padding-none)',
   small: 'var(--grid-layout-area-padding-small)',
+  medium: 'var(--grid-layout-area-padding-medium)',
+  large: 'var(--grid-layout-area-padding-large)',
 };
 
 export const DEFAULT_GRID_AREA_PROPS: DefaultGridAreaProps = {

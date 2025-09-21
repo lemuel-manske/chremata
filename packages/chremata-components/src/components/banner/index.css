@@ -1,0 +1,14 @@
+.ch-banner {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.4em;
+
+  padding: 24px 32px;
+
+  width: stretch;
+
+  min-height: 4em;
+
+  background-color: var(--background-dark);
+}
