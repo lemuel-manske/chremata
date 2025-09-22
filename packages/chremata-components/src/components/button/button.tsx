@@ -34,7 +34,8 @@ export function Button(props: ButtonProps) {
       aria-label={label}
       className={classes}
       disabled={disabled}
-      onClick={disabled ? doNothing : onClick}>
+      onClick={disabled ? doNothing : onClick}
+      tabIndex={0}>
       <Label
         size={labelSize}
         color={color}

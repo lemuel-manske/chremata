@@ -23,4 +23,5 @@ test('should render a Card', { tag }, async ({ mount, page }) => {
   const card = page.getByRole('article');
 
   await expect(card).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });

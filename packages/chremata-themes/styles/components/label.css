@@ -3,5 +3,5 @@
   --ch-label--color--regular-disabled: var(--font-color--light-disabled);
 
   --ch-label--color--accent: var(--font-color--dark);
-  --ch-label--color--accent-disabled: var(--font-color--dark-disable);
+  --ch-label--color--accent-disabled: var(--font-color--dark-disabled);
 }

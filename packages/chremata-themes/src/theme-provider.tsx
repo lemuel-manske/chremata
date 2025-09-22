@@ -1,18 +1,18 @@
 import * as React from 'react';
 
-type ThemeOption = 'dark-green';
+export type ThemeOption = 'dark-green';
 
-type Theme = `t-${ThemeOption}`;
+export type Theme = `t-${ThemeOption}`;
 
-type ThemeContextValue = {
+export type ThemeContextValue = {
   theme: Theme;
 };
 
-type ThemeProviderProps = {
+export type ThemeProviderProps = {
   children: React.ReactNode;
 };
 
-const ThemeContext = React.createContext<ThemeContextValue>({
+export const ThemeContext = React.createContext<ThemeContextValue>({
   theme: 't-dark-green',
 });
 

@@ -1,8 +1,9 @@
-import { type TableRowProps } from './table-row.types';
 import { classNames } from '@chremata/utils';
 
+import { type TableRowProps } from './table-row.types';
+
 export function TableRow(props: TableRowProps) {
-  const { children, className } = props;
+  const { children, className, tabIndex } = props;
 
   const role = 'row';
 
@@ -12,8 +13,9 @@ export function TableRow(props: TableRowProps) {
 
   return (
     <tr
+      className={classes}
       role={role}
-      className={classes}>
+      tabIndex={tabIndex}>
       {children}
     </tr>
   );

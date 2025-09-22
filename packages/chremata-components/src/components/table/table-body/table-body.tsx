@@ -18,7 +18,13 @@ export function TableBody(props: TableBodyProps) {
       </TableCell>
     ));
 
-    return <TableRow key={i}>{cells}</TableRow>;
+    return (
+      <TableRow
+        tabIndex={0}
+        key={i}>
+        {cells}
+      </TableRow>
+    );
   });
 
   const role = 'rowgroup';

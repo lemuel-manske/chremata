@@ -8,6 +8,9 @@ const getBaseConfig = (): PlaywrightTestConfig => ({
   testDir: './',
   testMatch: /.*\.ui\.test\.tsx?$/,
 
+  snapshotPathTemplate:
+    '{testDir}/{testFileDir}/__screenshots__/{projectName}/{testName}{ext}',
+
   timeout: 10 * 1000,
   fullyParallel: true,
 

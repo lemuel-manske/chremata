@@ -26,6 +26,7 @@ test('should render a Table', { tag }, async ({ mount, page }) => {
   await expect(rows).toHaveCount(3);
 
   await expect(table).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render a Table with no data', { tag }, async ({ mount, page }) => {
@@ -43,4 +44,5 @@ test('should render a Table with no data', { tag }, async ({ mount, page }) => {
   const table = page.getByRole('grid', { name: 'Empty Table' });
 
   await expect(table).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });

@@ -1,8 +1,8 @@
 :root {
-  --background-color--deep: #121212;
-  --background-color--dark: #012015;
-  --background-color--top: #003824;
-  --background-color--surface: #0d0e0d;
+  --background-color--deep: hsl(var(--color-gray-95));
+  --background-color--dark: hsl(var(--color-dark-green-85));
+  --background-color--top: hsl(var(--color-dark-green-70));
+  --background-color--surface: hsl(var(--color-dark-green-90));
 
   --background-color--main: var(--background-color--deep);
 }

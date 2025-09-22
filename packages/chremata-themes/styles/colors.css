@@ -1,0 +1,20 @@
+:root {
+  --color-signal-orange: 22, 100%, 59%;
+  --color-signal-green: 173, 72%, 53%;
+
+  --color-gray-95: 0, 0%, 7%;
+
+  --color-dark-green-100: 102, 100%, 4%;
+  --color-dark-green-90: 120, 4%, 5%;
+  --color-dark-green-85: 159, 94%, 6%;
+  --color-dark-green-80: 153, 85%, 8%;
+  --color-dark-green-75: 153, 88%, 10%;
+  --color-dark-green-70: 159, 100%, 11%;
+
+  --color-lime-green-95: 102, 22%, 9%;
+
+  --color-light-green-15: 159, 77%, 86%;
+  --color-light-green-10: 159, 90%, 92%;
+  --color-light-green-5: 159, 100%, 95%;
+  --color-light-green-0: 93, 63%, 94%;
+}
