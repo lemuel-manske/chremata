@@ -31,6 +31,7 @@
     "test:jest": "npm run test:jest --workspaces --if-present",
     "test:jest:setup": "npm run test:setup",
     "test:playwright": "npm run test:playwright --workspaces --if-present",
+    "test:playwright:update": "npm run test:playwright:update --workspaces --if-present",
     "test:playwright:setup": "npm run test:setup && npm run build --workspace=@chremata-preset/playwright && playwright install --with-deps"
   },
   "workspaces": [

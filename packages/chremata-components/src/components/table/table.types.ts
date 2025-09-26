@@ -1,23 +1,31 @@
-export type Column = {
-  key: string;
-  label: string;
+import * as React from 'react';
+
+import type { ElementId } from '@chremata/utils';
+
+import type { TableColumnProps } from './table-column/table-column.types';
+
+type TableDataItem = Record<string, unknown>;
+
+export type TableData = TableDataItem[];
+
+type TableLabelAttributes =
+  | {
+      label: string;
+      labelledBy?: never;
+    }
+  | {
+      label?: never;
+      labelledBy: ElementId;
+    };
+
+type TableAttributes = {
+  children:
+    | React.ReactElement<TableColumnProps>
+    | React.ReactElement<TableColumnProps>[];
+
+  data: TableData;
 };
 
-export type Row = Record<string, unknown>;
+export type TableProps = TableLabelAttributes & TableAttributes;
 
-export type TableProps = {
-  /**
-   * Table caption. Required.
-   */
-  caption: string;
-
-  /**
-   * Columns configuration. Required.
-   */
-  columns: Column[];
-
-  /**
-   * Data to be displayed in the table. Required.
-   */
-  data: Row[];
-};
+export type DefaultTableProps = Required<Pick<TableProps, 'data'>>;

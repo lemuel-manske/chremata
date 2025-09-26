@@ -3,7 +3,6 @@ import { useArgs } from '@storybook/preview-api';
 import { type Meta, type StoryObj } from '@storybook/react';
 
 import { Button } from '../button/button';
-import { Label } from '../label/label';
 
 import { Modal } from './modal';
 import { type ModalProps } from './modal.types';

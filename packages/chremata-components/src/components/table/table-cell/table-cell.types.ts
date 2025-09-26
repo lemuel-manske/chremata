@@ -1,20 +1,16 @@
-import * as React from 'react';
+import type {
+  TableCellAlignmentOptions,
+  TableColumnCellInfo,
+} from '../table-column/table-column.types';
 
-import { type LabelProps } from '../../label/label.types';
+type TableCellAttributes = {
+  alignment?: TableCellAlignmentOptions;
 
-export type TableCellProps = {
-  /**
-   * Cell content.
-   */
-  children: React.ReactElement<LabelProps>;
-
-  /**
-   * Whether the cell is a header cell.
-   */
-  header?: boolean;
-
-  /**
-   * Number of columns the cell should span.
-   */
-  colSpan?: number;
+  children?: ((info: TableColumnCellInfo) => React.ReactNode) | React.ReactNode;
 };
+
+export type TableCellProps = TableCellAttributes;
+
+export type DefaultTableCellProps = Required<
+  Pick<TableCellProps, 'alignment' | 'children'>
+>;

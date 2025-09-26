@@ -1,51 +1,76 @@
 .ch-table {
-  table-layout: fixed;
+  display: grid;
+  grid-template-columns: auto;
 
-  padding: 8px;
-
-  width: stretch;
-
-  border-collapse: collapse;
+  width: 100%;
 }
 
-.ch-table caption {
-  display: none;
+.ch-table-header,
+.ch-table-content {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: inherit;
+  grid-auto-flow: column;
+
+  overflow: visible;
 }
 
-.ch-table th {
-  text-align: left;
+.ch-table-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
-.ch-table th,
-.ch-table td {
-  padding: 1rem 1.5rem;
+.ch-table-content-cell,
+.ch-table-header-cell {
+  display: flex;
 
-  border-bottom: 1px solid var(--ch-table--border-color);
+  box-sizing: border-box;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.8rem 1rem;
 }
 
-.ch-table th span {
-  display: inline-flex;
+.ch-table-header-cell--sortable {
+  cursor: pointer;
+  user-select: none;
 }
 
-.ch-table th:last-child,
-.ch-table td:last-child {
-  border-inline-end: 0;
+.ch-table-header-cell--sortable:hover {
+  background-color: hsla(var(--color-dark-green-90), 30%);
 }
 
-.ch-table tbody tr:hover {
-  filter: brightness(65%);
-}
-
-.ch-table tbody tr:focus-visible {
-  background-color: hsla(var(--color-dark-green-90), 90%);
+.ch-table-header-cell--sortable:focus {
+  background-color: hsla(var(--color-dark-green-90), 45%);
 
   outline: none;
 }
 
-.ch-table tbody tr:active {
-  background-color: hsla(var(--color-dark-green-90), 90%);
+.ch-table-header-cell--sortable:active {
+  background-color: hsla(var(--color-dark-green-90), 50%);
 }
 
-.empty-row {
-  text-align: center;
+.ch-table-content-row,
+.ch-table-header-row {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-auto-flow: column;
+  grid-template-columns: inherit;
+
+  border-bottom: 1px solid var(--ch-table--border-color);
+}
+
+.ch-table-content-row:hover {
+  background-color: hsla(var(--color-dark-green-90), 50%);
+}
+
+.ch-table-content-row:focus-visible {
+  background-color: hsla(var(--color-dark-green-90), 90%);
+  outline: none;
+}
+
+.ch-table-content-row:active {
+  background-color: hsla(var(--color-dark-green-90), 90%);
 }

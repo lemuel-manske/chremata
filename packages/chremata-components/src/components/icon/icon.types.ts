@@ -1,3 +1,5 @@
+import { type CursorType } from '@chremata/utils';
+
 import { solid as SolidSVGs, type SVGSolidProps } from '@chremata/icons';
 
 import {
@@ -8,9 +10,6 @@ import {
 export type IconSolidNames = keyof typeof SolidSVGs;
 
 type IconAttributes = {
-  /**
-   * The name of the SVG icon.
-   */
   name: IconSolidNames;
 };
 
@@ -22,20 +21,15 @@ export type IconSize = EnumOrStringLiteralTypesInclude<
 export type InnerIconProps = SVGSolidProps & IconAttributes;
 
 export type IconProps = InnerIconProps & {
-  /**
-   * The Icon label. A11y requirement.
-   */
   label: string;
 
-  /**
-   * Whether the Icon is disabled. Default is false.
-   */
   disabled?: boolean;
 
-  /**
-   * The size of the Icon. Default is 'medium'.
-   */
   size?: IconSize;
+
+  pointer?: CursorType;
 };
 
-export type IconDefaultProps = Required<Pick<IconProps, 'size' | 'disabled'>>;
+export type IconDefaultProps = Required<
+  Pick<IconProps, 'size' | 'disabled' | 'pointer'>
+>;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { solid as availableSVGs } from '@chremata/icons';
-import { classNames } from '@chremata/utils';
+import { classNames, styleMap } from '@chremata/utils';
 
 import { type IconProps, type InnerIconProps } from './icon.types';
 
@@ -16,12 +16,16 @@ function InnerIcon(props: InnerIconProps) {
 }
 
 export function Icon(props: IconProps) {
-  const { label, name, size, disabled, ...svgProps } = useIcon(props);
+  const { label, name, size, disabled, pointer, ...svgProps } = useIcon(props);
 
   const classes = classNames({
     'ch-icon': true,
     'ch-icon--disabled': disabled,
     [`ch-icon--${size}`]: true,
+  });
+
+  const styles = styleMap({
+    cursor: pointer,
   });
 
   const role = 'img';
@@ -31,6 +35,7 @@ export function Icon(props: IconProps) {
       aria-label={label}
       aria-disabled={disabled}
       className={classes}
+      style={styles}
       role={role}>
       <InnerIcon
         name={name}
