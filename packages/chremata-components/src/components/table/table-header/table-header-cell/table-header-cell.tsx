@@ -1,13 +1,10 @@
-import * as React from 'react';
-
 import { classNames, isString, styleMap } from '@chremata/utils';
 
-import { Label } from '../../label/label';
+import { Label } from '../../../label/label';
+import { Icon } from '../../../icon/icon';
 
-import type { TableHeaderCellProps } from './table-header.types';
-import { Icon } from '../../icon/icon';
+import { type TableHeaderCellProps } from './table-header-cell.types';
 import { useTableHeaderCell } from './use-table-header-cell';
-import { Button } from '../../button/button';
 
 export function TableHeaderCell(props: TableHeaderCellProps) {
   const {
@@ -31,10 +28,6 @@ export function TableHeaderCell(props: TableHeaderCellProps) {
         {children as string}
       </Label>
     );
-  }
-
-  function renderNode() {
-    return children;
   }
 
   function renderSortIcon() {

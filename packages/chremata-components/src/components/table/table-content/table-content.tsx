@@ -1,9 +1,7 @@
-import * as React from 'react';
-
 import { Label } from '../../label/label';
 
-import { TableContentCell } from './table-content-cell';
-import { TableContentRow } from './table-content-row';
+import { TableContentCell } from './table-content-cell/table-content-cell';
+import { TableContentRow } from './table-content-row/table-content-row';
 import { useTableContent } from './use-table-content';
 
 import { type TableContentProps } from './table-content.types';

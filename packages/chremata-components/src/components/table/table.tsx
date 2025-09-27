@@ -1,4 +1,4 @@
-import { TableCell } from './table-cell/table-cell';
+import { TableColumnCell } from './table-column-cell/table-column-cell';
 import { TableColumn } from './table-column/table-column';
 import { TableColumnHeader } from './table-column-header/table-column-header';
 
@@ -36,4 +36,4 @@ export function Table(props: TableProps) {
 
 Table.Column = TableColumn;
 Table.ColumnHeader = TableColumnHeader;
-Table.Cell = TableCell;
+Table.Cell = TableColumnCell;

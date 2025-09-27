@@ -115,3 +115,8 @@ export type ElementId = string;
  * from {@link T a} to {@link T b}.
  */
 export type Comparable<T = unknown> = (a: T, b: T) => number;
+
+/**
+ * Omits `children` from a given {@link T type}.
+ */
+export type NoChildren<T extends { children: unknown }> = Omit<T, 'children'>;

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { findChild } from '@chremata/utils';
 
 import { TableColumnHeader } from './table-column-header/table-column-header';
-import { TableCell } from './table-cell/table-cell';
+import { TableColumnCell } from './table-column-cell/table-column-cell';
 
 import type { DefaultTableProps, TableProps } from './table.types';
 import type {
@@ -35,7 +35,7 @@ export function useTable(props: TableProps) {
     } = column.props;
 
     const header = findChild(children, TableColumnHeader);
-    const cell = findChild(children, TableCell);
+    const cell = findChild(children, TableColumnCell);
 
     if (!header) {
       throw new Error('[Table] No TableColumnHeader provided to TableColum.');

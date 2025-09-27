@@ -1,4 +1,4 @@
-import type { TableHeaderRowProps } from './table-header.types';
+import type { TableHeaderRowProps } from './table-header-row.types';
 
 export function TableHeaderRow(props: TableHeaderRowProps) {
   const { children } = props;

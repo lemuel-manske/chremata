@@ -9,6 +9,10 @@ export function useTableContent(props: TableContentProps) {
   function makeCell(column: TableColumnData, row: Record<string, unknown>) {
     const { cell, accessorKey, width } = column;
 
+    const CELL_CONTENT = {
+      width,
+    };
+
     const content = cell.children;
 
     if (isFunction(content)) {
@@ -19,16 +23,16 @@ export function useTableContent(props: TableContentProps) {
       });
 
       return {
+        ...CELL_CONTENT,
         node,
-        width,
       };
     }
 
     const node = row[accessorKey];
 
     return {
+      ...CELL_CONTENT,
       node: String(node),
-      width,
     };
   }
 

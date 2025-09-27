@@ -7,11 +7,11 @@ export function TableColumnHeader(_props: TableColumnHeaderProps) {
   return null;
 }
 
-export const DEFAULT_TABLE_COLUMN_HEADER_PROPS: DefaultTableColumnHeaderProps =
-  {
-    alignment: {
-      horizontal: 'start',
-      vertical: 'center',
-    },
-    children: null,
-  };
+export const DEFAULT_TABLE_COLUMN_HEADER_PROPS: DefaultTableColumnHeaderProps ={
+  alignment: {
+    horizontal: 'start',
+    vertical: 'center',
+  },
+    
+  children: null,
+};

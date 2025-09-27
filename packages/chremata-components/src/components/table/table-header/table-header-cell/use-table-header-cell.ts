@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import type { TableHeaderCellProps } from './table-header.types';
+import type { TableHeaderCellProps } from '../table-header.types';
 
 export function useTableHeaderCell(props: TableHeaderCellProps) {
   const { sortable, sortDirection, onSort, ...rest } = props;

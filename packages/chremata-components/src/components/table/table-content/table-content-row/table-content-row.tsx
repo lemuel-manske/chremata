@@ -1,4 +1,4 @@
-import { type TableContentRowProps } from './table-content.types';
+import { type TableContentRowProps } from './table-content-row.types';
 
 export function TableContentRow(props: TableContentRowProps) {
   const { children } = props;

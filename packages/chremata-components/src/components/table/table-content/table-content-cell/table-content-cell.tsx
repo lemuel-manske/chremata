@@ -1,8 +1,8 @@
 import { isString, styleMap } from '@chremata/utils';
 
-import { Label } from '../../label/label';
+import { Label } from '../../../label/label';
 
-import { type TableContentCellProps } from './table-content.types';
+import { type TableContentCellProps } from './table-content-cell.types';
 
 export function TableContentCell(props: TableContentCellProps) {
   const { children, colSpan, width } = props;

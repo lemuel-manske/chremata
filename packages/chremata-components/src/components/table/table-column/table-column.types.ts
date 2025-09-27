@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 import type {
-  Alignment,
   Comparable,
   EnumOrStringLiteralTypes,
+  NoChildren,
   SortDirection,
 } from '@chremata/utils';
 
-import type { TableCellProps } from '../table-cell/table-cell.types';
+import type { TableColumnCellProps } from '../table-column-cell/table-column-cell.types';
 import type { TableColumnHeaderProps } from '../table-column-header/table-column-header.types';
 
 export type TableSortDirection = EnumOrStringLiteralTypes<SortDirection>;
@@ -15,7 +15,7 @@ export type TableSortDirection = EnumOrStringLiteralTypes<SortDirection>;
 export type TableColumnProps = {
   children: [
     React.ReactElement<TableColumnHeaderProps>,
-    React.ReactElement<TableCellProps>,
+    React.ReactElement<TableColumnCellProps>,
   ];
 
   accessorKey: string;
@@ -27,30 +27,15 @@ export type TableColumnProps = {
   sortFn?: Comparable;
 };
 
-export type TableColumnCellInfo = Omit<TableColumnProps, 'children'> & {
+export type TableColumnData = NoChildren<TableColumnProps> & {
+  header: TableColumnHeaderProps;
+  cell: TableColumnCellProps;
+};
+
+export type TableColumnCellInfo = NoChildren<TableColumnProps> & {
   value: unknown;
 };
 
-export type TableColumnData = Pick<
-  TableColumnProps,
-  'accessorKey' | 'width' | 'sortable' | 'sortFn'
-> & {
-  header: TableColumnHeaderProps;
-  cell: TableCellProps;
-};
+export type TableColumnHeaderCellInfo = NoChildren<TableColumnProps>;
 
-export type TableColumnHeaderCellInfo = Omit<TableColumnProps, 'children'> & {
-  sortDirection?: TableSortDirection;
-
-  onSort?: (accessorKey: string) => void;
-};
-
-export type TableCellAlignmentOptions = {
-  horizontal?: EnumOrStringLiteralTypes<Alignment>;
-  vertical?: EnumOrStringLiteralTypes<Alignment>;
-};
-
-export type DefaultTableColumnProps = Required<
-  Pick<TableColumnProps, 'width' | 'sortable'>
-> &
-  Pick<TableColumnProps, 'accessorKey' | 'sortFn'>;
+export type DefaultTableColumnProps = Required<Pick<TableColumnProps, 'width' | 'sortable' | 'accessorKey' | 'sortFn'>>;
