@@ -100,6 +100,20 @@ target "test-playwright" {
   }
 }
 
+target "screenshots" {
+  inherits = ["_common"]
+  description = "Generated & outputs screenshots for visual testing"
+  dockerfile = ".bake/screenshots.dockerfile"
+
+  target = "export"
+
+  contexts = {
+    setup-workspace = "target:setup-workspace"
+  }
+
+  output = ["."]
+}
+
 target "lint-prettier" {
   inherits = ["_common"]
   description = "Run Prettier to check code formatting"
