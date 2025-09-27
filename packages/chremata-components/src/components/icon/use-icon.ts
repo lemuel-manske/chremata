@@ -3,6 +3,7 @@ import { type IconProps, type IconDefaultProps } from './icon.types';
 export const DEFAULT_ICON_PROPS: IconDefaultProps = {
   size: 'medium',
   disabled: false,
+  pointer: 'default',
 };
 
 export function useIcon(props: IconProps) {
@@ -11,6 +12,7 @@ export function useIcon(props: IconProps) {
     name,
     size = DEFAULT_ICON_PROPS.size,
     disabled = DEFAULT_ICON_PROPS.disabled,
+    pointer = DEFAULT_ICON_PROPS.pointer,
 
     ...svgProps
   } = props;
@@ -20,6 +22,7 @@ export function useIcon(props: IconProps) {
     name,
     size,
     disabled,
+    pointer,
 
     ...svgProps,
   };

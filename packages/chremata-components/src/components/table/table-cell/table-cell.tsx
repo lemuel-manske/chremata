@@ -1,17 +1,13 @@
-import { type TableCellProps } from './table-cell.types';
+import type { DefaultTableCellProps, TableCellProps } from './table-cell.types';
 
-export function TableCell(props: TableCellProps) {
-  const { children, colSpan, header = false } = props;
-
-  const role = header ? 'columnheader' : 'gridcell';
-
-  const Tag = header ? 'th' : 'td';
-
-  return (
-    <Tag
-      role={role}
-      colSpan={colSpan}>
-      {children}
-    </Tag>
-  );
+export function TableCell(_props: TableCellProps) {
+  return null;
 }
+
+export const DEFAULT_TABLE_CELL_PROPS: DefaultTableCellProps = {
+  alignment: {
+    horizontal: 'start',
+    vertical: 'center',
+  },
+  children: null,
+};

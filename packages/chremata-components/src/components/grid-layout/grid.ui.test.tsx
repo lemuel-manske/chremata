@@ -6,7 +6,7 @@ import { GridLayout } from './grid-layout';
 
 const tag = ['@ch-grid'];
 
-test('should render a GridLayout', { tag }, async ({ mount }) => {
+test('should render a GridLayout', { tag }, async ({ mount, page }) => {
   const grid = await mount(
     <GridLayout
       columnGap="panel"
@@ -40,4 +40,5 @@ test('should render a GridLayout', { tag }, async ({ mount }) => {
   );
 
   await expect(grid).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });

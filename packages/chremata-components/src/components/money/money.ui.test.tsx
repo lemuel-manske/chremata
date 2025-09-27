@@ -17,6 +17,7 @@ test('should render a USD Money', { tag }, async ({ mount, page }) => {
   const money = page.getByText('+US$ 1.234,56');
 
   await expect(money).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render a negative USD Money', { tag }, async ({ mount, page }) => {
@@ -30,6 +31,7 @@ test('should render a negative USD Money', { tag }, async ({ mount, page }) => {
   const money = page.getByText('-US$ 1.234,56');
 
   await expect(money).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render emphasis USD Money', { tag }, async ({ mount, page }) => {
@@ -44,6 +46,7 @@ test('should render emphasis USD Money', { tag }, async ({ mount, page }) => {
   const money = page.getByText('+US$ 1.234,56');
 
   await expect(money).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render small USD Money', { tag }, async ({ mount, page }) => {
@@ -58,6 +61,7 @@ test('should render small USD Money', { tag }, async ({ mount, page }) => {
   const money = page.getByText('+US$ 1.234,56');
 
   await expect(money).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render large USD Money', { tag }, async ({ mount, page }) => {
@@ -72,6 +76,7 @@ test('should render large USD Money', { tag }, async ({ mount, page }) => {
   const money = page.getByText('+US$ 1.234,56');
 
   await expect(money).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render a xlarge USD Money', { tag }, async ({ mount, page }) => {
@@ -86,4 +91,5 @@ test('should render a xlarge USD Money', { tag }, async ({ mount, page }) => {
   const money = page.getByText('+US$ 1.234,56');
 
   await expect(money).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });

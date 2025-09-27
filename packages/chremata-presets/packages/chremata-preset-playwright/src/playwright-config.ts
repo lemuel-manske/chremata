@@ -5,8 +5,17 @@ import { type PlaywrightTestConfig } from '@playwright/experimental-ct-react';
 import merge from 'lodash.merge';
 
 const getBaseConfig = (): PlaywrightTestConfig => ({
+  expect: {
+    toHaveScreenshot: {
+      threshold: 0.1,
+    },
+  },
+
   testDir: './',
   testMatch: /.*\.ui\.test\.tsx?$/,
+
+  snapshotPathTemplate:
+    '{testDir}/{testFileDir}/__screenshots__/{projectName}/{testName}{ext}',
 
   timeout: 10 * 1000,
   fullyParallel: true,

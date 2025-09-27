@@ -16,6 +16,7 @@ test('should render an Icon', { tag }, async ({ mount, page }) => {
   const icon = page.getByRole('img', { name: 'Coin icon' });
 
   await expect(icon).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render a disabled Icon', { tag }, async ({ mount, page }) => {
@@ -32,6 +33,7 @@ test('should render a disabled Icon', { tag }, async ({ mount, page }) => {
   const icon = page.getByRole('img', { name: 'Coin icon' });
 
   await expect(icon).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render a small Icon', { tag }, async ({ mount, page }) => {
@@ -47,6 +49,7 @@ test('should render a small Icon', { tag }, async ({ mount, page }) => {
   const icon = page.getByRole('img', { name: 'Coin icon' });
 
   await expect(icon).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render a medium Icon', { tag }, async ({ mount, page }) => {
@@ -62,6 +65,7 @@ test('should render a medium Icon', { tag }, async ({ mount, page }) => {
   const icon = page.getByRole('img', { name: 'Coin icon' });
 
   await expect(icon).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render a large Icon', { tag }, async ({ mount, page }) => {
@@ -77,6 +81,7 @@ test('should render a large Icon', { tag }, async ({ mount, page }) => {
   const icon = page.getByRole('img', { name: 'Coin icon' });
 
   await expect(icon).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render an xlarge Icon', { tag }, async ({ mount, page }) => {
@@ -92,4 +97,5 @@ test('should render an xlarge Icon', { tag }, async ({ mount, page }) => {
   const icon = page.getByRole('img', { name: 'Coin icon' });
 
   await expect(icon).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });

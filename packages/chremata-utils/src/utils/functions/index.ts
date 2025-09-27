@@ -3,6 +3,7 @@ export * from './do-nothing';
 export * from './find-child';
 export * from './get-string-value';
 export * from './is-even';
+export * from './is-function';
 export * from './is-string';
 export * from './remove-nulls';
 export * from './style-map';

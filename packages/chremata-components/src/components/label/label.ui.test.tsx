@@ -10,6 +10,7 @@ test('should render a Label', { tag }, async ({ mount, page }) => {
   const label = page.getByText('Label');
 
   await expect(label).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render disabled Label', { tag }, async ({ mount, page }) => {
@@ -18,6 +19,7 @@ test('should render disabled Label', { tag }, async ({ mount, page }) => {
   const label = page.getByText('Label');
 
   await expect(label).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render a emphasis Label', { tag }, async ({ mount, page }) => {
@@ -26,6 +28,7 @@ test('should render a emphasis Label', { tag }, async ({ mount, page }) => {
   const label = page.getByText('Label');
 
   await expect(label).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render a small Label', { tag }, async ({ mount, page }) => {
@@ -34,6 +37,7 @@ test('should render a small Label', { tag }, async ({ mount, page }) => {
   const label = page.getByText('Label');
 
   await expect(label).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render a medium Label', { tag }, async ({ mount, page }) => {
@@ -42,6 +46,7 @@ test('should render a medium Label', { tag }, async ({ mount, page }) => {
   const label = page.getByText('Label');
 
   await expect(label).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render a large Label', { tag }, async ({ mount, page }) => {
@@ -50,6 +55,7 @@ test('should render a large Label', { tag }, async ({ mount, page }) => {
   const label = page.getByText('Label');
 
   await expect(label).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render a xlarge Label', { tag }, async ({ mount, page }) => {
@@ -58,6 +64,7 @@ test('should render a xlarge Label', { tag }, async ({ mount, page }) => {
   const label = page.getByText('Label');
 
   await expect(label).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render a Label with Icon', { tag }, async ({ mount, page }) => {
@@ -71,4 +78,5 @@ test('should render a Label with Icon', { tag }, async ({ mount, page }) => {
   const label = page.getByText('Label');
 
   await expect(label).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });

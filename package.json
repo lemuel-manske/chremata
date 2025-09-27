@@ -17,9 +17,10 @@
 
     "build": "npm run build:components",
     "build:components": "npm run build --workspace=@chremata/components",
-    "build:setup": "npm run build:utils && npm run build:icons",
+    "build:setup": "npm run build:utils && npm run build:icons && npm run build:themes",
     "build:utils": "npm run build --workspace=@chremata/utils",
     "build:icons": "npm run build --workspace=@chremata/icons",
+    "build:themes": "npm run build --workspace=@chremata/themes",
     
     "lint:format": "npm run lint:format --workspaces --if-present",
     "lint:format:fix": "npm run lint:format:fix --workspaces  --if-present",
@@ -27,13 +28,11 @@
     "lint:source:fix": "npm run lint:source:fix --workspaces  --if-present",
 
     "test:setup": "npm run build:setup",
-    "test:jest:setup": "npm run test:setup",
-    "test:playwright:setup": "npm run test:setup && npm run build:playwright-preset && playwright install --with-deps",
-
     "test:jest": "npm run test:jest --workspaces --if-present",
+    "test:jest:setup": "npm run test:setup",
     "test:playwright": "npm run test:playwright --workspaces --if-present",
-
-    "build:playwright-preset": "npm run build --workspace=@chremata-preset/playwright"
+    "test:playwright:update": "npm run test:playwright:update --workspaces --if-present",
+    "test:playwright:setup": "npm run test:setup && npm run build --workspace=@chremata-preset/playwright && playwright install --with-deps"
   },
   "workspaces": [
     "packages/*",

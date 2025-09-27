@@ -1,37 +1,39 @@
-import { classNames } from '@chremata/utils';
+import { TableCell } from './table-cell/table-cell';
+import { TableColumn } from './table-column/table-column';
+import { TableColumnHeader } from './table-column-header/table-column-header';
 
+import type { TableProps } from './table.types';
 import { useTable } from './use-table';
-
-import { type TableProps } from './table.types';
-
-import { TableCaption } from './table-caption/table-caption';
 import { TableHeader } from './table-header/table-header';
-import { TableBody } from './table-body/table-body';
+import { TableContent } from './table-content/table-content';
 
 import './index.css';
 
 export function Table(props: TableProps) {
-  const { columns, data, caption } = useTable(props);
-
-  const classes = classNames({
-    'ch-table': true,
-  });
-
-  const role = 'grid';
+  const { columns, data, label, labelledBy, onSort, sortBy, sortDirection } =
+    useTable(props);
 
   return (
-    <table
-      role={role}
-      className={classes}
-      aria-label={caption}>
-      {caption && <TableCaption caption={caption} />}
-
-      <TableHeader columns={columns} />
-
-      <TableBody
+    <div
+      role="grid"
+      className="ch-table"
+      aria-label={label}
+      aria-labelledby={labelledBy}>
+      <TableHeader
         columns={columns}
-        data={data}
+        onSort={onSort}
+        sortBy={sortBy}
+        sortDirection={sortDirection}
       />
-    </table>
+
+      <TableContent
+        data={data}
+        columns={columns}
+      />
+    </div>
   );
 }
+
+Table.Column = TableColumn;
+Table.ColumnHeader = TableColumnHeader;
+Table.Cell = TableCell;

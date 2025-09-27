@@ -27,7 +27,8 @@
     "lint:format:fix": "prettier --write --ignore-path .gitignore .",
     "build": "rollup --config ../chremata-presets/packages/chremata-preset-rollup/rollup-config.js",
     "test:jest": "jest",
-    "test:playwright": "playwright test -c playwright-ct.config.ts"
+    "test:playwright": "playwright test -c playwright-ct.config.ts",
+    "test:playwright:update": "npm run test:playwright -- --update-snapshots"
   },
   "peerDependencies": {
     "@chremata/fonts": "file:../chremata-fonts",

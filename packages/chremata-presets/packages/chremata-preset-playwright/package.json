@@ -29,13 +29,11 @@
     "./dist"
   ],
   "scripts": {
+    "build": "rollup -c",
     "lint:source": "eslint .",
     "lint:source:fix": "npm run lint:source -- --fix",
     "lint:format": "prettier --check --ignore-path .gitignore .",
-    "lint:format:fix": "prettier --write --ignore-path .gitignore .",
-    "build": "npm run build:types && npm run build:js",
-    "build:js": "rollup -c",
-    "build:types": "tsc"
+    "lint:format:fix": "prettier --write --ignore-path .gitignore ."
   },
   "peerDependencies": {
     "@axe-core/playwright": "^4.10.2",

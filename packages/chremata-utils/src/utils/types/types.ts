@@ -104,3 +104,14 @@ type Id = string;
  * };
  */
 export type Identifiable<T> = T & { id: Id };
+
+/**
+ * Represents an HTML element `id`.
+ */
+export type ElementId = string;
+
+/**
+ * Represents a `Comparable` decorator, used to comparing a given {@link T}
+ * from {@link T a} to {@link T b}.
+ */
+export type Comparable<T = unknown> = (a: T, b: T) => number;

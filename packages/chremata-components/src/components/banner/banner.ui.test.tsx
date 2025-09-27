@@ -4,7 +4,9 @@ import { Label } from '../label/label';
 
 import { Banner } from './banner';
 
-test('should render a Banner', async ({ mount, page }) => {
+const tag = ['@ch-banner'];
+
+test('should render a Banner', { tag }, async ({ mount, page }) => {
   await mount(
     <Banner>
       <Label>Banner</Label>
@@ -14,4 +16,5 @@ test('should render a Banner', async ({ mount, page }) => {
   const banner = page.getByRole('banner');
 
   await expect(banner).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });

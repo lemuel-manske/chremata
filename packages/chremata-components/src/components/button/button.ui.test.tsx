@@ -26,6 +26,7 @@ test(
     const button = page.getByRole('button', { name: 'Click me' });
 
     await expect(button).toNotHaveAccessibilityViolations();
+    await expect(page).toHaveScreenshot();
   }
 );
 
@@ -44,6 +45,7 @@ test(
     const button = page.getByRole('button', { name: 'Click me' });
 
     await expect(button).toNotHaveAccessibilityViolations();
+    await expect(page).toHaveScreenshot();
   }
 );
 
@@ -58,6 +60,7 @@ test('should render a button with Icon', { tag }, async ({ mount, page }) => {
   const button = page.getByRole('button', { name: 'Click me' });
 
   await expect(button).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should be focused when clicked', { tag }, async ({ mount, page }) => {
@@ -68,6 +71,7 @@ test('should be focused when clicked', { tag }, async ({ mount, page }) => {
   await button.click();
 
   await expect(button).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render a disabled button', { tag }, async ({ mount, page }) => {
@@ -81,7 +85,9 @@ test('should render a disabled button', { tag }, async ({ mount, page }) => {
   const button = page.getByRole('button', { name: 'Click me' });
 
   await expect(button).toBeDisabled();
+
   await expect(button).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test(
@@ -96,7 +102,9 @@ test(
     await page.keyboard.press('Enter');
 
     await expect(button).toBeFocused();
+
     await expect(button).toNotHaveAccessibilityViolations();
+    await expect(page).toHaveScreenshot();
   }
 );
 
@@ -112,6 +120,8 @@ test(
     await page.keyboard.press('Space');
 
     await expect(button).toBeFocused();
+
     await expect(button).toNotHaveAccessibilityViolations();
+    await expect(page).toHaveScreenshot();
   }
 );

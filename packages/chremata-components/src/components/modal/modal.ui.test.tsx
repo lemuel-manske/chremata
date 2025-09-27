@@ -7,7 +7,7 @@ import { Button } from '../button/button';
 const tag = ['@ch-modal'];
 
 test('should render an opened Modal', { tag }, async ({ mount, page }) => {
-  const modal = await mount(
+  await mount(
     <Modal
       id="modal"
       open>
@@ -17,11 +17,14 @@ test('should render an opened Modal', { tag }, async ({ mount, page }) => {
     </Modal>
   );
 
+  const modal = page.getByRole('dialog', { name: 'Modal' });
+
   await expect(modal).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test('should render a closed Modal', { tag }, async ({ mount, page }) => {
-  const modal = await mount(
+  await mount(
     <Modal id="modal">
       <Modal.Header>
         <Modal.Title>Modal</Modal.Title>
@@ -29,14 +32,17 @@ test('should render a closed Modal', { tag }, async ({ mount, page }) => {
     </Modal>
   );
 
+  const modal = page.getByRole('dialog', { name: 'Modal' });
+
   await expect(modal).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
 });
 
 test(
   'should render header with Modal.Title and Button',
   { tag },
   async ({ mount, page }) => {
-    const modal = await mount(
+    await mount(
       <Modal
         id="modal"
         open>
@@ -47,6 +53,9 @@ test(
       </Modal>
     );
 
+    const modal = page.getByRole('dialog', { name: 'Modal' });
+
     await expect(modal).toNotHaveAccessibilityViolations();
+    await expect(page).toHaveScreenshot();
   }
 );

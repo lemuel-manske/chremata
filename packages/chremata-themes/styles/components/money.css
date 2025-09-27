@@ -1,4 +1,4 @@
 .t-dark-green {
-  --ch-money--color--negative: #ff7b2e;
-  --ch-money--color--positive: #30ddc9;
+  --ch-money--color--negative: hsl(var(--color-signal-orange));
+  --ch-money--color--positive: hsl(var(--color-signal-green));
 }

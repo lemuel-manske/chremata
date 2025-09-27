@@ -1,7 +1,7 @@
 .t-dark-green {
-  --font-color--light: #eef9e5;
-  --font-color--light-disabled: #b0b7ab;
+  --font-color--light: hsl(var(--color-light-green-0));
+  --font-color--light-disabled: hsla(var(--color-light-green-0), 80%);
 
-  --font-color--dark: #061400;
-  --font-color--dark-disabled: #151c12;
+  --font-color--dark: hsl(var(--color-dark-green-100));
+  --font-color--dark-disabled: hsla(var(--color-dark-green-100), 60%);
 }
