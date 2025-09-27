@@ -10,7 +10,7 @@ const getBaseConfig = (): PlaywrightTestConfig => ({
       threshold: 0.1,
     },
   },
-  
+
   testDir: './',
   testMatch: /.*\.ui\.test\.tsx?$/,
 
