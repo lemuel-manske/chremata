@@ -1,25 +1,45 @@
 import * as React from 'react';
 
-import type { TableHeaderCellProps } from '../table-header.types';
+import { doNothing, isEnterKey, isSpaceKey, type AriaSort, type Optional } from '@chremata/utils';
+
+import { DEFAULT_TABLE_COLUMN_PROPS } from '../../table-column/table-column';
+
+import type { DefaultTableHeaderCellProps, TableHeaderCellProps } from './table-header-cell.types';
+import type { IconSolidNames } from '../../../icon/icon.types';
+
+export const DEFAULT_TABLE_HEADER_CELL_PROPS: DefaultTableHeaderCellProps = {
+  ...DEFAULT_TABLE_COLUMN_PROPS,
+  sortDirection: 'none'
+};
 
 export function useTableHeaderCell(props: TableHeaderCellProps) {
-  const { sortable, sortDirection, onSort, ...rest } = props;
+  const {
+    children,
+    sortable = DEFAULT_TABLE_HEADER_CELL_PROPS.sortable,
+    sortDirection = DEFAULT_TABLE_HEADER_CELL_PROPS.sortDirection,
+    onSort,
+    width =  DEFAULT_TABLE_HEADER_CELL_PROPS.width,
+  } = props;
 
+  function resolveAriaSort(): Optional<AriaSort> {
+    if (!sortable) {
+      return undefined;
+    }
+
+    if (!sortDirection) {
+      return 'none';
+    }
+
+    return sortDirection === 'asc'
+      ? 'ascending'
+      : 'descending';
+  }
+  
   const handleSort = React.useCallback(() => {
     if (sortable && onSort) {
       onSort();
     }
   }, [sortable, onSort]);
-
-  const sortingIcon: 'ChevronUpSvg' | 'ChevronDownSvg' =
-    !sortDirection || sortDirection === 'desc'
-      ? 'ChevronUpSvg'
-      : 'ChevronDownSvg';
-
-  const clearOrDesc =
-    sortDirection === 'desc' ? 'Clear sort' : 'Sort descending';
-
-  const sortingLabel = !sortDirection ? 'Sort ascending' : clearOrDesc;
 
   const handleClick = () => {
     if (sortable && onSort) {
@@ -28,37 +48,36 @@ export function useTableHeaderCell(props: TableHeaderCellProps) {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTableCellElement>) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+    if (isEnterKey(e.key) || isSpaceKey(e.key)) {
       e.preventDefault();
 
       handleClick();
     }
   };
 
-  const canSort = !!sortable;
+  const sortingIcon: IconSolidNames = !sortDirection || sortDirection === 'desc'
+    ? 'ChevronUpSvg'
+    : 'ChevronDownSvg';
 
-  const tabIndex = sortable ? 0 : undefined;
+  const sortingLabel = 'Toggle sort';
 
-  const onClick = sortable ? handleClick : undefined;
-  const onKeyDown = sortable ? handleKeyDown : undefined;
+  const tabIndex = sortable ? 0 : -1;
 
-  const ariaSort: 'none' | 'ascending' | 'descending' | undefined = !sortable
-    ? undefined
-    : !sortDirection
-      ? 'none'
-      : sortDirection === 'asc'
-        ? 'ascending'
-        : 'descending';
+  const onClick = sortable ? handleClick : doNothing;
+  const onKeyDown = sortable ? handleKeyDown : doNothing;
+
+  const ariaSort = resolveAriaSort();
 
   return {
-    ...rest,
     ariaSort,
+    children,
     tabIndex,
     sortingIcon,
     sortingLabel,
-    sortable: canSort,
+    sortable,
     onClick,
     onKeyDown,
     onSort: handleSort,
+    width,
   };
 }

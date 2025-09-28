@@ -15,13 +15,13 @@ export type TableHeaderProps = {
 export type TableHeaderCellProps = {
   children: React.ReactNode;
 
-  width?: number;
-
   sortable?: boolean;
 
   sortDirection?: TableSortDirection;
 
   onSort?: () => void;
+  
+  width?: number;
 };
 
 export type TableHeaderRowProps = {

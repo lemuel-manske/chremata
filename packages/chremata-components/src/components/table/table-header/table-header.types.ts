@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import type {
   TableColumnData,
   TableSortDirection,
@@ -13,22 +11,4 @@ export type TableHeaderProps = {
   sortBy?: string;
 
   sortDirection?: TableSortDirection;
-};
-
-export type TableHeaderCellProps = {
-  children: React.ReactNode;
-
-  width?: number;
-
-  sortable?: boolean;
-
-  sortDirection?: TableSortDirection;
-
-  onSort?: () => void;
-};
-
-export type TableHeaderRowProps = {
-  children:
-    | React.ReactElement<TableHeaderCellProps>
-    | React.ReactElement<TableHeaderCellProps>[];
 };

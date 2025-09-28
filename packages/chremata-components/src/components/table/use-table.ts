@@ -12,12 +12,17 @@ import type {
 } from './table-column/table-column.types';
 import { DEFAULT_TABLE_COLUMN_PROPS } from './table-column/table-column';
 
-export const DEFAULT_TABLE_PROS: DefaultTableProps = {
+export const DEFAULT_TABLE_PROPS: DefaultTableProps = {
   data: [],
 };
 
 export function useTable(props: TableProps) {
-  const { children, data = DEFAULT_TABLE_PROS.data, label, labelledBy } = props;
+  const {
+    children, 
+    data = DEFAULT_TABLE_PROPS.data, 
+    label, 
+    labelledBy
+  } = props;
 
   const [sortBy, setSortBy] = React.useState<string | undefined>();
   const [sortDirection, setSortDirection] =
@@ -38,11 +43,11 @@ export function useTable(props: TableProps) {
     const cell = findChild(children, TableColumnCell);
 
     if (!header) {
-      throw new Error('[Table] No TableColumnHeader provided to TableColum.');
+      throw new Error('[Table] No `TableColumnHeader` provided to `TableColum`.');
     }
 
     if (!cell) {
-      throw new Error('[Table] No TableCell provided to TableColumn.');
+      throw new Error('[Table] No `TableColumnCell` provided to `TableColumn`.');
     }
 
     return {
@@ -55,12 +60,14 @@ export function useTable(props: TableProps) {
     };
   });
 
+  const memoizedColumns = React.useMemo(() => columns, [children]);
+
   const sortedData = React.useMemo(() => {
     if (!sortBy) {
       return data;
     }
 
-    const column = columns.find(col => col.accessorKey === sortBy);
+    const column = memoizedColumns.find(col => col.accessorKey === sortBy);
 
     if (!column || !column.sortable) {
       return data;
@@ -77,11 +84,11 @@ export function useTable(props: TableProps) {
 
       return sortDirection === 'desc' ? -result : result;
     });
-  }, [data, sortBy, sortDirection, columns]);
+  }, [data, sortBy, sortDirection, memoizedColumns]);
 
   const handleSort = React.useCallback(
     (accessorKey: string) => {
-      const column = columns.find(col => col.accessorKey === accessorKey);
+      const column = memoizedColumns.find(col => col.accessorKey === accessorKey);
 
       if (!column || !column.sortable) {
         return;
@@ -99,7 +106,7 @@ export function useTable(props: TableProps) {
         setSortDirection('asc');
       }
     },
-    [sortBy, sortDirection, columns]
+    [sortBy, sortDirection, memoizedColumns]
   );
 
   if (!label && !labelledBy) {
@@ -115,7 +122,7 @@ export function useTable(props: TableProps) {
   }
 
   return {
-    columns,
+    columns: memoizedColumns,
     data: sortedData,
     label,
     labelledBy,
