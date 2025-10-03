@@ -22,7 +22,9 @@ function PanelFixture(props: PanelFixtureProps) {
         <Panel.Title>{title}</Panel.Title>
 
         <Panel.ActionList>
-          <Panel.ActionItem onClick={onAdd}>Add</Panel.ActionItem>
+          <Panel.ActionItem onClick={onAdd}>
+            <Panel.ActionItem.Label>Add</Panel.ActionItem.Label>
+          </Panel.ActionItem>
         </Panel.ActionList>
       </Panel.Header>
 

@@ -12,11 +12,7 @@ export function ActionList(props: ActionListProps) {
 
   function mapItems() {
     return items.map((item, index) => (
-      <List.Item
-        key={index}
-        label={item?.props.children}>
-        {item}
-      </List.Item>
+      <List.Item key={index}>{item}</List.Item>
     ));
   }
 
