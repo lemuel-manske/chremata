@@ -40,7 +40,7 @@ export function TableHeaderCell(props: TableHeaderCellProps) {
         label={sortingLabel}
         onClick={onSort}
         pointer="pointer"
-        primaryColor="var(--font-color--light)"
+        primaryColor="var(--color-contrast-light)"
         name={sortingIcon}
       />
     );
@@ -60,7 +60,7 @@ export function TableHeaderCell(props: TableHeaderCellProps) {
     <th
       role="columnheader"
       style={styles}
-      aria-roledescription='sortable'
+      aria-roledescription="sortable"
       className={classes}
       onClick={onClick}
       tabIndex={tabIndex}

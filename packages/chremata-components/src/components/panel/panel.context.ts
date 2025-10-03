@@ -7,7 +7,7 @@ export type PanelContextValue = {
 
 export const PanelContext = React.createContext<PanelContextValue>({
   labelId: '',
-  tableId: ''
+  tableId: '',
 });
 
 export function usePanelContext() {

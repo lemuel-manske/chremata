@@ -1,15 +1,24 @@
 import * as React from 'react';
 
-import { doNothing, isEnterKey, isSpaceKey, type AriaSort, type Optional } from '@chremata/utils';
+import {
+  doNothing,
+  isEnterKey,
+  isSpaceKey,
+  type AriaSort,
+  type Optional,
+} from '@chremata/utils';
 
 import { DEFAULT_TABLE_COLUMN_PROPS } from '../../table-column/table-column';
 
-import type { DefaultTableHeaderCellProps, TableHeaderCellProps } from './table-header-cell.types';
+import type {
+  DefaultTableHeaderCellProps,
+  TableHeaderCellProps,
+} from './table-header-cell.types';
 import type { IconSolidNames } from '../../../icon/icon.types';
 
 export const DEFAULT_TABLE_HEADER_CELL_PROPS: DefaultTableHeaderCellProps = {
   ...DEFAULT_TABLE_COLUMN_PROPS,
-  sortDirection: 'none'
+  sortDirection: 'none',
 };
 
 export function useTableHeaderCell(props: TableHeaderCellProps) {
@@ -18,7 +27,7 @@ export function useTableHeaderCell(props: TableHeaderCellProps) {
     sortable = DEFAULT_TABLE_HEADER_CELL_PROPS.sortable,
     sortDirection = DEFAULT_TABLE_HEADER_CELL_PROPS.sortDirection,
     onSort,
-    width =  DEFAULT_TABLE_HEADER_CELL_PROPS.width,
+    width = DEFAULT_TABLE_HEADER_CELL_PROPS.width,
   } = props;
 
   function resolveAriaSort(): Optional<AriaSort> {
@@ -30,11 +39,9 @@ export function useTableHeaderCell(props: TableHeaderCellProps) {
       return 'none';
     }
 
-    return sortDirection === 'asc'
-      ? 'ascending'
-      : 'descending';
+    return sortDirection === 'asc' ? 'ascending' : 'descending';
   }
-  
+
   const handleSort = React.useCallback(() => {
     if (sortable && onSort) {
       onSort();
@@ -55,9 +62,10 @@ export function useTableHeaderCell(props: TableHeaderCellProps) {
     }
   };
 
-  const sortingIcon: IconSolidNames = !sortDirection || sortDirection === 'desc'
-    ? 'ChevronUpSvg'
-    : 'ChevronDownSvg';
+  const sortingIcon: IconSolidNames =
+    !sortDirection || sortDirection === 'desc'
+      ? 'ChevronUpSvg'
+      : 'ChevronDownSvg';
 
   const sortingLabel = 'Toggle sort';
 

@@ -2,10 +2,7 @@ import { findChild } from '@chremata/utils';
 
 import { ButtonLabel } from './button-label/button-label';
 
-import {
-  type DefaultButtonProps,
-  type ButtonProps,
-} from './button.types';
+import { type DefaultButtonProps, type ButtonProps } from './button.types';
 import tokens from './button.tokens';
 
 export const DEFAULT_BUTTON_PROPS: DefaultButtonProps = {
@@ -43,19 +40,20 @@ export function useButton(props: ButtonProps) {
       return colorByVariant.disabled;
     }
 
-    return colorByVariant.default
-  }
+    return colorByVariant.default;
+  };
 
   const color = getColor();
-  
+
   const width = tokens.fit[fit];
-  
+
   const padding = tokens.size[size].padding;
 
   const background = tokens.variant[variant].background.default;
   const backgroundActive = tokens.variant[variant].background.active;
   const backgroundDisabled = tokens.variant[variant].background.disabled;
-  const backgroundFocusVisible = tokens.variant[variant].background.focusVisible;
+  const backgroundFocusVisible =
+    tokens.variant[variant].background.focusVisible;
   const backgroundHover = tokens.variant[variant].background.hover;
 
   return {

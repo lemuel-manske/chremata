@@ -14,8 +14,14 @@ type ActionListItemAttributes = Pick<
 > & {
   children:
     | React.ReactElement<ActionListItemLabelProps>
-    | [React.ReactElement<ActionListItemIconProps>, React.ReactElement<ActionListItemLabelProps>]
-    | [React.ReactElement<ActionListItemLabelProps>, React.ReactElement<ActionListItemIconProps>]
+    | [
+        React.ReactElement<ActionListItemIconProps>,
+        React.ReactElement<ActionListItemLabelProps>,
+      ]
+    | [
+        React.ReactElement<ActionListItemLabelProps>,
+        React.ReactElement<ActionListItemIconProps>,
+      ];
 };
 
 export type ActionListItemProps = ActionListItemAttributes;

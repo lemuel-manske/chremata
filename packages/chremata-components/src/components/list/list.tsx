@@ -21,7 +21,7 @@ export function List(props: ListProps) {
     '--list-flex-direction': orientation.flexDirection,
     '--list-align-items': orientation.alignItems,
     '--list-justify-items': orientation.justifyItems,
-  })
+  });
 
   return (
     <ul

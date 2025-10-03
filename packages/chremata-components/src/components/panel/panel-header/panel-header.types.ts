@@ -6,5 +6,8 @@ import type { PanelTitleProps } from '../panel-title/panel-title.types';
 export type PanelHeaderProps = {
   children:
     | React.ReactElement<PanelTitleProps>
-     |[React.ReactElement<PanelTitleProps>, React.ReactElement<PanelActionListProps>]
-}
+    | [
+        React.ReactElement<PanelTitleProps>,
+        React.ReactElement<PanelActionListProps>,
+      ];
+};

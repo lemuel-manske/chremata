@@ -1,6 +1,9 @@
 import * as React from 'react';
 
-import type { TableColumnData, TableSortDirection } from '../../table-column/table-column.types';
+import type {
+  TableColumnData,
+  TableSortDirection,
+} from '../../table-column/table-column.types';
 
 export type TableHeaderProps = {
   columns: TableColumnData[];
@@ -20,7 +23,7 @@ export type TableHeaderCellProps = {
   sortDirection?: TableSortDirection;
 
   onSort?: () => void;
-  
+
   width?: number;
 };
 

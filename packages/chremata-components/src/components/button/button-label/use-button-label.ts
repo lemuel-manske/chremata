@@ -1,9 +1,9 @@
-import type { LabelSize } from "../../label/label.types";
+import type { LabelSize } from '../../label/label.types';
 
-import type { ButtonSize } from "../button.types";
-import { useButtonContext } from "../button.context";
+import type { ButtonSize } from '../button.types';
+import { useButtonContext } from '../button.context';
 
-import type { ButtonLabelProps } from "./button-label.types";
+import type { ButtonLabelProps } from './button-label.types';
 
 const LABEL_SIZE_MAP: Record<ButtonSize, LabelSize> = {
   small: 'medium',
@@ -12,9 +12,7 @@ const LABEL_SIZE_MAP: Record<ButtonSize, LabelSize> = {
 };
 
 export function useButtonLabel(props: ButtonLabelProps) {
-  const {
-    children,
-  } = props;
+  const { children } = props;
 
   const { state, color, size } = useButtonContext();
 

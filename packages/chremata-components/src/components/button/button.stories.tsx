@@ -14,14 +14,14 @@ type ButtonFixtureProps = ButtonProps & {
   label: string;
   icon: IconSolidNames;
   iconPosition?: 'left' | 'right';
-}
+};
 
 function ButtonFixture(props: ButtonFixtureProps) {
   const { label, icon, iconPosition } = props;
 
   const iconOnLeft = iconPosition === 'left';
   const iconOnRight = iconPosition === 'right';
- 
+
   if (iconOnLeft) {
     return (
       <Button {...props}>
@@ -79,8 +79,8 @@ export default {
       control: 'select',
     },
     iconPosition: {
-      control: 'radio', 
-      options: ['left', 'right']
+      control: 'radio',
+      options: ['left', 'right'],
     },
   },
 

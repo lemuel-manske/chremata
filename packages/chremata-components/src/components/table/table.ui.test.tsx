@@ -42,12 +42,16 @@ test('should render a sortable Table', { tag }, async ({ mount, page }) => {
         { name: 'Bob', age: 25, country: 'Canada' },
         { name: 'Charlie', age: 35, country: 'UK' },
       ]}>
-      <Table.Column accessorKey="name" sortable>
+      <Table.Column
+        accessorKey="name"
+        sortable>
         <Table.ColumnHeader>Name</Table.ColumnHeader>
         <Table.Cell />
       </Table.Column>
 
-      <Table.Column accessorKey="age" sortable>
+      <Table.Column
+        accessorKey="age"
+        sortable>
         <Table.ColumnHeader>Age</Table.ColumnHeader>
         <Table.Cell />
       </Table.Column>

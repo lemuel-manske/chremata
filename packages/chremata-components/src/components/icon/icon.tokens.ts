@@ -7,5 +7,5 @@ export default {
   },
   pointer: {
     disabled: 'not-allowed',
-  }
+  },
 };

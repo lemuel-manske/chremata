@@ -16,5 +16,11 @@ export function Banner(bannerProps: BannerProps) {
     '--banner-background-color': tokens.background.color,
   });
 
-  return <div className={classes} style={styles}>{children}</div>;
+  return (
+    <div
+      className={classes}
+      style={styles}>
+      {children}
+    </div>
+  );
 }

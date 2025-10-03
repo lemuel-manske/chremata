@@ -1,8 +1,8 @@
-import { Label } from "../../label/label";
+import { Label } from '../../label/label';
 
-import { usePanelContext } from "../panel.context";
+import { usePanelContext } from '../panel.context';
 
-import type { PanelTitleProps } from "./panel-title.types";
+import type { PanelTitleProps } from './panel-title.types';
 
 export function PanelTitle(props: PanelTitleProps) {
   const { children } = props;
@@ -10,7 +10,10 @@ export function PanelTitle(props: PanelTitleProps) {
   const { labelId } = usePanelContext();
 
   return (
-    <Label id={labelId} variant="emphasis" size="xlarge">
+    <Label
+      id={labelId}
+      variant="emphasis"
+      size="xlarge">
       {children}
     </Label>
   );

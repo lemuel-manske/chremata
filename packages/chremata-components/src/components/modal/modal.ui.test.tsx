@@ -39,7 +39,9 @@ test(
   { tag },
   async ({ mount, page }) => {
     const modal = await mount(
-      <Modal id="modal" open>
+      <Modal
+        id="modal"
+        open>
         <Modal.Header>
           <Modal.Title>Modal</Modal.Title>
 
@@ -49,7 +51,7 @@ test(
         </Modal.Header>
       </Modal>
     );
- 
+
     await expect(modal).toNotHaveAccessibilityViolations();
     await expect(page).toHaveScreenshot();
   }

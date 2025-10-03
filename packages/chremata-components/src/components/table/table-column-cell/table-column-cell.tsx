@@ -1,6 +1,6 @@
 import type {
   DefaultTableColumnCellProps,
-  TableColumnCellProps
+  TableColumnCellProps,
 } from './table-column-cell.types';
 
 export function TableColumnCell(_props: TableColumnCellProps) {

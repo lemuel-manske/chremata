@@ -33,18 +33,14 @@ export const Default: StoryObj<typeof Modal> = {
 
     return (
       <>
-        <Button
-          onClick={handleOnOpen}
-        >
+        <Button onClick={handleOnOpen}>
           <Button.Label>Open Modal</Button.Label>
         </Button>
 
         <Modal {...props}>
           <Modal.Header>
             <Modal.Title>Modal</Modal.Title>
-            <Button
-              onClick={handleOnClose}
-              >
+            <Button onClick={handleOnClose}>
               <Button.Label>Close</Button.Label>
             </Button>
           </Modal.Header>

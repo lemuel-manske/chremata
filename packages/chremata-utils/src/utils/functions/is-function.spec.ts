@@ -11,7 +11,7 @@ test('returns `true` for a function', () => {
 test('returns `false` for non-function values', () => {
   const values = [null, undefined, 123, 'string', {}, []];
 
-  values.forEach((value) => {
+  values.forEach(value => {
     expect(isFunction(value)).toBe(false);
   });
 });

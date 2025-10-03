@@ -45,7 +45,7 @@ type LabelAttributes = {
   /**
    * The text label to be displayed within the Label with or without an Icon. Required.
    */
-  children: string
+  children: string;
 };
 
 export type LabelProps = LabelAttributes;

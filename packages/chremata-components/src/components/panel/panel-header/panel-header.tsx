@@ -1,4 +1,4 @@
-import type { PanelHeaderProps } from "./panel-header.types";
+import type { PanelHeaderProps } from './panel-header.types';
 
 export function PanelHeader(props: PanelHeaderProps) {
   return null;

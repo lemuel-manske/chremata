@@ -3,16 +3,16 @@ import * as React from 'react';
 import type { ButtonSize, ButtonVariant } from './button.types';
 
 export type ButtonState = {
-  disabled?: boolean,
-}
+  disabled?: boolean;
+};
 
 export type ButtonContextValue = {
-  label: string,
-  color: string,
-  variant: ButtonVariant,
-  size: ButtonSize,
-  state: ButtonState,
-}
+  label: string;
+  color: string;
+  variant: ButtonVariant;
+  size: ButtonSize;
+  state: ButtonState;
+};
 
 export const ButtonContext = React.createContext<ButtonContextValue>({
   label: '',

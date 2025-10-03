@@ -15,7 +15,8 @@ Modal.Header = ModalHeader;
 Modal.Title = ModalTitle;
 
 export function Modal(props: ModalProps) {
-  const { backgroundColor, backgroundBackdropColor, id, header, open } = useModal(props);
+  const { backgroundColor, backgroundBackdropColor, id, header, open } =
+    useModal(props);
 
   const currRef = React.useRef<HTMLDialogElement>(null);
 
@@ -38,7 +39,7 @@ export function Modal(props: ModalProps) {
   const styles = styleMap({
     '--modal-background-color': backgroundColor,
     '--modal-background-backdrop-color': backgroundBackdropColor,
-  })
+  });
 
   const stateValue = { id, state: { open } };
 

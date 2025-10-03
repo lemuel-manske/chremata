@@ -16,10 +16,12 @@ type ActionListFixtureProps = {
 
 function ActionListFixture(props: ActionListFixtureProps) {
   const { addIcon, exportIcon, onClickAdd, onClickExport } = props;
-  
+
   return (
     <ActionList {...props}>
-      <ActionList.Item variant="secondary" onClick={onClickExport}>
+      <ActionList.Item
+        variant="secondary"
+        onClick={onClickExport}>
         <ActionList.Item.Icon name={exportIcon} />
         <ActionList.Item.Label>Export</ActionList.Item.Label>
       </ActionList.Item>

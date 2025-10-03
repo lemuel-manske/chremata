@@ -1,19 +1,19 @@
 export default {
   fit: {
     fillAvailable: 'stretch',
-    fitContent: 'max-content'
+    fitContent: 'max-content',
   },
 
   size: {
     small: {
-      padding: '8px 12px'
+      padding: '8px 12px',
     },
     medium: {
-      padding:  '12px 16px'
+      padding: '12px 16px',
     },
     large: {
-      padding: '16px 20px'
-    }
+      padding: '16px 20px',
+    },
   },
 
   variant: {
@@ -23,12 +23,12 @@ export default {
         active: 'hsl(var(--color-light-green-15))',
         disabled: 'hsla(var(--color-light-green-5), 70%)',
         hover: 'hsl(var(--color-light-green-10))',
-        focusVisible: 'hsl(var(--color-light-green-5))'
+        focusVisible: 'hsl(var(--color-light-green-5))',
       },
 
       color: {
-        default: 'var(--font-color--dark)',
-        disabled: 'var(--font-color--dark-disabled)'
+        default: 'var(--color-contrast-dark)',
+        disabled: 'var(--color-contrast-dark-disabled)',
       },
     },
 
@@ -38,13 +38,13 @@ export default {
         active: 'hsl(var(--color-dark-green-80))',
         disabled: 'transparent',
         hover: 'hsl(var(--color-dark-green-75))',
-        focusVisible: 'hsl(var(--color-dark-green-75))'
+        focusVisible: 'hsl(var(--color-dark-green-75))',
       },
 
       color: {
-        default: 'var(--font-color--light)',
-        disabled: 'var(--font-color--light-disabled)'
+        default: 'var(--color-contrast-light)',
+        disabled: 'var(--color-contrast-light-disabled)',
       },
-    }
-  }
+    },
+  },
 };

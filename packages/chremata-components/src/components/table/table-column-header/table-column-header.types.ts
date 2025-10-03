@@ -1,8 +1,6 @@
 import type { Alignment, EnumOrStringLiteralTypes } from '@chremata/utils';
 
-import type {
-  TableColumnHeaderCellInfo,
-} from '../table-column/table-column.types';
+import type { TableColumnHeaderCellInfo } from '../table-column/table-column.types';
 
 export type TableColumnHeaderAlignmentOptions = {
   horizontal?: EnumOrStringLiteralTypes<Alignment>;

@@ -29,7 +29,7 @@ export function useLabel(props: LabelProps) {
     }
 
     return tokens.color.regular;
-  }
+  };
 
   const fontColor = getColor();
   const fontFamily = tokens.fontFamily;

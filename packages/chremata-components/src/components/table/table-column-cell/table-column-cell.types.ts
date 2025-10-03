@@ -1,8 +1,6 @@
 import type { Alignment, EnumOrStringLiteralTypes } from '@chremata/utils';
 
-import type {
-  TableColumnCellInfo,
-} from '../table-column/table-column.types';
+import type { TableColumnCellInfo } from '../table-column/table-column.types';
 
 export type TableColumnCellAlignmentOptions = {
   horizontal?: EnumOrStringLiteralTypes<Alignment>;
@@ -12,9 +10,7 @@ export type TableColumnCellAlignmentOptions = {
 type TableColumnCellAttributes = {
   alignment?: TableColumnCellAlignmentOptions;
 
-  children?:
-    | ((info: TableColumnCellInfo) => React.ReactNode)
-    | React.ReactNode;
+  children?: ((info: TableColumnCellInfo) => React.ReactNode) | React.ReactNode;
 };
 
 export type TableColumnCellProps = TableColumnCellAttributes;

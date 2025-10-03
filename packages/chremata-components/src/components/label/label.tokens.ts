@@ -7,15 +7,15 @@ export default {
   },
 
   color: {
-    regular: 'var(--font-color--light)',
-    disabled: 'var(--font-color--light-disabled)',
+    regular: 'var(--color-contrast-light)',
+    disabled: 'var(--color-contrast-light-disabled)',
   },
-  
+
   size: {
     small: '0.775rem',
     medium: '0.85rem',
     large: '1rem',
     xlarge: '1.125rem',
     xxlarge: '1.25rem',
-  }
+  },
 };

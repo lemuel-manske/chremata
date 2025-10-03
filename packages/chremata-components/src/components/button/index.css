@@ -19,12 +19,12 @@
 
 .ch-button:disabled {
   background-color: var(--button-background-color-disabled);
-  
+
   cursor: not-allowed;
 }
 
 .ch-button:not(:disabled):hover {
-   background-color: var(--button-background-color-hover);
+  background-color: var(--button-background-color-hover);
 }
 
 .ch-button:not(:disabled):focus-visible {

@@ -13,6 +13,6 @@ export default {
       flexDirection: 'row',
       alignItems: 'none',
       justifyItems: 'center',
-    }
-  }
+    },
+  },
 };

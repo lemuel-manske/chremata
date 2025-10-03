@@ -56,9 +56,9 @@ export type EnumOrStringLiteralTypesInclude<
  * Returns {@link T} or `undefined`.
  *
  * @example
- * 
- * type SortDirection = 'asc' | 'desc' | 'none'; 
- * 
+ *
+ * type SortDirection = 'asc' | 'desc' | 'none';
+ *
  * Optional<SortDirection>; // 'asc' | 'desc' | 'none' | undefined
  */
 export type Optional<T> = T | undefined;
@@ -100,9 +100,9 @@ export type Identifiable<T> = T & { id: Id };
 
 /**
  * Represents an HTML element `id`.
- * 
+ *
  * @example
- * 
+ *
  * const elementId: ElementId = "my-element-id";
  */
 export type ElementId = string;
@@ -110,17 +110,17 @@ export type ElementId = string;
 /**
  * Represents a `Comparable` decorator, used to comparing a given {@link T}
  * from {@link T a} to {@link T b}.
- * 
+ *
  * @template T - The type of the elements to be compared. Defaults to `unknown`.
- * 
+ *
  * @example
- * 
+ *
  * const compareNumbers: Comparable<number> = (a, b) => a - b;
- * 
+ *
  * const compareStrings: Comparable<string> = (a, b) => a.localeCompare(b);
- * 
+ *
  * const compareDates: Comparable<Date> = (a, b) => a.getTime() - b.getTime();
- * 
+ *
  * const compareMixed: Comparable = (a, b) => {
  *   if (typeof a === 'number' && typeof b === 'number') {
  *     return a - b;
@@ -135,17 +135,17 @@ export type Comparable<T = unknown> = (a: T, b: T) => number;
 
 /**
  * Omits `children` from a given {@link T type}.
- * 
+ *
  * @template T - The type from which to omit the `children` property.
- * 
+ *
  * @example
- * 
+ *
  * interface ExampleWithChildren {
  *   children: React.ReactNode;
  *   title: string;
  *   value: number;
  * }
- * 
+ *
  * type ExampleWithoutChildren = NoChildren<ExampleWithChildren>;
  */
 export type NoChildren<T extends { children: unknown }> = Omit<T, 'children'>;

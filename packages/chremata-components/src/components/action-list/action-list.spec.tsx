@@ -69,7 +69,9 @@ test('should not call onClick when disabled and clicked', async () => {
 
   render(
     <ActionList>
-      <ActionList.Item onClick={onClick} disabled>
+      <ActionList.Item
+        onClick={onClick}
+        disabled>
         <ActionList.Item.Label>Add</ActionList.Item.Label>
       </ActionList.Item>
     </ActionList>
@@ -104,7 +106,7 @@ test('should call onClick on first item when focused and [Space] is pressed', as
   await user.keyboard('[Space]');
 
   expect(onClick1st).toHaveBeenCalledTimes(1);
-  expect(onClick2nd).toHaveBeenCalledTimes(0);  
+  expect(onClick2nd).toHaveBeenCalledTimes(0);
 
   await user.tab();
   await user.keyboard('[Space]');
@@ -189,7 +191,9 @@ test('should skip disabled items when using keyboard navigation', async () => {
         <ActionList.Item.Label>Add</ActionList.Item.Label>
       </ActionList.Item>
 
-      <ActionList.Item onClick={onClick2nd} disabled>
+      <ActionList.Item
+        onClick={onClick2nd}
+        disabled>
         <ActionList.Item.Label>Edit</ActionList.Item.Label>
       </ActionList.Item>
 

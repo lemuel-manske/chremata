@@ -13,11 +13,7 @@ interface LabelFixtureProps extends LabelProps {
 function LabelFixture(props: LabelFixtureProps) {
   const { label, ...rest } = props;
 
-  return (
-    <Label {...rest}>
-      {label}
-    </Label>
-  );
+  return <Label {...rest}>{label}</Label>;
 }
 
 export default {

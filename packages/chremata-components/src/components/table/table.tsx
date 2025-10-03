@@ -11,14 +11,14 @@ import './index.css';
 
 export function Table(props: TableProps) {
   const {
-    columns, 
-    data, 
-    label, 
+    columns,
+    data,
+    label,
     labelledBy,
     id,
-    onSort, 
-    sortBy, 
-    sortDirection
+    onSort,
+    sortBy,
+    sortDirection,
   } = useTable(props);
 
   return (

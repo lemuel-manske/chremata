@@ -1,4 +1,4 @@
-import type { TableContentCellProps } from "../table-content-cell/table-content-cell.types";
+import type { TableContentCellProps } from '../table-content-cell/table-content-cell.types';
 
 type TableContentRowAttributes = {
   children:

@@ -19,11 +19,11 @@ export const DEFAULT_TABLE_PROPS: DefaultTableProps = {
 
 export function useTable(props: TableProps) {
   const {
-    children, 
-    data = DEFAULT_TABLE_PROPS.data, 
-    label, 
+    children,
+    data = DEFAULT_TABLE_PROPS.data,
+    label,
     labelledBy,
-    id
+    id,
   } = props;
 
   const [sortBy, setSortBy] = React.useState<string | undefined>();
@@ -45,11 +45,15 @@ export function useTable(props: TableProps) {
     const cell = findChild(children, TableColumnCell);
 
     if (!header) {
-      throw new Error('[Table] No `TableColumnHeader` provided to `TableColum`.');
+      throw new Error(
+        '[Table] No `TableColumnHeader` provided to `TableColum`.'
+      );
     }
 
     if (!cell) {
-      throw new Error('[Table] No `TableColumnCell` provided to `TableColumn`.');
+      throw new Error(
+        '[Table] No `TableColumnCell` provided to `TableColumn`.'
+      );
     }
 
     return {
@@ -90,7 +94,9 @@ export function useTable(props: TableProps) {
 
   const handleSort = React.useCallback(
     (accessorKey: string) => {
-      const column = memoizedColumns.find(col => col.accessorKey === accessorKey);
+      const column = memoizedColumns.find(
+        col => col.accessorKey === accessorKey
+      );
 
       if (!column || !column.sortable) {
         return;

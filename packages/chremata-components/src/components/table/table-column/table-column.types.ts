@@ -38,4 +38,6 @@ export type TableColumnCellInfo = NoChildren<TableColumnProps> & {
 
 export type TableColumnHeaderCellInfo = NoChildren<TableColumnProps>;
 
-export type DefaultTableColumnProps = Required<Pick<TableColumnProps, 'width' | 'sortable' | 'accessorKey' | 'sortFn'>>;
+export type DefaultTableColumnProps = Required<
+  Pick<TableColumnProps, 'width' | 'sortable' | 'accessorKey' | 'sortFn'>
+>;

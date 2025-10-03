@@ -62,7 +62,9 @@ test('should not call onClick when disabled and clicked', async () => {
   const onClick = jest.fn();
 
   render(
-    <Button disabled onClick={onClick}>
+    <Button
+      disabled
+      onClick={onClick}>
       <Button.Label>Button</Button.Label>
     </Button>
   );

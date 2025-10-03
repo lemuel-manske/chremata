@@ -7,10 +7,11 @@ import type { PanelProps } from './panel.types';
 
 import { type TableProps } from '../table/table.types';
 
-type PanelFixtureProps = PanelProps & TableProps & {
-  onAdd: () => void,
-  title: string;
-};
+type PanelFixtureProps = PanelProps &
+  TableProps & {
+    onAdd: () => void;
+    title: string;
+  };
 
 function PanelFixture(props: PanelFixtureProps) {
   const { data, title, onAdd, ...rest } = props;
@@ -18,24 +19,26 @@ function PanelFixture(props: PanelFixtureProps) {
   return (
     <Panel {...rest}>
       <Panel.Header>
-        <Panel.Title>
-          {title}
-        </Panel.Title>
+        <Panel.Title>{title}</Panel.Title>
 
         <Panel.ActionList>
-          <Panel.ActionItem onClick={onAdd}>
-            Add
-          </Panel.ActionItem>
+          <Panel.ActionItem onClick={onAdd}>Add</Panel.ActionItem>
         </Panel.ActionList>
       </Panel.Header>
 
       <Panel.Table data={data}>
-        <Panel.TableColumn accessorKey='name' sortable width={240}>
+        <Panel.TableColumn
+          accessorKey="name"
+          sortable
+          width={240}>
           <Panel.TableColumnHeader>Name</Panel.TableColumnHeader>
           <Panel.TableCell />
         </Panel.TableColumn>
 
-        <Panel.TableColumn accessorKey='age' sortable width={120}>
+        <Panel.TableColumn
+          accessorKey="age"
+          sortable
+          width={120}>
           <Panel.TableColumnHeader>Age</Panel.TableColumnHeader>
           <Panel.TableCell />
         </Panel.TableColumn>

@@ -41,8 +41,14 @@ type ButtonAttributes = {
    */
   children:
     | React.ReactElement<ButtonLabelProps>
-    | [React.ReactElement<ButtonIconProps>, React.ReactElement<ButtonLabelProps>]
-    | [React.ReactElement<ButtonLabelProps>, React.ReactElement<ButtonIconProps>];
+    | [
+        React.ReactElement<ButtonIconProps>,
+        React.ReactElement<ButtonLabelProps>,
+      ]
+    | [
+        React.ReactElement<ButtonLabelProps>,
+        React.ReactElement<ButtonIconProps>,
+      ];
 
   /**
    * The size of the Button. Default is 'medium'.

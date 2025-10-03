@@ -24,14 +24,14 @@ export function Button(props: ButtonProps) {
     color,
     padding,
     width,
-    
+
     children,
     disabled,
     label,
     size,
     variant,
 
-   onClick,
+    onClick,
   } = useButton(props);
 
   const classes = classNames({

@@ -6,7 +6,8 @@ import { useLabel } from './use-label';
 import './index.css';
 
 export function Label(props: LabelProps) {
-  const { id, disabled, fontColor, fontFamily, fontSize, fontWeight, label } = useLabel(props);
+  const { id, disabled, fontColor, fontFamily, fontSize, fontWeight, label } =
+    useLabel(props);
 
   const classes = classNames({
     'ch-label': true,
@@ -20,7 +21,7 @@ export function Label(props: LabelProps) {
     '--font-color': fontColor,
     '--font-family': fontFamily,
     '--font-size': fontSize,
-    '--font-weight': fontWeight, 
+    '--font-weight': fontWeight,
   });
 
   return (

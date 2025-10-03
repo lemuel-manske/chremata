@@ -1,1 +1,1 @@
-export type AriaSort = "descending" | "ascending" | "none";
+export type AriaSort = 'descending' | 'ascending' | 'none';
