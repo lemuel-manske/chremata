@@ -5,4 +5,4 @@ export enum LayoutJustify {
   SPACE_BETWEEN = 'spaceBetween',
   SPACE_AROUND = 'spaceAround',
   SPACE_EVENLY = 'spaceEvenly',
-};
+}

@@ -73,7 +73,11 @@ export default {
     },
     variant: {
       control: 'select',
-      options: [ButtonVariantEnum.PRIMARY, ButtonVariantEnum.SECONDARY, ButtonVariantEnum.SILENT_EMPHASIS],
+      options: [
+        ButtonVariantEnum.PRIMARY,
+        ButtonVariantEnum.SECONDARY,
+        ButtonVariantEnum.SILENT_EMPHASIS,
+      ],
     },
     justify: {
       control: 'select',

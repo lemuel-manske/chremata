@@ -1,4 +1,11 @@
-import { classNames, Fit, isString, LayoutJustify, Size, styleMap } from '@chremata/utils';
+import {
+  classNames,
+  Fit,
+  isString,
+  LayoutJustify,
+  Size,
+  styleMap,
+} from '@chremata/utils';
 
 import { Label } from '../../../label/label';
 
@@ -10,14 +17,8 @@ import { LabelVariantEnum } from '../../../label/label.types';
 import type { IconSolidNames } from '../../../icon/icon.types';
 
 export function TableHeaderCell(props: TableHeaderCellProps) {
-  const {
-    ariaSort,
-    children,
-    width,
-    sortable,
-    sortingIcon,
-    onClick,
-  } = useTableHeaderCell(props);
+  const { ariaSort, children, width, sortable, sortingIcon, onClick } =
+    useTableHeaderCell(props);
 
   function renderLabel() {
     return (
@@ -30,19 +31,19 @@ export function TableHeaderCell(props: TableHeaderCellProps) {
   }
 
   function renderSortButton() {
-    const renderIcon = () =>  {
+    const renderIcon = () => {
       if (!sortingIcon) {
         return null;
       }
 
-      return <Button.Icon name={sortingIcon} />
+      return <Button.Icon name={sortingIcon} />;
     };
 
     return (
-      <Button 
-        onClick={onClick} 
-        variant={ButtonVariantEnum.SILENT_EMPHASIS} 
-        fit={Fit.FILL_AVAILABLE} 
+      <Button
+        onClick={onClick}
+        variant={ButtonVariantEnum.SILENT_EMPHASIS}
+        fit={Fit.FILL_AVAILABLE}
         size={Size.LARGE}
         justify={LayoutJustify.SPACE_BETWEEN}>
         <Button.Label>{children as string}</Button.Label>
@@ -68,7 +69,11 @@ export function TableHeaderCell(props: TableHeaderCellProps) {
       className={classes}
       aria-sort={ariaSort}>
       <>
-        {isString(children) ? sortable ? renderSortButton() : renderLabel() : children}
+        {isString(children)
+          ? sortable
+            ? renderSortButton()
+            : renderLabel()
+          : children}
       </>
     </th>
   );

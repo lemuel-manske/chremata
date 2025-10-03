@@ -44,7 +44,7 @@ export function useTableHeaderCell(props: TableHeaderCellProps) {
     }
 
     return sortDirection === 'asc' ? 'ascending' : 'descending';
-  }
+  };
 
   const handleClick = () => {
     if (sortable && onSort) {
@@ -70,7 +70,7 @@ export function useTableHeaderCell(props: TableHeaderCellProps) {
     }
 
     return null;
-  }
+  };
 
   const sortingIcon = getSortingIcon();
   const onClick = sortable ? handleClick : doNothing;

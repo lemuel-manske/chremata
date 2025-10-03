@@ -60,6 +60,6 @@ export default {
         default: 'var(--color-contrast-light)',
         disabled: 'var(--color-contrast-light-disabled)',
       },
-    }
+    },
   },
 };
