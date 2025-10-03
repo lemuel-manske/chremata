@@ -6,6 +6,7 @@ import {
   type UserEvent,
   type EnumOrStringLiteralTypes,
   type EnumOrStringLiteralTypesInclude,
+  type LayoutJustify,
 } from '@chremata/utils';
 
 import type { ButtonLabelProps } from './button-label/button-label.types';
@@ -14,7 +15,10 @@ import type { ButtonIconProps } from './button-icon/button-icon.types';
 export enum ButtonVariantEnum {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
+  SILENT_EMPHASIS = 'silentEmphasis',
 }
+
+export type ButtonJustify = EnumOrStringLiteralTypesInclude<LayoutJustify, 'center' | 'spaceBetween'>;
 
 export type ButtonVariant = EnumOrStringLiteralTypes<ButtonVariantEnum>;
 
@@ -48,6 +52,14 @@ type ButtonAttributes = {
     | [
         React.ReactElement<ButtonLabelProps>,
         React.ReactElement<ButtonIconProps>,
+      ]
+    | [
+        React.ReactElement<ButtonLabelProps>,
+        null
+      ]
+    | [
+        null,
+        React.ReactElement<ButtonLabelProps>,
       ];
 
   /**
@@ -69,10 +81,15 @@ type ButtonAttributes = {
    * The variant of the Button. Default is 'primary'.
    */
   variant?: ButtonVariant;
+  
+  /**
+   * Justify content of the Button. Default is 'center'.
+   */
+  justify?: ButtonJustify;
 };
 
 export type ButtonProps = ButtonAttributes & ButtonEvents;
 
 export type DefaultButtonProps = Required<
-  Pick<ButtonProps, 'disabled' | 'size' | 'variant' | 'fit'>
+  Pick<ButtonProps, 'disabled' | 'size' | 'variant' | 'fit' | 'justify'>
 >;

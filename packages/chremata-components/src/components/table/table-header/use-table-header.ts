@@ -11,7 +11,7 @@ export function useTableHeader(props: TableHeaderProps) {
 
     const content = header.children;
 
-    const _sortDirection = sortBy === accessorKey ? sortDirection : doNothing;
+    const _sortDirection = sortBy === accessorKey ? sortDirection : undefined;
     const _onSort = sortable && onSort ? () => onSort(accessorKey) : doNothing;
 
     const headerCellInfo = {

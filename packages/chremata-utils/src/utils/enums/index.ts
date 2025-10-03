@@ -2,6 +2,7 @@ export * from './currency';
 export * from './locale';
 export * from './sort-direction';
 export * from './ui/fit';
+export * from './ui/layout-justify';
 export * from './ui/alignment';
 export * from './ui/cursor';
 export * from './ui/orientation';

@@ -29,27 +29,14 @@
 
   align-items: center;
   justify-content: space-between;
+}
 
+.ch-table-header-cell:not(.ch-table-header-cell--sortable) {
   padding: 0.8rem 1rem;
 }
 
-.ch-table-header-cell--sortable {
-  cursor: pointer;
-  user-select: none;
-}
-
-.ch-table-header-cell--sortable:hover {
-  background-color: hsla(var(--color-dark-green-90), 30%);
-}
-
-.ch-table-header-cell--sortable:focus {
-  background-color: hsla(var(--color-dark-green-90), 45%);
-
-  outline: none;
-}
-
-.ch-table-header-cell--sortable:active {
-  background-color: hsla(var(--color-dark-green-90), 50%);
+.ch-table-content-cell {
+  padding: 0.8rem 1rem;
 }
 
 .ch-table-content-row,

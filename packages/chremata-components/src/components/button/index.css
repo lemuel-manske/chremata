@@ -1,9 +1,8 @@
 .ch-button {
   cursor: pointer;
 
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
 
   gap: 8px;
 
@@ -17,6 +16,14 @@
   background-color: var(--button-background-color);
 }
 
+.ch-button--justify-spaceBetween {
+  justify-content: space-between;
+}
+
+.ch-button--justify-center {
+  justify-content: center;
+}
+
 .ch-button:disabled {
   background-color: var(--button-background-color-disabled);
 
@@ -27,11 +34,25 @@
   background-color: var(--button-background-color-hover);
 }
 
+.ch-button:not(:disabled):active {
+  background-color: var(--button-background-color-active);
+}
+
 .ch-button:not(:disabled):focus-visible {
+  background-color: var(--button-background-color-focus-visible);
+}
+
+/* Variants */
+
+.ch-button--primary:not(:disabled):focus-visible {
   outline: 4px solid var(--button-background-color-focus-visible);
   outline-offset: 2px;
 }
 
-.ch-button:not(:disabled):active {
-  background-color: var(--button-background-color-active);
+.ch-button--secondary:not(:disabled):focus-visible {
+  outline: none;
+}
+
+.ch-button--silentEmphasis:not(:disabled):focus-visible {
+  outline: none;
 }

@@ -21,6 +21,7 @@ export function ButtonIcon(props: ButtonIconProps) {
     <Icon
       label={label}
       name={name}
+      cursor={'pointer'}
       size={ICON_SIZE_MAP[size]}
       primaryColor={color}
     />

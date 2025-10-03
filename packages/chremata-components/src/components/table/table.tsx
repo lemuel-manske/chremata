@@ -9,6 +9,10 @@ import { TableContent } from './table-content/table-content';
 
 import './index.css';
 
+Table.Column = TableColumn;
+Table.ColumnHeader = TableColumnHeader;
+Table.Cell = TableColumnCell;
+
 export function Table(props: TableProps) {
   const {
     columns,
@@ -42,7 +46,3 @@ export function Table(props: TableProps) {
     </div>
   );
 }
-
-Table.Column = TableColumn;
-Table.ColumnHeader = TableColumnHeader;
-Table.Cell = TableColumnCell;

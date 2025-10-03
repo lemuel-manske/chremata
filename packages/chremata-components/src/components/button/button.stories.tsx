@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react';
 
 import { fn } from '@storybook/test';
 
-import { Fit, Size } from '@chremata/utils';
+import { Fit, LayoutJustify, Size } from '@chremata/utils';
 
 import { type IconSolidNames } from '../icon/icon.types';
 
@@ -73,7 +73,11 @@ export default {
     },
     variant: {
       control: 'select',
-      options: [ButtonVariantEnum.PRIMARY, ButtonVariantEnum.SECONDARY],
+      options: [ButtonVariantEnum.PRIMARY, ButtonVariantEnum.SECONDARY, ButtonVariantEnum.SILENT_EMPHASIS],
+    },
+    justify: {
+      control: 'select',
+      options: [LayoutJustify.CENTER, LayoutJustify.SPACE_BETWEEN],
     },
     icon: {
       control: 'select',

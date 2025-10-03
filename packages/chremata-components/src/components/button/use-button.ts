@@ -6,6 +6,7 @@ import { type DefaultButtonProps, type ButtonProps } from './button.types';
 import tokens from './button.tokens';
 
 export const DEFAULT_BUTTON_PROPS: DefaultButtonProps = {
+  justify: 'center',
   size: 'medium',
   variant: 'primary',
   disabled: false,
@@ -19,6 +20,7 @@ export function useButton(props: ButtonProps) {
     children,
     variant = DEFAULT_BUTTON_PROPS.variant,
     size = DEFAULT_BUTTON_PROPS.size,
+    justify = DEFAULT_BUTTON_PROPS.justify,
 
     onClick,
   } = props;
@@ -72,6 +74,7 @@ export function useButton(props: ButtonProps) {
     label,
     size,
     variant,
+    justify,
 
     onClick,
   };

@@ -30,7 +30,7 @@ export function useTableHeaderCell(props: TableHeaderCellProps) {
     width = DEFAULT_TABLE_HEADER_CELL_PROPS.width,
   } = props;
 
-  function resolveAriaSort(): Optional<AriaSort> {
+  const resolveAriaSort = (): Optional<AriaSort> => {
     if (!sortable) {
       return undefined;
     }
@@ -39,14 +39,12 @@ export function useTableHeaderCell(props: TableHeaderCellProps) {
       return 'none';
     }
 
+    if (sortDirection === 'none') {
+      return 'none';
+    }
+
     return sortDirection === 'asc' ? 'ascending' : 'descending';
   }
-
-  const handleSort = React.useCallback(() => {
-    if (sortable && onSort) {
-      onSort();
-    }
-  }, [sortable, onSort]);
 
   const handleClick = () => {
     if (sortable && onSort) {
@@ -62,15 +60,19 @@ export function useTableHeaderCell(props: TableHeaderCellProps) {
     }
   };
 
-  const sortingIcon: IconSolidNames =
-    !sortDirection || sortDirection === 'desc'
-      ? 'ChevronUpSvg'
-      : 'ChevronDownSvg';
+  const getSortingIcon = (): IconSolidNames | null => {
+    if (sortDirection === 'asc') {
+      return 'ChevronUpSvg';
+    }
 
-  const sortingLabel = 'Toggle sort';
+    if (sortDirection === 'desc') {
+      return 'ChevronDownSvg';
+    }
 
-  const tabIndex = sortable ? 0 : -1;
+    return null;
+  }
 
+  const sortingIcon = getSortingIcon();
   const onClick = sortable ? handleClick : doNothing;
   const onKeyDown = sortable ? handleKeyDown : doNothing;
 
@@ -79,13 +81,10 @@ export function useTableHeaderCell(props: TableHeaderCellProps) {
   return {
     ariaSort,
     children,
-    tabIndex,
     sortingIcon,
-    sortingLabel,
     sortable,
     onClick,
     onKeyDown,
-    onSort: handleSort,
     width,
   };
 }

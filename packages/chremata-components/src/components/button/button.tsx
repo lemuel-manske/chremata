@@ -24,6 +24,7 @@ export function Button(props: ButtonProps) {
     color,
     padding,
     width,
+    justify,
 
     children,
     disabled,
@@ -36,6 +37,8 @@ export function Button(props: ButtonProps) {
 
   const classes = classNames({
     'ch-button': true,
+    [`ch-button--justify-${justify}`]: true,
+    [`ch-button--${variant}`]: true,
   });
 
   const styles = styleMap({

@@ -46,5 +46,20 @@ export default {
         disabled: 'var(--color-contrast-light-disabled)',
       },
     },
+
+    silentEmphasis: {
+      background: {
+        default: 'transparent',
+        active: 'transparent',
+        disabled: 'transparent',
+        hover: 'hsl(var(--color-dark-green-90))',
+        focusVisible: 'hsl(var(--color-dark-green-90))',
+      },
+
+      color: {
+        default: 'var(--color-contrast-light)',
+        disabled: 'var(--color-contrast-light-disabled)',
+      },
+    }
   },
 };
