@@ -5,39 +5,44 @@ import { ActionList } from '../action-list/action-list';
 
 const tag = ['@ch-panel'];
 
-test('should render a Panel without actions', { tag }, async ({ mount, page }) => {
-  const panel = await mount(
-    <Panel>
-      <Panel.Header>
-        <Panel.Title>Users</Panel.Title>
-      </Panel.Header>
+test(
+  'should render a Panel without actions',
+  { tag },
+  async ({ mount, page }) => {
+    const panel = await mount(
+      <Panel>
+        <Panel.Header>
+          <Panel.Title>Users</Panel.Title>
+        </Panel.Header>
 
-      <Panel.Table data={[
-        { name: 'Jane Doe', age: 32 },
-        { name: 'John Doe', age: 28 }
-      ]}>
-        <Panel.TableColumn
-          accessorKey="name"
-          sortable
-          width={240}>
-          <Panel.TableColumnHeader>Name</Panel.TableColumnHeader>
-          <Panel.TableCell />
-        </Panel.TableColumn>
+        <Panel.Table
+          data={[
+            { name: 'Jane Doe', age: 32 },
+            { name: 'John Doe', age: 28 },
+          ]}>
+          <Panel.TableColumn
+            accessorKey="name"
+            sortable
+            width={240}>
+            <Panel.TableColumnHeader>Name</Panel.TableColumnHeader>
+            <Panel.TableCell />
+          </Panel.TableColumn>
 
-        <Panel.TableColumn
-          accessorKey="age"
-          sortable
-          width={120}>
-          <Panel.TableColumnHeader>Age</Panel.TableColumnHeader>
-          <Panel.TableCell />
-        </Panel.TableColumn>
-      </Panel.Table>
-    </Panel>
-  );
+          <Panel.TableColumn
+            accessorKey="age"
+            sortable
+            width={120}>
+            <Panel.TableColumnHeader>Age</Panel.TableColumnHeader>
+            <Panel.TableCell />
+          </Panel.TableColumn>
+        </Panel.Table>
+      </Panel>
+    );
 
-  await expect(panel).toNotHaveAccessibilityViolations();
-  await expect(page).toHaveScreenshot();
-});
+    await expect(panel).toNotHaveAccessibilityViolations();
+    await expect(page).toHaveScreenshot();
+  }
+);
 
 test('should render a Panel with actions', { tag }, async ({ mount, page }) => {
   const panel = await mount(
@@ -52,10 +57,11 @@ test('should render a Panel with actions', { tag }, async ({ mount, page }) => {
         </ActionList>
       </Panel.Header>
 
-      <Panel.Table data={[
-        { name: 'Jane Doe', age: 32 },
-        { name: 'John Doe', age: 28 }
-      ]}>
+      <Panel.Table
+        data={[
+          { name: 'Jane Doe', age: 32 },
+          { name: 'John Doe', age: 28 },
+        ]}>
         <Panel.TableColumn
           accessorKey="name"
           sortable
