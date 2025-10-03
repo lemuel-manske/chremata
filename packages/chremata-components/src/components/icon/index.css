@@ -2,36 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.ch-icon--disabled {
-  cursor: not-allowed;
-}
+  inline-size: var(--icon-size);
+  block-size: var(--icon-size);
 
-.ch-icon--small {
-  --icon-size-small: 12px;
-
-  inline-size: var(--icon-size-small);
-  block-size: var(--icon-size-small);
-}
-
-.ch-icon--medium {
-  --icon-size-medium: 16px;
-
-  inline-size: var(--icon-size-medium);
-  block-size: var(--icon-size-medium);
-}
-
-.ch-icon--large {
-  --icon-size-large: 20px;
-
-  inline-size: var(--icon-size-large);
-  block-size: var(--icon-size-large);
-}
-
-.ch-icon--xlarge {
-  --icon-size-xlarge: 24px;
-
-  inline-size: var(--icon-size-xlarge);
-  block-size: var(--icon-size-xlarge);
+  cursor: var(--icon-pointer);
 }

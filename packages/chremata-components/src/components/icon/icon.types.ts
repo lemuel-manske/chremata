@@ -21,12 +21,24 @@ export type IconSize = EnumOrStringLiteralTypesInclude<
 export type InnerIconProps = SVGSolidProps & IconAttributes;
 
 export type IconProps = InnerIconProps & {
+  /**
+   * The icon text label.
+   */
   label: string;
 
+  /**
+   * Whether the icon is disabled. Defaults to `false`.
+   */
   disabled?: boolean;
 
+  /**
+   * The icon size. Defaults to `medium`.
+   */
   size?: IconSize;
 
+  /**
+   * The icon cursor. Defaults to `default`.
+   */
   pointer?: CursorType;
 };
 

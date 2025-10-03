@@ -1,22 +1,11 @@
+import { getStringValue, isString } from '@chremata/utils';
+
 import {
-  type LayoutGap,
-  type LayoutPadding,
   type DefaultGridLayoutProps,
   type GridLayoutProps,
 } from './grid-layout.types';
 
-import { getStringValue, isString } from '@chremata/utils';
-
-const PADDING_MAP: Record<NonNullable<LayoutPadding>, string> = {
-  none: 'var(--grid-layout-padding-none)',
-  small: 'var(--grid-layout-padding-small)',
-  medium: 'var(--grid-layout-padding-medium)',
-};
-
-const GAP_MAP: Record<NonNullable<LayoutGap>, string> = {
-  none: 'var(--grid-layout-gap-none)',
-  panel: 'var(--grid-layout-gap-panel)',
-};
+import tokens from './grid-layout.tokens';
 
 export const DEFAULT_GRID_LAYOUT_PROPS: DefaultGridLayoutProps = {
   columnGap: 'panel',
@@ -42,9 +31,9 @@ export function useGridLayout(props: GridLayoutProps) {
   const templateColumnsString = getStringValue(columns);
   const templateRowsString = getStringValue(rows);
 
-  const padding = PADDING_MAP[rawPadding];
-  const columnGap = GAP_MAP[rawColumnGap];
-  const rowGap = GAP_MAP[rawRowGap];
+  const padding = tokens.padding[rawPadding];
+  const columnGap = tokens.gap[rawColumnGap];
+  const rowGap = tokens.gap[rawRowGap];
 
   return {
     children,

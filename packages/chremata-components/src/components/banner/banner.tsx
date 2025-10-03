@@ -1,6 +1,7 @@
-import { classNames } from '@chremata/utils';
+import { classNames, styleMap } from '@chremata/utils';
 
 import { type BannerProps } from './banner.types';
+import tokens from './banner.tokens';
 
 import './index.css';
 
@@ -11,5 +12,9 @@ export function Banner(bannerProps: BannerProps) {
     'ch-banner': true,
   });
 
-  return <div className={classes}>{children}</div>;
+  const styles = styleMap({
+    '--banner-background-color': tokens.background.color,
+  });
+
+  return <div className={classes} style={styles}>{children}</div>;
 }

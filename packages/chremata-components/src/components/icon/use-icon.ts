@@ -1,4 +1,5 @@
 import { type IconProps, type IconDefaultProps } from './icon.types';
+import tokens from './icon.tokens';
 
 export const DEFAULT_ICON_PROPS: IconDefaultProps = {
   size: 'medium',
@@ -17,12 +18,15 @@ export function useIcon(props: IconProps) {
     ...svgProps
   } = props;
 
+  const pointerOrDisabled = disabled ? tokens.pointer.disabled : pointer;
+  const iconSize = tokens.size[size];
+
   return {
     label,
     name,
-    size,
+    size: iconSize,
     disabled,
-    pointer,
+    pointer: pointerOrDisabled,
 
     ...svgProps,
   };

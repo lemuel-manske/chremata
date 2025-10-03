@@ -20,15 +20,12 @@ export function Icon(props: IconProps) {
 
   const classes = classNames({
     'ch-icon': true,
-    'ch-icon--disabled': disabled,
-    [`ch-icon--${size}`]: true,
   });
 
   const styles = styleMap({
-    cursor: pointer,
+    '--icon-pointer': pointer,
+    '--icon-size': size,
   });
-
-  const role = 'img';
 
   return (
     <div
@@ -36,7 +33,7 @@ export function Icon(props: IconProps) {
       aria-disabled={disabled}
       className={classes}
       style={styles}
-      role={role}>
+      role="img">
       <InnerIcon
         name={name}
         disabled={disabled}

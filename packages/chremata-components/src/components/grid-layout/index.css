@@ -1,11 +1,4 @@
 .ch-grid {
-  --grid-layout-gap-none: 0px;
-  --grid-layout-gap-panel: 16px;
-
-  --grid-layout-padding-none: 0px;
-  --grid-layout-padding-small: 8px;
-  --grid-layout-padding-medium: 16px;
-
   display: grid;
 
   box-sizing: border-box;
