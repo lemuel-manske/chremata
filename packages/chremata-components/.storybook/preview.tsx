@@ -1,11 +1,10 @@
-import '@chremata/themes/styles';
-
+import '@chremata/themes';
 import '@chremata/fonts';
 import '@chremata/icons';
 
 import type { Preview } from '@storybook/react';
 
-import { ThemeProvider } from '@chremata/themes/provider';
+import { ThemeProvider } from '../src/providers/theme';
 
 import './index.css';
 

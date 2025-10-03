@@ -3,21 +3,28 @@ import * as React from 'react';
 import { findChild } from '@chremata/utils';
 
 import { TableColumnHeader } from './table-column-header/table-column-header';
-import { TableCell } from './table-cell/table-cell';
+import { TableColumnCell } from './table-column-cell/table-column-cell';
 
-import type { DefaultTableProps, TableProps } from './table.types';
 import type {
   TableColumnData,
   TableSortDirection,
 } from './table-column/table-column.types';
 import { DEFAULT_TABLE_COLUMN_PROPS } from './table-column/table-column';
 
-export const DEFAULT_TABLE_PROS: DefaultTableProps = {
+import type { DefaultTableProps, TableProps } from './table.types';
+
+export const DEFAULT_TABLE_PROPS: DefaultTableProps = {
   data: [],
 };
 
 export function useTable(props: TableProps) {
-  const { children, data = DEFAULT_TABLE_PROS.data, label, labelledBy } = props;
+  const {
+    children,
+    data = DEFAULT_TABLE_PROPS.data,
+    label,
+    labelledBy,
+    id,
+  } = props;
 
   const [sortBy, setSortBy] = React.useState<string | undefined>();
   const [sortDirection, setSortDirection] =
@@ -35,14 +42,18 @@ export function useTable(props: TableProps) {
     } = column.props;
 
     const header = findChild(children, TableColumnHeader);
-    const cell = findChild(children, TableCell);
+    const cell = findChild(children, TableColumnCell);
 
     if (!header) {
-      throw new Error('[Table] No TableColumnHeader provided to TableColum.');
+      throw new Error(
+        '[Table] No `TableColumnHeader` provided to `TableColum`.'
+      );
     }
 
     if (!cell) {
-      throw new Error('[Table] No TableCell provided to TableColumn.');
+      throw new Error(
+        '[Table] No `TableColumnCell` provided to `TableColumn`.'
+      );
     }
 
     return {
@@ -55,12 +66,14 @@ export function useTable(props: TableProps) {
     };
   });
 
+  const memoizedColumns = React.useMemo(() => columns, [children]);
+
   const sortedData = React.useMemo(() => {
     if (!sortBy) {
       return data;
     }
 
-    const column = columns.find(col => col.accessorKey === sortBy);
+    const column = memoizedColumns.find(col => col.accessorKey === sortBy);
 
     if (!column || !column.sortable) {
       return data;
@@ -77,11 +90,13 @@ export function useTable(props: TableProps) {
 
       return sortDirection === 'desc' ? -result : result;
     });
-  }, [data, sortBy, sortDirection, columns]);
+  }, [data, sortBy, sortDirection, memoizedColumns]);
 
   const handleSort = React.useCallback(
     (accessorKey: string) => {
-      const column = columns.find(col => col.accessorKey === accessorKey);
+      const column = memoizedColumns.find(
+        col => col.accessorKey === accessorKey
+      );
 
       if (!column || !column.sortable) {
         return;
@@ -99,7 +114,7 @@ export function useTable(props: TableProps) {
         setSortDirection('asc');
       }
     },
-    [sortBy, sortDirection, columns]
+    [sortBy, sortDirection, memoizedColumns]
   );
 
   if (!label && !labelledBy) {
@@ -115,10 +130,11 @@ export function useTable(props: TableProps) {
   }
 
   return {
-    columns,
+    columns: memoizedColumns,
     data: sortedData,
     label,
     labelledBy,
+    id,
     sortBy,
     sortDirection,
     onSort: handleSort,

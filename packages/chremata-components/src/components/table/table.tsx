@@ -1,4 +1,4 @@
-import { TableCell } from './table-cell/table-cell';
+import { TableColumnCell } from './table-column-cell/table-column-cell';
 import { TableColumn } from './table-column/table-column';
 import { TableColumnHeader } from './table-column-header/table-column-header';
 
@@ -9,16 +9,29 @@ import { TableContent } from './table-content/table-content';
 
 import './index.css';
 
+Table.Column = TableColumn;
+Table.ColumnHeader = TableColumnHeader;
+Table.Cell = TableColumnCell;
+
 export function Table(props: TableProps) {
-  const { columns, data, label, labelledBy, onSort, sortBy, sortDirection } =
-    useTable(props);
+  const {
+    columns,
+    data,
+    label,
+    labelledBy,
+    id,
+    onSort,
+    sortBy,
+    sortDirection,
+  } = useTable(props);
 
   return (
     <div
       role="grid"
       className="ch-table"
       aria-label={label}
-      aria-labelledby={labelledBy}>
+      aria-labelledby={labelledBy}
+      id={id}>
       <TableHeader
         columns={columns}
         onSort={onSort}
@@ -33,7 +46,3 @@ export function Table(props: TableProps) {
     </div>
   );
 }
-
-Table.Column = TableColumn;
-Table.ColumnHeader = TableColumnHeader;
-Table.Cell = TableCell;

@@ -1,79 +1,58 @@
 .ch-button {
   cursor: pointer;
 
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
 
   gap: 8px;
 
   height: fit-content;
 
   border: none;
+
+  padding: var(--button-padding);
+  width: var(--button-width);
+
+  background-color: var(--button-background-color);
 }
 
-/* Sizes */
-
-.ch-button--small {
-  padding: 8px 12px;
+.ch-button--justify-spaceBetween {
+  justify-content: space-between;
 }
 
-.ch-button--medium {
-  padding: 12px 16px;
+.ch-button--justify-center {
+  justify-content: center;
 }
 
-.ch-button--large {
-  padding: 16px 20px;
+.ch-button:disabled {
+  background-color: var(--button-background-color-disabled);
+
+  cursor: not-allowed;
 }
 
-/* Fit */
-.ch-button--fitContent {
-  width: max-content;
+.ch-button:not(:disabled):hover {
+  background-color: var(--button-background-color-hover);
 }
 
-.ch-button--fillAvailable {
-  width: stretch;
+.ch-button:not(:disabled):active {
+  background-color: var(--button-background-color-active);
 }
 
-/* Primary */
-
-.ch-button--primary {
-  background-color: var(--ch-button--background-color--primary);
+.ch-button:not(:disabled):focus-visible {
+  background-color: var(--button-background-color-focus-visible);
 }
 
-.ch-button--primary:disabled {
-  background-color: var(--ch-button--background-color--primary-disabled);
-}
-
-.ch-button--primary:not(:disabled):hover {
-  background-color: var(--ch-button--background-color--primary-hover);
-}
+/* Variants */
 
 .ch-button--primary:not(:disabled):focus-visible {
-  outline: 4px solid var(--ch-button--background-color--primary-focus-visible);
+  outline: 4px solid var(--button-background-color-focus-visible);
   outline-offset: 2px;
-}
-
-.ch-button--primary:not(:disabled):active {
-  background-color: var(--ch-button--background-color--primary-active);
-}
-
-/* Secondary */
-
-.ch-button--secondary {
-  background-color: var(--ch-button--background-color--secondary);
-}
-
-.ch-button--secondary:not(:disabled):hover {
-  background-color: var(--ch-button--background-color--secondary-hover);
 }
 
 .ch-button--secondary:not(:disabled):focus-visible {
   outline: none;
-
-  background-color: var(--ch-button--background-color--secondary-focus-visible);
 }
 
-.ch-button--secondary:not(:disabled):active {
-  background-color: var(--ch-button--background-color--secondary-active);
+.ch-button--silentEmphasis:not(:disabled):focus-visible {
+  outline: none;
 }

@@ -13,5 +13,6 @@ export const DEFAULT_TABLE_COLUMN_HEADER_PROPS: DefaultTableColumnHeaderProps =
       horizontal: 'start',
       vertical: 'center',
     },
+
     children: null,
   };

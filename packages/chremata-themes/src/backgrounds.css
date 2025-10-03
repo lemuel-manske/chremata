@@ -1,0 +1,6 @@
+.t-dark-green {
+  --background-color--dark: hsl(var(--color-dark-green-85));
+  --background-color--top: hsl(var(--color-dark-green-70));
+  --background-color--surface: hsl(var(--color-dark-green-90));
+  --background-color--main: hsl(var(--color-gray-95));
+}

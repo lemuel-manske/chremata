@@ -3,24 +3,17 @@ import { type Meta, type StoryObj } from '@storybook/react';
 import { Size, Variant } from '@chremata/utils';
 
 import { Label } from './label';
-import { LabelColorEnum, type LabelProps } from './label.types';
+import { type LabelProps } from './label.types';
 import { DEFAULT_LABEL_PROPS } from './use-label';
-import type { IconSolidNames } from '../icon/icon.types';
 
 interface LabelFixtureProps extends LabelProps {
   label: string;
-  icon?: IconSolidNames;
 }
 
 function LabelFixture(props: LabelFixtureProps) {
-  const { label, icon, ...rest } = props;
+  const { label, ...rest } = props;
 
-  return (
-    <Label {...rest}>
-      {icon && <Label.Icon name={icon} />}
-      {label}
-    </Label>
-  );
+  return <Label {...rest}>{label}</Label>;
 }
 
 export default {
@@ -32,9 +25,6 @@ export default {
   argTypes: {
     id: {
       control: 'text',
-    },
-    icon: {
-      control: 'select',
     },
     disabled: {
       control: 'boolean',
@@ -51,16 +41,15 @@ export default {
       options: [Variant.EMPHASIS, Variant.REGULAR],
     },
     color: {
-      control: 'select',
-      options: [LabelColorEnum.REGULAR, LabelColorEnum.ACCENT],
+      control: 'text',
     },
   },
 
   args: {
     ...DEFAULT_LABEL_PROPS,
 
+    color: 'white',
     label: 'Label',
-    icon: 'CoinIconSvg',
   },
 } satisfies Meta<typeof LabelFixture>;
 

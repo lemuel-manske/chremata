@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { classNames } from '@chremata/utils';
+import { classNames, styleMap } from '@chremata/utils';
 
 import { ModalHeader } from './modal-header/modal-header';
 import { ModalTitle } from './modal-title/modal-title';
@@ -15,7 +15,8 @@ Modal.Header = ModalHeader;
 Modal.Title = ModalTitle;
 
 export function Modal(props: ModalProps) {
-  const { id, header, open } = useModal(props);
+  const { backgroundColor, backgroundBackdropColor, id, header, open } =
+    useModal(props);
 
   const currRef = React.useRef<HTMLDialogElement>(null);
 
@@ -35,6 +36,11 @@ export function Modal(props: ModalProps) {
     'ch-modal': true,
   });
 
+  const styles = styleMap({
+    '--modal-background-color': backgroundColor,
+    '--modal-background-backdrop-color': backgroundBackdropColor,
+  });
+
   const stateValue = { id, state: { open } };
 
   return (
@@ -43,7 +49,8 @@ export function Modal(props: ModalProps) {
         ref={currRef}
         aria-modal="true"
         aria-labelledby={id}
-        className={classes}>
+        className={classes}
+        style={styles}>
         {header}
       </dialog>
     </ModalContext.Provider>

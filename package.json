@@ -17,10 +17,9 @@
 
     "build": "npm run build:components",
     "build:components": "npm run build --workspace=@chremata/components",
-    "build:setup": "npm run build:utils && npm run build:icons && npm run build:themes",
+    "build:setup": "npm run build:utils && npm run build:icons",
     "build:utils": "npm run build --workspace=@chremata/utils",
     "build:icons": "npm run build --workspace=@chremata/icons",
-    "build:themes": "npm run build --workspace=@chremata/themes",
     
     "lint:format": "npm run lint:format --workspaces --if-present",
     "lint:format:fix": "npm run lint:format:fix --workspaces  --if-present",

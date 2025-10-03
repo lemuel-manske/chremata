@@ -1,4 +1,4 @@
-import { isFunction } from '@chremata/utils';
+import { doNothing, isFunction } from '@chremata/utils';
 
 import type { TableColumnData } from '../table-column/table-column.types';
 import type { TableHeaderProps } from './table-header.types';
@@ -12,7 +12,7 @@ export function useTableHeader(props: TableHeaderProps) {
     const content = header.children;
 
     const _sortDirection = sortBy === accessorKey ? sortDirection : undefined;
-    const _onSort = sortable && onSort ? () => onSort(accessorKey) : undefined;
+    const _onSort = sortable && onSort ? () => onSort(accessorKey) : doNothing;
 
     const headerCellInfo = {
       accessorKey,

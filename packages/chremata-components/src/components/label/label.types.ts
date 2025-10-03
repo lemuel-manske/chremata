@@ -1,19 +1,8 @@
-import * as React from 'react';
-
 import {
   type Size,
   type EnumOrStringLiteralTypes,
   type EnumOrStringLiteralTypesInclude,
 } from '@chremata/utils';
-
-import type { LabelIconProps } from './label-icon/label-icon.types';
-
-export enum LabelColorEnum {
-  REGULAR = 'regular',
-  ACCENT = 'accent',
-}
-
-export type LabelColor = EnumOrStringLiteralTypes<LabelColorEnum>;
 
 export enum LabelVariantEnum {
   REGULAR = 'regular',
@@ -36,7 +25,7 @@ type LabelAttributes = {
   /**
    * The color of the Label. Default is 'regular'.
    */
-  color?: LabelColor;
+  color?: string;
 
   /**
    * Whether the Label is disabled. Default is false.
@@ -56,15 +45,11 @@ type LabelAttributes = {
   /**
    * The text label to be displayed within the Label with or without an Icon. Required.
    */
-  children:
-    | string
-    | [React.ReactElement<LabelIconProps>, string]
-    | [null, string]
-    | [undefined, string];
+  children: string;
 };
 
 export type LabelProps = LabelAttributes;
 
 export type DefaultLabelProps = Required<
-  Pick<LabelProps, 'disabled' | 'size' | 'variant' | 'color'>
+  Pick<LabelProps, 'disabled' | 'size' | 'variant'>
 >;

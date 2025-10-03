@@ -1,4 +1,4 @@
-import { classNames } from '@chremata/utils';
+import { classNames, styleMap } from '@chremata/utils';
 
 import { ListItem } from './list-item/list-item';
 
@@ -14,14 +14,20 @@ export function List(props: ListProps) {
 
   const classes = classNames({
     'ch-list': true,
-    [`ch-list--${gap}`]: true,
-    [`ch-list--${orientation}`]: true,
+  });
+
+  const style = styleMap({
+    '--list-gap': gap,
+    '--list-flex-direction': orientation.flexDirection,
+    '--list-align-items': orientation.alignItems,
+    '--list-justify-items': orientation.justifyItems,
   });
 
   return (
     <ul
       aria-labelledby={labelledBy}
-      className={classes}>
+      className={classes}
+      style={style}>
       {items}
     </ul>
   );

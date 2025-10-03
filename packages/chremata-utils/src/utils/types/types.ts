@@ -53,22 +53,15 @@ export type EnumOrStringLiteralTypesInclude<
   : never;
 
 /**
- * Extracts keys from an object whose corresponding values are optional (i.e., `undefined` is assignable to them).
+ * Returns {@link T} or `undefined`.
  *
  * @example
  *
- * interface ExampleInterface {
- *   foo?: string;
- *   fee?: boolean;
- *   foobar: number;
- *   baz: boolean;
- * }
+ * type SortDirection = 'asc' | 'desc' | 'none';
  *
- * type AllOptionalKeys = Optionals<ExampleInterface>; // output keys will be `foo` and `fee`
+ * Optional<SortDirection>; // 'asc' | 'desc' | 'none' | undefined
  */
-export type Optionals<T> = {
-  [K in keyof T]: undefined extends T[K] ? K : never;
-}[keyof T];
+export type Optional<T> = T | undefined;
 
 /**
  * Represents a user event callback function.
@@ -107,11 +100,52 @@ export type Identifiable<T> = T & { id: Id };
 
 /**
  * Represents an HTML element `id`.
+ *
+ * @example
+ *
+ * const elementId: ElementId = "my-element-id";
  */
 export type ElementId = string;
 
 /**
  * Represents a `Comparable` decorator, used to comparing a given {@link T}
  * from {@link T a} to {@link T b}.
+ *
+ * @template T - The type of the elements to be compared. Defaults to `unknown`.
+ *
+ * @example
+ *
+ * const compareNumbers: Comparable<number> = (a, b) => a - b;
+ *
+ * const compareStrings: Comparable<string> = (a, b) => a.localeCompare(b);
+ *
+ * const compareDates: Comparable<Date> = (a, b) => a.getTime() - b.getTime();
+ *
+ * const compareMixed: Comparable = (a, b) => {
+ *   if (typeof a === 'number' && typeof b === 'number') {
+ *     return a - b;
+ *   }
+ *   if (typeof a === 'string' && typeof b === 'string') {
+ *     return a.localeCompare(b);
+ *   }
+ *   return 0;
+ * };
  */
 export type Comparable<T = unknown> = (a: T, b: T) => number;
+
+/**
+ * Omits `children` from a given {@link T type}.
+ *
+ * @template T - The type from which to omit the `children` property.
+ *
+ * @example
+ *
+ * interface ExampleWithChildren {
+ *   children: React.ReactNode;
+ *   title: string;
+ *   value: number;
+ * }
+ *
+ * type ExampleWithoutChildren = NoChildren<ExampleWithChildren>;
+ */
+export type NoChildren<T extends { children: unknown }> = Omit<T, 'children'>;

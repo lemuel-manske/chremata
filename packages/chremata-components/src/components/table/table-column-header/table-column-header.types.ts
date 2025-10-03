@@ -1,10 +1,14 @@
-import type {
-  TableCellAlignmentOptions,
-  TableColumnHeaderCellInfo,
-} from '../table-column/table-column.types';
+import type { Alignment, EnumOrStringLiteralTypes } from '@chremata/utils';
+
+import type { TableColumnHeaderCellInfo } from '../table-column/table-column.types';
+
+export type TableColumnHeaderAlignmentOptions = {
+  horizontal?: EnumOrStringLiteralTypes<Alignment>;
+  vertical?: EnumOrStringLiteralTypes<Alignment>;
+};
 
 type TableColumnHeaderAttributes = {
-  alignment?: TableCellAlignmentOptions;
+  alignment?: TableColumnHeaderAlignmentOptions;
 
   children?:
     | ((info: TableColumnHeaderCellInfo) => React.ReactNode)

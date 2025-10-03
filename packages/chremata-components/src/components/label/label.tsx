@@ -1,47 +1,40 @@
-import { classNames } from '@chremata/utils';
+import { classNames, styleMap } from '@chremata/utils';
 
 import { type LabelProps } from './label.types';
-
 import { useLabel } from './use-label';
-
-import { LabelIcon } from './label-icon/label-icon';
-import { LabelContext } from './label.context';
 
 import './index.css';
 
-Label.Icon = LabelIcon;
-
 export function Label(props: LabelProps) {
-  const { id, disabled, color, size, variant, label, icon } = useLabel(props);
+  const { id, disabled, fontColor, fontFamily, fontSize, fontWeight, label } =
+    useLabel(props);
 
   const classes = classNames({
     'ch-label': true,
-    [`ch-label--${variant}`]: true,
-    [`ch-label--${size}`]: true,
   });
 
   const wrapperClasses = classNames({
     'ch-label-wrapper': true,
-    [`ch-label-wrapper--${color}`]: !disabled,
-    [`ch-label-wrapper--${color}-disabled`]: disabled,
   });
 
-  const stateValue = { label, variant, size, state: { disabled } };
+  const styles = styleMap({
+    '--font-color': fontColor,
+    '--font-family': fontFamily,
+    '--font-size': fontSize,
+    '--font-weight': fontWeight,
+  });
 
   return (
-    <LabelContext.Provider value={stateValue}>
-      <span
-        className={wrapperClasses}
-        aria-disabled={disabled}>
-        {icon && icon}
-
-        <label
-          aria-disabled={disabled}
-          className={classes}
-          id={id}>
-          {label}
-        </label>
-      </span>
-    </LabelContext.Provider>
+    <span
+      className={wrapperClasses}
+      aria-disabled={disabled}>
+      <label
+        style={styles}
+        aria-disabled={disabled}
+        className={classes}
+        id={id}>
+        {label}
+      </label>
+    </span>
   );
 }

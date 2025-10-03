@@ -24,6 +24,8 @@ type TableAttributes = {
     | React.ReactElement<TableColumnProps>[];
 
   data: TableData;
+
+  id?: ElementId;
 };
 
 export type TableProps = TableLabelAttributes & TableAttributes;

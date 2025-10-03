@@ -1,15 +1,17 @@
-import '@chremata/themes/styles';
-
+import '@chremata/themes';
 import '@chremata/fonts';
 import '@chremata/icons';
 
 import { beforeMount } from '@playwright/experimental-ct-react/hooks';
-import { ThemeProvider } from '@chremata/themes/provider';
+
+import { ThemeProvider } from '../src/providers/theme';
 
 beforeMount(async ({ App }) => {
   return (
     <ThemeProvider>
-      <App />
+      <main className="preview">
+        <App />
+      </main>
     </ThemeProvider>
   );
 });

@@ -1,5 +1,7 @@
 import type { DefaultListProps, ListProps } from './list.types';
 
+import tokens from './list.tokens';
+
 export const DEFAULT_LIST_PROPS: DefaultListProps = {
   gap: 'small',
   orientation: 'horizontal',
@@ -15,10 +17,13 @@ export function useList(props: ListProps) {
 
   const items = [children].flat();
 
+  const listGap = tokens.gap[gap];
+  const listOrientation = tokens.orientation[orientation];
+
   return {
-    gap,
+    gap: listGap,
     items,
     labelledBy,
-    orientation,
+    orientation: listOrientation,
   };
 }

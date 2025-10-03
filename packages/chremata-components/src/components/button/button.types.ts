@@ -1,17 +1,27 @@
+import * as React from 'react';
+
 import {
   type Fit,
   type Size,
   type UserEvent,
   type EnumOrStringLiteralTypes,
   type EnumOrStringLiteralTypesInclude,
+  type LayoutJustify,
 } from '@chremata/utils';
 
-import type { IconSolidNames } from '../icon/icon.types';
+import type { ButtonLabelProps } from './button-label/button-label.types';
+import type { ButtonIconProps } from './button-icon/button-icon.types';
 
 export enum ButtonVariantEnum {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
+  SILENT_EMPHASIS = 'silentEmphasis',
 }
+
+export type ButtonJustify = EnumOrStringLiteralTypesInclude<
+  LayoutJustify,
+  'center' | 'spaceBetween'
+>;
 
 export type ButtonVariant = EnumOrStringLiteralTypes<ButtonVariantEnum>;
 
@@ -36,7 +46,18 @@ type ButtonAttributes = {
   /**
    * The label of the Button.
    */
-  label: string;
+  children:
+    | React.ReactElement<ButtonLabelProps>
+    | [
+        React.ReactElement<ButtonIconProps>,
+        React.ReactElement<ButtonLabelProps>,
+      ]
+    | [
+        React.ReactElement<ButtonLabelProps>,
+        React.ReactElement<ButtonIconProps>,
+      ]
+    | [React.ReactElement<ButtonLabelProps>, null]
+    | [null, React.ReactElement<ButtonLabelProps>];
 
   /**
    * The size of the Button. Default is 'medium'.
@@ -59,13 +80,13 @@ type ButtonAttributes = {
   variant?: ButtonVariant;
 
   /**
-   * The icon to be displayed in the Button. Defaults to `undefined`.
+   * Justify content of the Button. Default is 'center'.
    */
-  icon?: IconSolidNames;
+  justify?: ButtonJustify;
 };
 
 export type ButtonProps = ButtonAttributes & ButtonEvents;
 
 export type DefaultButtonProps = Required<
-  Pick<ButtonProps, 'disabled' | 'size' | 'variant' | 'fit'>
+  Pick<ButtonProps, 'disabled' | 'size' | 'variant' | 'fit' | 'justify'>
 >;
