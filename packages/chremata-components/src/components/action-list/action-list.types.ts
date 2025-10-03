@@ -7,7 +7,7 @@ type ActionListAttributes = {
 
   controls?: string;
 
-  children:
+  children?:
     | null
     | React.ReactElement<ActionListItemProps>
     | React.ReactElement<ActionListItemProps>[];

@@ -16,8 +16,6 @@ import { usePanel } from './use-panel';
 
 import './index.css';
 
-Panel.ActionList = ActionList;
-Panel.ActionItem = ActionListItem;
 Panel.Header = PanelHeader;
 Panel.Title = PanelTitle;
 Panel.Table = PanelTable;

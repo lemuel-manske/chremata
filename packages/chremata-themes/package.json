@@ -15,34 +15,23 @@
   "author": "lemuel-manske",
   "type": "module",
   "exports": {
-    "./provider": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
-    },
-    "./styles": "./styles/index.css",
+    ".": "./src/index.css",
     "./package.json": "./package.json"
   },
   "files": [
-    "index.css"
+    "./src/*.css"
   ],
   "scripts": {
-    "build": "rollup --config ../chremata-presets/packages/chremata-preset-rollup/rollup-config.js",
     "lint:source": "eslint .",
     "lint:source:fix": "npm run lint:source -- --fix",
     "lint:format": "prettier --check --ignore-path .gitignore .",
     "lint:format:fix": "prettier --write --ignore-path .gitignore ."
-  },
-  "peerDependencies": {
-    "@chremata/fonts": "file:../chremata-fonts",
-    "react": "^19.0.0"
   },
   "devDependencies": {
     "@chremata-preset/prettier": "file:../chremata-presets/packages/chremata-preset-prettier",
     "@chremata-preset/typescript": "file:../chremata-presets/packages/chremata-preset-typescript",
     "@chremata-preset/eslint": "file:../chremata-presets/packages/chremata-preset-eslint",
     "eslint": "^9.35.0",
-    "rollup": "^4.50.1",
     "typescript": "^5.9.2",
     "prettier": "^3.6.2"
   }

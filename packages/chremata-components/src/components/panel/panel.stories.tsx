@@ -6,6 +6,7 @@ import { Panel } from './panel';
 import type { PanelProps } from './panel.types';
 
 import { type TableProps } from '../table/table.types';
+import { ActionList } from '../action-list/action-list';
 
 type PanelFixtureProps = PanelProps &
   TableProps & {
@@ -21,11 +22,11 @@ function PanelFixture(props: PanelFixtureProps) {
       <Panel.Header>
         <Panel.Title>{title}</Panel.Title>
 
-        <Panel.ActionList>
-          <Panel.ActionItem onClick={onAdd}>
-            <Panel.ActionItem.Label>Add</Panel.ActionItem.Label>
-          </Panel.ActionItem>
-        </Panel.ActionList>
+        <ActionList>
+          <ActionList.Item onClick={onAdd}>
+            <ActionList.Item.Label>Add</ActionList.Item.Label>
+          </ActionList.Item>
+        </ActionList>
       </Panel.Header>
 
       <Panel.Table data={data}>
