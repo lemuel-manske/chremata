@@ -1,0 +1,12 @@
+.ch-panel {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+.ch-panel--header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

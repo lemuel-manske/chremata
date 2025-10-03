@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import {
   type Fit,
   type Size,
@@ -7,6 +9,9 @@ import {
 } from '@chremata/utils';
 
 import type { IconSolidNames } from '../icon/icon.types';
+
+import type { ButtonLabelProps } from './button-label/button-label.types';
+import type { ButtonIconProps } from './button-icon/button-icon.types';
 
 export enum ButtonVariantEnum {
   PRIMARY = 'primary',
@@ -36,7 +41,10 @@ type ButtonAttributes = {
   /**
    * The label of the Button.
    */
-  label: string;
+  children:
+    | React.ReactElement<ButtonLabelProps>
+    | [React.ReactElement<ButtonIconProps>, React.ReactElement<ButtonLabelProps>]
+    | [React.ReactElement<ButtonLabelProps>, React.ReactElement<ButtonIconProps>];
 
   /**
    * The size of the Button. Default is 'medium'.
@@ -57,11 +65,6 @@ type ButtonAttributes = {
    * The variant of the Button. Default is 'primary'.
    */
   variant?: ButtonVariant;
-
-  /**
-   * The icon to be displayed in the Button. Defaults to `undefined`.
-   */
-  icon?: IconSolidNames;
 };
 
 export type ButtonProps = ButtonAttributes & ButtonEvents;

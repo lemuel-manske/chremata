@@ -6,6 +6,20 @@ import { Money } from './money';
 
 const tag = ['@ch-money'];
 
+test('should render neutral Money', { tag }, async ({ mount, page }) => {
+  await mount(
+    <Money
+      amount={0}
+      currency={Currency.US_DOLLAR}
+    />
+  );
+
+  const money = page.getByText('US$ 0,00');
+
+  await expect(money).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
+});
+
 test('should render a USD Money', { tag }, async ({ mount, page }) => {
   await mount(
     <Money

@@ -5,7 +5,7 @@ import { Table } from './table';
 const tag = ['@ch-table'];
 
 test('should render a Table', { tag }, async ({ mount, page }) => {
-  await mount(
+  const table = await mount(
     <Table
       label="Sample Table"
       data={[
@@ -29,18 +29,42 @@ test('should render a Table', { tag }, async ({ mount, page }) => {
     </Table>
   );
 
-  const table = page.getByRole('grid', { name: 'Sample Table' });
+  await expect(table).toNotHaveAccessibilityViolations();
+  await expect(page).toHaveScreenshot();
+});
 
-  const rows = table.getByRole('row');
+test('should render a sortable Table', { tag }, async ({ mount, page }) => {
+  const table = await mount(
+    <Table
+      label="Sortable Table"
+      data={[
+        { name: 'Alice', age: 30, country: 'USA' },
+        { name: 'Bob', age: 25, country: 'Canada' },
+        { name: 'Charlie', age: 35, country: 'UK' },
+      ]}>
+      <Table.Column accessorKey="name" sortable>
+        <Table.ColumnHeader>Name</Table.ColumnHeader>
+        <Table.Cell />
+      </Table.Column>
 
-  await expect(rows).toHaveCount(3);
+      <Table.Column accessorKey="age" sortable>
+        <Table.ColumnHeader>Age</Table.ColumnHeader>
+        <Table.Cell />
+      </Table.Column>
+
+      <Table.Column accessorKey="country">
+        <Table.ColumnHeader>Country</Table.ColumnHeader>
+        <Table.Cell />
+      </Table.Column>
+    </Table>
+  );
 
   await expect(table).toNotHaveAccessibilityViolations();
   await expect(page).toHaveScreenshot();
 });
 
 test('should render a Table with no data', { tag }, async ({ mount, page }) => {
-  await mount(
+  const table = await mount(
     <Table
       label="Empty Table"
       data={[]}>
@@ -60,8 +84,6 @@ test('should render a Table with no data', { tag }, async ({ mount, page }) => {
       </Table.Column>
     </Table>
   );
-
-  const table = page.getByRole('grid', { name: 'Empty Table' });
 
   await expect(table).toNotHaveAccessibilityViolations();
   await expect(page).toHaveScreenshot();

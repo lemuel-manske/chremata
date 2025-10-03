@@ -10,15 +10,24 @@ import { TableContent } from './table-content/table-content';
 import './index.css';
 
 export function Table(props: TableProps) {
-  const { columns, data, label, labelledBy, onSort, sortBy, sortDirection } =
-    useTable(props);
+  const {
+    columns, 
+    data, 
+    label, 
+    labelledBy,
+    id,
+    onSort, 
+    sortBy, 
+    sortDirection
+  } = useTable(props);
 
   return (
     <div
       role="grid"
       className="ch-table"
       aria-label={label}
-      aria-labelledby={labelledBy}>
+      aria-labelledby={labelledBy}
+      id={id}>
       <TableHeader
         columns={columns}
         onSort={onSort}

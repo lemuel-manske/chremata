@@ -21,7 +21,8 @@ export function useTable(props: TableProps) {
     children, 
     data = DEFAULT_TABLE_PROPS.data, 
     label, 
-    labelledBy
+    labelledBy,
+    id
   } = props;
 
   const [sortBy, setSortBy] = React.useState<string | undefined>();
@@ -126,6 +127,7 @@ export function useTable(props: TableProps) {
     data: sortedData,
     label,
     labelledBy,
+    id,
     sortBy,
     sortDirection,
     onSort: handleSort,

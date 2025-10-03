@@ -14,7 +14,7 @@ export function ActionList(props: ActionListProps) {
     return items.map((item, index) => (
       <List.Item
         key={index}
-        label={item.props.children}>
+        label={item?.props.children}>
         {item}
       </List.Item>
     ));

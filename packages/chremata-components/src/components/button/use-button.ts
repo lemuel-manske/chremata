@@ -1,21 +1,15 @@
-import { type LabelColor, type LabelSize } from '../label/label.types';
+import { findChild } from '@chremata/utils';
 
 import {
   type DefaultButtonProps,
   type ButtonProps,
   type ButtonVariant,
-  type ButtonSize,
 } from './button.types';
+import { ButtonLabel } from './button-label/button-label';
 
-const COLOR_MAP: Record<ButtonVariant, LabelColor> = {
-  primary: 'accent',
-  secondary: 'regular',
-};
-
-const LABEL_SIZE_MAP: Record<ButtonSize, LabelSize> = {
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
+const COLOR_MAP: Record<ButtonVariant, string> = {
+  primary: 'var(--font-color--dark)',
+  secondary: 'var(--font-color--light)',
 };
 
 export const DEFAULT_BUTTON_PROPS: DefaultButtonProps = {
@@ -29,30 +23,33 @@ export function useButton(props: ButtonProps) {
   const {
     disabled = DEFAULT_BUTTON_PROPS.disabled,
     fit = DEFAULT_BUTTON_PROPS.fit,
-    icon,
-    label,
+    children,
     variant = DEFAULT_BUTTON_PROPS.variant,
     size = DEFAULT_BUTTON_PROPS.size,
 
     onClick,
   } = props;
 
-  if (!label) {
+  const childrenArray = [children].flat();
+
+  const labelElement = findChild(childrenArray, ButtonLabel);
+
+  if (!labelElement) {
     throw new Error('[Button] requires a label.');
   }
 
+  const label = labelElement.props.children;
+
   const color = COLOR_MAP[variant];
-  const labelSize = LABEL_SIZE_MAP[size];
 
   return {
+    children,
+    color,
     disabled,
     fit,
-    icon,
     label,
-    labelSize,
     size,
     variant,
-    color,
 
     onClick,
   };

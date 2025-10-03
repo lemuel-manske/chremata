@@ -1,10 +1,7 @@
-import { removeNulls, findChild } from '@chremata/utils';
-
 import { type LabelProps, type DefaultLabelProps } from './label.types';
-import { LabelIcon } from './label-icon/label-icon';
+import tokens from './label.tokens';
 
 export const DEFAULT_LABEL_PROPS: DefaultLabelProps = {
-  color: 'regular',
   disabled: false,
   size: 'medium',
   variant: 'regular',
@@ -13,26 +10,41 @@ export const DEFAULT_LABEL_PROPS: DefaultLabelProps = {
 export function useLabel(props: LabelProps) {
   const {
     id,
-    color = DEFAULT_LABEL_PROPS.color,
+    color,
     disabled = DEFAULT_LABEL_PROPS.disabled,
     size = DEFAULT_LABEL_PROPS.size,
     variant = DEFAULT_LABEL_PROPS.variant,
     children,
   } = props;
 
-  const childrenArray = removeNulls([children].flat());
+  const label = children;
 
-  const icon = findChild(childrenArray, LabelIcon);
+  const getColor = () => {
+    if (color) {
+      return color;
+    }
 
-  const label = (icon ? childrenArray[1] : childrenArray[0]) as string;
+    if (disabled) {
+      return tokens.color.disabled;
+    }
+
+    return tokens.color.regular;
+  }
+
+  const fontColor = getColor();
+  const fontFamily = tokens.fontFamily;
+  const fontSize = tokens.size[size];
+  const fontWeight = tokens.fontWeight[variant];
 
   return {
     id,
     disabled,
-    color,
+    fontColor,
+    fontFamily,
+    fontSize,
+    fontWeight,
     size,
     variant,
     label,
-    icon,
   };
 }

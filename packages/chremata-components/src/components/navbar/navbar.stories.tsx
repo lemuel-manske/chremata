@@ -14,11 +14,15 @@ function NavbarFixture(props: NavbarFixtureProps) {
       <Navbar.Header title={title} />
 
       <Navbar.Body>
-        <Navbar.Item label="Home" />
+        <Navbar.Item>
+          Home
+        </Navbar.Item>
       </Navbar.Body>
 
       <Navbar.Footer>
-        <Navbar.Item label="Settings" />
+        <Navbar.Item>
+          Settings
+        </Navbar.Item>
       </Navbar.Footer>
     </Navbar>
   );

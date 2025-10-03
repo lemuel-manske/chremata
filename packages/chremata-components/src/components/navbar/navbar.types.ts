@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { type NavbarHeaderProps } from './navbar-header/navbar-header.types';
-import { type NavbarItemProps } from './navbar-item/navbar-item.types';
 import { type NavbarFooterProps } from './navbar-footer/navbar-footer.types';
 import type { NavbarBodyProps } from './navbar-body/navbar-body.types';
 

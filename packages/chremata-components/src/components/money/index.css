@@ -1,7 +1,0 @@
-.ch-money--positive .ch-label {
-  color: var(--ch-money--color--positive);
-}
-
-.ch-money--negative .ch-label {
-  color: var(--ch-money--color--negative);
-}

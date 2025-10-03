@@ -1,8 +1,8 @@
 import { type IconSolidNames } from '../../icon/icon.types';
 
-export type LabelIconProps = {
+export type ButtonIconProps = {
   /**
-   * The icon to be displayed within the LabelIcon. Required.
+   * The icon to be displayed. Required.
    */
   name: IconSolidNames;
 };

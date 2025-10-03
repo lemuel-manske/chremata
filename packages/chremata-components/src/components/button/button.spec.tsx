@@ -10,10 +10,9 @@ test('should call onClick when focused and [Space] is pressed', async () => {
   const onClick = jest.fn();
 
   render(
-    <Button
-      label="Button"
-      onClick={onClick}
-    />
+    <Button onClick={onClick}>
+      <Button.Label>Button</Button.Label>
+    </Button>
   );
 
   await user.tab();
@@ -28,10 +27,9 @@ test('should call onClick when focused and [Enter] is pressed', async () => {
   const onClick = jest.fn();
 
   render(
-    <Button
-      label="Button"
-      onClick={onClick}
-    />
+    <Button onClick={onClick}>
+      <Button.Label>Button</Button.Label>
+    </Button>
   );
 
   await user.tab();
@@ -46,10 +44,9 @@ test('should call onClick once clicked', async () => {
   const onClick = jest.fn();
 
   render(
-    <Button
-      label="Button"
-      onClick={onClick}
-    />
+    <Button onClick={onClick}>
+      <Button.Label>Button</Button.Label>
+    </Button>
   );
 
   const button = screen.getByRole('button', { name: 'Button' });
@@ -65,11 +62,9 @@ test('should not call onClick when disabled and clicked', async () => {
   const onClick = jest.fn();
 
   render(
-    <Button
-      disabled
-      label="Button"
-      onClick={onClick}
-    />
+    <Button disabled onClick={onClick}>
+      <Button.Label>Button</Button.Label>
+    </Button>
   );
 
   const button = screen.getByRole('button', { name: 'Button' });

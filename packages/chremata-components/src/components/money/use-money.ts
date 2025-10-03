@@ -1,4 +1,5 @@
 import { type DefaultMoneyProps, type MoneyProps } from './money.types';
+import tokens from './money.tokens';
 
 export const DEFAULT_MONEY_PROPS: DefaultMoneyProps = {
   size: 'medium',
@@ -25,9 +26,17 @@ export function useMoney(props: MoneyProps) {
 
   const formattedAmount = `${positive}${amountWithCurrency}`;
 
+  const getColor = () => {
+    if (amount > 0) return 'positive';
+    if (amount < 0) return 'negative';
+    return 'neutral';
+  };
+
+  const color = tokens.color[getColor()];
+
   return {
-    amount,
-    formattedAmount,
+    amount: formattedAmount,
+    color,
     variant,
     size,
   };

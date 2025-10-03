@@ -1,24 +1,12 @@
 .ch-list {
   display: flex;
 
+  align-items: var(--list-align-items);
+  flex-direction: var(--list-flex-direction);
+  justify-items: var(--list-justify-items);
+
   margin: 0;
   padding: 0;
-}
-
-.ch-list--vertical {
-  flex-direction: column;
-  align-items: center;
-}
-
-.ch-list--horizontal {
-  flex-direction: row;
-  justify-items: center;
-}
-
-.ch-list--xsmall {
-  gap: 0.5rem;
-}
-
-.ch-list--small {
-  gap: 1rem;
+  
+  gap: var(--list-gap); 
 }

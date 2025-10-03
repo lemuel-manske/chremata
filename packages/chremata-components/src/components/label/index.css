@@ -1,7 +1,9 @@
 .ch-label {
-  --font-family: 'CentraleSans', sans-serif;
-
+  color: var(--font-color);
+  
   font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
 
   cursor: inherit;
 
@@ -16,74 +18,10 @@
   max-inline-size: fit-content;
 }
 
-/* Sizes */
-
-.ch-label--small {
-  --font-size-small: 0.775rem;
-
-  font-size: var(--font-size-small);
-}
-
-.ch-label--medium {
-  --font-size-medium: 0.85rem;
-
-  font-size: var(--font-size-medium);
-}
-
-.ch-label--large {
-  --font-size-large: 1rem;
-
-  font-size: var(--font-size-large);
-}
-
-.ch-label--xlarge {
-  --font-size-xlarge: 1.125rem;
-
-  font-size: var(--font-size-xlarge);
-}
-
-.ch-label--xxlarge {
-  --font-size-xxlarge: 1.25rem;
-
-  font-size: var(--font-size-xxlarge);
-}
-
-/* Weights */
-
-.ch-label--regular {
-  --font-weight-regular: 500;
-
-  font-weight: var(--font-weight-regular);
-}
-
-.ch-label--emphasis {
-  --font-weight-emphasis: 700;
-
-  font-weight: var(--font-weight-emphasis);
-}
-
-/* Variants */
-
 .ch-label-wrapper {
   display: flex;
 
   align-items: center;
 
   gap: 8px;
-}
-
-.ch-label-wrapper--regular-disabled {
-  color: var(--ch-label--color--regular-disabled);
-}
-
-.ch-label-wrapper--regular {
-  color: var(--ch-label--color--regular);
-}
-
-.ch-label-wrapper--accent-disabled {
-  color: var(--ch-label--color--accent-disabled);
-}
-
-.ch-label-wrapper--accent {
-  color: var(--ch-label--color--accent);
 }

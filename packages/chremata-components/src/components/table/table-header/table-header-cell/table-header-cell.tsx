@@ -60,6 +60,7 @@ export function TableHeaderCell(props: TableHeaderCellProps) {
     <th
       role="columnheader"
       style={styles}
+      aria-roledescription='sortable'
       className={classes}
       onClick={onClick}
       tabIndex={tabIndex}

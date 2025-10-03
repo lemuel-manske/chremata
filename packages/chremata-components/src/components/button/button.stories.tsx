@@ -4,15 +4,54 @@ import { fn } from '@storybook/test';
 
 import { Fit, Size } from '@chremata/utils';
 
+import { type IconSolidNames } from '../icon/icon.types';
+
 import { DEFAULT_BUTTON_PROPS } from './use-button';
 import { ButtonVariantEnum, type ButtonProps } from './button.types';
 import { Button } from './button';
+
+type ButtonFixtureProps = ButtonProps & {
+  label: string;
+  icon: IconSolidNames;
+  iconPosition?: 'left' | 'right';
+}
+
+function ButtonFixture(props: ButtonFixtureProps) {
+  const { label, icon, iconPosition } = props;
+
+  const iconOnLeft = iconPosition === 'left';
+  const iconOnRight = iconPosition === 'right';
+ 
+  if (iconOnLeft) {
+    return (
+      <Button {...props}>
+        <Button.Icon name={icon} />
+        <Button.Label>{label}</Button.Label>
+      </Button>
+    );
+  }
+
+  if (iconOnRight) {
+    return (
+      <Button {...props}>
+        <Button.Label>{label}</Button.Label>
+        <Button.Icon name={icon} />
+      </Button>
+    );
+  }
+
+  return (
+    <Button {...props}>
+      <Button.Label>{label}</Button.Label>
+    </Button>
+  );
+}
 
 export default {
   id: 'Button',
   title: 'Button',
 
-  component: Button,
+  component: ButtonFixture,
 
   argTypes: {
     label: {
@@ -39,6 +78,10 @@ export default {
     icon: {
       control: 'select',
     },
+    iconPosition: {
+      control: 'radio', 
+      options: ['left', 'right']
+    },
   },
 
   args: {
@@ -46,11 +89,12 @@ export default {
 
     onClick: fn(),
 
-    label: 'Button',
+    label: 'Click me',
     icon: 'CoinIconSvg',
+    iconPosition: 'left',
   },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof ButtonFixture>;
 
-export const Default: StoryObj<ButtonProps> = {
-  render: (args: ButtonProps) => <Button {...args} />,
+export const Default: StoryObj<typeof ButtonFixture> = {
+  render: (args: ButtonFixtureProps) => <ButtonFixture {...args} />,
 };
