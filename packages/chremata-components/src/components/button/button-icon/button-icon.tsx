@@ -7,7 +7,7 @@ import type { ButtonSize } from '../button.types';
 import type { ButtonIconProps } from './button-icon.types';
 
 const ICON_SIZE_MAP: Record<ButtonSize, IconSize> = {
-  small: 'small',
+  small: 'medium',
   medium: 'medium',
   large: 'large',
 };

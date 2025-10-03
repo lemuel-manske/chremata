@@ -6,7 +6,7 @@ import { useButtonContext } from "../button.context";
 import type { ButtonLabelProps } from "./button-label.types";
 
 const LABEL_SIZE_MAP: Record<ButtonSize, LabelSize> = {
-  small: 'small',
+  small: 'medium',
   medium: 'medium',
   large: 'large',
 };
@@ -16,7 +16,7 @@ export function useButtonLabel(props: ButtonLabelProps) {
     children,
   } = props;
 
-  const { state, variant, color, size } = useButtonContext();
+  const { state, color, size } = useButtonContext();
 
   const { disabled } = state;
 

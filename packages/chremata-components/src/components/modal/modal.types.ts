@@ -14,7 +14,7 @@ type ModalAttributes = {
   children: React.ReactElement<ModalHeaderProps>;
 
   /**
-   * Whether the Modal is open or closed.
+   * Whether the Modal is open or closed. Defaults to `false`.
    */
   open?: boolean;
 };

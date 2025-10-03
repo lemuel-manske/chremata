@@ -5,12 +5,13 @@ import { findChild } from '@chremata/utils';
 import { TableColumnHeader } from './table-column-header/table-column-header';
 import { TableColumnCell } from './table-column-cell/table-column-cell';
 
-import type { DefaultTableProps, TableProps } from './table.types';
 import type {
   TableColumnData,
   TableSortDirection,
 } from './table-column/table-column.types';
 import { DEFAULT_TABLE_COLUMN_PROPS } from './table-column/table-column';
+
+import type { DefaultTableProps, TableProps } from './table.types';
 
 export const DEFAULT_TABLE_PROPS: DefaultTableProps = {
   data: [],

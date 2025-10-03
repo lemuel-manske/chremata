@@ -1,16 +1,12 @@
 import { findChild } from '@chremata/utils';
 
+import { ButtonLabel } from './button-label/button-label';
+
 import {
   type DefaultButtonProps,
   type ButtonProps,
-  type ButtonVariant,
 } from './button.types';
-import { ButtonLabel } from './button-label/button-label';
-
-const COLOR_MAP: Record<ButtonVariant, string> = {
-  primary: 'var(--font-color--dark)',
-  secondary: 'var(--font-color--light)',
-};
+import tokens from './button.tokens';
 
 export const DEFAULT_BUTTON_PROPS: DefaultButtonProps = {
   size: 'medium',
@@ -40,13 +36,41 @@ export function useButton(props: ButtonProps) {
 
   const label = labelElement.props.children;
 
-  const color = COLOR_MAP[variant];
+  const getColor = () => {
+    const colorByVariant = tokens.variant[variant].color;
+
+    if (disabled) {
+      return colorByVariant.disabled;
+    }
+
+    return colorByVariant.default
+  }
+
+  const color = getColor();
+  
+  const width = tokens.fit[fit];
+  
+  const padding = tokens.size[size].padding;
+
+  const background = tokens.variant[variant].background.default;
+  const backgroundActive = tokens.variant[variant].background.active;
+  const backgroundDisabled = tokens.variant[variant].background.disabled;
+  const backgroundFocusVisible = tokens.variant[variant].background.focusVisible;
+  const backgroundHover = tokens.variant[variant].background.hover;
 
   return {
-    children,
+    background,
+    backgroundActive,
+    backgroundDisabled,
+    backgroundFocusVisible,
+    backgroundHover,
+
     color,
+    padding,
+    width,
+
+    children,
     disabled,
-    fit,
     label,
     size,
     variant,

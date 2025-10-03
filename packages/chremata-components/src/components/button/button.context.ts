@@ -16,7 +16,7 @@ export type ButtonContextValue = {
 
 export const ButtonContext = React.createContext<ButtonContextValue>({
   label: '',
-  color: 'var(--font-color--light)',
+  color: '',
   variant: 'primary',
   size: 'medium',
   state: { disabled: false },

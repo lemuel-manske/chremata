@@ -1,4 +1,4 @@
-import { classNames, doNothing } from '@chremata/utils';
+import { classNames, doNothing, styleMap } from '@chremata/utils';
 
 import { ButtonIcon } from './button-icon/button-icon';
 import { ButtonLabel } from './button-label/button-label';
@@ -15,12 +15,20 @@ Button.Label = ButtonLabel;
 
 export function Button(props: ButtonProps) {
   const {
-    children,
+    background,
+    backgroundActive,
+    backgroundDisabled,
+    backgroundFocusVisible,
+    backgroundHover,
+
     color,
-    fit,
+    padding,
+    width,
+    
+    children,
+    disabled,
     label,
     size,
-    disabled,
     variant,
 
    onClick,
@@ -28,9 +36,16 @@ export function Button(props: ButtonProps) {
 
   const classes = classNames({
     'ch-button': true,
-    [`ch-button--${fit}`]: true,
-    [`ch-button--${size}`]: true,
-    [`ch-button--${variant}`]: true,
+  });
+
+  const styles = styleMap({
+    '--button-width': width,
+    '--button-padding': padding,
+    '--button-background-color': background,
+    '--button-background-color-active': backgroundActive,
+    '--button-background-color-disabled': backgroundDisabled,
+    '--button-background-color-focus-visible': backgroundFocusVisible,
+    '--button-background-color-hover': backgroundHover,
   });
 
   const state = { disabled };
@@ -42,7 +57,8 @@ export function Button(props: ButtonProps) {
         className={classes}
         disabled={disabled}
         onClick={disabled ? doNothing : onClick}
-        tabIndex={0}>
+        tabIndex={0}
+        style={styles}>
         {children}
       </button>
     </ButtonContext.Provider>

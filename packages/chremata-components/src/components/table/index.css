@@ -59,7 +59,7 @@
   grid-auto-flow: column;
   grid-template-columns: inherit;
 
-  border-bottom: 1px solid var(--ch-table--border-color);
+  border-bottom: 1px solid var(--border-color--light);
 }
 
 .ch-table-content-row:hover {

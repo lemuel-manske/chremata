@@ -6,6 +6,7 @@ import { type ModalHeaderProps } from './modal-header/modal-header.types';
 import { ModalHeader } from './modal-header/modal-header';
 
 import { type ModalProps } from './modal.types';
+import tokens from './modal.tokens';
 
 export function useModal(props: ModalProps) {
   const { children, id, open } = props;
@@ -22,7 +23,12 @@ export function useModal(props: ModalProps) {
     );
   }
 
+  const backgroundColor = tokens.background.color;
+  const backgroundBackdropColor = tokens.backdrop.background.color;
+
   return {
+    backgroundColor,
+    backgroundBackdropColor,
     id,
     header,
     open,

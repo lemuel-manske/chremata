@@ -8,8 +8,6 @@ import {
   type EnumOrStringLiteralTypesInclude,
 } from '@chremata/utils';
 
-import type { IconSolidNames } from '../icon/icon.types';
-
 import type { ButtonLabelProps } from './button-label/button-label.types';
 import type { ButtonIconProps } from './button-icon/button-icon.types';
 
